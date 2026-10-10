@@ -2,12 +2,16 @@ import { ArrowLeft, ArrowRight, BookOpen, FlaskConical } from 'lucide-react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { useLocale } from '../../i18n/LocaleContext'
 import { modules } from './moduleCatalog'
+import { lessons } from '../../content/lessons'
+import { LessonRenderer } from './LessonRenderer'
 
 export function ModulePage() {
   const { module: slug } = useParams()
   const module = modules.find((item) => item.slug === slug)
   const { t } = useLocale()
   if (!module) return <Navigate to="/learn" replace />
+  const lesson = lessons.find((item) => item.subject === module.slug)
+  if (lesson) return <div className="page-wrap module-page"><LessonRenderer lesson={lesson} /></div>
   const Icon = module.icon
   return <div className="page-wrap module-page">
     <div className="module-hero">

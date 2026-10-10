@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Activity, ArrowDownRight, ArrowRight, Bone, Calculator, ChevronDown, Command, FlaskConical, HeartPulse, Home, Menu, Search, Settings2, Sparkles, Utensils, X } from 'lucide-react'
+import { Activity, ArrowDownRight, ArrowRight, Bone, BookOpen, Calculator, ChevronDown, Command, FlaskConical, HeartPulse, Home, Menu, Search, Settings2, Sparkles, Utensils, X } from 'lucide-react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { Brand } from '../../components/Brand'
 import { BackButton } from '../../components/BackButton'
@@ -45,6 +45,7 @@ export function StudentLayout() {
       <div className="sidebar-label">{t('navGroup')}</div>
       <nav aria-label={t('navGroup')} className="main-nav">
         {navigation.map(({ key, to, icon: Icon, end }) => <NavLink key={to} to={to} end={end} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} onClick={() => setMobileNav(false)}><Icon size={18} strokeWidth={1.8} /><span>{t(key)}</span></NavLink>)}
+        <NavLink to="/knowledge" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} onClick={() => setMobileNav(false)}><BookOpen size={18} strokeWidth={1.8} /><span>{t('navKnowledge')}</span></NavLink>
       </nav>
       <div className="sidebar-bottom">
         <div className="streak-card"><div className="streak-icon"><Sparkles size={16} /></div><div><b>{t('demoLabel')}</b><p>{t('progressLabel')}</p></div><ArrowDownRight size={16} className="streak-arrow" /></div>

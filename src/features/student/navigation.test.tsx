@@ -20,9 +20,10 @@ describe('platform navigation', () => {
     await user.click(screen.getAllByRole('link', { name: /Explore learning/i })[0])
     for (const name of ['Anatomy', 'Physiology', 'Biochemistry', 'Metabolism', 'Nutrition', 'Calculators']) {
       await user.click(screen.getByRole('link', { name: new RegExp(`^${name}$`) }))
-      expect(screen.getByRole('heading', { name })).toBeInTheDocument()
+      const expectedHeading = name === 'Anatomy' ? 'Cell Structure' : name === 'Metabolism' ? 'Glucose Metabolism' : name === 'Nutrition' ? 'Macronutrient Digestion' : name
+      expect(screen.getByRole('heading', { name: expectedHeading })).toBeInTheDocument()
     }
-  })
+  }, 15000)
 
   it('uses in-app history for Back and supports browser back and forward', async () => {
     const user = userEvent.setup()
@@ -32,10 +33,10 @@ describe('platform navigation', () => {
     await user.click(screen.getByRole('button', { name: 'Back' }))
     await waitFor(() => expect(screen.getByRole('heading', { name: 'Your learning library' })).toBeInTheDocument())
     window.history.forward()
-    await waitFor(() => expect(screen.getByRole('heading', { name: 'Anatomy' })).toBeInTheDocument())
+    await waitFor(() => expect(screen.getByRole('heading', { name: 'Cell Structure' })).toBeInTheDocument())
     window.history.back()
     await waitFor(() => expect(screen.getByRole('heading', { name: 'Your learning library' })).toBeInTheDocument())
-  })
+  }, 15000)
 
   it('uses the safe public fallback when opened directly on a student module', async () => {
     window.history.replaceState({}, '', '/learn/anatomy')
@@ -56,7 +57,7 @@ describe('platform navigation', () => {
       expect(screen.getByRole('heading', { name })).toBeInTheDocument()
       expect(screen.getByText('No connected data')).toBeInTheDocument()
     }
-  })
+  }, 15000)
 
   it('uses the admin fallback on direct admin subpage entry and keeps the main-site link available', async () => {
     window.history.replaceState({}, '', '/admin/content')

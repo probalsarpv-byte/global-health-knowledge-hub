@@ -1,0 +1,74 @@
+import { cleanup, render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import App from '../App'
+import { lessons } from './lessons'
+import { validateLessons } from './lessonSchema'
+
+beforeEach(() => window.history.replaceState({}, '', '/'))
+afterEach(cleanup)
+
+describe('scientific lesson content', () => {
+  it('validates all published sample records and all internal topic relations', () => {
+    expect(validateLessons(lessons)).toEqual([])
+    expect(lessons).toHaveLength(3)
+    expect(new Set(lessons.map((lesson) => lesson.id)).size).toBe(3)
+    for (const lesson of lessons) {
+      expect(lesson.references.every((reference) => reference.url.startsWith('https://'))).toBe(true)
+      expect(Object.keys(lesson.levels)).toEqual(['foundation', 'academic', 'advanced'])
+      expect(lesson.reviewStatus).toBe('source-checked-expert-review-pending')
+    }
+  })
+
+  it('rejects missing translations, unresolved sources, short scientific explanations and broken links', () => {
+    const altered = structuredClone(lessons[0])
+    altered.relatedTopicIds.push('topic.missing')
+    altered.references[0].url = 'not-a-url'
+    altered.evidenceBySection.mechanism = ['missing-reference']
+    altered.levels.foundation.sections[0].paragraphs[0].bn = ''
+    altered.levels.academic.sections.find((section) => section.id === 'mechanism')!.paragraphs[0].en = 'Too short.'
+    const issues = validateLessons([altered])
+    expect(issues.some((issue) => issue.message.includes('Unresolved topic link'))).toBe(true)
+    expect(issues.some((issue) => issue.message.includes('Unresolved reference ID'))).toBe(true)
+    expect(issues.some((issue) => issue.path.includes('references.0.url'))).toBe(true)
+    expect(issues.some((issue) => issue.path.includes('foundation.introduction'))).toBe(true)
+    expect(issues.some((issue) => issue.message.includes('suspiciously short'))).toBe(true)
+  })
+
+  it('connects Knowledge navigation to the integrated student lesson routes', async () => {
+    window.history.replaceState({}, '', '/knowledge')
+    const user = userEvent.setup()
+    render(<App />)
+    expect(screen.getByRole('heading', { name: 'Knowledge library' })).toBeInTheDocument()
+    await user.click(screen.getByRole('link', { name: /Open lesson: Cell Structure/i }))
+    expect(await screen.findByRole('heading', { name: 'Cell Structure' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Scientific references' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Open source/ })).toHaveAttribute('href', expect.stringContaining('openstax.org'))
+  })
+
+  it('renders the same full lesson in Bengali and English and switches substantive depth', async () => {
+    window.history.replaceState({}, '', '/learn/nutrition')
+    const user = userEvent.setup()
+    render(<App />)
+    expect(screen.getByRole('heading', { name: 'Macronutrient Digestion' })).toBeInTheDocument()
+    expect(screen.getByText(/Digestion combines mechanical processing with chemical hydrolysis/)).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Switch language' }))
+    expect(await screen.findByRole('heading', { name: 'ম্যাক্রোনিউট্রিয়েন্টের পরিপাক' })).toBeInTheDocument()
+    expect(screen.getByText(/পরিপাকে যান্ত্রিক প্রক্রিয়াকরণ ও রাসায়নিক হাইড্রোলাইসিস/)).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'ভিত্তি' })).toHaveAttribute('aria-pressed', 'true')
+    await user.click(screen.getByRole('button', { name: 'একাডেমিক' }))
+    await waitFor(() => expect(screen.getByText(/অগ্ন্যাশয়ের জাইমোজেন/)).toBeInTheDocument())
+    expect(screen.getByRole('heading', { name: 'বৈজ্ঞানিক তথ্যসূত্র' })).toBeInTheDocument()
+  })
+
+  it('offers keyboard-operable pathway and assessment controls', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism')
+    const user = userEvent.setup()
+    render(<App />)
+    const next = screen.getByRole('button', { name: 'Next step' })
+    await user.click(next)
+    expect(screen.getByText('2 / 4')).toBeInTheDocument()
+    await user.click(screen.getByRole('radio', { name: 'Two ATP' }))
+    expect(screen.getByRole('status')).toHaveTextContent('Correct.')
+  })
+})

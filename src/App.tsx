@@ -5,6 +5,7 @@ import { AdminPlaceholder } from './features/admin/AdminPlaceholder'
 import { adminSections } from './features/admin/adminSections'
 import { LocaleProvider } from './i18n/LocaleContext'
 import { PublicHome } from './features/public/PublicHome'
+import { KnowledgeIndex } from './features/public/KnowledgeIndex'
 import { StudentDashboard } from './features/student/StudentDashboard'
 import { StudentLayout } from './features/student/StudentLayout'
 import { ModulePage } from './features/student/ModulePage'
@@ -17,6 +18,7 @@ export default function App() {
        <BrowserRouter>
         <Routes>
           <Route path="/" element={<PublicHome />} />
+          <Route path="/knowledge" element={<KnowledgeIndex />} />
           <Route element={<StudentLayout />}>
             <Route path="/learn" element={<StudentDashboard />} />
             <Route path="/learn/:module" element={<ModulePage />} />
