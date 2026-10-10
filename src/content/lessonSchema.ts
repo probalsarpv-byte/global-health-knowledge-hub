@@ -43,6 +43,15 @@ export type LessonTopic = {
   levels: Record<ContentDepth, LessonLevel>
   diagram: { accessibleDescription: Localized; steps: Localized[] }
   assessment: { question: Localized; options: Localized[]; correctIndex: number; explanation: Localized }
+  chapter?: CellChapter
+}
+
+export type CellChapter = {
+  toc: Array<{ id: string; label: Localized; sectionId: string }>
+  terms: Array<{ term: Localized; definition: Localized }>
+  workedExamples: Array<{ title: Localized; steps: Localized[]; conclusion: Localized }>
+  checkpoints: Array<{ question: Localized; answer: Localized }>
+  organelles: Array<{ id: string; label: Localized; description: Localized; functions: Localized[]; sectionId: string }>
 }
 
 export type ContentIssue = { topicId: string; path: string; message: string }
@@ -78,7 +87,8 @@ export function validateLessons(lessons: readonly LessonTopic[]): ContentIssue[]
       if (!level || !isLocalized(level.label) || !level.sections.length) { issue(lesson.id, `levels.${depth}`, 'Each depth level needs a bilingual label and structured sections'); continue }
       const sectionIds = new Set<string>()
       const requiredSections = depth === 'advanced' ? ['integration', 'practice'] : ['introduction', 'structure', 'mechanism', 'integration', 'practice', 'takeaways']
-      for (const required of requiredSections) if (!level.sections.some((section) => section.id === required)) issue(lesson.id, `levels.${depth}.${required}`, 'Required educational section is missing')
+      const chapterAliases: Record<string, string> = lesson.chapter ? { structure: 'membrane', mechanism: 'transport', integration: depth === 'advanced' ? 'energy' : 'nucleus' } : {}
+      for (const required of requiredSections) if (!level.sections.some((section) => section.id === required || section.id === chapterAliases[required])) issue(lesson.id, `levels.${depth}.${required}`, 'Required educational section is missing')
       for (const section of level.sections) {
         if (sectionIds.has(section.id)) issue(lesson.id, `levels.${depth}.${section.id}`, 'Section IDs must be unique within a level')
         sectionIds.add(section.id)

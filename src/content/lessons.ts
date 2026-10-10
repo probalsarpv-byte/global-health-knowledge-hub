@@ -1,4 +1,5 @@
 import type { LessonTopic } from './lessonSchema'
+import { cellStructureLesson } from './cellStructureChapter'
 
 const cellRef = { id: 'openstax-biology-2e-4-3', authors: 'Mary Ann Clark, Matthew Douglas, Jung Choi', title: 'Biology 2e, section 4.3: Eukaryotic Cells', organization: 'OpenStax, Rice University', year: 2018, url: 'https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells' }
 const digestionRef = { id: 'openstax-ap2e-23-7', authors: 'J. Gordon Betts, Kelly A. Young, James A. Wise, Eddie Johnson, Brandon Poe, Dean H. Kruse, Oksana Korol, Jody E. Johnson, Mark Womble, Peter DeSaix', title: 'Anatomy and Physiology 2e, section 23.7: Chemical Digestion and Absorption', organization: 'OpenStax, Rice University', year: 2022, url: 'https://openstax.org/books/anatomy-and-physiology-2e/pages/23-7-chemical-digestion-and-absorption-a-closer-look' }
@@ -7,7 +8,7 @@ const metabolismRefs = [
   { id: 'openstax-ap2e-24-5', authors: digestionRef.authors, title: 'Anatomy and Physiology 2e, section 24.5: Metabolic States of the Body', organization: digestionRef.organization, year: 2022, url: 'https://openstax.org/books/anatomy-and-physiology-2e/pages/24-5-metabolic-states-of-the-body' },
 ]
 
-export const lessons = [
+const legacyLessons = [
   {
     id: 'topic.cell.structure', slug: 'cell-structure', version: 1, updatedAt: '2026-10-10', title: { en: 'Cell Structure', bn: 'কোষের গঠন' },
     summary: { en: 'How membranes, compartments and molecular machinery organize a eukaryotic cell.', bn: 'ঝিল্লি, কোষীয় প্রকোষ্ঠ ও আণবিক যন্ত্র কীভাবে ইউক্যারিওটিক কোষকে সংগঠিত করে।' },
@@ -211,3 +212,5 @@ export const lessons = [
     assessment: { question: { en: 'What is the net ATP yield of glycolysis per glucose molecule, before counting later pathways?', bn: 'পরবর্তী পথের হিসাব বাদ দিলে প্রতি গ্লুকোজে গ্লাইকোলাইসিসের নিট ATP উৎপাদ কত?' }, options: [{ en: 'Two ATP', bn: 'দুই ATP' }, { en: 'Four ATP net', bn: 'নিট চার ATP' }, { en: 'Thirty ATP', bn: 'ত্রিশ ATP' }], correctIndex: 0, explanation: { en: 'Glycolysis invests two ATP and produces four by substrate-level phosphorylation, for a net gain of two ATP, plus two NADH and two pyruvate.', bn: 'গ্লাইকোলাইসিসে দুই ATP বিনিয়োগ হয় এবং সাবস্ট্রেট-স্তরের ফসফরাইলেশনে চার ATP তৈরি হয়; ফলে নিট দুই ATP, সঙ্গে দুই NADH ও দুই পাইরুভেট উৎপন্ন হয়।' } },
   },
 ] satisfies LessonTopic[]
+
+export const lessons = [cellStructureLesson, ...legacyLessons.filter((lesson) => lesson.id !== cellStructureLesson.id)] satisfies LessonTopic[]

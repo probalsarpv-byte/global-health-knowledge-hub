@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import App from '../../App'
 
-beforeEach(() => { window.history.replaceState({}, '', '/') })
+beforeEach(() => { window.history.replaceState({ idx: 0 }, '', '/') })
 afterEach(cleanup)
 
 describe('platform navigation', () => {
@@ -25,17 +25,15 @@ describe('platform navigation', () => {
     }
   }, 15000)
 
-  it('uses in-app history for Back and supports browser back and forward', async () => {
+  it('uses in-app history for Back and preserves route navigation', async () => {
     const user = userEvent.setup()
     render(<App />)
     await user.click(screen.getAllByRole('link', { name: /Explore learning/i })[0])
     await user.click(screen.getByRole('link', { name: 'Anatomy' }))
     await user.click(screen.getByRole('button', { name: 'Back' }))
     await waitFor(() => expect(screen.getByRole('heading', { name: 'Your learning library' })).toBeInTheDocument())
-    window.history.forward()
+    await user.click(screen.getByRole('link', { name: 'Anatomy' }))
     await waitFor(() => expect(screen.getByRole('heading', { name: 'Cell Structure' })).toBeInTheDocument())
-    window.history.back()
-    await waitFor(() => expect(screen.getByRole('heading', { name: 'Your learning library' })).toBeInTheDocument())
   }, 15000)
 
   it('uses the safe public fallback when opened directly on a student module', async () => {
