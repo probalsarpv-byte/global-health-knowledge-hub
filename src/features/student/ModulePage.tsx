@@ -10,6 +10,7 @@ export function ModulePage() {
   const module = modules.find((item) => item.slug === slug)
   const { t } = useLocale()
   if (!module) return <Navigate to="/learn" replace />
+  if (module.slug === 'anatomy') return <Navigate to="/learn/anatomy" replace />
   const lesson = lessons.find((item) => item.subject === module.slug)
   if (lesson) return <div className="page-wrap module-page"><LessonRenderer lesson={lesson} /></div>
   const Icon = module.icon

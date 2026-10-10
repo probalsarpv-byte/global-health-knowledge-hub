@@ -44,6 +44,38 @@ export type LessonTopic = {
   diagram: { accessibleDescription: Localized; steps: Localized[] }
   assessment: { question: Localized; options: Localized[]; correctIndex: number; explanation: Localized }
   chapter?: CellChapter
+  anatomyExplorer?: AnatomyExplorerContent
+}
+
+export type CurriculumStatus = 'available' | 'planned'
+export type CompletionStatus = 'not-started' | 'in-progress' | 'complete'
+export type AnatomyCurriculumChapter = {
+  id: string
+  order: number
+  groupId: string
+  slug: string
+  title: Localized
+  summary: Localized
+  status: CurriculumStatus
+  completionStatus: CompletionStatus
+  prerequisiteIds: string[]
+  lessonId?: string
+  estimatedMinutes: number
+}
+export type AnatomyCurriculumGroup = { id: string; order: number; title: Localized; description: Localized }
+export type AnatomyCurriculum = {
+  id: 'subject.anatomy'
+  version: number
+  updatedAt: string
+  groups: AnatomyCurriculumGroup[]
+  chapters: AnatomyCurriculumChapter[]
+}
+export type AnatomyExplorerContent = {
+  title: Localized
+  disclaimer: Localized
+  description: Localized
+  regions: Array<{ id: string; label: Localized; description: Localized; sectionId: string }>
+  planes: Array<{ id: string; label: Localized; description: Localized }>
 }
 
 export type CellChapter = {

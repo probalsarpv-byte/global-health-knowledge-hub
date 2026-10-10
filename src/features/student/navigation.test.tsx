@@ -20,7 +20,7 @@ describe('platform navigation', () => {
     await user.click(screen.getAllByRole('link', { name: /Explore learning/i })[0])
     for (const name of ['Anatomy', 'Physiology', 'Biochemistry', 'Metabolism', 'Nutrition', 'Calculators']) {
       await user.click(screen.getByRole('link', { name: new RegExp(`^${name}$`) }))
-      const expectedHeading = name === 'Anatomy' ? 'Cell Structure' : name === 'Metabolism' ? 'Glucose Metabolism' : name === 'Nutrition' ? 'Macronutrient Digestion' : name
+      const expectedHeading = name === 'Anatomy' ? 'Anatomy curriculum' : name === 'Metabolism' ? 'Glucose Metabolism' : name === 'Nutrition' ? 'Macronutrient Digestion' : name
       expect(screen.getByRole('heading', { name: expectedHeading })).toBeInTheDocument()
     }
   }, 15000)
@@ -33,7 +33,7 @@ describe('platform navigation', () => {
     await user.click(screen.getByRole('button', { name: 'Back' }))
     await waitFor(() => expect(screen.getByRole('heading', { name: 'Your learning library' })).toBeInTheDocument())
     await user.click(screen.getByRole('link', { name: 'Anatomy' }))
-    await waitFor(() => expect(screen.getByRole('heading', { name: 'Cell Structure' })).toBeInTheDocument())
+    await waitFor(() => expect(screen.getByRole('heading', { name: 'Anatomy curriculum' })).toBeInTheDocument())
   }, 15000)
 
   it('uses the safe public fallback when opened directly on a student module', async () => {

@@ -9,6 +9,9 @@ import { KnowledgeIndex } from './features/public/KnowledgeIndex'
 import { StudentDashboard } from './features/student/StudentDashboard'
 import { StudentLayout } from './features/student/StudentLayout'
 import { ModulePage } from './features/student/ModulePage'
+import { AnatomySubjectPage } from './features/anatomy/AnatomySubjectPage'
+import { AnatomyChapterPage } from './features/anatomy/AnatomyChapterPage'
+import { AnatomyLegacyLessonPage } from './features/anatomy/AnatomyLegacyLessonPage'
 import { ThemeProvider } from './components/ThemeContext'
 
 export default function App() {
@@ -21,6 +24,9 @@ export default function App() {
           <Route path="/knowledge" element={<KnowledgeIndex />} />
           <Route element={<StudentLayout />}>
             <Route path="/learn" element={<StudentDashboard />} />
+            <Route path="/learn/anatomy" element={<AnatomySubjectPage />} />
+            <Route path="/learn/anatomy/chapters/:chapter" element={<AnatomyChapterPage />} />
+            <Route path="/learn/anatomy/lessons/:lesson" element={<AnatomyLegacyLessonPage />} />
             <Route path="/learn/:module" element={<ModulePage />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>

@@ -15,7 +15,7 @@ export function KnowledgeIndex() {
     <section className="knowledge-list" aria-label={t('knowledgeTitle')}>
       {lessons.map((lesson) => {
         const subjectName = lesson.subject === 'anatomy' ? (bn ? 'অ্যানাটমি' : 'Anatomy') : lesson.subject === 'nutrition' ? (bn ? 'পুষ্টিবিজ্ঞান' : 'Nutrition science') : (bn ? 'বিপাকবিজ্ঞান' : 'Metabolism')
-        const href = `/learn/${lesson.subject}`
+        const href = lesson.subject === 'anatomy' ? `/learn/anatomy/lessons/${lesson.slug}` : `/learn/${lesson.subject}`
         return <article className="knowledge-card" key={lesson.id}><span className="knowledge-card-icon"><BookOpen size={20} /></span><div><span>{subjectName} · {bn ? 'সংস্করণ' : 'Version'} {lesson.version}</span><h2><Link to={href}>{bn ? lesson.title.bn : lesson.title.en}</Link></h2><p>{bn ? lesson.summary.bn : lesson.summary.en}</p><small>{bn ? 'ইংরেজি ও বাংলায় · ভিত্তি, একাডেমিক ও উন্নত স্তর' : 'English and Bengali · Foundation, Academic and Advanced levels'}</small></div><Link className="knowledge-card-action" to={href} aria-label={`${bn ? 'পাঠ খুলুন' : 'Open lesson'}: ${bn ? lesson.title.bn : lesson.title.en}`}><ArrowRight size={18} /></Link></article>
       })}
     </section>
