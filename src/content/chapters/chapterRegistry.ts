@@ -35,6 +35,10 @@ import { metabolism05BetaOxidationLesson } from './metabolism05BetaOxidation'
 import { metabolism06LipogenesisLesson } from './metabolism06Lipogenesis'
 import { metabolism07CholesterolLesson } from './metabolism07Cholesterol'
 import { metabolism08LipoproteinsLesson } from './metabolism08Lipoproteins'
+import { metabolism09AminoAcidsUreaLesson } from './metabolism09AminoAcidsUrea'
+import { metabolism10CarbonSkeletonsLesson } from './metabolism10CarbonSkeletons'
+import { metabolism11PurinesPyrimidinesLesson } from './metabolism11PurinesPyrimidines'
+import { metabolism12HemeBilirubinLesson } from './metabolism12HemeBilirubin'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -172,9 +176,17 @@ export const batch2MetabolismChapters: LessonTopic[] = [
   metabolism08LipoproteinsLesson,
 ]
 
+export const batch3MetabolismChapters: LessonTopic[] = [
+  metabolism09AminoAcidsUreaLesson,
+  metabolism10CarbonSkeletonsLesson,
+  metabolism11PurinesPyrimidinesLesson,
+  metabolism12HemeBilirubinLesson,
+]
+
 export const allCompletedMetabolismChapters: LessonTopic[] = [
   ...batch1MetabolismChapters,
   ...batch2MetabolismChapters,
+  ...batch3MetabolismChapters,
 ]
 
 export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
@@ -186,6 +198,10 @@ export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
   [metabolism06LipogenesisLesson.id]: metabolism06LipogenesisLesson,
   [metabolism07CholesterolLesson.id]: metabolism07CholesterolLesson,
   [metabolism08LipoproteinsLesson.id]: metabolism08LipoproteinsLesson,
+  [metabolism09AminoAcidsUreaLesson.id]: metabolism09AminoAcidsUreaLesson,
+  [metabolism10CarbonSkeletonsLesson.id]: metabolism10CarbonSkeletonsLesson,
+  [metabolism11PurinesPyrimidinesLesson.id]: metabolism11PurinesPyrimidinesLesson,
+  [metabolism12HemeBilirubinLesson.id]: metabolism12HemeBilirubinLesson,
 }
 
 export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
@@ -197,6 +213,10 @@ export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
   [metabolism06LipogenesisLesson.slug]: metabolism06LipogenesisLesson,
   [metabolism07CholesterolLesson.slug]: metabolism07CholesterolLesson,
   [metabolism08LipoproteinsLesson.slug]: metabolism08LipoproteinsLesson,
+  [metabolism09AminoAcidsUreaLesson.slug]: metabolism09AminoAcidsUreaLesson,
+  [metabolism10CarbonSkeletonsLesson.slug]: metabolism10CarbonSkeletonsLesson,
+  [metabolism11PurinesPyrimidinesLesson.slug]: metabolism11PurinesPyrimidinesLesson,
+  [metabolism12HemeBilirubinLesson.slug]: metabolism12HemeBilirubinLesson,
 }
 
 export function getMetabolismChapterLesson(identifier?: string): LessonTopic | undefined {

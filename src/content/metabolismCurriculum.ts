@@ -226,7 +226,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Transamination with pyridoxal phosphate (PLP), oxidative deamination, ammonia toxicity, and the 5-step hepatic urea cycle.',
         'পাইরিডক্সাল ফসফেট (পিএলপি) সহ ট্রান্সঅ্যামিনেশন, অক্সিডেটিভ ডিঅ্যামিনেশন, অ্যামোনিয়ার বিষাক্ততা এবং ৫-ধাপের যকৃত ইউরিয়া চক্র।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.03'],
       lessonId: 'topic.metabolism.amino-acid-catabolism-urea',
@@ -242,7 +242,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Glucogenic vs ketogenic amino acid classification, one-carbon pool (folate/B12), creatine, nitric oxide, glutathione, and neurotransmitter precursors.',
         'গ্লুকোজেনিক বনাম কিটোজেনিক অ্যামিনো অ্যাসিডের শ্রেণিবিভাগ, এক-কার্বন পুল (ফোলেট/বি১২), ক্রিয়েটিন, নাইট্রিক অক্সাইড, গ্লুটাথিয়ন এবং নিউরোট্রান্সমিটার।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.09'],
       lessonId: 'topic.metabolism.carbon-skeletons-specialized-products',
@@ -258,7 +258,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'De novo synthesis, salvage pathways (HGPRT/APRT), ribonucleotide reductase, uric acid degradation, clinical gout, and allopurinol mechanism.',
         'ডি নোভো সংশ্লেষ, সালভেজ গতিপথ (এইচজিপিআরটি/এপিআরটি), রিবোনিউক্লিওটাইড রিডাক্টেজ, ইউরিক অ্যাসিড উৎপাদন, গেঁটেবাত এবং অ্যালোপিউরিনল ক্রিয়া।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.01'],
       lessonId: 'topic.metabolism.purine-pyrimidine-metabolism',
@@ -274,7 +274,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'ALA synthase pathway, porphyrinogen intermediates, lead toxicity, porphyrias, macrophage heme oxygenase, hepatic conjugation, and jaundice differential.',
         'এএলএ সিন্থেজ গতিপথ, পরফাইরিনোজেন মধ্যবর্তী যৌগ, সীসার বিষাক্ততা, পরফাইরিয়া, ম্যাক্রোফেজ হিম অক্সিজিনেজ, যকৃত কনজুগেশন এবং জন্ডিস নির্ণয়।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.03'],
       lessonId: 'topic.metabolism.heme-bilirubin-metabolism',

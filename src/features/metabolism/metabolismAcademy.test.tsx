@@ -7,6 +7,7 @@ import {
   allCompletedChapters,
   batch1MetabolismChapters,
   batch2MetabolismChapters,
+  batch3MetabolismChapters,
   allCompletedMetabolismChapters,
 } from '../../content/chapters/chapterRegistry'
 import { lessons } from '../../content/lessons'
@@ -15,8 +16,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Human Metabolism Academy curriculum and Batches 1 & 2 Chapters (01–08 complete)', () => {
-  it('defines an ordered 18-chapter curriculum with Batches 1 & 2 available across 5 thematic groups', () => {
+describe('Human Metabolism Academy curriculum and Batches 1, 2 & 3 Chapters (01–12 complete)', () => {
+  it('defines an ordered 18-chapter curriculum with Batches 1, 2 & 3 available across 5 thematic groups', () => {
     expect(metabolismCurriculum.chapters).toHaveLength(18)
     expect(metabolismCurriculum.groups.map((group) => group.id)).toEqual([
       'metabolism.foundations',
@@ -30,7 +31,7 @@ describe('Human Metabolism Academy curriculum and Batches 1 & 2 Chapters (01–0
     )
 
     const availableChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(8)
+    expect(availableChapters).toHaveLength(12)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'metabolism.chapter.01',
       'metabolism.chapter.02',
@@ -40,16 +41,21 @@ describe('Human Metabolism Academy curriculum and Batches 1 & 2 Chapters (01–0
       'metabolism.chapter.06',
       'metabolism.chapter.07',
       'metabolism.chapter.08',
+      'metabolism.chapter.09',
+      'metabolism.chapter.10',
+      'metabolism.chapter.11',
+      'metabolism.chapter.12',
     ])
 
     const plannedChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(10)
+    expect(plannedChapters).toHaveLength(6)
   })
 
-  it('validates complete bilingual Batch 1 and Batch 2 records, paragraph lengths (>=120 chars), and scientific citations', () => {
+  it('validates complete bilingual Batch 1, Batch 2 and Batch 3 records, paragraph lengths (>=120 chars), and scientific citations', () => {
     expect(batch1MetabolismChapters).toHaveLength(4)
     expect(batch2MetabolismChapters).toHaveLength(4)
-    expect(allCompletedMetabolismChapters).toHaveLength(8)
+    expect(batch3MetabolismChapters).toHaveLength(4)
+    expect(allCompletedMetabolismChapters).toHaveLength(12)
     const issues = validateLessons([...lessons, ...allCompletedChapters, ...allCompletedMetabolismChapters])
     expect(issues).toEqual([])
 
@@ -81,15 +87,16 @@ describe('Human Metabolism Academy curriculum and Batches 1 & 2 Chapters (01–0
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'Metabolism curriculum' })).toBeInTheDocument()
-    expect(screen.getByText(/8 \/ 18 chapters available/i)).toBeInTheDocument()
+    expect(screen.getByText(/12 \/ 18 chapters available/i)).toBeInTheDocument()
     expect(screen.getByText(/01 · Introduction to Human Metabolism & Bioenergetics/i)).toBeInTheDocument()
     expect(screen.getByText(/05 · Fatty Acid Beta-Oxidation & Ketogenesis/i)).toBeInTheDocument()
-    expect(screen.getByText(/08 · Lipoprotein Transport & Lipid Flux/i)).toBeInTheDocument()
+    expect(screen.getByText(/09 · Amino Acid Catabolism & Urea Cycle/i)).toBeInTheDocument()
+    expect(screen.getByText(/12 · Heme Biosynthesis & Bilirubin Metabolism/i)).toBeInTheDocument()
 
     const searchInput = screen.getByPlaceholderText(/Search available or planned metabolism lessons/i)
-    await user.type(searchInput, 'Glycolysis')
+    await user.type(searchInput, 'Purine')
 
-    expect(screen.getByText(/02 · Glycolysis & Pyruvate Oxidation/i)).toBeInTheDocument()
+    expect(screen.getByText(/11 · Purine & Pyrimidine Metabolism/i)).toBeInTheDocument()
     expect(screen.queryByText(/01 · Introduction to Human Metabolism & Bioenergetics/i)).not.toBeInTheDocument()
   })
 
@@ -289,6 +296,108 @@ describe('Human Metabolism Academy curriculum and Batches 1 & 2 Chapters (01–0
       name: /Autosomal dominant loss-of-function mutation in the LDLR gene encoding the cell-surface LDL receptor/i,
     })
     await user.click(fhOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 09 (Urea Cycle) and operates 3D organ explorer, pathway diagram and OTC deficiency assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/amino-acid-catabolism-urea')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '09 · Amino Acid Catabolism & Urea Cycle' })
+    ).toBeInTheDocument()
+
+    // Verify 3D Inter-Organ Explorer exists
+    expect(screen.getByText(/3D Inter-Organ Nitrogen Flux & Urea Clearance Topography/i)).toBeInTheDocument()
+
+    // Operate interactive diagram
+    const altAstNode = screen.getByRole('button', {
+      name: /1\. ALT \/ AST Aminotransferases/i,
+    })
+    await user.click(altAstNode)
+    expect(screen.getByText(/Transfers alpha-amino groups from donor amino acids onto alpha-ketoglutarate/i)).toBeInTheDocument()
+
+    // Answer assessment on OTC deficiency
+    const otcOption = screen.getByRole('radio', {
+      name: /Ornithine transcarbamoylase \(OTC\) deficiency/i,
+    })
+    await user.click(otcOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 10 (Carbon Skeletons) and operates BCKDH MSUD node and TPP assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/carbon-skeletons-specialized-products')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '10 · Carbon Skeleton Fates & Specialized Products' })
+    ).toBeInTheDocument()
+
+    const bckdhNode = screen.getByRole('button', {
+      name: /2\. Branched-Chain Amino Acids \(BCAA\) & BCKDH Complex/i,
+    })
+    await user.click(bckdhNode)
+    expect(screen.getByText(/Mitochondrial BCKDH complex decarboxylates deaminated leucine/i)).toBeInTheDocument()
+
+    // Answer assessment on MSUD TPP cofactor
+    const tppOption = screen.getByRole('radio', {
+      name: /Thiamine pyrophosphate \(TPP, derived from vitamin B1\)\./i,
+    })
+    await user.click(tppOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 11 (Purines & Pyrimidines) and operates PRPP node, 3D explorer and Lesch-Nyhan assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/purine-pyrimidine-metabolism')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '11 · Purine & Pyrimidine Metabolism' })
+    ).toBeInTheDocument()
+
+    // Verify 3D Nucleotide Economy Explorer exists
+    expect(screen.getByText(/3D Inter-Organ Nucleotide Economy, Gout & Chemotherapy Targets/i)).toBeInTheDocument()
+
+    const prppNode = screen.getByRole('button', {
+      name: /1\. PRPP Gateway & Purine Commitment/i,
+    })
+    await user.click(prppNode)
+    expect(screen.getByText(/PRPP synthetase activates ribose-5-phosphate using ATP/i)).toBeInTheDocument()
+
+    // Answer assessment on Lesch-Nyhan HGPRT deficiency
+    const lnsOption = screen.getByRole('radio', {
+      name: /Hypoxanthine-guanine phosphoribosyltransferase \(HGPRT\) complete deficiency/i,
+    })
+    await user.click(lnsOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 12 (Heme & Bilirubin) and operates 3D multi-organ explorer, ALAS node and AIP assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/heme-bilirubin-metabolism')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '12 · Heme Biosynthesis & Bilirubin Metabolism' })
+    ).toBeInTheDocument()
+
+    // Verify 3D Multi-Organ Explorer exists
+    expect(screen.getByText(/3D Multi-Organ Heme Economy, Porphyrias & Jaundice Differential/i)).toBeInTheDocument()
+
+    const alasNode = screen.getByRole('button', {
+      name: /1\. Mitochondrial ALAS Rate-Limiting Gateway/i,
+    })
+    await user.click(alasNode)
+    expect(screen.getByText(/Mitochondrial delta-aminolevulinate synthase \(ALAS\) condenses succinyl-CoA and glycine/i)).toBeInTheDocument()
+
+    // Answer assessment on Acute Intermittent Porphyria
+    const aipOption = screen.getByRole('radio', {
+      name: /Porphobilinogen deaminase \(hydroxymethylbilane synthase\) deficiency/i,
+    })
+    await user.click(aipOption)
     expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
   })
 })
