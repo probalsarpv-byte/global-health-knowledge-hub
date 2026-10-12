@@ -6,6 +6,8 @@ import { metabolismCurriculum } from '../../content/metabolismCurriculum'
 import {
   allCompletedChapters,
   batch1MetabolismChapters,
+  batch2MetabolismChapters,
+  allCompletedMetabolismChapters,
 } from '../../content/chapters/chapterRegistry'
 import { lessons } from '../../content/lessons'
 import { validateLessons } from '../../content/lessonSchema'
@@ -13,8 +15,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Human Metabolism Academy curriculum and Batch 1 Chapters (01–04 complete)', () => {
-  it('defines an ordered 18-chapter curriculum with Batch 1 available across 5 thematic groups', () => {
+describe('Human Metabolism Academy curriculum and Batches 1 & 2 Chapters (01–08 complete)', () => {
+  it('defines an ordered 18-chapter curriculum with Batches 1 & 2 available across 5 thematic groups', () => {
     expect(metabolismCurriculum.chapters).toHaveLength(18)
     expect(metabolismCurriculum.groups.map((group) => group.id)).toEqual([
       'metabolism.foundations',
@@ -28,24 +30,30 @@ describe('Human Metabolism Academy curriculum and Batch 1 Chapters (01–04 comp
     )
 
     const availableChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(4)
+    expect(availableChapters).toHaveLength(8)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'metabolism.chapter.01',
       'metabolism.chapter.02',
       'metabolism.chapter.03',
       'metabolism.chapter.04',
+      'metabolism.chapter.05',
+      'metabolism.chapter.06',
+      'metabolism.chapter.07',
+      'metabolism.chapter.08',
     ])
 
     const plannedChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(14)
+    expect(plannedChapters).toHaveLength(10)
   })
 
-  it('validates complete bilingual Batch 1 records, paragraph lengths (>=120 chars), and scientific citations', () => {
+  it('validates complete bilingual Batch 1 and Batch 2 records, paragraph lengths (>=120 chars), and scientific citations', () => {
     expect(batch1MetabolismChapters).toHaveLength(4)
-    const issues = validateLessons([...lessons, ...allCompletedChapters, ...batch1MetabolismChapters])
+    expect(batch2MetabolismChapters).toHaveLength(4)
+    expect(allCompletedMetabolismChapters).toHaveLength(8)
+    const issues = validateLessons([...lessons, ...allCompletedChapters, ...allCompletedMetabolismChapters])
     expect(issues).toEqual([])
 
-    for (const chapter of batch1MetabolismChapters) {
+    for (const chapter of allCompletedMetabolismChapters) {
       expect(chapter.subject).toBe('metabolism')
       for (const depth of ['foundation', 'academic', 'advanced'] as const) {
         const level = chapter.levels[depth]
@@ -73,9 +81,10 @@ describe('Human Metabolism Academy curriculum and Batch 1 Chapters (01–04 comp
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'Metabolism curriculum' })).toBeInTheDocument()
-    expect(screen.getByText(/4 \/ 18 chapters available/i)).toBeInTheDocument()
+    expect(screen.getByText(/8 \/ 18 chapters available/i)).toBeInTheDocument()
     expect(screen.getByText(/01 · Introduction to Human Metabolism & Bioenergetics/i)).toBeInTheDocument()
-    expect(screen.getByText(/02 · Glycolysis & Pyruvate Oxidation/i)).toBeInTheDocument()
+    expect(screen.getByText(/05 · Fatty Acid Beta-Oxidation & Ketogenesis/i)).toBeInTheDocument()
+    expect(screen.getByText(/08 · Lipoprotein Transport & Lipid Flux/i)).toBeInTheDocument()
 
     const searchInput = screen.getByPlaceholderText(/Search available or planned metabolism lessons/i)
     await user.type(searchInput, 'Glycolysis')
@@ -189,5 +198,97 @@ describe('Human Metabolism Academy curriculum and Batch 1 Chapters (01–04 comp
     expect(
       screen.getByRole('heading', { name: '03 · Citric Acid Cycle & Oxidative Phosphorylation' })
     ).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 05 (Beta-Oxidation) and operates CPT-I shuttle and assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/fatty-acid-oxidation-ketones')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '05 · Fatty Acid Beta-Oxidation & Ketogenesis' })
+    ).toBeInTheDocument()
+
+    const cpt1Node = screen.getByRole('button', {
+      name: /1\. CPT-I & Carnitine Shuttle \[Mitochondrial Entry Valve\]/i,
+    })
+    await user.click(cpt1Node)
+    expect(screen.getByText(/Rate-limiting gateway of lipid oxidation/i)).toBeInTheDocument()
+
+    // Answer assessment on MCAD deficiency
+    const mcadOption = screen.getByRole('radio', {
+      name: /Severe hypoglycemia with undetectable or inappropriately low urine and serum ketone bodies/i,
+    })
+    await user.click(mcadOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 06 (Lipogenesis) and operates ACC regulation node and assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/lipogenesis-triglycerides')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '06 · Fatty Acid & Triglyceride Synthesis' })
+    ).toBeInTheDocument()
+
+    const accNode = screen.getByRole('button', {
+      name: /2\. Acetyl-CoA Carboxylase \(ACC\) \[Rate-Limiting Valve\]/i,
+    })
+    await user.click(accNode)
+    expect(screen.getByText(/Carboxylates acetyl-CoA into malonyl-CoA/i)).toBeInTheDocument()
+
+    // Answer assessment on adipose lacking glycerol kinase
+    const glycerolOption = screen.getByRole('radio', {
+      name: /Adipocytes completely lack the enzyme glycerol kinase and must rely on glycolysis of glucose/i,
+    })
+    await user.click(glycerolOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 07 (Cholesterol) and operates HMGCR node and statin assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/cholesterol-steroids')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '07 · Cholesterol & Steroid Metabolism' })
+    ).toBeInTheDocument()
+
+    const hmgcrNode = screen.getByRole('button', {
+      name: /1\. HMG-CoA Reductase \[Committed Mevalonate Step\]/i,
+    })
+    await user.click(hmgcrNode)
+    expect(screen.getByText(/Rate-limiting enzyme of cholesterol synthesis located in ER membrane/i)).toBeInTheDocument()
+
+    // Answer assessment on statin mechanism
+    const statinOption = screen.getByRole('radio', {
+      name: /Depletion of hepatic intracellular cholesterol activates SREBP-2, upregulating transcription and cell-surface expression of LDL receptors/i,
+    })
+    await user.click(statinOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 08 (Lipoproteins) and operates PCSK9 switch node and FH assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/lipoproteins-lipid-flux')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '08 · Lipoprotein Transport & Lipid Flux' })
+    ).toBeInTheDocument()
+
+    const pcsk9Node = screen.getByRole('button', {
+      name: /5\. PCSK9 Receptor Degradation Switch \[Pharmacological Target\]/i,
+    })
+    await user.click(pcsk9Node)
+    expect(screen.getByText(/Secreted liver protease that binds the EGF-A domain of the LDL receptor/i)).toBeInTheDocument()
+
+    // Answer assessment on Familial Hypercholesterolemia LDLR mutation
+    const fhOption = screen.getByRole('radio', {
+      name: /Autosomal dominant loss-of-function mutation in the LDLR gene encoding the cell-surface LDL receptor/i,
+    })
+    await user.click(fhOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
   })
 })

@@ -2,12 +2,12 @@
 
 **Last Updated:** 2026-10-12  
 **Curriculum Version:** 1.0.0 (V2.5 Launch)  
-**Total Chapters:** 18 Planned / 4 Complete (22.2%)  
+**Total Chapters:** 18 Planned / 8 Complete (44.4%)  
 **Subject ID:** `subject.metabolism`  
 **Production Status Overview:**  
 - **Batch 1 (Ch 01–04):** **COMPLETE & VERIFIED** (Group 1: Bioenergetics, Glycolysis, TCA/OxPhos, Glycogen/Gluconeogenesis)
-- **Batch 2 (Ch 05–08):** **READY TO AUTHOR** (Group 2: Lipid & Lipoprotein Metabolism)
-- **Batch 3 (Ch 09–12):** Planned (Group 3: Nitrogen, Amino Acids & Nucleotides)
+- **Batch 2 (Ch 05–08):** **COMPLETE & VERIFIED** (Group 2: Lipid & Lipoprotein Metabolism)
+- **Batch 3 (Ch 09–12):** **READY TO AUTHOR** (Group 3: Nitrogen, Amino Acids & Nucleotides)
 - **Batch 4 (Ch 13–15):** Planned (Group 4: Metabolic Integration, Hormones & Organ Crosstalk)
 - **Batch 5 (Ch 16–18):** Planned (Group 5: Micronutrients, Inborn Errors & Clinical Integration)
 
@@ -17,14 +17,14 @@
 
 | Order | Chapter ID | Slug | Title (EN / BN) | Group | Status | File Path | Validation Tests | Scientific Review State | Remaining Needs |
 |---|---|---|---|---|---|---|---|---|---|
-| 01 | `metabolism.chapter.01` | `intro-bioenergetics` | 01 · Introduction to Human Metabolism & Bioenergetics / ০১ · মানব বিপাক ও জৈবশক্তিবিজ্ঞানের পরিচয় | Foundations | Complete & Verified | `src/content/chapters/metabolism01Bioenergetics.ts` | Passed (8/8) | Citations Checked (Primary Sources) | None (Batch 1 Complete) |
-| 02 | `metabolism.chapter.02` | `glycolysis-pyruvate` | 02 · Glycolysis & Pyruvate Oxidation / ০২ · গ্লাইকোলাইসিস ও পাইরুভেট জারণ | Foundations | Complete & Verified | `src/content/chapters/metabolism02Glycolysis.ts` | Passed (8/8) | Citations Checked (Primary Sources) | None (Batch 1 Complete) |
-| 03 | `metabolism.chapter.03` | `tca-oxphos` | 03 · Citric Acid Cycle & Oxidative Phosphorylation / ০৩ · সাইট্রিক অ্যাসিড চক্র ও অক্সিডেটিভ ফসফরাইলেশন | Foundations | Complete & Verified | `src/content/chapters/metabolism03TcaOxphos.ts` | Passed (8/8) | Citations Checked (Primary Sources) | None (Batch 1 Complete) |
-| 04 | `metabolism.chapter.04` | `glycogen-gluconeogenesis` | 04 · Glycogen Metabolism & Gluconeogenesis / ০৪ · গ্লাইকোজেন বিপাক ও গ্লুকোনিওজেনেসিস | Foundations | Complete & Verified | `src/content/chapters/metabolism04GlycogenGluconeogenesis.ts` | Passed (8/8) | Citations Checked (Primary Sources) | None (Batch 1 Complete) |
-| 05 | `metabolism.chapter.05` | `fatty-acid-oxidation-ketones` | 05 · Fatty Acid Beta-Oxidation & Ketogenesis / ০৫ · ফ্যাটি অ্যাসিড বিটা-জারণ ও কিটোজেনেসিস | Lipids | Planned | `src/content/chapters/metabolism05BetaOxidation.ts` | Pending | Source Checked (Expert Pending) | Batch 2 Implementation |
-| 06 | `metabolism.chapter.06` | `lipogenesis-triglycerides` | 06 · Fatty Acid & Triglyceride Synthesis / ০৬ · ফ্যাটি অ্যাসিড ও ট্রাইগ্লিসারাইড সংশ্লেষ | Lipids | Planned | `src/content/chapters/metabolism06Lipogenesis.ts` | Pending | Source Checked (Expert Pending) | Batch 2 Implementation |
-| 07 | `metabolism.chapter.07` | `cholesterol-steroids` | 07 · Cholesterol & Steroid Metabolism / ০৭ · কোলেস্টেরল ও স্টেরয়েড বিপাক | Lipids | Planned | `src/content/chapters/metabolism07Cholesterol.ts` | Pending | Source Checked (Expert Pending) | Batch 2 Implementation |
-| 08 | `metabolism.chapter.08` | `lipoproteins-lipid-flux` | 08 · Lipoprotein Transport & Lipid Flux / ০৮ · লাইপোপ্রোটিন পরিবহন ও লিপিড প্রবাহ | Lipids | Planned | `src/content/chapters/metabolism08Lipoproteins.ts` | Pending | Source Checked (Expert Pending) | Batch 2 Implementation |
+| 01 | `metabolism.chapter.01` | `intro-bioenergetics` | 01 · Introduction to Human Metabolism & Bioenergetics / ০১ · মানব বিপাক ও জৈবশক্তিবিজ্ঞানের পরিচয় | Foundations | Complete & Verified | `src/content/chapters/metabolism01Bioenergetics.ts` | Passed (12/12) | Citations Checked (Primary Sources) | None (Batch 1 Complete) |
+| 02 | `metabolism.chapter.02` | `glycolysis-pyruvate` | 02 · Glycolysis & Pyruvate Oxidation / ০২ · গ্লাইকোলাইসিস ও পাইরুভেট জারণ | Foundations | Complete & Verified | `src/content/chapters/metabolism02Glycolysis.ts` | Passed (12/12) | Citations Checked (Primary Sources) | None (Batch 1 Complete) |
+| 03 | `metabolism.chapter.03` | `tca-oxphos` | 03 · Citric Acid Cycle & Oxidative Phosphorylation / ০৩ · সাইট্রিক অ্যাসিড চক্র ও অক্সিডেটিভ ফসফরাইলেশন | Foundations | Complete & Verified | `src/content/chapters/metabolism03TcaOxphos.ts` | Passed (12/12) | Citations Checked (Primary Sources) | None (Batch 1 Complete) |
+| 04 | `metabolism.chapter.04` | `glycogen-gluconeogenesis` | 04 · Glycogen Metabolism & Gluconeogenesis / ০৪ · গ্লাইকোজেন বিপাক ও গ্লুকোনিওজেনেসিস | Foundations | Complete & Verified | `src/content/chapters/metabolism04GlycogenGluconeogenesis.ts` | Passed (12/12) | Citations Checked (Primary Sources) | None (Batch 1 Complete) |
+| 05 | `metabolism.chapter.05` | `fatty-acid-oxidation-ketones` | 05 · Fatty Acid Beta-Oxidation & Ketogenesis / ০৫ · ফ্যাটি অ্যাসিড বিটা-জারণ ও কিটোজেনেসিস | Lipids | Complete & Verified | `src/content/chapters/metabolism05BetaOxidation.ts` | Passed (12/12) | Citations Checked (Primary Sources) | None (Batch 2 Complete) |
+| 06 | `metabolism.chapter.06` | `lipogenesis-triglycerides` | 06 · Fatty Acid & Triglyceride Synthesis / ০৬ · ফ্যাটি অ্যাসিড ও ট্রাইগ্লিসারাইড সংশ্লেষ | Lipids | Complete & Verified | `src/content/chapters/metabolism06Lipogenesis.ts` | Passed (12/12) | Citations Checked (Primary Sources) | None (Batch 2 Complete) |
+| 07 | `metabolism.chapter.07` | `cholesterol-steroids` | 07 · Cholesterol & Steroid Metabolism / ০৭ · কোলেস্টেরল ও স্টেরয়েড বিপাক | Lipids | Complete & Verified | `src/content/chapters/metabolism07Cholesterol.ts` | Passed (12/12) | Citations Checked (Primary Sources) | None (Batch 2 Complete) |
+| 08 | `metabolism.chapter.08` | `lipoproteins-lipid-flux` | 08 · Lipoprotein Transport & Lipid Flux / ০৮ · লাইপোপ্রোটিন পরিবহন ও লিপিড প্রবাহ | Lipids | Complete & Verified | `src/content/chapters/metabolism08Lipoproteins.ts` | Passed (12/12) | Citations Checked (Primary Sources) | None (Batch 2 Complete) |
 | 09 | `metabolism.chapter.09` | `amino-acid-catabolism-urea` | 09 · Amino Acid Catabolism & Urea Cycle / ০৯ · অ্যামিনো অ্যাসিড ভাঙন ও ইউরিয়া চক্র | Nitrogen | Planned | `src/content/chapters/metabolism09AminoAcidsUrea.ts` | Pending | Source Checked (Expert Pending) | Batch 3 Implementation |
 | 10 | `metabolism.chapter.10` | `carbon-skeletons-specialized-products` | 10 · Carbon Skeleton Fates & Specialized Products / ১০ · কার্বন কাঠামোর পরিণতি ও বিশেষ যৌগ | Nitrogen | Planned | `src/content/chapters/metabolism10CarbonSkeletons.ts` | Pending | Source Checked (Expert Pending) | Batch 3 Implementation |
 | 11 | `metabolism.chapter.11` | `purine-pyrimidine-metabolism` | 11 · Purine & Pyrimidine Metabolism / ১১ · পিউরিন ও পিরিমিডিন বিপাক | Nitrogen | Planned | `src/content/chapters/metabolism11PurinesPyrimidines.ts` | Pending | Source Checked (Expert Pending) | Batch 3 Implementation |

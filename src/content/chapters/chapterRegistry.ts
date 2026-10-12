@@ -31,6 +31,10 @@ import { metabolism01BioenergeticsLesson } from './metabolism01Bioenergetics'
 import { metabolism02GlycolysisLesson } from './metabolism02Glycolysis'
 import { metabolism03TcaOxphosLesson } from './metabolism03TcaOxphos'
 import { metabolism04GlycogenGluconeogenesisLesson } from './metabolism04GlycogenGluconeogenesis'
+import { metabolism05BetaOxidationLesson } from './metabolism05BetaOxidation'
+import { metabolism06LipogenesisLesson } from './metabolism06Lipogenesis'
+import { metabolism07CholesterolLesson } from './metabolism07Cholesterol'
+import { metabolism08LipoproteinsLesson } from './metabolism08Lipoproteins'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -161,11 +165,27 @@ export const batch1MetabolismChapters: LessonTopic[] = [
   metabolism04GlycogenGluconeogenesisLesson,
 ]
 
+export const batch2MetabolismChapters: LessonTopic[] = [
+  metabolism05BetaOxidationLesson,
+  metabolism06LipogenesisLesson,
+  metabolism07CholesterolLesson,
+  metabolism08LipoproteinsLesson,
+]
+
+export const allCompletedMetabolismChapters: LessonTopic[] = [
+  ...batch1MetabolismChapters,
+  ...batch2MetabolismChapters,
+]
+
 export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
   [metabolism01BioenergeticsLesson.id]: metabolism01BioenergeticsLesson,
   [metabolism02GlycolysisLesson.id]: metabolism02GlycolysisLesson,
   [metabolism03TcaOxphosLesson.id]: metabolism03TcaOxphosLesson,
   [metabolism04GlycogenGluconeogenesisLesson.id]: metabolism04GlycogenGluconeogenesisLesson,
+  [metabolism05BetaOxidationLesson.id]: metabolism05BetaOxidationLesson,
+  [metabolism06LipogenesisLesson.id]: metabolism06LipogenesisLesson,
+  [metabolism07CholesterolLesson.id]: metabolism07CholesterolLesson,
+  [metabolism08LipoproteinsLesson.id]: metabolism08LipoproteinsLesson,
 }
 
 export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
@@ -173,6 +193,10 @@ export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
   [metabolism02GlycolysisLesson.slug]: metabolism02GlycolysisLesson,
   [metabolism03TcaOxphosLesson.slug]: metabolism03TcaOxphosLesson,
   [metabolism04GlycogenGluconeogenesisLesson.slug]: metabolism04GlycogenGluconeogenesisLesson,
+  [metabolism05BetaOxidationLesson.slug]: metabolism05BetaOxidationLesson,
+  [metabolism06LipogenesisLesson.slug]: metabolism06LipogenesisLesson,
+  [metabolism07CholesterolLesson.slug]: metabolism07CholesterolLesson,
+  [metabolism08LipoproteinsLesson.slug]: metabolism08LipoproteinsLesson,
 }
 
 export function getMetabolismChapterLesson(identifier?: string): LessonTopic | undefined {

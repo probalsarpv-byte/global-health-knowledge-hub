@@ -149,7 +149,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
       estimatedMinutes: 65,
     },
 
-    // Group 2: Lipid & Lipoprotein Metabolism (Batch 2: Chapters 05–08 Planned)
+    // Group 2: Lipid & Lipoprotein Metabolism (Batch 2: Chapters 05–08 Available)
     {
       id: 'metabolism.chapter.05',
       order: 5,
@@ -160,7 +160,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Mitochondrial carnitine shuttle, repetitive 4-step beta-oxidation spiral, energy yield of palmitate, and hepatic ketogenesis in fasting.',
         'মাইটোকন্ড্রিয়াল কার্নিটিন শাটল, ৪-ধাপের পুনরাবৃত্তিমূলক বিটা-জারণ স্পাইরাল, পামিটেটের শক্তি ফলন এবং উপবাসকালীন যকৃতের কিটোজেনেসিস।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.03'],
       lessonId: 'topic.metabolism.fatty-acid-oxidation-ketones',
@@ -176,7 +176,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Cytosolic citrate-malate shuttle, acetyl-CoA carboxylase regulation, fatty acid synthase multienzyme complex, and triglyceride packaging in adipocytes.',
         'সাইটোসোলিক সাইট্রেট-ম্যালেট শাটল, অ্যাসিটাইল-কোএ কার্বক্সিলেজ নিয়ন্ত্রণ, ফ্যাটি অ্যাসিড সিন্থেজ কমপ্লেক্স এবং অ্যাডিপোসাইটে ট্রাইগ্লিসারাইড সঞ্চয়।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.02'],
       lessonId: 'topic.metabolism.lipogenesis-triglycerides',
@@ -192,7 +192,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Mevalonate pathway, HMG-CoA reductase regulation, SREBP feedback, bile acid synthesis via 7alpha-hydroxylase, and steroid hormone biogenesis.',
         'মেভালোনেট গতিপথ, এইচএমজি-কোএ রিডাক্টেজ নিয়ন্ত্রণ, এসআরইবিপি প্রতিক্রিয়া, পিত্ত অ্যাসিড সংশ্লেষ এবং স্টেরয়েড হরমোন জৈবসংশ্লেষ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.06'],
       lessonId: 'topic.metabolism.cholesterol-steroids',
@@ -208,7 +208,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Chylomicrons, VLDL, LDL, HDL, apolipoprotein markers (ApoB-100, ApoA-1, ApoE), LDL receptor-mediated endocytosis, and reverse cholesterol transport.',
         'কাইলোমাইক্রন, ভিএলডিএল, এলডিএল, এইচডিএল, অ্যাপোলাইপোপ্রোটিন মার্কার, এলডিএল রিসেপ্টর নিয়ন্ত্রিত এন্ডোসাইটোসিস এবং রিভার্স কোলেস্টেরল পরিবহন।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.07'],
       lessonId: 'topic.metabolism.lipoproteins-lipid-flux',
