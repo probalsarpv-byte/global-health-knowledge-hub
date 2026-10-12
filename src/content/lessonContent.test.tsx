@@ -91,7 +91,7 @@ describe('scientific lesson content', () => {
   })
 
   it('provides a navigable reading map, progress indicator and accessible organelle diagram', async () => {
-    window.history.replaceState({}, '', '/learn/anatomy')
+    window.history.replaceState({}, '', '/learn/anatomy/lessons/cell-structure')
     const user = userEvent.setup()
     render(<App />)
     expect(screen.getByRole('navigation', { name: 'Table of contents' })).toBeInTheDocument()
@@ -104,7 +104,7 @@ describe('scientific lesson content', () => {
   })
 
   it('keeps the complete Cell Structure chapter available in Bengali', async () => {
-    window.history.replaceState({}, '', '/learn/anatomy')
+    window.history.replaceState({}, '', '/learn/anatomy/lessons/cell-structure')
     const user = userEvent.setup()
     render(<App />)
     await user.click(screen.getByRole('button', { name: 'Switch language' }))

@@ -14,6 +14,7 @@ export type LessonReference = {
   url: string
   doi?: string
 }
+export type ReferenceItem = LessonReference
 export type LessonSection = {
   id: string
   heading: Localized
@@ -45,6 +46,8 @@ export type LessonTopic = {
   assessment: { question: Localized; options: Localized[]; correctIndex: number; explanation: Localized }
   chapter?: CellChapter
   anatomyExplorer?: AnatomyExplorerContent
+  organ3DExplorer?: Organ3DExplorerContent
+  interactiveDiagram?: InteractiveDiagramContent
 }
 
 export type CurriculumStatus = 'available' | 'planned'
@@ -78,6 +81,31 @@ export type AnatomyExplorerContent = {
   planes: Array<{ id: string; label: Localized; description: Localized }>
 }
 
+export type Organ3DItem = {
+  id: string
+  name: Localized
+  latinName: string
+  system: Localized
+  cavity: Localized
+  position3D: { x: number; y: number; z: number }
+  color: string
+  highlightColor: string
+  shapeType: 'brain' | 'heart' | 'lungs' | 'liver' | 'stomach' | 'kidneys' | 'intestines' | 'pancreas' | 'skeleton'
+  description: Localized
+  spatialRelations: Localized
+  physiology: Localized
+  nutritionConnection: Localized
+  clinicalSignificance: Localized
+  sectionId: string
+}
+
+export type Organ3DExplorerContent = {
+  title: Localized
+  disclaimer: Localized
+  description: Localized
+  organs: Organ3DItem[]
+}
+
 export type CellChapter = {
   toc: Array<{ id: string; label: Localized; sectionId: string }>
   terms: Array<{ term: Localized; definition: Localized }>
@@ -85,6 +113,35 @@ export type CellChapter = {
   checkpoints: Array<{ question: Localized; answer: Localized }>
   organelles: Array<{ id: string; label: Localized; description: Localized; functions: Localized[]; sectionId: string }>
 }
+
+export type InteractiveDiagramItem = {
+  id: string
+  label: Localized
+  description: Localized
+  details?: Localized
+  sectionId?: string
+  color?: string
+  svgCoords?: {
+    cx?: number
+    cy?: number
+    r?: number
+    d?: string
+    x?: number
+    y?: number
+    width?: number
+    height?: number
+  }
+}
+
+export type InteractiveDiagramContent = {
+  id: string
+  title: Localized
+  disclaimer: Localized
+  description: Localized
+  svgType: string
+  items: InteractiveDiagramItem[]
+}
+
 
 export type ContentIssue = { topicId: string; path: string; message: string }
 const localizedKeys = lessonLocales
@@ -139,6 +196,19 @@ export function validateLessons(lessons: readonly LessonTopic[]): ContentIssue[]
     }
     if (!isLocalized(lesson.diagram.accessibleDescription) || lesson.diagram.steps.length < 2 || lesson.diagram.steps.some((step) => !isLocalized(step))) issue(lesson.id, 'diagram', 'Accessible diagram needs a bilingual description and at least two bilingual steps')
     if (!isLocalized(lesson.assessment.question) || !isLocalized(lesson.assessment.explanation) || lesson.assessment.options.length < 2 || lesson.assessment.options.some((option) => !isLocalized(option)) || lesson.assessment.correctIndex < 0 || lesson.assessment.correctIndex >= lesson.assessment.options.length) issue(lesson.id, 'assessment', 'Assessment content or answer key is invalid/incomplete')
+    if (lesson.interactiveDiagram) {
+      if (!isLocalized(lesson.interactiveDiagram.title) || !isLocalized(lesson.interactiveDiagram.description) || !isLocalized(lesson.interactiveDiagram.disclaimer)) {
+        issue(lesson.id, 'interactiveDiagram', 'Interactive diagram metadata requires both locales')
+      }
+      if (!lesson.interactiveDiagram.items.length) {
+        issue(lesson.id, 'interactiveDiagram.items', 'Interactive diagram must include at least one item')
+      }
+      for (const [index, item] of lesson.interactiveDiagram.items.entries()) {
+        if (!isLocalized(item.label) || !isLocalized(item.description)) {
+          issue(lesson.id, `interactiveDiagram.items.${index}`, 'Diagram item requires bilingual label and description')
+        }
+      }
+    }
   }
   return issues
 }

@@ -11,21 +11,29 @@ declare module 'lucide-react' {
   export const BookOpen: Icon
   export const Calculator: Icon
   export const ChevronDown: Icon
+  export const ChevronRight: Icon
+  export const CircleCheck: Icon
   export const CircleHelp: Icon
   export const Clock3: Icon
   export const Command: Icon
   export const Compass: Icon
   export const Dna: Icon
   export const Database: Icon
+  export const Eye: Icon
   export const FlaskConical: Icon
   export const Heart: Icon
   export const HeartPulse: Icon
   export const Home: Icon
+  export const Info: Icon
   export const Leaf: Icon
   export const Languages: Icon
+  export const Layers: Icon
   export const Layers3: Icon
   export const Menu: Icon
   export const Moon: Icon
+  export const Pause: Icon
+  export const Play: Icon
+  export const RotateCcw: Icon
   export const Search: Icon
   export const Settings2: Icon
   export const ShieldCheck: Icon
@@ -34,4 +42,6 @@ declare module 'lucide-react' {
   export const Utensils: Icon
   export const Users: Icon
   export const X: Icon
+  export const ZoomIn: Icon
+  export const ZoomOut: Icon
 }

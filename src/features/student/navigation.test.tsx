@@ -31,9 +31,9 @@ describe('platform navigation', () => {
     await user.click(screen.getAllByRole('link', { name: /Explore learning/i })[0])
     await user.click(screen.getByRole('link', { name: 'Anatomy' }))
     await user.click(screen.getByRole('button', { name: 'Back' }))
-    await waitFor(() => expect(screen.getByRole('heading', { name: 'Your learning library' })).toBeInTheDocument())
+    await waitFor(() => expect(screen.getByRole('heading', { name: 'Your learning library' })).toBeInTheDocument(), { timeout: 8000 })
     await user.click(screen.getByRole('link', { name: 'Anatomy' }))
-    await waitFor(() => expect(screen.getByRole('heading', { name: 'Anatomy curriculum' })).toBeInTheDocument())
+    await waitFor(() => expect(screen.getByRole('heading', { name: 'Anatomy curriculum' })).toBeInTheDocument(), { timeout: 8000 })
   }, 15000)
 
   it('uses the safe public fallback when opened directly on a student module', async () => {

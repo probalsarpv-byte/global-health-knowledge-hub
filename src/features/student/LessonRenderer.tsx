@@ -4,6 +4,8 @@ import { useLocale } from '../../i18n/LocaleContext'
 import type { ContentDepth, LessonTopic } from '../../content/lessonSchema'
 import { CellOrganelleDiagram } from './CellOrganelleDiagram'
 import { AnatomyExplorer } from '../anatomy/AnatomyExplorer'
+import { Organ3DExplorer } from '../anatomy/Organ3DExplorer'
+import { InteractiveAnatomyDiagram } from '../anatomy/InteractiveAnatomyDiagram'
 
 const depthOrder: ContentDepth[] = ['foundation', 'academic', 'advanced']
 
@@ -49,7 +51,9 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     <section className="lesson-depth" aria-label={label('Choose lesson depth', 'পাঠের গভীরতা বাছুন')}><h2>{label('Explore by depth', 'শেখার স্তর')}</h2><div className="lesson-depth-tabs" role="group" aria-label={label('Content depth', 'বিষয়বস্তুর গভীরতা')}>{depthOrder.map((item) => <button type="button" key={item} aria-pressed={depth === item} onClick={() => setDepth(item)}>{contentLabel(lesson.levels[item].label)}</button>)}</div></section>
 
     {chapter && chapter.organelles.length > 0 && <CellOrganelleDiagram chapter={chapter} locale={lang} onSectionSelect={jumpTo} />}
+    {lesson.organ3DExplorer && <Organ3DExplorer explorer={lesson.organ3DExplorer} locale={lang} onSectionSelect={jumpTo} />}
     {lesson.anatomyExplorer && <AnatomyExplorer explorer={lesson.anatomyExplorer} locale={lang} onSectionSelect={jumpTo} />}
+    {lesson.interactiveDiagram && <InteractiveAnatomyDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />}
 
     <section className="lesson-chapter" aria-label={contentLabel(currentLevel.label)}>{currentLevel.sections.map((item) => <details className="lesson-section" id={`lesson-section-${item.id}`} key={`${depth}-${item.id}`} open><summary>{contentLabel(item.heading)}</summary><div className="lesson-section-body">{item.paragraphs.map((paragraph, index) => <p key={index}>{contentLabel(paragraph)}</p>)}{item.bullets && <ul>{item.bullets.map((bullet, index) => <li key={index}>{contentLabel(bullet)}</li>)}</ul>}<p className="lesson-section-citations">{label('Scientific support:', 'বৈজ্ঞানিক সমর্থন:')} {lesson.evidenceBySection[item.id]?.map((referenceId) => lesson.references.find((reference) => reference.id === referenceId)).filter((reference) => reference !== undefined).map((reference) => <a key={reference.id} href={reference.url} target="_blank" rel="noreferrer">{reference.title}</a>)}</p></div></details>)}</section>
 
