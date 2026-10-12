@@ -1,0 +1,745 @@
+/* ==========================================================================
+   V2.4 Scientific Modern Design System & Laboratory Experience
+   Global Health Knowledge Hub / Forma Biomedical Learning
+   ========================================================================== */
+
+:root {
+  /* Core Scientific Palette Tokens */
+  --sci-navy-primary: #10253F;
+  --sci-navy-deep: #0D1424;
+  --sci-teal: #0D9488;
+  --sci-teal-hover: #0F766E;
+  --sci-teal-pale: #E6F7F5;
+  --sci-teal-glow: rgba(13, 148, 136, 0.28);
+  --sci-cyan: #22C7D6;
+  --sci-cyan-glow: rgba(34, 199, 214, 0.36);
+  --sci-bg-light: #F7FAFC;
+  --sci-surface-primary: #FFFFFF;
+  --sci-surface-secondary: #EEF4F7;
+  --sci-surface-tertiary: #E2E8F0;
+  --sci-text-primary: #152B40;
+  --sci-text-secondary: #52677A;
+  --sci-text-muted: #7E92A2;
+  --sci-border: #DDE5ED;
+
+  /* Subject-Specific Domain Accents */
+  --accent-anatomy: #D95D39;
+  --accent-anatomy-pale: #FDF2E9;
+  --accent-anatomy-border: #F6CBB7;
+  --accent-physiology: #2563EB;
+  --accent-physiology-pale: #EFF6FF;
+  --accent-physiology-border: #BFDBFE;
+  --accent-biochemistry: #7C3AED;
+  --accent-biochemistry-pale: #F5F3FF;
+  --accent-biochemistry-border: #DDD6FE;
+  --accent-metabolism: #D97706;
+  --accent-metabolism-pale: #FFFBEB;
+  --accent-metabolism-border: #FDE68A;
+  --accent-nutrition: #059669;
+  --accent-nutrition-pale: #ECFDF5;
+  --accent-nutrition-border: #A7F3D0;
+  --accent-digital-health: #4F46E5;
+  --accent-digital-health-pale: #EEF2FF;
+  --accent-digital-health-border: #C7D2FE;
+  --accent-calculators: #0891B2;
+  --accent-calculators-pale: #ECFEFF;
+  --accent-calculators-border: #A5F3FC;
+
+  /* Typography */
+  --font-heading: 'Manrope', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+  --font-body: 'DM Sans', 'Inter', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+  --font-bengali: 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+
+  /* Elevations */
+  --shadow-sci-xs: 0 1px 2px rgba(16, 37, 63, 0.04);
+  --shadow-sci-sm: 0 2px 6px rgba(16, 37, 63, 0.06);
+  --shadow-sci-md: 0 6px 18px rgba(16, 37, 63, 0.08);
+  --shadow-sci-lg: 0 12px 32px rgba(16, 37, 63, 0.1);
+  --shadow-sci-hover: 0 10px 24px -4px rgba(13, 148, 136, 0.14);
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Transition speeds */
+  --trans-fast: 140ms cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-base: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Light Mode Overrides (Refining existing base tokens to Scientific Palette)
+   -------------------------------------------------------------------------- */
+.app-shell[data-theme="light"],
+.app-shell:not(.dark):not(.lab-mode) {
+  --bg: var(--sci-bg-light);
+  --panel: var(--sci-surface-primary);
+  --panel-soft: var(--sci-surface-secondary);
+  --text: var(--sci-text-primary);
+  --muted: var(--sci-text-secondary);
+  --subtle: #2D4862;
+  --border: var(--sci-border);
+  --green: var(--sci-teal);
+  --green-pale: var(--sci-teal-pale);
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode Overrides (Clinical Low-light)
+   -------------------------------------------------------------------------- */
+.app-shell.dark:not(.lab-mode),
+.app-shell[data-theme="dark"] {
+  --bg: #0E1726;
+  --panel: #132238;
+  --panel-soft: #1B2F4C;
+  --text: #F1F5F9;
+  --muted: #94A3B8;
+  --subtle: #CBD5E1;
+  --border: #223552;
+  --green: #2DD4BF;
+  --green-pale: #133838;
+}
+
+/* --------------------------------------------------------------------------
+   Laboratory Mode (Deep Navy, Scientific Teal & Restrained Cyan Highlights)
+   -------------------------------------------------------------------------- */
+.app-shell.lab-mode,
+.app-shell[data-theme="lab"] {
+  --bg: #090E1A;
+  --panel: #0D1629;
+  --panel-soft: #14223E;
+  --text: #F0FDF4;
+  --muted: #94A3B8;
+  --subtle: #A5F3FC;
+  --border: #1E314F;
+  --green: var(--sci-cyan);
+  --green-pale: #082F3B;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(13, 148, 136, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(34, 199, 214, 0.06) 0%, transparent 45%);
+}
+
+.app-shell.lab-mode .topbar,
+.app-shell.lab-mode .admin-topbar {
+  background: rgba(13, 22, 41, 0.88);
+  border-bottom: 1px solid rgba(34, 199, 214, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.app-shell.lab-mode .sidebar,
+.app-shell.lab-mode .admin-sidebar {
+  background: #0B1324;
+  border-right: 1px solid rgba(34, 199, 214, 0.2);
+}
+
+.app-shell.lab-mode .anatomy-explorer,
+.app-shell.lab-mode .organ-3d-explorer,
+.app-shell.lab-mode .cell-diagram-card {
+  border-color: rgba(34, 199, 214, 0.35);
+  box-shadow: 0 0 25px rgba(13, 148, 136, 0.15);
+  background: #0B1426;
+}
+
+/* --------------------------------------------------------------------------
+   Subject-Specific Module Card Accents
+   -------------------------------------------------------------------------- */
+.module-card.tone-peach:hover {
+  border-color: var(--accent-anatomy);
+  box-shadow: 0 6px 18px rgba(217, 93, 57, 0.12);
+}
+.tone-peach .module-icon {
+  background: var(--accent-anatomy-pale) !important;
+  color: var(--accent-anatomy) !important;
+}
+
+.module-card.tone-blue:hover {
+  border-color: var(--accent-physiology);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
+}
+.tone-blue .module-icon {
+  background: var(--accent-physiology-pale) !important;
+  color: var(--accent-physiology) !important;
+}
+
+.module-card.tone-lavender:hover {
+  border-color: var(--accent-biochemistry);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.12);
+}
+.tone-lavender .module-icon {
+  background: var(--accent-biochemistry-pale) !important;
+  color: var(--accent-biochemistry) !important;
+}
+
+.module-card.tone-yellow:hover {
+  border-color: var(--accent-metabolism);
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.12);
+}
+.tone-yellow .module-icon {
+  background: var(--accent-metabolism-pale) !important;
+  color: var(--accent-metabolism) !important;
+}
+
+.module-card.tone-mint:hover {
+  border-color: var(--accent-nutrition);
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.12);
+}
+.tone-mint .module-icon {
+  background: var(--accent-nutrition-pale) !important;
+  color: var(--accent-nutrition) !important;
+}
+
+.module-card.tone-pink:hover {
+  border-color: var(--accent-calculators);
+  box-shadow: 0 6px 18px rgba(8, 145, 178, 0.12);
+}
+.tone-pink .module-icon {
+  background: var(--accent-calculators-pale) !important;
+  color: var(--accent-calculators) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Typography Refinements
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, .brand-name {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+}
+
+p, li, dd, input, button, select {
+  font-family: var(--font-body);
+}
+
+html[lang="bn"] p,
+html[lang="bn"] li,
+html[lang="bn"] dd,
+html[lang="bn"] .lesson-section-body p {
+  line-height: 1.85 !important;
+  font-family: var(--font-bengali);
+}
+
+/* --------------------------------------------------------------------------
+   Global Controls & Lab Mode Button
+   -------------------------------------------------------------------------- */
+.lab-button {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--subtle);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all var(--trans-base);
+}
+
+.lab-button:hover {
+  background: var(--panel-soft);
+  color: var(--sci-teal);
+  border-color: var(--sci-teal);
+}
+
+.lab-button.is-active {
+  background: rgba(34, 199, 214, 0.15);
+  color: var(--sci-cyan);
+  border-color: var(--sci-cyan);
+  box-shadow: 0 0 10px var(--sci-cyan-glow);
+}
+
+.language-button {
+  font-weight: 600;
+  border-radius: var(--radius-md) !important;
+  transition: all var(--trans-base);
+}
+
+.language-button:hover {
+  border-color: var(--sci-teal);
+  color: var(--sci-teal);
+}
+
+/* --------------------------------------------------------------------------
+   Homepage V2.4 Scientific Architecture
+   -------------------------------------------------------------------------- */
+.public-hero-scientific {
+  padding: 48px 0 36px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.public-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.95fr);
+  gap: 36px;
+  align-items: center;
+}
+
+.public-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.public-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--green-pale);
+  color: var(--green);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.public-status-badge i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sci-teal);
+  box-shadow: 0 0 6px var(--sci-teal);
+}
+
+.public-hero-title {
+  font: 700 clamp(32px, 4.8vw, 54px)/1.15 var(--font-heading);
+  color: var(--text);
+  margin: 0 0 16px;
+  letter-spacing: -0.03em;
+}
+
+.public-hero-desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 580px;
+  margin: 0 0 24px;
+}
+
+.public-actions-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-scientific-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: var(--sci-navy-primary);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 11px 18px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  box-shadow: var(--shadow-sci-sm);
+  transition: all var(--trans-base);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-scientific-primary:hover {
+  background: #173356;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sci-md);
+}
+
+.dark .btn-scientific-primary {
+  background: var(--sci-teal);
+  color: #0D1424 !important;
+}
+
+.dark .btn-scientific-primary:hover {
+  background: #14B8A6;
+}
+
+.btn-scientific-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--panel);
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--trans-base);
+}
+
+.btn-scientific-secondary:hover {
+  background: var(--panel-soft);
+  border-color: var(--sci-teal);
+  color: var(--sci-teal) !important;
+}
+
+/* Scientific Graphic Showcase */
+.scientific-graphic-card {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, rgba(13, 148, 136, 0.08) 0%, rgba(16, 37, 63, 0.03) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sci-sm);
+}
+
+.scientific-svg-stage {
+  width: 100%;
+  max-width: 320px;
+  height: 240px;
+}
+
+.telemetry-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--panel) 90%, transparent);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  letter-spacing: 0.05em;
+}
+
+/* Primary Destination Cards */
+.flagship-destinations {
+  padding: 40px 0 32px;
+}
+
+.section-head-scientific {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.section-head-scientific h2 {
+  font-size: clamp(22px, 3vw, 28px);
+  margin: 6px 0 0;
+  color: var(--text);
+}
+
+.flagship-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.destination-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--panel);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--trans-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.destination-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sci-hover);
+  border-color: var(--sci-teal);
+}
+
+.destination-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.destination-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  transition: transform var(--trans-base);
+}
+
+.destination-card:hover .destination-icon {
+  transform: scale(1.08);
+}
+
+.destination-card h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.destination-card p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.destination-meta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* Learner Pathways Section */
+.pathways-section {
+  padding: 32px 0 44px;
+  border-top: 1px solid var(--border);
+}
+
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pathway-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--trans-base);
+}
+
+.pathway-card:hover {
+  border-color: var(--sci-teal);
+  box-shadow: var(--shadow-sci-sm);
+}
+
+.pathway-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.pathway-card h3 {
+  font-size: 14px;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.pathway-card p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Scientific Principles Strip */
+.principles-strip {
+  margin: 20px 0 36px;
+  padding: 20px 24px;
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.principle-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.principle-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--green-pale);
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.principle-text b {
+  display: block;
+  font-size: 12px;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.principle-text span {
+  display: block;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Chapter Reading Experience & Focus Mode
+   -------------------------------------------------------------------------- */
+.reading-focus-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.focus-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--subtle);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--trans-base);
+}
+
+.focus-mode-btn:hover {
+  background: var(--panel-soft);
+  color: var(--sci-teal);
+  border-color: var(--sci-teal);
+}
+
+.focus-mode-btn.is-active {
+  background: var(--green-pale);
+  color: var(--green);
+  border-color: var(--green);
+}
+
+/* Focus Reading Mode Layout */
+.app-shell.focus-reading-active .sidebar,
+.app-shell.focus-reading-active .topbar-left .breadcrumb {
+  opacity: 0.35;
+}
+
+.lesson-document {
+  max-width: 900px !important;
+  margin: 0 auto;
+}
+
+.lesson-section-body p {
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  color: var(--subtle) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Admin Dashboard Scientific Redesign
+   -------------------------------------------------------------------------- */
+.admin-metric-card {
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border) !important;
+  background: var(--panel) !important;
+  transition: all var(--trans-base) !important;
+}
+
+.admin-metric-card:hover {
+  border-color: var(--sci-teal) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sci-sm) !important;
+}
+
+.admin-metric-icon {
+  background: var(--green-pale) !important;
+  color: var(--green) !important;
+}
+
+.admin-area-card {
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border) !important;
+  background: var(--panel) !important;
+  transition: all var(--trans-base) !important;
+}
+
+.admin-area-card:hover {
+  border-color: var(--sci-teal) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sci-sm) !important;
+}
+
+.admin-area-dot {
+  background: var(--sci-teal) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .flagship-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pathways-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .principles-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .public-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .scientific-graphic-card {
+    min-height: 240px;
+  }
+  .flagship-grid {
+    grid-template-columns: 1fr;
+  }
+  .pathways-grid {
+    grid-template-columns: 1fr;
+  }
+  .principles-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .public-hero-title {
+    font-size: 28px;
+  }
+  .public-actions-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-scientific-primary,
+  .btn-scientific-secondary {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

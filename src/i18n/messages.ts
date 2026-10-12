@@ -9,6 +9,21 @@ const en = {
   lessonCell: 'The architecture of a cell', lessonHeart: 'Your heart, in a heartbeat', lessonProtein: 'A closer look at protein', topicCell: 'CELL BIOLOGY', topicHeart: 'CARDIOVASCULAR', topicNutrition: 'NUTRITION',
   modulePreview: 'MODULE PREVIEW', comingSoon: 'Learning content is being prepared.', previewExplanation: 'This page is a navigation-ready placeholder. Scientific lessons will be added after content review.', returnHome: 'Back to learning home', noMedicalAdvice: 'For learning only. This preview is not medical advice.',
   adminTitle: 'Admin dashboard', adminPrototype: 'PROTOTYPE · DEMO OVERVIEW', adminBrandLabel: 'FORMA · UI PROTOTYPE', adminDemoNotice: 'Illustrative demo values only. No user, account, or analytics data is connected.', adminOverview: 'Overview', adminManagement: 'MANAGEMENT', adminContent: 'Content', adminModels: 'Anatomy Models', adminSimulations: 'Simulations', adminInteractions: 'Nutrient Interactions', adminCalculators: 'Calculators', adminQuizzes: 'Quizzes', adminUsers: 'Users', adminAccess: 'Feature Access', adminReviews: 'Scientific Reviews', adminAnalytics: 'Analytics', adminSettings: 'Settings', adminOverviewTitle: 'Platform overview', adminOverviewDescription: 'A prototype workspace for future content and operations management.', adminModules: 'Learning modules', adminAreas: 'Management areas', adminConnected: 'Connected systems', adminPublished: 'Published content', demoMetric: 'DEMO', adminPlaceholderTitle: 'Management workspace', adminPlaceholderCopy: 'This screen is a UI placeholder. No records are loaded or changed.', adminEmpty: 'No connected data', adminBack: 'Back to overview', adminSidebar: 'Admin navigation',
+  labMode: 'Laboratory Mode', exitLabMode: 'Standard Mode', labModeAria: 'Toggle laboratory view mode',
+  studyHub: 'Study Hub', virtualLabs: 'Virtual Labs', healthCalculators: 'Health Calculators', nutritionTools: 'Nutrition Tools', digitalHealth: 'Digital Health',
+  studyHubDesc: 'Curated 28-chapter biomedical curricula with progressive depth.',
+  knowledgeHubDesc: 'Interconnected, source-verified lessons across physiology and biochemistry.',
+  virtualLabsDesc: 'Interactive 2D and schematic anatomical simulators and cellular models.',
+  healthCalculatorsDesc: 'Evidence-based biomedical formulas with explicit physiological assumptions.',
+  nutritionToolsDesc: 'Digestive pathway maps, nutrient kinetics and dietary physiology.',
+  digitalHealthDesc: 'Clinical informatics, medical data standards and health technology principles.',
+  pathwayStudents: 'Medical & Life Sciences Students', pathwayStudentsDesc: 'Structured curriculum, anatomical terminology and foundational biochemistry.',
+  pathwayProfessionals: 'Healthcare Practitioners', pathwayProfessionalsDesc: 'Rapid clinical refresher, cross-sectional anatomy and evidence synthesis.',
+  pathwayResearchers: 'Biomedical Researchers', pathwayResearchersDesc: 'Pathway mechanics, peer-reviewed citations and methodological notes.',
+  pathwayLearners: 'Lifelong Health Enthusiasts', pathwayLearnersDesc: 'Intuitive diagrams, plain-language explanations and biological literacy.',
+  focusMode: 'Focus View', standardView: 'Standard View',
+  readingProgressLabel: 'Reading progress', tableOfContents: 'Table of Contents',
+  viewSubjectCurriculum: 'Explore curriculum', openSimulation: 'Launch simulator',
 } as const
 
 type MessageKey = keyof typeof en
@@ -25,6 +40,21 @@ const bn: Record<MessageKey, string> = {
   lessonCell: 'কোষের গঠন', lessonHeart: 'হৃদস্পন্দনের গল্প', lessonProtein: 'প্রোটিনকে কাছ থেকে দেখা', topicCell: 'কোষবিজ্ঞান', topicHeart: 'হৃদ্‌যন্ত্র', topicNutrition: 'পুষ্টি',
   modulePreview: 'মডিউল প্রিভিউ', comingSoon: 'শিক্ষামূলক কনটেন্ট প্রস্তুত করা হচ্ছে।', previewExplanation: 'এই পৃষ্ঠাটি নেভিগেশনের নমুনা। বৈজ্ঞানিক পর্যালোচনার পর পাঠ যোগ করা হবে।', returnHome: 'শেখার পাতায় ফিরুন', noMedicalAdvice: 'শুধু শেখার জন্য। এই প্রিভিউ চিকিৎসা পরামর্শ নয়।',
   adminTitle: 'অ্যাডমিন ড্যাশবোর্ড', adminPrototype: 'প্রোটোটাইপ · নমুনা সারাংশ', adminBrandLabel: 'ফর্মা · UI প্রোটোটাইপ', adminDemoNotice: 'শুধু উদাহরণমূলক মান। কোনো ব্যবহারকারী, অ্যাকাউন্ট বা অ্যানালিটিক্স ডেটা যুক্ত নয়।', adminOverview: 'সারাংশ', adminManagement: 'পরিচালনা', adminContent: 'কনটেন্ট', adminModels: 'অ্যানাটমি মডেল', adminSimulations: 'সিমুলেশন', adminInteractions: 'পুষ্টি উপাদানের মিথস্ক্রিয়া', adminCalculators: 'ক্যালকুলেটর', adminQuizzes: 'কুইজ', adminUsers: 'ব্যবহারকারী', adminAccess: 'ফিচার অ্যাক্সেস', adminReviews: 'বৈজ্ঞানিক পর্যালোচনা', adminAnalytics: 'অ্যানালিটিক্স', adminSettings: 'সেটিংস', adminOverviewTitle: 'প্ল্যাটফর্ম সারাংশ', adminOverviewDescription: 'ভবিষ্যতের কনটেন্ট ও পরিচালনার জন্য প্রোটোটাইপ কর্মক্ষেত্র।', adminModules: 'শেখার মডিউল', adminAreas: 'পরিচালনা বিভাগ', adminConnected: 'যুক্ত সিস্টেম', adminPublished: 'প্রকাশিত কনটেন্ট', demoMetric: 'নমুনা', adminPlaceholderTitle: 'পরিচালনা কর্মক্ষেত্র', adminPlaceholderCopy: 'এই স্ক্রিনটি কেবল UI নমুনা। কোনো তথ্য দেখা বা পরিবর্তন করা হয় না।', adminEmpty: 'কোনো ডেটা যুক্ত নেই', adminBack: 'সারাংশে ফিরুন', adminSidebar: 'অ্যাডমিন নেভিগেশন',
+  labMode: 'ল্যাবরেটরি মোড', exitLabMode: 'স্বাভাবিক মোড', labModeAria: 'ল্যাবরেটরি ভিউ পরিবর্তন করুন',
+  studyHub: 'স্টাডি হাব', virtualLabs: 'ভার্চুয়াল ল্যাব', healthCalculators: 'স্বাস্থ্য ক্যালকুলেটর', nutritionTools: 'পুষ্টি টুলস', digitalHealth: 'ডিজিটাল হেলথ',
+  studyHubDesc: 'ধাপে ধাপে গভীরতাসম্পন্ন ২৮ অধ্যায়ের বায়োমেডিক্যাল পাঠ্যক্রম।',
+  knowledgeHubDesc: 'ফিজিওলজি ও বায়োকেমিস্ট্রির সংযুক্ত, তথ্যসূত্র-যাচাইকৃত পাঠমালা।',
+  virtualLabsDesc: 'ইন্টারঅ্যাক্টিভ অ্যানাটমিক্যাল সিমুলেটর ও কোষীয় মডেল।',
+  healthCalculatorsDesc: 'শারীরবৃত্তীয় ভিত্তিসম্পন্ন প্রমাণভিত্তিক ক্যালকুলেশন টুল।',
+  nutritionToolsDesc: 'পরিপাকতন্ত্রের পথ, পুষ্টির গতিবিদ্যা ও ডায়েটারি ফিজিওলজি।',
+  digitalHealthDesc: 'ক্লিনিক্যাল ইনফরমেটিক্স, স্বাস্থ্য ডেটা মান ও চিকিৎসা প্রযুক্তি।',
+  pathwayStudents: 'মেডিকেল ও বিজ্ঞান শিক্ষার্থী', pathwayStudentsDesc: 'সুশৃঙ্খল পাঠ্যক্রম, অঙ্গসংস্থানিক পরিভাষা ও ভিত্তিমূলক রসায়ন।',
+  pathwayProfessionals: 'স্বাস্থ্যসেবা পেশাজীবী', pathwayProfessionalsDesc: 'দ্রুত ক্লিনিক্যাল রিফ্রেশার, প্রস্থচ্ছেদ অ্যানাটমি ও প্রমাণ সংশ্লেষ।',
+  pathwayResearchers: 'বায়োমেডিক্যাল গবেষক', pathwayResearchersDesc: 'বিপাকীয় প্রতিক্রিয়া, পিয়ার-রিভিউড তথ্যসূত্র ও গবেষণা পদ্ধতি।',
+  pathwayLearners: 'আজীবন স্বাস্থ্য শিক্ষার্থী', pathwayLearnersDesc: 'সহজবোধ্য চিত্র, সহজ ব্যাখ্যা ও সামগ্রিক জীববিজ্ঞানের ধারণা।',
+  focusMode: 'মনোযোগ ভিউ', standardView: 'স্বাভাবিক ভিউ',
+  readingProgressLabel: 'পড়ার অগ্রগতি', tableOfContents: 'সূচিপত্র',
+  viewSubjectCurriculum: 'কারিকুলাম দেখুন', openSimulation: 'সিমুলেটর চালু করুন',
 }
 
 export type { MessageKey }

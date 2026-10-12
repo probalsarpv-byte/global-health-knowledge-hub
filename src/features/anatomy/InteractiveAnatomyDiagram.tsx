@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { FlaskConical } from 'lucide-react'
 import type { InteractiveDiagramContent, LessonLocale } from '../../content/lessonSchema'
+import { useTheme } from '../../components/ThemeContext'
 
 export function InteractiveAnatomyDiagram({
   diagram,
@@ -11,16 +13,31 @@ export function InteractiveAnatomyDiagram({
   onSectionSelect: (sectionId: string) => void
 }) {
   const [selectedId, setSelectedId] = useState(diagram.items[0]?.id ?? '')
+  const { isLab, toggleLabMode } = useTheme()
   const lang = locale === 'bn' ? 'bn' : 'en'
   const activeItem = diagram.items.find((item) => item.id === selectedId) || diagram.items[0]
 
   return (
-    <section className="anatomy-explorer" aria-labelledby={`diagram-heading-${diagram.id}`}>
+    <section className={`anatomy-explorer${isLab ? ' lab-active' : ''}`} aria-labelledby={`diagram-heading-${diagram.id}`}>
       <header>
-        <span className="section-kicker">
-          {locale === 'bn' ? 'ইন্টার‌্যাক্টিভ স্কিম্যাটিক' : 'INTERACTIVE SCHEMATIC'}
-        </span>
-        <h2 id={`diagram-heading-${diagram.id}`}>{diagram.title[lang]}</h2>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
+          <div>
+            <span className="section-kicker">
+              {locale === 'bn' ? 'ইন্টার‌্যাক্টিভ স্কিম্যাটিক' : 'INTERACTIVE SCHEMATIC'}
+            </span>
+            <h2 id={`diagram-heading-${diagram.id}`}>{diagram.title[lang]}</h2>
+          </div>
+          <button
+            type="button"
+            className={`focus-mode-btn${isLab ? ' is-active' : ''}`}
+            onClick={toggleLabMode}
+            aria-pressed={isLab}
+            title={isLab ? (locale === 'bn' ? 'স্বাভাবিক মোড' : 'Exit Lab View') : (locale === 'bn' ? 'ল্যাব মোড' : 'Lab View')}
+          >
+            <FlaskConical size={14} />
+            <span>{isLab ? (locale === 'bn' ? 'ল্যাবরেটরি ভিউ' : 'Lab Mode Active') : (locale === 'bn' ? 'ল্যাব ভিউ' : 'Lab View')}</span>
+          </button>
+        </div>
         <p>{diagram.description[lang]}</p>
         <small>{diagram.disclaimer[lang]}</small>
       </header>
@@ -36,7 +53,16 @@ export function InteractiveAnatomyDiagram({
           <desc id={`svg-desc-${diagram.id}`}>{diagram.disclaimer[lang]}</desc>
 
           {/* Background schematic grid / frame */}
-          <rect x="10" y="10" width="340" height="360" rx="14" fill="#f4f6f2" stroke="#d5decb" strokeWidth="2" />
+          <rect
+            x="10"
+            y="10"
+            width="340"
+            height="360"
+            rx="14"
+            fill={isLab ? '#081324' : '#f4f6f2'}
+            stroke={isLab ? '#1a3b5c' : '#d5decb'}
+            strokeWidth="2"
+          />
 
           {/* Render interactive diagram shapes based on SVG items */}
           {diagram.items.map((item, index) => {
@@ -50,6 +76,12 @@ export function InteractiveAnatomyDiagram({
               cy: 60 + index * 60,
               r: 16,
             }
+
+            const activeFill = isLab ? '#114B5F' : '#9dbb92'
+            const activeStroke = isLab ? '#22C7D6' : '#405e48'
+            const defaultFill = isLab ? '#0E1F36' : (item.color || '#e4eee0')
+            const defaultStroke = isLab ? '#1E3A5F' : '#8da488'
+            const textColor = isLab ? (isSelected ? '#FFFFFF' : '#94A3B8') : '#243328'
 
             return (
               <g
@@ -70,8 +102,8 @@ export function InteractiveAnatomyDiagram({
                 {coords.d ? (
                   <path
                     d={coords.d}
-                    fill={isSelected ? '#9dbb92' : (item.color || '#e0ebd8')}
-                    stroke={isSelected ? '#405e48' : '#7a9675'}
+                    fill={isSelected ? activeFill : defaultFill}
+                    stroke={isSelected ? activeStroke : defaultStroke}
                     strokeWidth={isSelected ? 3 : 2}
                   />
                 ) : coords.width && coords.height ? (
@@ -81,8 +113,8 @@ export function InteractiveAnatomyDiagram({
                     width={coords.width}
                     height={coords.height}
                     rx="8"
-                    fill={isSelected ? '#cbe3c3' : (item.color || '#e4eee0')}
-                    stroke={isSelected ? '#405e48' : '#8da488'}
+                    fill={isSelected ? activeFill : defaultFill}
+                    stroke={isSelected ? activeStroke : defaultStroke}
                     strokeWidth={isSelected ? 3 : 1.5}
                   />
                 ) : (
@@ -90,8 +122,8 @@ export function InteractiveAnatomyDiagram({
                     cx={coords.cx ?? 180}
                     cy={coords.cy ?? (60 + index * 50)}
                     r={coords.r ?? 22}
-                    fill={isSelected ? '#9dbb92' : (item.color || '#f0dfbf')}
-                    stroke={isSelected ? '#405e48' : '#9c765f'}
+                    fill={isSelected ? activeFill : defaultFill}
+                    stroke={isSelected ? activeStroke : defaultStroke}
                     strokeWidth={isSelected ? 3 : 2}
                   />
                 )}
@@ -99,7 +131,7 @@ export function InteractiveAnatomyDiagram({
                   x={(coords.x ? coords.x + (coords.width ? coords.width / 2 : 150) : (coords.cx ?? 180))}
                   y={(coords.y ? coords.y + (coords.height ? coords.height / 2 + 5 : 25) : ((coords.cy ?? (60 + index * 50)) + 5))}
                   textAnchor="middle"
-                  fill="#243328"
+                  fill={textColor}
                   fontSize="11"
                   fontWeight="600"
                   fontFamily="Manrope, sans-serif"

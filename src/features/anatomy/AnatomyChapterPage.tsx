@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronLeft, CircleCheck } from 'lucide-react'
+import { ArrowRight, ChevronLeft, CircleCheck, Eye } from 'lucide-react'
 import { useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { anatomyCurriculum } from '../../content/anatomyCurriculum'
@@ -10,6 +10,7 @@ export function AnatomyChapterPage() {
   const { chapter: slug } = useParams()
   const { locale } = useLocale()
   const [complete, setComplete] = useState(false)
+  const [focusMode, setFocusMode] = useState(false)
   const lang = locale === 'bn' ? 'bn' : 'en'
   const label = (en: string, bn: string) => (lang === 'bn' ? bn : en)
 
@@ -26,14 +27,27 @@ export function AnatomyChapterPage() {
   const next = anatomyCurriculum.chapters.find((item) => item.order === chapter.order + 1)
 
   return (
-    <main className="page-wrap anatomy-chapter-page">
-      <nav className="anatomy-breadcrumb" aria-label={label('Chapter navigation', 'অধ্যায় নেভিগেশন')}>
-        <Link to="/learn/anatomy">
-          <ChevronLeft size={15} />
-          {label('Anatomy curriculum', 'অ্যানাটমি কারিকুলাম')}
-        </Link>
-        <span>{chapter.title[lang]}</span>
-      </nav>
+    <main className={`page-wrap anatomy-chapter-page${focusMode ? ' focus-reading-active' : ''}`}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
+        <nav className="anatomy-breadcrumb" aria-label={label('Chapter navigation', 'অধ্যায় নেভিগেশন')}>
+          <Link to="/learn/anatomy">
+            <ChevronLeft size={15} />
+            {label('Anatomy curriculum', 'অ্যানাটমি কারিকুলাম')}
+          </Link>
+          <span>{chapter.title[lang]}</span>
+        </nav>
+        <div className="reading-focus-controls">
+          <button
+            type="button"
+            className={`focus-mode-btn${focusMode ? ' is-active' : ''}`}
+            onClick={() => setFocusMode((current) => !current)}
+            aria-pressed={focusMode}
+          >
+            <Eye size={14} />
+            <span>{focusMode ? label('Exit focus mode', 'মনোযোগ মোড বন্ধ') : label('Focus view', 'মনোযোগ ভিউ')}</span>
+          </button>
+        </div>
+      </div>
 
       <LessonRenderer lesson={lesson} />
 
