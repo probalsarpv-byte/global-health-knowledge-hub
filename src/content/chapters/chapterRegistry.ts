@@ -39,6 +39,9 @@ import { metabolism09AminoAcidsUreaLesson } from './metabolism09AminoAcidsUrea'
 import { metabolism10CarbonSkeletonsLesson } from './metabolism10CarbonSkeletons'
 import { metabolism11PurinesPyrimidinesLesson } from './metabolism11PurinesPyrimidines'
 import { metabolism12HemeBilirubinLesson } from './metabolism12HemeBilirubin'
+import { metabolism13FuelDynamicsLesson } from './metabolism13FuelDynamics'
+import { metabolism14EndocrineRegulationLesson } from './metabolism14EndocrineRegulation'
+import { metabolism15OrganSpecializationLesson } from './metabolism15OrganSpecialization'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -183,10 +186,17 @@ export const batch3MetabolismChapters: LessonTopic[] = [
   metabolism12HemeBilirubinLesson,
 ]
 
+export const batch4MetabolismChapters: LessonTopic[] = [
+  metabolism13FuelDynamicsLesson,
+  metabolism14EndocrineRegulationLesson,
+  metabolism15OrganSpecializationLesson,
+]
+
 export const allCompletedMetabolismChapters: LessonTopic[] = [
   ...batch1MetabolismChapters,
   ...batch2MetabolismChapters,
   ...batch3MetabolismChapters,
+  ...batch4MetabolismChapters,
 ]
 
 export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
@@ -202,6 +212,9 @@ export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
   [metabolism10CarbonSkeletonsLesson.id]: metabolism10CarbonSkeletonsLesson,
   [metabolism11PurinesPyrimidinesLesson.id]: metabolism11PurinesPyrimidinesLesson,
   [metabolism12HemeBilirubinLesson.id]: metabolism12HemeBilirubinLesson,
+  [metabolism13FuelDynamicsLesson.id]: metabolism13FuelDynamicsLesson,
+  [metabolism14EndocrineRegulationLesson.id]: metabolism14EndocrineRegulationLesson,
+  [metabolism15OrganSpecializationLesson.id]: metabolism15OrganSpecializationLesson,
 }
 
 export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
@@ -217,6 +230,9 @@ export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
   [metabolism10CarbonSkeletonsLesson.slug]: metabolism10CarbonSkeletonsLesson,
   [metabolism11PurinesPyrimidinesLesson.slug]: metabolism11PurinesPyrimidinesLesson,
   [metabolism12HemeBilirubinLesson.slug]: metabolism12HemeBilirubinLesson,
+  [metabolism13FuelDynamicsLesson.slug]: metabolism13FuelDynamicsLesson,
+  [metabolism14EndocrineRegulationLesson.slug]: metabolism14EndocrineRegulationLesson,
+  [metabolism15OrganSpecializationLesson.slug]: metabolism15OrganSpecializationLesson,
 }
 
 export function getMetabolismChapterLesson(identifier?: string): LessonTopic | undefined {

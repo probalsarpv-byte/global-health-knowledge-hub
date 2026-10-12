@@ -281,7 +281,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
       estimatedMinutes: 70,
     },
 
-    // Group 4: Integration, Hormones & Crosstalk (Batch 4: Chapters 13–15 Planned)
+    // Group 4: Integration, Hormones & Crosstalk (Batch 4: Chapters 13–15 Available)
     {
       id: 'metabolism.chapter.13',
       order: 13,
@@ -292,7 +292,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Temporal fuel transitions: absorptive state, postabsorptive phase, early starvation, and prolonged starvation; brain keto-adaptation and muscle sparing.',
         'সময়ানুগ জ্বালানি রূপান্তর: শোষণকালীন অবস্থা, শোষোত্তর পর্যায়, প্রাথমিক উপবাস এবং দীর্ঘস্থায়ী অনাহার; মস্তিষ্কের কিটো-অভিযোজন ও পেশি সুরক্ষা।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.04', 'metabolism.chapter.05'],
       lessonId: 'topic.metabolism.fed-fasted-starvation-states',
@@ -308,7 +308,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Receptor tyrosine kinase insulin signaling (IRS/PI3K/Akt), GPCR glucagon/epinephrine cascades, cortisol transcriptional effects, and AMPK energy sensing.',
         'রিসেপ্টর টাইরোসিন কাইনেজ ইনসুলিন সিগন্যালিং, জিপিসিআর গ্লুকাগন/এপিনেফ্রিন ক্যাসকেড, কর্টিসল ট্রান্সক্রিপশনাল প্রভাব এবং এএমপিকে শক্তি সংবেদন।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.13'],
       lessonId: 'topic.metabolism.endocrine-fuel-regulation',
@@ -324,7 +324,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Functional fuel specialization: hepatic hub, skeletal muscle anaerobic/aerobic flux, cardiac fatty acid reliance, brain glucose dependence, and adipose thermogenesis.',
         'কার্যকরী জ্বালানি বিশেষায়ন: যকৃতের কেন্দ্রীয় ভূমিকা, কঙ্কালপেশির অ্যানেরোবিক/অ্যারোবিক প্রবাহ, হৃৎপিণ্ডের ফ্যাটি অ্যাসিড নির্ভরতা এবং মস্তিষ্ক বিপাক।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.14'],
       lessonId: 'topic.metabolism.organ-metabolic-specialization',

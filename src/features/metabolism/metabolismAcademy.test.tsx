@@ -8,6 +8,7 @@ import {
   batch1MetabolismChapters,
   batch2MetabolismChapters,
   batch3MetabolismChapters,
+  batch4MetabolismChapters,
   allCompletedMetabolismChapters,
 } from '../../content/chapters/chapterRegistry'
 import { lessons } from '../../content/lessons'
@@ -16,8 +17,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Human Metabolism Academy curriculum and Batches 1, 2 & 3 Chapters (01–12 complete)', () => {
-  it('defines an ordered 18-chapter curriculum with Batches 1, 2 & 3 available across 5 thematic groups', () => {
+describe('Human Metabolism Academy curriculum and Batches 1, 2, 3 & 4 Chapters (01–15 complete)', () => {
+  it('defines an ordered 18-chapter curriculum with Batches 1, 2, 3 & 4 available across 5 thematic groups', () => {
     expect(metabolismCurriculum.chapters).toHaveLength(18)
     expect(metabolismCurriculum.groups.map((group) => group.id)).toEqual([
       'metabolism.foundations',
@@ -31,7 +32,7 @@ describe('Human Metabolism Academy curriculum and Batches 1, 2 & 3 Chapters (01�
     )
 
     const availableChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(12)
+    expect(availableChapters).toHaveLength(15)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'metabolism.chapter.01',
       'metabolism.chapter.02',
@@ -45,17 +46,21 @@ describe('Human Metabolism Academy curriculum and Batches 1, 2 & 3 Chapters (01�
       'metabolism.chapter.10',
       'metabolism.chapter.11',
       'metabolism.chapter.12',
+      'metabolism.chapter.13',
+      'metabolism.chapter.14',
+      'metabolism.chapter.15',
     ])
 
     const plannedChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(6)
+    expect(plannedChapters).toHaveLength(3)
   })
 
-  it('validates complete bilingual Batch 1, Batch 2 and Batch 3 records, paragraph lengths (>=120 chars), and scientific citations', () => {
+  it('validates complete bilingual Batch 1, Batch 2, Batch 3 and Batch 4 records, paragraph lengths (>=120 chars), and scientific citations', () => {
     expect(batch1MetabolismChapters).toHaveLength(4)
     expect(batch2MetabolismChapters).toHaveLength(4)
     expect(batch3MetabolismChapters).toHaveLength(4)
-    expect(allCompletedMetabolismChapters).toHaveLength(12)
+    expect(batch4MetabolismChapters).toHaveLength(3)
+    expect(allCompletedMetabolismChapters).toHaveLength(15)
     const issues = validateLessons([...lessons, ...allCompletedChapters, ...allCompletedMetabolismChapters])
     expect(issues).toEqual([])
 
@@ -87,11 +92,14 @@ describe('Human Metabolism Academy curriculum and Batches 1, 2 & 3 Chapters (01�
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'Metabolism curriculum' })).toBeInTheDocument()
-    expect(screen.getByText(/12 \/ 18 chapters available/i)).toBeInTheDocument()
+    expect(screen.getByText(/15 \/ 18 chapters available/i)).toBeInTheDocument()
     expect(screen.getByText(/01 · Introduction to Human Metabolism & Bioenergetics/i)).toBeInTheDocument()
     expect(screen.getByText(/05 · Fatty Acid Beta-Oxidation & Ketogenesis/i)).toBeInTheDocument()
     expect(screen.getByText(/09 · Amino Acid Catabolism & Urea Cycle/i)).toBeInTheDocument()
     expect(screen.getByText(/12 · Heme Biosynthesis & Bilirubin Metabolism/i)).toBeInTheDocument()
+    expect(screen.getByText(/13 · Fed, Fasted & Starvation Dynamics/i)).toBeInTheDocument()
+    expect(screen.getByText(/14 · Endocrine Regulation of Fuel Flux/i)).toBeInTheDocument()
+    expect(screen.getByText(/15 · Organ-Specific Metabolic Specialization/i)).toBeInTheDocument()
 
     const searchInput = screen.getByPlaceholderText(/Search available or planned metabolism lessons/i)
     await user.type(searchInput, 'Purine')
@@ -400,4 +408,83 @@ describe('Human Metabolism Academy curriculum and Batches 1, 2 & 3 Chapters (01�
     await user.click(aipOption)
     expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
   })
+
+  it('navigates to Chapter 13 (Fuel Dynamics) and operates 3D multi-organ explorer, fed state node and starvation MCT1 assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/fed-fasted-starvation-states')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '13 · Fed, Fasted & Starvation Dynamics' })
+    ).toBeInTheDocument()
+
+    // Verify 3D Multi-Organ Explorer exists
+    expect(screen.getByText(/3D Multi-Organ Temporal Fuel Coordination & Starvation Adaptation/i)).toBeInTheDocument()
+
+    const absorptiveNode = screen.getByRole('button', {
+      name: /1\. Absorptive Fed State \(0–4h\): Anabolic Storage/i,
+    })
+    await user.click(absorptiveNode)
+    expect(screen.getByText(/Portal glucose reaches 140 mg\/dL; liver takes up 60g via glucokinase/i)).toBeInTheDocument()
+
+    // Answer assessment on starvation MCT1 brain adaptation
+    const mctOption = screen.getByRole('radio', {
+      name: /Upregulation of blood-brain barrier monocarboxylate transporters allowing cerebral utilization of ketone bodies/i,
+    })
+    await user.click(mctOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 14 (Endocrine Regulation) and operates 3D multi-organ explorer, insulin RTK node and FOXO1 assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/endocrine-fuel-regulation')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '14 · Endocrine Regulation of Fuel Flux' })
+    ).toBeInTheDocument()
+
+    // Verify 3D Multi-Organ Explorer exists
+    expect(screen.getByText(/3D Multi-Organ Endocrine Signal Transduction & Metabolic Triage/i)).toBeInTheDocument()
+
+    const rtkNode = screen.getByRole('button', {
+      name: /1\. Insulin Receptor Autophosphorylation & IRS-1 Docking/i,
+    })
+    await user.click(rtkNode)
+    expect(screen.getByText(/Insulin receptor is a disulfide-linked \(alpha-beta\)2 heterotetramer/i)).toBeInTheDocument()
+
+    // Answer assessment on FOXO1 phosphorylation failure
+    const foxoOption = screen.getByRole('radio', {
+      name: /Failure of Akt-mediated phosphorylation of FOXO1, allowing uninhibited nuclear transcription of PEPCK and glucose-6-phosphatase/i,
+    })
+    await user.click(foxoOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 15 (Organ Specialization) and operates 3D multi-organ explorer, glucokinase hub node and thiophorase deficiency assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/organ-metabolic-specialization')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '15 · Organ-Specific Metabolic Specialization' })
+    ).toBeInTheDocument()
+
+    // Verify 3D Multi-Organ Explorer exists
+    expect(screen.getByText(/3D Multi-Organ Metabolic Specialization & Inter-Organ Fuel Loops/i)).toBeInTheDocument()
+
+    const gkNode = screen.getByRole('button', {
+      name: /1\. Hepatic Glucokinase & Fuel Distribution Hub/i,
+    })
+    await user.click(gkNode)
+    expect(screen.getByText(/Glucokinase is not inhibited by glucose-6-phosphate/i)).toBeInTheDocument()
+
+    // Answer assessment on hepatic lack of thiophorase (SCOT)
+    const scotOption = screen.getByRole('radio', {
+      name: /Succinyl-CoA:3-ketoacid CoA transferase \(thiophorase \/ SCOT\); sampled tissue is the Liver/i,
+    })
+    await user.click(scotOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
 })
+
