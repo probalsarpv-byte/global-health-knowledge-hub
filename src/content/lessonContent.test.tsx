@@ -80,7 +80,7 @@ describe('scientific lesson content', () => {
   })
 
   it('offers keyboard-operable pathway and assessment controls', async () => {
-    window.history.replaceState({}, '', '/learn/metabolism')
+    window.history.replaceState({}, '', '/learn/metabolism/lessons/glucose-metabolism')
     const user = userEvent.setup()
     render(<App />)
     const next = screen.getByRole('button', { name: 'Next step' })

@@ -6,6 +6,7 @@ import { CellOrganelleDiagram } from './CellOrganelleDiagram'
 import { AnatomyExplorer } from '../anatomy/AnatomyExplorer'
 import { Organ3DExplorer } from '../anatomy/Organ3DExplorer'
 import { InteractiveAnatomyDiagram } from '../anatomy/InteractiveAnatomyDiagram'
+import { InteractivePathwayDiagram } from '../metabolism/InteractivePathwayDiagram'
 
 const depthOrder: ContentDepth[] = ['foundation', 'academic', 'advanced']
 
@@ -53,7 +54,11 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     {chapter && chapter.organelles.length > 0 && <CellOrganelleDiagram chapter={chapter} locale={lang} onSectionSelect={jumpTo} />}
     {lesson.organ3DExplorer && <Organ3DExplorer explorer={lesson.organ3DExplorer} locale={lang} onSectionSelect={jumpTo} />}
     {lesson.anatomyExplorer && <AnatomyExplorer explorer={lesson.anatomyExplorer} locale={lang} onSectionSelect={jumpTo} />}
-    {lesson.interactiveDiagram && <InteractiveAnatomyDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />}
+    {lesson.interactiveDiagram && (lesson.subject === 'metabolism' ? (
+      <InteractivePathwayDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />
+    ) : (
+      <InteractiveAnatomyDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />
+    ))}
 
     <section className="lesson-chapter" aria-label={contentLabel(currentLevel.label)}>{currentLevel.sections.map((item) => <details className="lesson-section" id={`lesson-section-${item.id}`} key={`${depth}-${item.id}`} open><summary>{contentLabel(item.heading)}</summary><div className="lesson-section-body">{item.paragraphs.map((paragraph, index) => <p key={index}>{contentLabel(paragraph)}</p>)}{item.bullets && <ul>{item.bullets.map((bullet, index) => <li key={index}>{contentLabel(bullet)}</li>)}</ul>}<p className="lesson-section-citations">{label('Scientific support:', 'বৈজ্ঞানিক সমর্থন:')} {lesson.evidenceBySection[item.id]?.map((referenceId) => lesson.references.find((reference) => reference.id === referenceId)).filter((reference) => reference !== undefined).map((reference) => <a key={reference.id} href={reference.url} target="_blank" rel="noreferrer">{reference.title}</a>)}</p></div></details>)}</section>
 

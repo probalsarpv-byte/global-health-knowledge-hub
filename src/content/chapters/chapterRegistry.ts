@@ -27,6 +27,10 @@ import { chapter25CrossSectionalLesson } from './chapter25CrossSectional'
 import { chapter26SurfaceAnatomyLesson } from './chapter26SurfaceAnatomy'
 import { chapter27AnatomicalVariationLesson } from './chapter27AnatomicalVariation'
 import { chapter28ClinicalIntegrationLesson } from './chapter28ClinicalIntegration'
+import { metabolism01BioenergeticsLesson } from './metabolism01Bioenergetics'
+import { metabolism02GlycolysisLesson } from './metabolism02Glycolysis'
+import { metabolism03TcaOxphosLesson } from './metabolism03TcaOxphos'
+import { metabolism04GlycogenGluconeogenesisLesson } from './metabolism04GlycogenGluconeogenesis'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -148,4 +152,34 @@ export function getAnatomyChapterLesson(identifier?: string): LessonTopic | unde
 
 export function getAllAvailableAnatomyLessons(): LessonTopic[] {
   return Object.values(allAnatomyLessonsMap)
+}
+
+export const batch1MetabolismChapters: LessonTopic[] = [
+  metabolism01BioenergeticsLesson,
+  metabolism02GlycolysisLesson,
+  metabolism03TcaOxphosLesson,
+  metabolism04GlycogenGluconeogenesisLesson,
+]
+
+export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
+  [metabolism01BioenergeticsLesson.id]: metabolism01BioenergeticsLesson,
+  [metabolism02GlycolysisLesson.id]: metabolism02GlycolysisLesson,
+  [metabolism03TcaOxphosLesson.id]: metabolism03TcaOxphosLesson,
+  [metabolism04GlycogenGluconeogenesisLesson.id]: metabolism04GlycogenGluconeogenesisLesson,
+}
+
+export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
+  [metabolism01BioenergeticsLesson.slug]: metabolism01BioenergeticsLesson,
+  [metabolism02GlycolysisLesson.slug]: metabolism02GlycolysisLesson,
+  [metabolism03TcaOxphosLesson.slug]: metabolism03TcaOxphosLesson,
+  [metabolism04GlycogenGluconeogenesisLesson.slug]: metabolism04GlycogenGluconeogenesisLesson,
+}
+
+export function getMetabolismChapterLesson(identifier?: string): LessonTopic | undefined {
+  if (!identifier) return undefined
+  return allMetabolismLessonsMap[identifier] || allMetabolismLessonsBySlug[identifier]
+}
+
+export function getAllAvailableMetabolismLessons(): LessonTopic[] {
+  return Object.values(allMetabolismLessonsMap)
 }
