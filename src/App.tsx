@@ -15,10 +15,12 @@ import { AnatomyLegacyLessonPage } from './features/anatomy/AnatomyLegacyLessonP
 import { ThemeProvider } from './components/ThemeContext'
 
 export default function App() {
+  const basename = import.meta.env.BASE_URL || '/'
+
   return (
     <LocaleProvider>
       <ThemeProvider>
-       <BrowserRouter>
+       <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<PublicHome />} />
           <Route path="/knowledge" element={<KnowledgeIndex />} />
