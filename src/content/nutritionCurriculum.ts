@@ -163,60 +163,64 @@ export const nutritionCurriculum: NutritionCurriculum = {
       id: 'nutrition.chapter.05',
       order: 5,
       groupId: 'nutrition.macronutrients',
-      slug: 'dietary-lipids-fats-pufa',
-      title: l('05 · Dietary Lipids: Fatty Acid Saturation, Trans-Fats & Essential PUFA Ratios', '০৫ · খাদ্যের লিপিড: ফ্যাটি অ্যাসিড সম্পৃক্ততা, ট্রান্স-ফ্যাট ও প্রয়োজনীয় পিইউএফএ অনুপাত'),
+      slug: 'dietary-lipids-fatty-acids-pufa',
+      title: l('05 · Dietary Lipids: Fatty Acid Saturation, Trans-Fats & Essential PUFA Ratios', '০৫ · খাদ্যতালিকার চর্বি: ফ্যাটি অ্যাসিডের সম্পৃক্ততা, ট্রান্স-ফ্যাট ও অত্যাবশ্যক PUFA অনুপাত'),
       summary: l(
-        'SFA, MUFA, and PUFA biochemistry, industrial partial hydrogenation, linoleic vs alpha-linolenic acid elongation pathways, and omega-6/omega-3 eicosanoid balance.',
-        'এসএফএ, এমইউএফএ ও পিইউএফএ রসায়ন, ট্রান্স-ফ্যাট, লিনোলিক বনাম আলফা-লিনোলেনিক অ্যাসিডের রূপান্তর এবং ওমেগা-৬/ওমেগা-৩ আইকোসানয়েড ভারসাম্য।'
+        'Chemical structure and physiological impacts of dietary lipids: saturated, monounsaturated, and polyunsaturated fatty acids, industrial trans-fat atherogenicity, competitive desaturation of omega-6 and omega-3 cascades, and lipid mediators.',
+        'খাদ্য চর্বির রাসায়নিক গঠন ও শারীরবৃত্তীয় প্রভাব: সম্পৃক্ত, মনো-অসম্পৃক্ত এবং পলি-অসম্পৃক্ত ফ্যাটি অ্যাসিড, ট্রান্স-ফ্যাটের ক্ষতিকর কার্যপদ্ধতি, ওমেগা-৬ ও ওমেগা-৩ পথের প্রতিযোগিতামূলক রূপান্তর এবং প্রদাহ নিয়ন্ত্রক লিপিড মধ্যস্থতাকারী।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.02'],
+      lessonId: 'topic.nutrition.dietary-lipids-fatty-acids-pufa',
       estimatedMinutes: 60,
     },
     {
       id: 'nutrition.chapter.06',
       order: 6,
       groupId: 'nutrition.macronutrients',
-      slug: 'dietary-proteins-amino-acids',
-      title: l('06 · Dietary Proteins, Amino Acid Quality, DIAAS/PDCAAS & Nitrogen Balance', '০৬ · খাদ্যের প্রোটিন, অ্যামিনো অ্যাসিড গুণমান, DIAAS/PDCAAS ও নাইট্রোজেন সমতা'),
+      slug: 'protein-quality-diaas-nitrogen-balance',
+      title: l('06 · Dietary Proteins, Amino Acid Quality, DIAAS/PDCAAS & Nitrogen Balance', '০৬ · খাদ্য প্রোটিন, অ্যামিনো অ্যাসিডের মান, DIAAS/PDCAAS ও নাইট্রোজেন ভারসাম্য'),
       summary: l(
-        'Indispensable amino acid requirements, true ileal digestibility, scoring frameworks (PDCAAS vs DIAAS), muscle protein synthesis leucine trigger, and whole-body nitrogen equilibrium.',
-        'অত্যাবশ্যক অ্যামিনো অ্যাসিডের চাহিদা, ইলিয়াল পরিপাকযোগ্যতা, প্রোটিন মান নির্ধারণ (PDCAAS বনাম DIAAS), পেশি প্রোটিন সংশ্লেষে লিউসিন সংকেত এবং নাইট্রোজেন সমতা।'
+        'The molecular physiology of dietary proteins: essential amino acid kinetics, true ileal DIAAS vs fecal PDCAAS scoring, the mTORC1 leucine trigger for muscle protein synthesis, nitrogen balance assessment, and clinical protein malnutrition.',
+        'খাদ্য প্রোটিনের আণবিক শারীরবৃত্ত: অত্যাবশ্যক অ্যামিনো অ্যাসিডের গতিবিদ্যা, সত্য ইলিয়াল DIAAS বনাম ফিকাল PDCAAS মূল্যায়ন, পেশির প্রোটিন তৈরিতে mTORC1 লিউসিন সুইচ, নাইট্রোজেন ভারসাম্য নিরূপণ এবং ক্লিনিক্যাল প্রোটিন অপুষ্টি।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.02'],
+      lessonId: 'topic.nutrition.protein-quality-diaas-nitrogen-balance',
       estimatedMinutes: 65,
     },
     {
       id: 'nutrition.chapter.07',
       order: 7,
       groupId: 'nutrition.macronutrients',
-      slug: 'satiety-neuroendocrinology',
-      title: l('07 · Satiety Neuroendocrinology: Leptin, Ghrelin, GLP-1, PYY & Appetite Regulation', '০৭ · তৃপ্তির নিউরোএন্ডোক্রিনোলজি: লেপটিন, ঘ্রেলিন, GLP-1, PYY ও ক্ষুধা নিয়ন্ত্রণ'),
+      slug: 'satiety-neuroendocrinology-appetite',
+      title: l('07 · Satiety Neuroendocrinology: Leptin, Ghrelin, GLP-1, PYY & Appetite Regulation', '০৭ · তৃপ্তি ও ক্ষুধার নিউরোএন্ডোক্রিনোলজি: লেপটিন, ঘ্রেলিন, GLP-1, PYY ও ক্ষুধা নিয়ন্ত্রণ'),
       summary: l(
-        'Hypothalamic arcuate nucleus POMC/CART versus NPY/AgRP circuitry, gastric ghrelin pulsatility, enteroendocrine GLP-1 and PYY secretion, and adipostat leptin feedback.',
-        'হাইপোথ্যালামাসের আর্কুয়েট নিউক্লিয়াসের সংকেত পথ, পাকস্থলীর ঘ্রেলিন ক্ষরণ, অন্ত্রীয় এল-কোষ থেকে GLP-1 ও PYY নিঃসরণ এবং এডিপোসাইটের লেপটিন সংকেত।'
+        'The molecular neuroendocrinology of energy intake: hypothalamic arcuate POMC/CART vs NPY/AgRP circuits, gastric ghrelin octanoylation, adipocyte leptin-STAT3 signaling, enteroendocrine incretins (GLP-1, PYY, CCK), and hedonic vs homeostatic feeding.',
+        'শক্তি গ্রহণের আণবিক নিউরোএন্ডোক্রিনোলজি: হাইপোথ্যালামাসের আর্কুয়েট নিউক্লিয়াসের POMC/CART বনাম NPY/AgRP সার্কিট, পাকস্থলীর ঘ্রেলিন হরমোন, অ্যাডিপোসাইটের লেপটিন-STAT3 সংকেত, অন্ত্রের ইনক্রিটিন (GLP-1, PYY, CCK) এবং আনন্দঘন বনাম শারীরবৃত্তীয় ক্ষুধা নিয়ন্ত্রণ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.01'],
+      lessonId: 'topic.nutrition.satiety-neuroendocrinology-appetite',
       estimatedMinutes: 55,
     },
     {
       id: 'nutrition.chapter.08',
       order: 8,
       groupId: 'nutrition.macronutrients',
-      slug: 'hydration-fluid-electrolytes',
-      title: l('08 · Cellular Hydration, Fluid Balance & Electrolyte Osmoregulation', '০৮ · কোষীয় আর্দ্রতা, তরল ভারসাম্য ও ইলেক্ট্রোলাইট অভিস্রবণ নিয়ন্ত্রণ'),
+      slug: 'hydration-electrolytes-fluid-balance',
+      title: l('08 · Cellular Hydration, Fluid Balance & Electrolyte Osmoregulation', '০৮ · কোষীয় আর্দ্রতা, তরলের ভারসাম্য ও ইলেক্ট্রোলাইট অসমোরিলেশন'),
       summary: l(
-        'Intracellular and extracellular osmolarity, hypothalamic osmoreceptor threshold, vasopressin (ADH) aquaporin-2 gating, RAAS aldosterone sodium retention, and clinical dehydration markers.',
-        'কোষীয় ও বহিঃকোষীয় অসমোলারিটি, হাইপোথ্যালামাসের অভিস্রবণ সংবেদী কেন্দ্র, ভ্যাসোপ্রেসিন ও একুয়াপোরিন-২ নালিকা, অ্যালডোস্টেরন সোডিয়াম সংরক্ষণ এবং পানিশূন্যতার ক্লিনিক্যাল লক্ষণ।'
+        'Biophysical principles of human fluid homeostasis: intracellular vs extracellular compartments, Na+/K+-ATPase gradients, hypothalamic osmoreceptor-AVP-Aquaporin-2 axis, renin-aldosterone volume regulation, and stoichiometric ORS cotransport.',
+        'মানবদেহের তরল ভারসাম্যের জৈব-ভৌত বিজ্ঞান: আন্তঃকোষীয় বনাম বহিঃকোষীয় প্রকোষ্ঠ, Na+/K+-ATPase গ্রেডিয়েন্ট, হাইপোথ্যালামিক অসমোরিসেপ্টর-AVP-অ্যাকোয়াপোরিন-২ অক্ষ, রেনিন-অ্যালডোস্টেরন আয়তন নিয়ন্ত্রণ এবং ওআরএসের স্টইকিওমেট্রিক কো-ট্রান্সপোর্ট।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.01'],
+      lessonId: 'topic.nutrition.hydration-electrolytes-fluid-balance',
       estimatedMinutes: 50,
     },
 

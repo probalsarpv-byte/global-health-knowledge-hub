@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import App from '../../App'
@@ -6,6 +6,7 @@ import { nutritionCurriculum } from '../../content/nutritionCurriculum'
 import { lessons } from '../../content/lessons'
 import {
   batch1NutritionChapters,
+  batch2NutritionChapters,
   allCompletedNutritionChapters,
   allCompletedChapters,
   allCompletedMetabolismChapters,
@@ -15,8 +16,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Functional Nutrition & Dietetics Academy curriculum and Batch 1 Chapters', () => {
-  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batch 1 available', () => {
+describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1 & 2 Chapters', () => {
+  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1 & 2 (8 chapters) available', () => {
     expect(nutritionCurriculum.chapters).toHaveLength(26)
     expect(nutritionCurriculum.groups.map((group) => group.id)).toEqual([
       'nutrition.foundations',
@@ -31,27 +32,32 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batch 1 Chapte
     )
 
     const availableChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(4)
+    expect(availableChapters).toHaveLength(8)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'nutrition.chapter.01',
       'nutrition.chapter.02',
       'nutrition.chapter.03',
       'nutrition.chapter.04',
+      'nutrition.chapter.05',
+      'nutrition.chapter.06',
+      'nutrition.chapter.07',
+      'nutrition.chapter.08',
     ])
 
     const plannedChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(22)
+    expect(plannedChapters).toHaveLength(18)
   })
 
-  it('validates all Batch 1 Nutrition chapters using the strict lesson schema validator', () => {
+  it('validates all Batches 1 & 2 Nutrition chapters using the strict lesson schema validator', () => {
     expect(batch1NutritionChapters).toHaveLength(4)
-    expect(allCompletedNutritionChapters).toHaveLength(4)
+    expect(batch2NutritionChapters).toHaveLength(4)
+    expect(allCompletedNutritionChapters).toHaveLength(8)
 
     const issues = validateLessons([
       ...lessons,
       ...allCompletedChapters,
       ...allCompletedMetabolismChapters,
-      ...batch1NutritionChapters,
+      ...allCompletedNutritionChapters,
     ])
     expect(issues).toEqual([])
   })
@@ -62,7 +68,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batch 1 Chapte
     render(<App />)
 
     expect(await screen.findByRole('heading', { name: 'Nutrition & dietetics curriculum' })).toBeInTheDocument()
-    expect(screen.getByText('4 / 26 chapters available')).toBeInTheDocument()
+    expect(screen.getByText('8 / 26 chapters available')).toBeInTheDocument()
 
     // Chapter 01 and Chapter 04 visible initially
     expect(screen.getByText(/01 · Energy Balance, Basal Metabolic Rate/)).toBeInTheDocument()
@@ -180,7 +186,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batch 1 Chapte
     expect(screen.getByText(/RS1: physically trapped/i)).toBeInTheDocument()
   })
 
-  it('navigates to Chapter 04 (Dietary Fiber & SCFA) and inspects next planned chapter indicator', async () => {
+  it('navigates to Chapter 04 (Dietary Fiber & SCFA) and inspects link to Chapter 05', async () => {
     window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/dietary-fiber-scfa')
     render(<App />)
 
@@ -190,9 +196,87 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batch 1 Chapte
       })
     ).toBeInTheDocument()
 
-    // Chapter 05 is a planned chapter
+    // Chapter 05 is now available and linked
+    const nextLink = screen.getByRole('link', {
+      name: /05 · Dietary Lipids/i,
+    })
+    expect(nextLink).toHaveAttribute('href', '/learn/nutrition/chapters/dietary-lipids-fatty-acids-pufa')
+  })
+
+  it('navigates to Chapter 05 (Dietary Lipids) and operates interactive diagram', async () => {
+    const user = userEvent.setup()
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/dietary-lipids-fatty-acids-pufa')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '05 · Dietary Lipids: Fatty Acid Saturation, Trans-Fats & Essential PUFA Ratios',
+      })
+    ).toBeInTheDocument()
+
+    // Operate trans fats node in diagram
+    const transNodeBtns = screen.getAllByRole('button', { name: /Industrial Trans Fats/i })
+    const transNodeBtn = transNodeBtns.find((b) => b.tagName.toLowerCase() === 'button') ?? transNodeBtns[0]
+    await user.click(transNodeBtn)
+    expect(screen.getByText(/mimics saturated fats/i)).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 06 (Dietary Proteins) and operates leucine threshold diagram node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/protein-quality-diaas-nitrogen-balance')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '06 · Dietary Proteins, Amino Acid Quality, DIAAS/PDCAAS & Nitrogen Balance',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Leucine Threshold diagram node
+    const leucineNodeBtns = screen.getAllByRole('button', { name: /The Leucine Threshold/i })
+    for (const btn of leucineNodeBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getByText(/Sestrin2 binds free leucine/i)).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 07 (Satiety Neuroendocrinology) and operates ghrelin node', async () => {
+    const user = userEvent.setup()
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/satiety-neuroendocrinology-appetite')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '07 · Satiety Neuroendocrinology: Leptin, Ghrelin, GLP-1, PYY & Appetite Regulation',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Ghrelin node
+    const ghrelinNodeBtns = screen.getAllByRole('button', { name: /Gastric Fundus: Ghrelin/i })
+    const ghrelinNodeBtn = ghrelinNodeBtns.find((b) => b.tagName.toLowerCase() === 'button') ?? ghrelinNodeBtns[0]
+    await user.click(ghrelinNodeBtn)
+    expect(screen.getByText(/Pre-prandial hunger hormone/i)).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 08 (Hydration & Electrolytes) and inspects next planned chapter indicator', async () => {
+    const user = userEvent.setup()
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/hydration-electrolytes-fluid-balance')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '08 · Cellular Hydration, Fluid Balance & Electrolyte Osmoregulation',
+      })
+    ).toBeInTheDocument()
+
+    // Operate SGLT1 ORS node
+    const sgltNodeBtns = screen.getAllByRole('button', { name: /Intestinal SGLT1 Cotransport/i })
+    const sgltNodeBtn = sgltNodeBtns.find((b) => b.tagName.toLowerCase() === 'button') ?? sgltNodeBtns[0]
+    await user.click(sgltNodeBtn)
+    expect(screen.getAllByText(/Reduced-osmolarity ORS/i).length).toBeGreaterThanOrEqual(1)
+
+    // Next chapter is Chapter 09 (planned)
     expect(screen.getByText(/Next release/i)).toBeInTheDocument()
-    expect(screen.getByText(/05 · Dietary Lipids/i)).toBeInTheDocument()
+    expect(screen.getByText(/09 · Fat-Soluble Vitamins/i)).toBeInTheDocument()
     expect(screen.getByText('Planned chapter')).toBeInTheDocument()
   })
 
