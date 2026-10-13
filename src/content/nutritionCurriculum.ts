@@ -299,9 +299,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Heme versus non-heme iron absorption, enterocyte DMT1 and ferroportin, serum transferrin saturation, macrophage recycling, and hepatic hepcidin control in health, anemia, and chronic disease.',
         'হিম ও নন-হিম আয়রন শোষণ, এন্টারোসাইটের ডিএমটি১ ও ফেরোপোর্টিন, ট্রান্সফেরিন সম্পৃক্ততা, ম্যাক্রোফেজের আয়রন পুনঃব্যবহার এবং প্রদাহ ও রক্তাল্পতায় হেপসিডিনের নিয়ন্ত্রণ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.02'],
+      lessonId: 'topic.nutrition.iron-biology-hepcidin-anemia',
       estimatedMinutes: 65,
     },
 
@@ -316,9 +317,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Claudin, occludin, and zonula occludens (ZO-1) junctional complexes, goblet cell mucin layers, GALT Peyer patches, secretory IgA transcytosis, and endotoxin translocation.',
         'ক্লডিন, অক্লুডিন ও জোনুলা অক্লুডেন্স জটিলতা, গবলেট কোষের মিউকাস স্তর, জিএএলটি পেয়ারস প্যাচ, ক্ষরণকারী আইজিএ পরিবহন এবং ব্যাকটেরিয়াল এন্ডোটক্সিন প্রবেশ প্রতিরোধ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.04'],
+      lessonId: 'topic.nutrition.gut-barrier-mucosal-immunity',
       estimatedMinutes: 60,
     },
     {
@@ -331,9 +333,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Bacillota, Bacteroidota, and Actinomycetota phyla distribution, alpha/beta diversity metrics, bile acid secondary transformation, microbial tryptophan indoles, and host-microbe crosstalk.',
         'অন্ত্রের প্রধান ব্যাকটেরিয়াল পর্বসমূহ, আলফা ও বিটা বৈচিত্র্য পরিমাপ, পিত্ত অম্লের রূপান্তর, ট্রিপটোফ্যান থেকে উৎপন্ন ইনডোল যৌগ এবং দেহ-জীবাণুর পারস্পরিক সংকেত আদান-প্রদান।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.14'],
+      lessonId: 'topic.nutrition.gut-microbiome-metagenomics',
       estimatedMinutes: 65,
     },
     {
@@ -346,9 +349,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Mechanisms of prebiotic fructans and galactans, evidence-based probiotic strain taxonomy (Lactobacillus, Bifidobacterium), pathogen competitive exclusion, and post-antibiotic recovery.',
         'প্রিবায়োটিক ফ্রুক্টান ও গ্যালাক্টানের ভূমিকা, নির্দিষ্ট প্রোবায়োটিক স্ট্রেনের কার্যকারিতা, ক্ষতিকর জীবাণু বিতাড়ন এবং অ্যান্টিবায়োটিক পরবর্তী অন্ত্রের স্বাভাবিক পরিবেশ পুনরুদ্ধার।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.15'],
+      lessonId: 'topic.nutrition.prebiotics-probiotics-dysbiosis',
       estimatedMinutes: 55,
     },
     {

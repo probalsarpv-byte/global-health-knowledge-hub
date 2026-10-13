@@ -8,6 +8,7 @@ import {
   batch1NutritionChapters,
   batch2NutritionChapters,
   batch3NutritionChapters,
+  batch4NutritionChapters,
   allCompletedNutritionChapters,
   allCompletedChapters,
   allCompletedMetabolismChapters,
@@ -17,8 +18,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2 & 3 Chapters', () => {
-  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1, 2 & 3 (12 chapters) available', () => {
+describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 3 & 4 Chapters', () => {
+  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1, 2, 3 & 4 (16 chapters) available', () => {
     expect(nutritionCurriculum.chapters).toHaveLength(26)
     expect(nutritionCurriculum.groups.map((group) => group.id)).toEqual([
       'nutrition.foundations',
@@ -33,7 +34,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2 &
     )
 
     const availableChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(12)
+    expect(availableChapters).toHaveLength(16)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'nutrition.chapter.01',
       'nutrition.chapter.02',
@@ -47,17 +48,22 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2 &
       'nutrition.chapter.10',
       'nutrition.chapter.11',
       'nutrition.chapter.12',
+      'nutrition.chapter.13',
+      'nutrition.chapter.14',
+      'nutrition.chapter.15',
+      'nutrition.chapter.16',
     ])
 
     const plannedChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(14)
+    expect(plannedChapters).toHaveLength(10)
   })
 
-  it('validates all Batches 1, 2 & 3 Nutrition chapters using the strict lesson schema validator', () => {
+  it('validates all Batches 1, 2, 3 & 4 Nutrition chapters using the strict lesson schema validator', () => {
     expect(batch1NutritionChapters).toHaveLength(4)
     expect(batch2NutritionChapters).toHaveLength(4)
     expect(batch3NutritionChapters).toHaveLength(4)
-    expect(allCompletedNutritionChapters).toHaveLength(12)
+    expect(batch4NutritionChapters).toHaveLength(4)
+    expect(allCompletedNutritionChapters).toHaveLength(16)
 
     const issues = validateLessons([
       ...lessons,
@@ -74,7 +80,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2 &
     render(<App />)
 
     expect(await screen.findByRole('heading', { name: 'Nutrition & dietetics curriculum' })).toBeInTheDocument()
-    expect(screen.getByText('12 / 26 chapters available')).toBeInTheDocument()
+    expect(screen.getByText('16 / 26 chapters available')).toBeInTheDocument()
 
     // Chapter 01 and Chapter 04 visible initially
     expect(screen.getByText(/01 · Energy Balance, Basal Metabolic Rate/)).toBeInTheDocument()
@@ -338,7 +344,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2 &
     expect(screen.getByText(/Reduces H2O2 and toxic lipid hydroperoxides/i)).toBeInTheDocument()
   })
 
-  it('navigates to Chapter 12 (Macrominerals & Bone Matrix) and inspects next planned chapter indicator', async () => {
+  it('navigates to Chapter 12 (Macrominerals & Bone Matrix) and inspects link to Chapter 13', async () => {
     window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/macrominerals-bone-calcium-magnesium')
     render(<App />)
 
@@ -355,9 +361,84 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2 &
     }
     expect(screen.getByText(/Osteoblast RANKL binds osteoclast RANK/i)).toBeInTheDocument()
 
-    // Next chapter is Chapter 13 (planned)
+    // Next chapter is Chapter 13 (now available)
+    expect(screen.getByText(/13 · Iron Biology: Dietary Bioavailability, Ferritin, Transferrin & Hepcidin/i)).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 13 (Iron Biology) and operates Hepcidin degradation node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/iron-biology-hepcidin-anemia')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '13 · Iron Biology: Dietary Bioavailability, Ferritin, Transferrin & Hepcidin',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Hepcidin node
+    const hepcidinBtns = screen.getAllByRole('button', { name: /Hepatic Hepcidin & Lysosomal Degradation/i })
+    for (const btn of hepcidinBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Hepcidin binds Ferroportin/i).length).toBeGreaterThanOrEqual(1)
+  })
+
+  it('navigates to Chapter 14 (Gut Barrier) and operates MLCK leak pathway node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/gut-barrier-mucosal-immunity')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '14 · The Gastrointestinal Barrier: Mucosal Immunity & Tight Junction Integrity',
+      })
+    ).toBeInTheDocument()
+
+    // Operate MLCK node
+    const mlckBtns = screen.getAllByRole('button', { name: /MLCK Phosphorylation & Leak Pathway/i })
+    for (const btn of mlckBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Myosin Light Chain Kinase \(MLCK\)/i).length).toBeGreaterThanOrEqual(1)
+  })
+
+  it('navigates to Chapter 15 (Gut Microbiome) and operates CutC TMAO node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/gut-microbiome-metagenomics')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '15 · The Human Gut Microbiome: Taxonomic Architecture & Metagenomics',
+      })
+    ).toBeInTheDocument()
+
+    // Operate CutC TMAO node
+    const cutcBtns = screen.getAllByRole('button', { name: /CutC Choline Lyase & Hepatic FMO3 TMAO/i })
+    for (const btn of cutcBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/CutC\/D cleaves dietary choline into Trimethylamine/i).length).toBeGreaterThanOrEqual(1)
+  })
+
+  it('navigates to Chapter 16 (Prebiotics & Probiotics) and inspects next planned chapter indicator', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/prebiotics-probiotics-dysbiosis')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '16 · Prebiotics, Probiotics, Synbiotics & Dietary Interventions in Dysbiosis',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Low-FODMAP node
+    const fodmapBtns = screen.getAllByRole('button', { name: /Three-Phase Low-FODMAP Personalization/i })
+    for (const btn of fodmapBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Phase 1 eliminates gas-distending fermentable oligosaccharides/i).length).toBeGreaterThanOrEqual(1)
+
+    // Next chapter is Chapter 17 (planned)
     expect(screen.getByText(/Next release/i)).toBeInTheDocument()
-    expect(screen.getByText(/13 · Iron Biology/i)).toBeInTheDocument()
+    expect(screen.getByText(/17 · Food Intolerances/i)).toBeInTheDocument()
     expect(screen.getByText('Planned chapter')).toBeInTheDocument()
   })
 
