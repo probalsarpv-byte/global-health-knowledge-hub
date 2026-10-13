@@ -1,16 +1,16 @@
 # Human Metabolism Academy — Resumption & Handover Protocol
 
-**Last Updated:** 2026-10-12  
-**Current Status:** Batches 1, 2, 3 & 4 Complete & Verified (Chapters 01–15, 83.3%)  
-**Next Active Batch:** Batch 5: Micronutrients, Inborn Errors & Clinical Integration (Chapters 16–18)  
+**Last Updated:** 2026-10-13  
+**Current Status:** All 18 Chapters Complete & Verified across Batches 1, 2, 3, 4 & 5 (100.0% Complete)  
+**Next Stage:** Production Deploy & Advanced Simulation Modules (Calculators & Dynamic Flux Visualizers)  
 **Current Branch:** `main`  
 **Repository:** `d:\My book\Review\learning-platform\global-health-knowledge-hub`  
 
 ---
 
-## 1. Verified Completed Work (Batches 1, 2, 3 & 4: Chapters 01–15)
+## 1. Verified Completed Work (Batches 1, 2, 3, 4 & 5: Chapters 01–18 Complete)
 
-All 15 completed chapters are fully authored, schema-validated, bilingual (>= 120 characters per section paragraph in EN and BN), and integrated with interactive animated pathway simulations and 3D organ topology explorers:
+All 18 planned chapters are fully authored, schema-validated, bilingual (>= 120 characters per section paragraph in EN and BN), and integrated with interactive animated pathway simulations and 3D organ topology explorers:
 
 ### Batch 1: Metabolic Foundations & Bioenergetics (Chapters 01–04)
 1. `Chapter 01` — Introduction to Human Metabolism & Bioenergetics (`metabolism.chapter.01` / `intro-bioenergetics`)
@@ -55,21 +55,23 @@ All 15 completed chapters are fully authored, schema-validated, bilingual (>= 12
     - 3D Organ Explorer: Physiological Fuel Specialization & Inter-Organ Cooperativity (Liver, Heart, Skeletal Muscle, Brain, White & Brown Adipose, Kidneys).
     - Interactive Diagram: Interactive Organ Specialization & Inter-Organ Fuel Loops (8 nodes, hepatic glucokinase hub, altruistic ketogenesis lacking SCOT, cardiac beta-oxidation, muscle phosphocreatine buffer, Cori cycle, Cahill cycle, adipose lipolysis lacking GK, brown adipose UCP-1 thermogenesis).
 
-All 50 unit/feature tests pass (`npm test`), strict TypeScript checks succeed (`npm run typecheck`), ESLint passes with zero warnings (`npm run lint`), and Vite production builds cleanly (`npm run build`).
+### Batch 5: Micronutrients, Inborn Errors & Clinical Integration (Chapters 16–18)
+16. `Chapter 16` — Micronutrients & Metabolic Cofactors (`metabolism.chapter.16` / `micronutrients-cofactors`)
+    - 3D Organ Explorer: Multi-Organ Micronutrient Absorption, Activation & Storage Network (Stomach/Intrinsic Factor, Liver/Storage, Kidneys/Calcitriol, Bone Marrow/Hematopoiesis).
+    - Interactive Diagram: The Micronutrient & Coenzyme Metabolic Engine (8 nodes, TPP alpha-ketoacids, FAD/FMN redox, NAD+/NADP+ hydrides, CoA acyl activation, PLP transamination, Biotin carboxylation, Folate/B12 methylation, Trace metalloclusters).
+17. `Chapter 17` — Inborn Errors of Metabolism (`metabolism.chapter.17` / `inborn-errors-metabolism`)
+    - 3D Organ Explorer: Multi-Organ Pathology of Monogenic Metabolic Blocks (Liver, Brain, Skeletal Muscle, Kidneys).
+    - Interactive Diagram: Monogenic Metabolic Blocks & Newborn Screening Gateway (8 nodes, GALT galactosemia, Aldolase B HFI, GSD glycogen storage, PAH PKU, BCKDH MSUD, Alkaptonuria/Homocystinuria, MCAD hypoketotic hypoglycemia, Lysosomal storage diseases).
+18. `Chapter 18` — Metabolic Disease & Clinical Integration (`metabolism.chapter.18` / `metabolic-disease-clinical-integration`)
+    - 3D Organ Explorer: Multi-Organ Landscape of Systemic Metabolic Disease (Pancreas, Liver, Skeletal Muscle, Visceral Adipose).
+    - Interactive Diagram: Metabolic Syndrome, Diabetes, MASLD & Oncology Disease Engine (8 nodes, T1D autoimmunity, T2D IRS-1 serine blockade, HHS hyperosmolality, MetSyn visceral adiposity, Atherogenic dyslipidemia sdLDL, MASLD/MASH cascade, Warburg effect aerobic glycolysis, Critical illness hypercatabolism).
 
 ---
 
-## 2. Next Work To Resume: Batch 5 (Chapters 16–18: Micronutrients, Inborn Errors & Clinical Integration)
+## 2. Verification Status Summary
 
-1. **Chapter 16:** `micronutrients-cofactors` — Micronutrients & Metabolic Cofactors
-   - Key topics: Water-soluble and fat-soluble vitamins, coenzymes (thiamine TPP, riboflavin FAD, niacin NAD, pantothenate CoA, pyridoxine PLP, biotin, folate THF, cobalamin B12), trace minerals (iron, zinc, copper, selenium, iodine), deficiencies.
-   - Target File: `src/content/chapters/metabolism16MicronutrientsCofactors.ts`
-2. **Chapter 17:** `inborn-errors-metabolism` — Inborn Errors of Metabolism
-   - Key topics: Carbohydrate disorders (galactosemia, hereditary fructose intolerance, GSDs), amino acidopathies (PKU, MSUD, alkaptonuria, homocystinuria), organic acidemias, fatty acid oxidation defects (MCAD deficiency), lysosomal storage diseases (Gaucher, Tay-Sachs, Pompe).
-   - Target File: `src/content/chapters/metabolism17InbornErrors.ts`
-3. **Chapter 18:** `metabolic-disease-clinical-integration` — Metabolic Disease & Clinical Integration
-   - Key topics: Type 1 & Type 2 Diabetes Pathophysiology, DKA vs HHS, Metabolic Syndrome, MASLD/MASH (fatty liver), Dyslipidemias and Atherosclerosis, Cancer Warburg effect, Sepsis and Trauma hypermetabolism, Comprehensive Capstone Integration.
-   - Target File: `src/content/chapters/metabolism18MetabolicDisease.ts`
-
-Follow `docs/METABOLISM_CONTENT_STANDARD.md` strictly for all new chapters.
+- **Vitest Suite:** 53 unit/feature tests pass (`npm test`) across all 18 metabolism chapters and platform navigation.
+- **TypeScript:** Strict typecheck passes cleanly with zero diagnostics (`npm run typecheck`).
+- **ESLint:** Zero warnings or errors across all files (`npm run lint`).
+- **Production Build:** Vite builds the full optimized bundle cleanly (`npm run build`).
 

@@ -9,6 +9,7 @@ import {
   batch2MetabolismChapters,
   batch3MetabolismChapters,
   batch4MetabolismChapters,
+  batch5MetabolismChapters,
   allCompletedMetabolismChapters,
 } from '../../content/chapters/chapterRegistry'
 import { lessons } from '../../content/lessons'
@@ -17,8 +18,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Human Metabolism Academy curriculum and Batches 1, 2, 3 & 4 Chapters (01–15 complete)', () => {
-  it('defines an ordered 18-chapter curriculum with Batches 1, 2, 3 & 4 available across 5 thematic groups', () => {
+describe('Human Metabolism Academy curriculum and all 18 Chapters (Batches 1–5 complete, 100% available)', () => {
+  it('defines an ordered 18-chapter curriculum with all Batches 1–5 available across 5 thematic groups', () => {
     expect(metabolismCurriculum.chapters).toHaveLength(18)
     expect(metabolismCurriculum.groups.map((group) => group.id)).toEqual([
       'metabolism.foundations',
@@ -32,7 +33,7 @@ describe('Human Metabolism Academy curriculum and Batches 1, 2, 3 & 4 Chapters (
     )
 
     const availableChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(15)
+    expect(availableChapters).toHaveLength(18)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'metabolism.chapter.01',
       'metabolism.chapter.02',
@@ -49,18 +50,22 @@ describe('Human Metabolism Academy curriculum and Batches 1, 2, 3 & 4 Chapters (
       'metabolism.chapter.13',
       'metabolism.chapter.14',
       'metabolism.chapter.15',
+      'metabolism.chapter.16',
+      'metabolism.chapter.17',
+      'metabolism.chapter.18',
     ])
 
     const plannedChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(3)
+    expect(plannedChapters).toHaveLength(0)
   })
 
-  it('validates complete bilingual Batch 1, Batch 2, Batch 3 and Batch 4 records, paragraph lengths (>=120 chars), and scientific citations', () => {
+  it('validates complete bilingual Batch 1, Batch 2, Batch 3, Batch 4, and Batch 5 records, paragraph lengths (>=120 chars), and scientific citations', () => {
     expect(batch1MetabolismChapters).toHaveLength(4)
     expect(batch2MetabolismChapters).toHaveLength(4)
     expect(batch3MetabolismChapters).toHaveLength(4)
     expect(batch4MetabolismChapters).toHaveLength(3)
-    expect(allCompletedMetabolismChapters).toHaveLength(15)
+    expect(batch5MetabolismChapters).toHaveLength(3)
+    expect(allCompletedMetabolismChapters).toHaveLength(18)
     const issues = validateLessons([...lessons, ...allCompletedChapters, ...allCompletedMetabolismChapters])
     expect(issues).toEqual([])
 
@@ -92,7 +97,7 @@ describe('Human Metabolism Academy curriculum and Batches 1, 2, 3 & 4 Chapters (
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'Metabolism curriculum' })).toBeInTheDocument()
-    expect(screen.getByText(/15 \/ 18 chapters available/i)).toBeInTheDocument()
+    expect(screen.getByText(/18 \/ 18 chapters available/i)).toBeInTheDocument()
     expect(screen.getByText(/01 · Introduction to Human Metabolism & Bioenergetics/i)).toBeInTheDocument()
     expect(screen.getByText(/05 · Fatty Acid Beta-Oxidation & Ketogenesis/i)).toBeInTheDocument()
     expect(screen.getByText(/09 · Amino Acid Catabolism & Urea Cycle/i)).toBeInTheDocument()
@@ -100,6 +105,9 @@ describe('Human Metabolism Academy curriculum and Batches 1, 2, 3 & 4 Chapters (
     expect(screen.getByText(/13 · Fed, Fasted & Starvation Dynamics/i)).toBeInTheDocument()
     expect(screen.getByText(/14 · Endocrine Regulation of Fuel Flux/i)).toBeInTheDocument()
     expect(screen.getByText(/15 · Organ-Specific Metabolic Specialization/i)).toBeInTheDocument()
+    expect(screen.getByText(/16 · Micronutrients & Metabolic Cofactors/i)).toBeInTheDocument()
+    expect(screen.getByText(/17 · Inborn Errors of Metabolism/i)).toBeInTheDocument()
+    expect(screen.getByText(/18 · Metabolic Disease & Clinical Integration/i)).toBeInTheDocument()
 
     const searchInput = screen.getByPlaceholderText(/Search available or planned metabolism lessons/i)
     await user.type(searchInput, 'Purine')
@@ -484,6 +492,84 @@ describe('Human Metabolism Academy curriculum and Batches 1, 2, 3 & 4 Chapters (
       name: /Succinyl-CoA:3-ketoacid CoA transferase \(thiophorase \/ SCOT\); sampled tissue is the Liver/i,
     })
     await user.click(scotOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 16 (Micronutrients) and operates 3D multi-organ explorer, TPP node and Wernicke assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/micronutrients-cofactors')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '16 · Micronutrients & Metabolic Cofactors' })
+    ).toBeInTheDocument()
+
+    // Verify 3D Multi-Organ Explorer exists
+    expect(screen.getByText(/3D Multi-Organ Micronutrient Absorption, Activation & Storage Network/i)).toBeInTheDocument()
+
+    const tppNode = screen.getByRole('button', {
+      name: /1\. Thiamine Pyrophosphate \(TPP\): Alpha-Ketoacid Decarboxylation/i,
+    })
+    await user.click(tppNode)
+    expect(screen.getByText(/Forms a reactive thiazolium carbanion that attacks carbonyl carbons/i)).toBeInTheDocument()
+
+    // Answer assessment on Wernicke thiamine prior to glucose
+    const thiamineOption = screen.getByRole('radio', {
+      name: /Thiamine \(vitamin B1\) must be administered intravenously BEFORE or concurrently with glucose/i,
+    })
+    await user.click(thiamineOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 17 (Inborn Errors) and operates 3D multi-organ explorer, GALT node and galactosemia assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/inborn-errors-metabolism')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '17 · Inborn Errors of Metabolism' })
+    ).toBeInTheDocument()
+
+    // Verify 3D Multi-Organ Explorer exists
+    expect(screen.getByText(/3D Multi-Organ Pathology of Monogenic Metabolic Blocks/i)).toBeInTheDocument()
+
+    const galtNode = screen.getByRole('button', {
+      name: /1\. Classical Galactosemia: GALT Block & Galactitol Cataracts/i,
+    })
+    await user.click(galtNode)
+    expect(screen.getAllByText(/Autosomal recessive deficiency of galactose-1-phosphate uridylyltransferase/i)[0]).toBeInTheDocument()
+
+    // Answer assessment on GALT deficiency and galactitol cataracts
+    const galtOption = screen.getByRole('radio', {
+      name: /Galactose-1-phosphate uridylyltransferase \(GALT\) deficiency; accumulated toxic intermediates are Galactose-1-phosphate/i,
+    })
+    await user.click(galtOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 18 (Metabolic Disease) and operates 3D multi-organ explorer, T1D node and DAG/PKC assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/metabolic-disease-clinical-integration')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '18 · Metabolic Disease & Clinical Integration' })
+    ).toBeInTheDocument()
+
+    // Verify 3D Multi-Organ Explorer exists
+    expect(screen.getByText(/3D Multi-Organ Landscape of Systemic Metabolic Disease/i)).toBeInTheDocument()
+
+    const t1dNode = screen.getByRole('button', {
+      name: /1\. Type 1 Diabetes: Autoimmune Beta-Cell Destruction & DKA/i,
+    })
+    await user.click(t1dNode)
+    expect(screen.getByText(/Autoreactive CD8\+ T cells destroy pancreatic beta-cells/i)).toBeInTheDocument()
+
+    // Answer assessment on DAG / novel PKC serine phosphorylation of IRS-1
+    const pkcOption = screen.getByRole('radio', {
+      name: /Accumulation of intracellular sn-1,2-diacylglycerol \(DAG\) activating novel PKC isoforms/i,
+    })
+    await user.click(pkcOption)
     expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
   })
 })

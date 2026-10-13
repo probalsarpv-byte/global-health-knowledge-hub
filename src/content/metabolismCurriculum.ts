@@ -34,7 +34,7 @@ export type MetabolismCurriculum = {
 export const metabolismCurriculum: MetabolismCurriculum = {
   id: 'subject.metabolism',
   version: 1,
-  updatedAt: '2026-10-12',
+  updatedAt: '2026-10-13',
   groups: [
     {
       id: 'metabolism.foundations',
@@ -331,7 +331,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
       estimatedMinutes: 65,
     },
 
-    // Group 5: Micronutrients, Genetics & Clinics (Batch 5: Chapters 16–18 Planned)
+    // Group 5: Micronutrients, Genetics & Clinics (Batch 5: Chapters 16–18 Available)
     {
       id: 'metabolism.chapter.16',
       order: 16,
@@ -342,7 +342,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Essential coenzymes: thiamine (TPP), riboflavin (FAD), niacin (NAD), pantothenate (CoA), pyridoxine (PLP), biotin, folate, cobalamin, and trace metals.',
         'অপরিহার্য কো-এনজাইম: থায়ামিন (টিপিপি), রিবোফ্লাভিন (এফএডি), নিয়াসিন (এনএডি), প্যান্টোথেনেট (কোএ), পাইরিডক্সিন (পিএলপি), বায়োটিন, ফোলেট এবং ট্রেস ধাতু।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.01'],
       lessonId: 'topic.metabolism.micronutrients-cofactors',
@@ -358,7 +358,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Monogenic metabolic diseases: phenylketonuria (PKU), galactosemia, glycogen storage diseases (von Gierke, Pompe, McArdle), MCAD deficiency, and newborn screening.',
         'একক জিনীয় বিপাকীয় রোগ: ফিনাইলকিটোনুরিয়া (পিকেইউ), গ্যালাক্টোসেমিয়া, গ্লাইকোজেন সঞ্চয় রোগ (ভন গিয়ের্কে, পম্পে, ম্যাকআর্ডল), এমসিএডি ঘাটতি ও নবজাতক স্ক্রিনিং।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.04', 'metabolism.chapter.09'],
       lessonId: 'topic.metabolism.inborn-errors-metabolism',
@@ -374,7 +374,7 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'Pathophysiology of type 2 diabetes mellitus, insulin resistance, metabolic syndrome, metabolic dysfunction-associated steatohepatitis (MASH), and exercise physiology.',
         'টাইপ ২ ডায়াবেটিস মেলিটাস, ইনসুলিন রেজিস্ট্যান্স, মেটাবলিক সিন্ড্রোম, বিপাকীয় ফ্যাটি লিভার ডিজিজ (ম্যাশ) এবং ব্যায়ামের শারীরবৃত্তীয় সমন্বয়।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.14', 'metabolism.chapter.17'],
       lessonId: 'topic.metabolism.metabolic-disease-clinical-integration',

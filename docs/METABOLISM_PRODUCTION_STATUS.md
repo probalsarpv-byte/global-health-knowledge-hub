@@ -1,15 +1,15 @@
 # Human Metabolism Curriculum — Production Status Ledger
 
-**Last Updated:** 2026-10-12  
-**Curriculum Version:** 1.0.0 (V2.5 Launch)  
-**Total Chapters:** 18 Planned / 15 Complete (83.3%)  
+**Last Updated:** 2026-10-13  
+**Curriculum Version:** 1.0.0 (V2.5 Launch — 100% Complete)  
+**Total Chapters:** 18 Planned / 18 Complete (100.0%)  
 **Subject ID:** `subject.metabolism`  
 **Production Status Overview:**  
 - **Batch 1 (Ch 01–04):** **COMPLETE & VERIFIED** (Group 1: Bioenergetics, Glycolysis, TCA/OxPhos, Glycogen/Gluconeogenesis)
 - **Batch 2 (Ch 05–08):** **COMPLETE & VERIFIED** (Group 2: Lipid & Lipoprotein Metabolism)
 - **Batch 3 (Ch 09–12):** **COMPLETE & VERIFIED** (Group 3: Nitrogen, Amino Acids & Nucleotides)
 - **Batch 4 (Ch 13–15):** **COMPLETE & VERIFIED** (Group 4: Metabolic Integration, Hormones & Organ Crosstalk)
-- **Batch 5 (Ch 16–18):** **READY TO AUTHOR** (Group 5: Micronutrients, Inborn Errors & Clinical Integration)
+- **Batch 5 (Ch 16–18):** **COMPLETE & VERIFIED** (Group 5: Micronutrients, Inborn Errors & Clinical Integration)
 
 ---
 
@@ -32,7 +32,7 @@
 | 13 | `metabolism.chapter.13` | `fed-fasted-starvation-states` | 13 · Fed, Fasted & Starvation Dynamics / ১৩ · ভুক্ত, উপবাস ও অনাহারকালীন পরিবর্তন | Integration | Complete & Verified | `src/content/chapters/metabolism13FuelDynamics.ts` | Passed (19/19) | Citations Checked (Primary Sources) | None (Batch 4 Complete) |
 | 14 | `metabolism.chapter.14` | `endocrine-fuel-regulation` | 14 · Endocrine Regulation of Fuel Flux / ১৪ · জ্বালানি প্রবাহের হরমোনজনিত নিয়ন্ত্রণ | Integration | Complete & Verified | `src/content/chapters/metabolism14EndocrineRegulation.ts` | Passed (19/19) | Citations Checked (Primary Sources) | None (Batch 4 Complete) |
 | 15 | `metabolism.chapter.15` | `organ-metabolic-specialization` | 15 · Organ-Specific Metabolic Specialization / ১৫ · অঙ্গভিত্তিক বিপাকীয় বিশেষায়ন | Integration | Complete & Verified | `src/content/chapters/metabolism15OrganSpecialization.ts` | Passed (19/19) | Citations Checked (Primary Sources) | None (Batch 4 Complete) |
-| 16 | `metabolism.chapter.16` | `micronutrients-cofactors` | 16 · Micronutrients & Metabolic Cofactors / ১৬ · অনুপুষ্টি ও বিপাকীয় কোফ্যাক্টর | Micronutrients & Clinics | Planned | `src/content/chapters/metabolism16MicronutrientsCofactors.ts` | Pending | Source Checked (Expert Pending) | Batch 5 Implementation |
-| 17 | `metabolism.chapter.17` | `inborn-errors-metabolism` | 17 · Inborn Errors of Metabolism / ১৭ · জন্মগত বিপাকীয় ত্রুটি | Micronutrients & Clinics | Planned | `src/content/chapters/metabolism17InbornErrors.ts` | Pending | Source Checked (Expert Pending) | Batch 5 Implementation |
-| 18 | `metabolism.chapter.18` | `metabolic-disease-clinical-integration` | 18 · Metabolic Disease & Clinical Integration / ১৮ · বিপাকীয় ব্যাধি ও ক্লিনিক্যাল সমন্বয় | Micronutrients & Clinics | Planned | `src/content/chapters/metabolism18MetabolicDisease.ts` | Pending | Source Checked (Expert Pending) | Batch 5 Implementation |
+| 16 | `metabolism.chapter.16` | `micronutrients-cofactors` | 16 · Micronutrients & Metabolic Cofactors / ১৬ · অনুপুষ্টি ও বিপাকীয় কোফ্যাক্টর | Micronutrients & Clinics | Complete & Verified | `src/content/chapters/metabolism16MicronutrientsCofactors.ts` | Passed (22/22) | Citations Checked (Primary Sources) | None (Batch 5 Complete - All 18 Complete) |
+| 17 | `metabolism.chapter.17` | `inborn-errors-metabolism` | 17 · Inborn Errors of Metabolism / ১৭ · জন্মগত বিপাকীয় ত্রুটি | Micronutrients & Clinics | Complete & Verified | `src/content/chapters/metabolism17InbornErrors.ts` | Passed (22/22) | Citations Checked (Primary Sources) | None (Batch 5 Complete - All 18 Complete) |
+| 18 | `metabolism.chapter.18` | `metabolic-disease-clinical-integration` | 18 · Metabolic Disease & Clinical Integration / ১৮ · বিপাকীয় ব্যাধি ও ক্লিনিক্যাল সমন্বয় | Micronutrients & Clinics | Complete & Verified | `src/content/chapters/metabolism18MetabolicDisease.ts` | Passed (22/22) | Citations Checked (Primary Sources) | None (Batch 5 Complete - All 18 Complete) |
 
