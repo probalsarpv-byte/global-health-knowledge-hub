@@ -71,6 +71,10 @@ import { nutrition05DietaryLipidsLesson } from './nutrition05DietaryLipids'
 import { nutrition06DietaryProteinsLesson } from './nutrition06DietaryProteins'
 import { nutrition07SatietyNeuroendocrinologyLesson } from './nutrition07SatietyNeuroendocrinology'
 import { nutrition08HydrationElectrolytesLesson } from './nutrition08HydrationElectrolytes'
+import { nutrition09FatSolubleVitaminsLesson } from './nutrition09FatSolubleVitamins'
+import { nutrition10BComplexBioenergeticsLesson } from './nutrition10BComplexBioenergetics'
+import { nutrition11VitaminCTraceMineralsLesson } from './nutrition11VitaminCTraceMinerals'
+import { nutrition12MacromineralsBoneMatrixLesson } from './nutrition12MacromineralsBoneMatrix'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -357,6 +361,10 @@ export const allNutritionLessonsMap: Record<string, LessonTopic> = {
   [nutrition06DietaryProteinsLesson.id]: nutrition06DietaryProteinsLesson,
   [nutrition07SatietyNeuroendocrinologyLesson.id]: nutrition07SatietyNeuroendocrinologyLesson,
   [nutrition08HydrationElectrolytesLesson.id]: nutrition08HydrationElectrolytesLesson,
+  [nutrition09FatSolubleVitaminsLesson.id]: nutrition09FatSolubleVitaminsLesson,
+  [nutrition10BComplexBioenergeticsLesson.id]: nutrition10BComplexBioenergeticsLesson,
+  [nutrition11VitaminCTraceMineralsLesson.id]: nutrition11VitaminCTraceMineralsLesson,
+  [nutrition12MacromineralsBoneMatrixLesson.id]: nutrition12MacromineralsBoneMatrixLesson,
 }
 
 export const allNutritionLessonsBySlug: Record<string, LessonTopic> = {
@@ -368,6 +376,10 @@ export const allNutritionLessonsBySlug: Record<string, LessonTopic> = {
   [nutrition06DietaryProteinsLesson.slug]: nutrition06DietaryProteinsLesson,
   [nutrition07SatietyNeuroendocrinologyLesson.slug]: nutrition07SatietyNeuroendocrinologyLesson,
   [nutrition08HydrationElectrolytesLesson.slug]: nutrition08HydrationElectrolytesLesson,
+  [nutrition09FatSolubleVitaminsLesson.slug]: nutrition09FatSolubleVitaminsLesson,
+  [nutrition10BComplexBioenergeticsLesson.slug]: nutrition10BComplexBioenergeticsLesson,
+  [nutrition11VitaminCTraceMineralsLesson.slug]: nutrition11VitaminCTraceMineralsLesson,
+  [nutrition12MacromineralsBoneMatrixLesson.slug]: nutrition12MacromineralsBoneMatrixLesson,
 }
 
 export function getNutritionChapterLesson(identifier?: string): LessonTopic | undefined {
@@ -393,9 +405,17 @@ export const batch2NutritionChapters: LessonTopic[] = [
   nutrition08HydrationElectrolytesLesson,
 ]
 
+export const batch3NutritionChapters: LessonTopic[] = [
+  nutrition09FatSolubleVitaminsLesson,
+  nutrition10BComplexBioenergeticsLesson,
+  nutrition11VitaminCTraceMineralsLesson,
+  nutrition12MacromineralsBoneMatrixLesson,
+]
+
 export const allCompletedNutritionChapters: LessonTopic[] = [
   ...batch1NutritionChapters,
   ...batch2NutritionChapters,
+  ...batch3NutritionChapters,
 ]
 
 

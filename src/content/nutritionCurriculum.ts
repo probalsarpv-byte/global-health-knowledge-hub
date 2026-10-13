@@ -235,9 +235,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Retinoid nuclear receptors (RAR/RXR) and visual cycle; calcitriol-VDR calcium transport; alpha-tocopherol lipid membrane chain-breaking; vitamin K cycle, VKOR, and gamma-carboxylation.',
         'রেটিনয়েডের নিউক্লিয়ার রিসেপ্টর ও দৃষ্টি চক্র; ক্যালসিট্রিওল-ভিডিআর ক্যালসিয়াম পরিবহন; আলফা-টোকোফেরল লিপিড মেমব্রেন সুরক্ষা; এবং ভিটামিন কে চক্র ও গামা-কার্বক্সিলেশন।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.05'],
+      lessonId: 'topic.nutrition.fat-soluble-vitamins',
       estimatedMinutes: 70,
     },
     {
@@ -250,9 +251,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Thiamine (TPP), riboflavin (FMN/FAD), niacin (NAD/NADP), pantothenate (CoA), pyridoxine (PLP), biotin, folate (THF), and cobalamin (methyl-B12) coenzyme kinetics in intermediate metabolism.',
         'থায়ামিন (টিপিপি), রিবোফ্লাভিন (এফএমএন/এফএডি), নিয়াসিন (এনএডি/এনএডিপি), প্যান্টোথেনিক অ্যাসিড (কোএ), পাইরিডক্সিন (পিএলপি), বায়োটিন, ফোলেট ও ভিটামিন বি১২ কো-এনজাইমীয় গতিবিদ্যা।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.01'],
+      lessonId: 'topic.nutrition.b-complex-vitamins-bioenergetics',
       estimatedMinutes: 75,
     },
     {
@@ -265,9 +267,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Ascorbate prolyl hydroxylase collagen reduction, superoxide dismutase (Cu/Zn and Mn), glutathione peroxidase (selenium), catalase, and zinc finger transcription factors.',
         'অ্যাসকরবেটের কোলাজেন সংশ্লেষণ সহায়তা, সুপারঅক্সাইড ডিসমিউটেজ (কপার/জিঙ্ক ও ম্যাঙ্গানিজ), গ্লুটাথিয়ন পারঅক্সিডেজ (সেলেনিয়াম), ক্যাটালেজ এবং জিঙ্ক ফিঙ্গার প্রোটিন।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.10'],
+      lessonId: 'topic.nutrition.vitamin-c-trace-minerals-redox',
       estimatedMinutes: 60,
     },
     {
@@ -280,9 +283,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Hydroxyapatite matrix mineralization, calcium-sensing receptor (CaSR), PTH and calcitonin endocrine loops, intracellular Mg-ATP chelation, and dietary calcium-phosphate ratios.',
         'হাইড্রোক্সিঅ্যাপাটাইট স্ফটিক গঠন, ক্যালসিয়াম সেন্সিং রিসেপ্টর, পিটিএইচ ও ক্যালসিটোনিন হরমোনীয় চক্র, কোষের ভেতর ম্যাগনেসিয়াম-এটিপি সংযোজন এবং খাদ্যে ক্যালসিয়াম-ফসফরাস অনুপাত।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.09'],
+      lessonId: 'topic.nutrition.macrominerals-bone-calcium-magnesium',
       estimatedMinutes: 60,
     },
     {

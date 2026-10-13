@@ -7,6 +7,7 @@ import { lessons } from '../../content/lessons'
 import {
   batch1NutritionChapters,
   batch2NutritionChapters,
+  batch3NutritionChapters,
   allCompletedNutritionChapters,
   allCompletedChapters,
   allCompletedMetabolismChapters,
@@ -16,8 +17,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1 & 2 Chapters', () => {
-  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1 & 2 (8 chapters) available', () => {
+describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2 & 3 Chapters', () => {
+  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1, 2 & 3 (12 chapters) available', () => {
     expect(nutritionCurriculum.chapters).toHaveLength(26)
     expect(nutritionCurriculum.groups.map((group) => group.id)).toEqual([
       'nutrition.foundations',
@@ -32,7 +33,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1 & 2 
     )
 
     const availableChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(8)
+    expect(availableChapters).toHaveLength(12)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'nutrition.chapter.01',
       'nutrition.chapter.02',
@@ -42,16 +43,21 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1 & 2 
       'nutrition.chapter.06',
       'nutrition.chapter.07',
       'nutrition.chapter.08',
+      'nutrition.chapter.09',
+      'nutrition.chapter.10',
+      'nutrition.chapter.11',
+      'nutrition.chapter.12',
     ])
 
     const plannedChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(18)
+    expect(plannedChapters).toHaveLength(14)
   })
 
-  it('validates all Batches 1 & 2 Nutrition chapters using the strict lesson schema validator', () => {
+  it('validates all Batches 1, 2 & 3 Nutrition chapters using the strict lesson schema validator', () => {
     expect(batch1NutritionChapters).toHaveLength(4)
     expect(batch2NutritionChapters).toHaveLength(4)
-    expect(allCompletedNutritionChapters).toHaveLength(8)
+    expect(batch3NutritionChapters).toHaveLength(4)
+    expect(allCompletedNutritionChapters).toHaveLength(12)
 
     const issues = validateLessons([
       ...lessons,
@@ -68,7 +74,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1 & 2 
     render(<App />)
 
     expect(await screen.findByRole('heading', { name: 'Nutrition & dietetics curriculum' })).toBeInTheDocument()
-    expect(screen.getByText('8 / 26 chapters available')).toBeInTheDocument()
+    expect(screen.getByText('12 / 26 chapters available')).toBeInTheDocument()
 
     // Chapter 01 and Chapter 04 visible initially
     expect(screen.getByText(/01 · Energy Balance, Basal Metabolic Rate/)).toBeInTheDocument()
@@ -257,7 +263,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1 & 2 
     expect(screen.getByText(/Pre-prandial hunger hormone/i)).toBeInTheDocument()
   })
 
-  it('navigates to Chapter 08 (Hydration & Electrolytes) and inspects next planned chapter indicator', async () => {
+  it('navigates to Chapter 08 (Hydration & Electrolytes) and inspects link to Chapter 09', async () => {
     const user = userEvent.setup()
     window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/hydration-electrolytes-fluid-balance')
     render(<App />)
@@ -274,9 +280,84 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1 & 2 
     await user.click(sgltNodeBtn)
     expect(screen.getAllByText(/Reduced-osmolarity ORS/i).length).toBeGreaterThanOrEqual(1)
 
-    // Next chapter is Chapter 09 (planned)
-    expect(screen.getByText(/Next release/i)).toBeInTheDocument()
+    // Next chapter is Chapter 09 (available)
     expect(screen.getByText(/09 · Fat-Soluble Vitamins/i)).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 09 (Fat-Soluble Vitamins) and operates VKOR diagram node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/fat-soluble-vitamins')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '09 · Fat-Soluble Vitamins (A, D, E, K): Genomic Signaling, Phototransduction & Antioxidation',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Vitamin K VKORC1 node
+    const vkorBtns = screen.getAllByRole('button', { name: /Vitamin K Cycle: GGCX & VKORC1 Gla Synthesis/i })
+    for (const btn of vkorBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Reduced vitamin K hydroquinone/i).length).toBeGreaterThanOrEqual(1)
+  })
+
+  it('navigates to Chapter 10 (B-Complex Vitamins) and operates PDH TPP coenzyme node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/b-complex-vitamins-bioenergetics')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '10 · Water-Soluble Vitamins: B-Complex Coenzymes in Mitochondrial Bioenergetics',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Thiamine TPP node
+    const tppBtns = screen.getAllByRole('button', { name: /Thiamine \(B1\) - TPP \(E1: Pyruvate Decarboxylase\)/i })
+    for (const btn of tppBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getByText(/Thiazolium carbanion of TPP attacks pyruvate/i)).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 11 (Vitamin C & Trace Minerals) and operates Selenium GPx node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/vitamin-c-trace-minerals-redox')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '11 · Vitamin C, Trace Minerals & Cellular Antioxidant Defense Networks',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Selenium GPx node
+    const gpxBtns = screen.getAllByRole('button', { name: /Selenium Glutathione Peroxidases \(GPx1–4\)/i })
+    for (const btn of gpxBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getByText(/Reduces H2O2 and toxic lipid hydroperoxides/i)).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 12 (Macrominerals & Bone Matrix) and inspects next planned chapter indicator', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/macrominerals-bone-calcium-magnesium')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '12 · Macrominerals & Bone Matrix: Calcium, Phosphorus, Magnesium Homeostasis',
+      })
+    ).toBeInTheDocument()
+
+    // Operate RANKL/OPG node
+    const ranklBtns = screen.getAllByRole('button', { name: /Bone Remodeling Unit: RANKL vs OPG Coupling/i })
+    for (const btn of ranklBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getByText(/Osteoblast RANKL binds osteoclast RANK/i)).toBeInTheDocument()
+
+    // Next chapter is Chapter 13 (planned)
+    expect(screen.getByText(/Next release/i)).toBeInTheDocument()
+    expect(screen.getByText(/13 · Iron Biology/i)).toBeInTheDocument()
     expect(screen.getByText('Planned chapter')).toBeInTheDocument()
   })
 
