@@ -97,10 +97,54 @@ This is a recommendation, not a request to create these folders preemptively. In
 - Maintain readable contrast in both themes, support text resizing/reflow, and provide accessible validation and status announcements for dynamic results.
 - Test with automated accessibility checks and manual keyboard/screen-reader review for meaningful UI changes.
 
+## Academic Writing, Language and Citation Standard (Permanent)
+
+All future Antigravity sessions and human contributors must strictly comply with the standard documented in `docs/ACADEMIC_WRITING_AND_CITATION_STANDARD.md`. This applies platform-wide across Anatomy, Physiology, Biochemistry, Metabolism, Functional Nutrition & Dietetics, Clinical Sciences, and all future educational chapters.
+
+### 1. Vancouver-Style Numeric Citation System
+- Use compact numeric brackets: `[1]`, `[2]`, `[3]`, etc.
+- **Never display raw URLs, external hyperlinks, publisher cards, or bibliographic strings inside main chapter paragraphs.**
+- Number references sequentially by first appearance within the chapter.
+- Reuse the same number whenever a source is cited again.
+- Support multiple ascending citations, e.g., `[1, 3]`.
+- Every inline citation number must be clickable and smoothly jump to `#ref-${chapterId}-${number}` in the End-of-Chapter References section with keyboard focus and target highlighting.
+- Every reference item in the bibliography must feature an accessible `Return to citation [n]` control that returns the learner to their exact reading position.
+- Retain full bibliographic details, verified publisher links, and DOIs **only** in the final References section.
+- Cross-academy concept links (e.g., Ovary, Insulin Resistance, Glycolysis, LH/FSH) are conceptual links and must never be converted into or conflated with citations.
+
+### 2. Simple International English
+- Write clear, direct, and accessible international English suitable for non-native English speakers, including Bangladeshi students.
+- Use short-to-medium sentences and explain difficult scientific terms immediately on first introduction.
+- Preserve scientific precision; never replace necessary medical or biochemical terminology with incorrect everyday words.
+- Break biological pathways into clear logical steps: what happens, where it happens, why it happens, and what happens next.
+- Explicitly distinguish illustrative analogies from actual molecular mechanisms.
+- Explain macroscopic context before delving into detailed enzymology.
+
+### 3. Bengali Language Quality (`বাংলা মানদণ্ড`)
+- Write natural, scientifically accurate Bengali reading like high-quality popular science literature.
+- Pair standard English terms alongside Bengali explanations where beneficial (e.g., *গ্লাইকোলাইসিস (Glycolysis)*).
+- Maintain complete scientific scope and depth parity between English and Bengali editions.
+
+### 4. Educational Chapter Structure
+Where suitable for biological mechanisms, follow this progression:
+1. What is it? (Definition)
+2. Why is it important? (Physiological role)
+3. Where does it happen? (Tissue & organelle localization)
+4. How does it work? (Sequential mechanism)
+5. Intuitive everyday analogy vs. actual biological mechanism
+6. Detailed molecular regulation
+7. Clinical and nutritional relevance
+8. High-yield takeaway and assessment
+
+Maintain Foundation, Academic, and Advanced/Research tiers across all subjects.
+
 ## Verification and test requirements
 
-- Before adding scripts, inspect `package.json`. At present, `build` is the only verification script and runs `tsc -b && vite build`; no lint, standalone typecheck, or test script is configured.
-- For every feature or bug fix, add or update focused tests for behavior and edge cases. Use unit tests for domain logic and calculator formulas, component tests for interactions, and end-to-end tests for critical learner/admin journeys when those test tools are introduced.
-- Test English and Bengali rendering, responsive layouts, keyboard access, both themes, empty/error states, and permissions where the relevant feature exists.
-- Run the available typecheck, lint, tests, and production build scripts after relevant changes. Report checks that could not run because a script/tool is absent; do not claim a missing check passed.
+- `package.json` defines `lint`, `test`, `typecheck`, and `build` scripts.
+- For every feature or bug fix, run:
+  - `npm run lint` (`eslint . --max-warnings=0`)
+  - `npm run typecheck` (`tsc -b --pretty false`)
+  - `npm run test` (`vitest run`)
+  - `npm run build` (`tsc -b && vite build`)
+- For every citation or content change, verify citation numbering, duplicate source reuse, two-way navigation, return-to-citation controls, and bilingual rendering.
 - Do not weaken strict compiler settings, delete failing tests, or suppress diagnostics just to get a green build. Fix the underlying issue or document a justified, narrowly scoped exception.

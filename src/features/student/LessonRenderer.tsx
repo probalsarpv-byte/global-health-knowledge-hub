@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLocale } from '../../i18n/LocaleContext'
 import type { ContentDepth, LessonTopic } from '../../content/lessonSchema'
@@ -7,6 +7,12 @@ import { AnatomyExplorer } from '../anatomy/AnatomyExplorer'
 import { Organ3DExplorer } from '../anatomy/Organ3DExplorer'
 import { InteractiveAnatomyDiagram } from '../anatomy/InteractiveAnatomyDiagram'
 import { InteractivePathwayDiagram } from '../metabolism/InteractivePathwayDiagram'
+import {
+  buildChapterCitationMap,
+  EndOfChapterReferences,
+  NumberedCitation,
+  parseInlineCitationTokens,
+} from '../../components/citations'
 
 const depthOrder: ContentDepth[] = ['foundation', 'academic', 'advanced']
 
@@ -22,6 +28,11 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
   const contentLabel = (value: { en: string; bn: string }) => value[lang]
   const chapter = lesson.chapter
 
+  const citationMap = useMemo(
+    () => buildChapterCitationMap(lesson.id, lesson.references, lesson.evidenceBySection),
+    [lesson.id, lesson.references, lesson.evidenceBySection]
+  )
+
   useEffect(() => {
     const updateProgress = () => {
       const max = document.documentElement.scrollHeight - window.innerHeight
@@ -35,6 +46,28 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
   const jumpTo = (sectionId: string) => {
     const target = document.getElementById(`lesson-section-${sectionId}`)
     if (target && typeof target.scrollIntoView === 'function') target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  const renderParagraphContent = (text: string, paraKey: string) => {
+    const tokens = parseInlineCitationTokens(text)
+    if (tokens.length === 1 && tokens[0].type === 'text') {
+      return text
+    }
+    return tokens.map((token, idx) => {
+      if (token.type === 'text') {
+        return <span key={idx}>{token.value}</span>
+      }
+      return (
+        <NumberedCitation
+          key={idx}
+          chapterId={lesson.id}
+          referenceIds={token.refIds}
+          citationMap={citationMap}
+          instanceId={`${paraKey}-${idx}`}
+          locale={lang}
+        />
+      )
+    })
   }
 
   return <article className="lesson-document">
@@ -60,7 +93,7 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
       <InteractiveAnatomyDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />
     ))}
 
-    <section className="lesson-chapter" aria-label={contentLabel(currentLevel.label)}>{currentLevel.sections.map((item) => <details className="lesson-section" id={`lesson-section-${item.id}`} key={`${depth}-${item.id}`} open><summary>{contentLabel(item.heading)}</summary><div className="lesson-section-body">{item.paragraphs.map((paragraph, index) => <p key={index}>{contentLabel(paragraph)}</p>)}{item.bullets && <ul>{item.bullets.map((bullet, index) => <li key={index}>{contentLabel(bullet)}</li>)}</ul>}<p className="lesson-section-citations">{label('Scientific support:', 'বৈজ্ঞানিক সমর্থন:')} {lesson.evidenceBySection[item.id]?.map((referenceId) => lesson.references.find((reference) => reference.id === referenceId)).filter((reference) => reference !== undefined).map((reference) => <a key={reference.id} href={reference.url} target="_blank" rel="noreferrer">{reference.title}</a>)}</p></div></details>)}</section>
+    <section className="lesson-chapter" aria-label={contentLabel(currentLevel.label)}>{currentLevel.sections.map((item) => <details className="lesson-section" id={`lesson-section-${item.id}`} key={`${depth}-${item.id}`} open><summary>{contentLabel(item.heading)}</summary><div className="lesson-section-body">{item.paragraphs.map((paragraph, index) => <p key={index}>{renderParagraphContent(contentLabel(paragraph), `p-${item.id}-${index}`)}</p>)}{item.bullets && <ul>{item.bullets.map((bullet, index) => <li key={index}>{renderParagraphContent(contentLabel(bullet), `b-${item.id}-${index}`)}</li>)}</ul>}{Boolean(lesson.evidenceBySection[item.id]?.length) && <div className="section-citations-bar"><span className="section-citations-label">{label('Evidence: ', 'প্রমাণ: ')}</span><NumberedCitation chapterId={lesson.id} referenceIds={lesson.evidenceBySection[item.id]} citationMap={citationMap} instanceId={`sec-${item.id}`} locale={lang} /></div>}</div></details>)}</section>
 
     {chapter && <><section className="lesson-study-tools" aria-labelledby="lesson-terms-heading"><div className="lesson-tool-panel"><h2 id="lesson-terms-heading">{label('Key terminology', 'মূল পরিভাষা')}</h2><dl>{chapter.terms.map((term) => <div key={term.term.en}><dt>{contentLabel(term.term)}</dt><dd>{contentLabel(term.definition)}</dd></div>)}</dl></div><div className="lesson-tool-panel"><h2>{label('Worked reasoning', 'সমাধানসহ যুক্তি')}</h2>{chapter.workedExamples.map((example) => <details key={example.title.en}><summary>{contentLabel(example.title)}</summary><ol>{example.steps.map((step) => <li key={step.en}>{contentLabel(step)}</li>)}</ol><p>{contentLabel(example.conclusion)}</p></details>)}</div></section><section className="lesson-checkpoints" aria-labelledby="lesson-checkpoints-heading"><h2 id="lesson-checkpoints-heading">{label('Interactive checkpoints', 'ইন্টার‌্যাক্টিভ checkpoint')}</h2>{chapter.checkpoints.map((checkpoint) => <details key={checkpoint.question.en}><summary>{contentLabel(checkpoint.question)}</summary><p>{contentLabel(checkpoint.answer)}</p></details>)}</section></>}
 
@@ -68,6 +101,7 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
 
     <section className="lesson-assessment" aria-labelledby="lesson-assessment-heading"><h2 id="lesson-assessment-heading">{label('Knowledge assessment', 'জ্ঞান যাচাই')}</h2><fieldset><legend>{contentLabel(lesson.assessment.question)}</legend>{lesson.assessment.options.map((option, index) => <label key={index}><input type="radio" name={`answer-${lesson.id}`} checked={answer === index} onChange={() => setAnswer(index)} />{contentLabel(option)}</label>)}</fieldset>{answer !== null && <p className={answer === lesson.assessment.correctIndex ? 'lesson-answer-correct' : 'lesson-answer-review'} role="status">{answer === lesson.assessment.correctIndex ? label('Correct. ', 'সঠিক। ') : label('Review this point. ', 'বিষয়টি আবার দেখুন। ')}{contentLabel(lesson.assessment.explanation)}</p>}</section>
 
-    <section className="lesson-references" aria-labelledby="lesson-references-heading"><h2 id="lesson-references-heading">{label('Scientific references', 'বৈজ্ঞানিক তথ্যসূত্র')}</h2><ol>{lesson.references.map((reference) => <li key={reference.id}><span>{reference.authors} ({reference.year}). <i>{reference.title}</i>. {reference.organization}.</span> <a href={reference.url} target="_blank" rel="noreferrer">{label('Open source', 'উৎস খুলুন')}<span className="sr-only">: {reference.title}</span></a></li>)}</ol><p>{label('Reference metadata is linked to publisher or NCBI Bookshelf records; citations support the educational synthesis, not individualized care recommendations.', 'তথ্যসূত্রের metadata publisher বা NCBI Bookshelf record-এর সঙ্গে যুক্ত; citation শিক্ষামূলক সংশ্লেষ সমর্থন করে, ব্যক্তিকেন্দ্রিক care recommendation নয়।')}</p></section>
+    <EndOfChapterReferences chapterId={lesson.id} citationMap={citationMap} locale={lang} />
   </article>
 }
+

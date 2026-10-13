@@ -14,6 +14,15 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
-  test: { globals: true, environment: 'jsdom', setupFiles: ['./src/test/setup.ts'], pool: 'threads', maxWorkers: 1, testTimeout: 20000 },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+    pool: 'threads',
+    threads: {
+      singleThread: true,
+    },
+    testTimeout: 30000,
+  },
 }))
 

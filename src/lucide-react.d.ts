@@ -17,8 +17,10 @@ declare module 'lucide-react' {
   export const Clock3: Icon
   export const Command: Icon
   export const Compass: Icon
+  export const CornerUpLeft: Icon
   export const Dna: Icon
   export const Database: Icon
+  export const ExternalLink: Icon
   export const Eye: Icon
   export const FlaskConical: Icon
   export const Heart: Icon
