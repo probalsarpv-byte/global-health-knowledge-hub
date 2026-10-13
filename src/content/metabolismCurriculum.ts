@@ -380,5 +380,175 @@ export const metabolismCurriculum: MetabolismCurriculum = {
       lessonId: 'topic.metabolism.metabolic-disease-clinical-integration',
       estimatedMinutes: 75,
     },
+
+    // Batch A: Advanced Cellular Mechanisms & Organ Pipelines (Chapters 19–27 Available)
+    {
+      id: 'metabolism.chapter.19',
+      order: 19,
+      groupId: 'metabolism.foundations',
+      slug: 'enzyme-kinetics-control',
+      title: l(
+        '19 · Enzyme Kinetics, Inhibition & Metabolic Control Analysis',
+        '১৯ · এনজাইম গতিবিদ্যা, প্রতিরোধ ও বিপাকীয় নিয়ন্ত্রণ বিশ্লেষণ'
+      ),
+      summary: l(
+        'Briggs-Haldane steady-state derivation, Km, kcat, reversible inhibition mechanisms, allosteric cooperativity, and Kacser-Burns MCA flux control coefficients.',
+        'এনজাইম গতিবিদ্যা: ব্রিগস-হ্যালডেন স্থিতাবস্থা প্রতিপাদন, Km, kcat, বিপরীতমুখী প্রতিরোধ মডেল, অ্যালবস্টেরিক সহযোগিতা এবং ক্যাকসার-বার্নস MCA ফ্লাক্স কন্ট্রোল কোফিশিয়েন্ট।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.01'],
+      lessonId: 'topic.metabolism.enzyme-kinetics-control',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.20',
+      order: 20,
+      groupId: 'metabolism.foundations',
+      slug: 'cellular-compartmentation-shuttles',
+      title: l(
+        '20 · Cellular Compartmentation, Metabolite Transport & Shuttle Systems',
+        '২০ · কোষীয় প্রকোষ্ঠায়ন, মেটাবোলাইট পরিবহন ও শাটল ব্যবস্থা'
+      ),
+      summary: l(
+        'Mitochondrial SLC25 carrier family, Malate-Aspartate (~2.5 ATP) vs Glycerol-3-Phosphate (~1.5 ATP) shuttles, peroxisomal ABCD1, and ER G6PT/SLC37A4 transport.',
+        'মাইটোকন্ড্রিয়াল SLC25 বাহক পরিবার, ম্যালেট-অ্যাসপার্টেট ও গ্লিসারল-৩-ফসফেট শাটল ব্যবস্থা, পারঅক্সিসোমাল ABCD1 এবং ER হেক্সোজ পরিবহন।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.02', 'metabolism.chapter.03'],
+      lessonId: 'topic.metabolism.cellular-compartmentation-shuttles',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.21',
+      order: 21,
+      groupId: 'metabolism.foundations',
+      slug: 'pentose-phosphate-pathway',
+      title: l('21 · Pentose Phosphate Pathway & NADPH Generation', '২১ · পেন্টোজ ফসফেট পথ ও এনএডিপিএইচ উৎপাদন'),
+      summary: l(
+        'Oxidative G6PD branch generating NADPH, non-oxidative transketolase/transaldolase shuffles, 4 metabolic flux modes, erythrocyte glutathione defense, and favism.',
+        'NADPH উৎপাদনকারী অক্সিডেটিভ G6PD শাখা, নন-অক্সিডেটিভ ট্রান্সকিটোলেজ/ট্রান্সঅ্যালডোলেজ কার্বন পুনর্বিন্যাস, ৪টি বিপাকীয় মোড, এরিথ্রোসাইট গ্লুটাথিয়ন রেডক্স প্রতিরক্ষা ও ফ্যাভিজম।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.02'],
+      lessonId: 'topic.metabolism.pentose-phosphate-pathway',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.22',
+      order: 22,
+      groupId: 'metabolism.foundations',
+      slug: 'fructose-galactose-alternative-sugars',
+      title: l(
+        '22 · Fructose, Galactose & Alternative Sugar Metabolism',
+        '২২ · ফ্রুক্টোজ, গ্যালাক্টোজ ও বিকল্প শর্করা বিপাক'
+      ),
+      summary: l(
+        'Hepatic fructolysis via ketohexokinase-C bypassing PFK-1, aldolase B entrapment, diabetic sorbitol polyol pathway, galactose Leloir pathway, and hexosamine O-GlcNAc sensing.',
+        'PFK-1 নিয়ন্ত্রণহীন হেপাটিক ফ্রুক্টোলাইসিস, অ্যালডোলেজ বি ঘাটতি, ডায়াবেটিক সরবিটল পলিওল পথ, গ্যালাক্টোজ লেলোয়ার পথ এবং হেক্সোসামাইন O-GlcNAc পুষ্টি-সংবেদন।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.02'],
+      lessonId: 'topic.metabolism.fructose-galactose-alternative-sugars',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.23',
+      order: 23,
+      groupId: 'metabolism.integration',
+      slug: 'lactate-cori-glucose-alanine',
+      title: l(
+        '23 · Lactate Metabolism, Cori Cycle & Glucose–Alanine Cycle',
+        '২৩ · ল্যাকটেট বিপাক, কোরি চক্র ও গ্লুকোজ-অ্যালানিন চক্র'
+      ),
+      summary: l(
+        'Lactate Shuttle hypothesis, MCT1/MCT4 transporters, mitochondrial lactate oxidation complex, hepatic Cori cycle (6 ATP cost), muscle Cahill cycle, and Type A vs B lactic acidosis.',
+        'ল্যাকটেট শাটল তত্ত্ব, MCT1/MCT4 বাহক, মাইটোকন্ড্রিয়াল ল্যাকটেট জারণ, হেপাটিক কোরি চক্র (৬ এটিপি ব্যয়), কঙ্কালপেশির কাহিল চক্র এবং টাইপ এ বনাম বি ল্যাকটিক অ্যাসিডোসিস।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.02', 'metabolism.chapter.04'],
+      lessonId: 'topic.metabolism.lactate-cori-glucose-alanine',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.24',
+      order: 24,
+      groupId: 'metabolism.lipids',
+      slug: 'lipid-digestion-chylomicrons',
+      title: l(
+        '24 · Intestinal Lipid Digestion, Absorption & Chylomicron Assembly',
+        '২৪ · অন্ত্রে লিপিড পরিপাক, শোষণ ও কাইলোমাইক্রন সমাবেশ'
+      ),
+      summary: l(
+        'Luminal bile micelle emulsification, pancreatic lipase-colipase catalysis, enterocyte CD36/NPC1L1 uptake, TAG resynthesis, APOBEC-1 editing of ApoB-48, MTP lipidation, and thoracic duct bypass.',
+        'পিত্তলবণের মাইসেলি ইমালসিফিকেশন, অগ্ন্যাশয় লাইপেজ-কোলিপাইপেজ অনুঘটন, অন্ত্রের শোষণ (CD36, NPC1L1), চর্বি পুনর্গঠন, APOBEC-1 আরএনএ এডিটিং, MTP লিপিডেশন এবং থোরাসিক ডাক্ট পরিবহন।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.05', 'metabolism.chapter.08'],
+      lessonId: 'topic.metabolism.lipid-digestion-chylomicrons',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.25',
+      order: 25,
+      groupId: 'metabolism.lipids',
+      slug: 'phospholipids-sphingolipids-eicosanoids',
+      title: l(
+        '25 · Phospholipid, Sphingolipid & Eicosanoid Metabolism',
+        '২৫ · ফসফোলিপিড, স্ফিংগোলিপিড ও আইকোসানয়েড বিপাক'
+      ),
+      summary: l(
+        'Membrane glycerophospholipids (Kennedy pathway, PEMT, cardiolipin remodeling by tafazzin), sphingolipids (ceramide, sphingomyelin, S1P rheostat), and eicosanoids (cPLA2, COX-1/2, 5-LOX, aspirin cardioprotection).',
+        'ঝিল্লি গ্লিসারোফসফোলিপিড (কেনেডি পথ, পিইএমটি, কার্ডিওলিপিন পুনর্গঠন), স্ফিংগোলিপিড (সেরামাইড, স্ফিংগোমায়েলিন, S1P ভারসাম্য) এবং আইকোসানয়েড (cPLA2, COX-1/2, 5-LOX, অ্যাসপিরিন কার্ডিওপ্রোটেকশন)।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.05', 'metabolism.chapter.06'],
+      lessonId: 'topic.metabolism.phospholipids-sphingolipids-eicosanoids',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.26',
+      order: 26,
+      groupId: 'metabolism.nitrogen',
+      slug: 'protein-turnover-proteasome-autophagy',
+      title: l(
+        '26 · Protein Turnover, Proteasomes, Autophagy & Amino Acid Pools',
+        '২৬ · প্রোটিন রূপান্তর, প্রোটিওসোম, অটোফ্যাজি ও অ্যামিনো অ্যাসিড পুল'
+      ),
+      summary: l(
+        'The E1-E2-E3 ubiquitin cascade, 26S proteasome structural biology and bortezomib pharmacology, macroautophagy and LC3 lipidation, chaperone-mediated autophagy (CMA), lysosomal amino acid sensing (Sestrin2, Rag, mTORC1), and whole-body nitrogen buffering.',
+        'E1-E2-E3 ইউবিকুইটিন ক্যাসকেড, ২৬এস প্রোটিওসোম গঠন ও বরটেজোমিব ফার্মাকোলজি, ম্যাক্রোঅটোফ্যাজি ও LC3 লিপিডেশন, চ্যাপেরন-চালিত অটোফ্যাজি (CMA), লাইসোসোমাল mTORC1 পুষ্টি সংবেদন এবং সার্বিক নাইট্রোজেন ভারসাম্য।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.09', 'metabolism.chapter.10'],
+      lessonId: 'topic.metabolism.protein-turnover-proteasome-autophagy',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.27',
+      order: 27,
+      groupId: 'metabolism.nitrogen',
+      slug: 'one-carbon-methylation-transsulfuration',
+      title: l(
+        '27 · One-Carbon Metabolism, Methylation & Transsulfuration',
+        '২৭ · এক-কার্বন বিপাক, মিথাইলেশন ও ট্রান্সসালফারেশন'
+      ),
+      summary: l(
+        'Mitochondrial formate shuttle and cytosolic folate cycle, MTHFR kinetics and the B12 methyl trap, methionine synthase, SAM-driven epigenetics, hepatic BHMT bypass, CBS-CSE transsulfuration to glutathione, MTHFR C677T polymorphism, and classical homocystinuria.',
+        'মাইটোকন্ড্রিয়াল ফরমেট শাটল ও সাইটোসোলিক ফোলেট চক্র, MTHFR গতিবিদ্যা ও ভিটামিন বি১২ মিথাইল ট্র্যাপ, মেথিওনিন সিন্থেস, SAM-চালিত এপিজেনেটিক্স, হেপাটিক BHMT বাইপাস, CBS-CSE দ্বারা গ্লুটাথিয়ন উৎপাদন এবং ক্লাসিক্যাল হোমোকসিস্টিনুরিয়া।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.09', 'metabolism.chapter.11'],
+      lessonId: 'topic.metabolism.one-carbon-methylation-transsulfuration',
+      estimatedMinutes: 50,
+    },
   ],
 }

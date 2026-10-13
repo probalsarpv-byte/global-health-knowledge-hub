@@ -10,6 +10,7 @@ import {
   batch3MetabolismChapters,
   batch4MetabolismChapters,
   batch5MetabolismChapters,
+  batch6MetabolismChapters,
   allCompletedMetabolismChapters,
 } from '../../content/chapters/chapterRegistry'
 import { lessons } from '../../content/lessons'
@@ -18,9 +19,9 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Human Metabolism Academy curriculum and all 18 Chapters (Batches 1–5 complete, 100% available)', () => {
-  it('defines an ordered 18-chapter curriculum with all Batches 1–5 available across 5 thematic groups', () => {
-    expect(metabolismCurriculum.chapters).toHaveLength(18)
+describe('Human Metabolism Academy curriculum and all 27 Chapters (Batches 1–6 complete, 100% available)', () => {
+  it('defines an ordered 27-chapter curriculum with all Batches 1–6 available across 5 thematic groups', () => {
+    expect(metabolismCurriculum.chapters).toHaveLength(27)
     expect(metabolismCurriculum.groups.map((group) => group.id)).toEqual([
       'metabolism.foundations',
       'metabolism.lipids',
@@ -29,11 +30,11 @@ describe('Human Metabolism Academy curriculum and all 18 Chapters (Batches 1–5
       'metabolism.clinical',
     ])
     expect(metabolismCurriculum.chapters.map((chapter) => chapter.order)).toEqual(
-      Array.from({ length: 18 }, (_, index) => index + 1)
+      Array.from({ length: 27 }, (_, index) => index + 1)
     )
 
     const availableChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(18)
+    expect(availableChapters).toHaveLength(27)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'metabolism.chapter.01',
       'metabolism.chapter.02',
@@ -53,19 +54,29 @@ describe('Human Metabolism Academy curriculum and all 18 Chapters (Batches 1–5
       'metabolism.chapter.16',
       'metabolism.chapter.17',
       'metabolism.chapter.18',
+      'metabolism.chapter.19',
+      'metabolism.chapter.20',
+      'metabolism.chapter.21',
+      'metabolism.chapter.22',
+      'metabolism.chapter.23',
+      'metabolism.chapter.24',
+      'metabolism.chapter.25',
+      'metabolism.chapter.26',
+      'metabolism.chapter.27',
     ])
 
     const plannedChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
     expect(plannedChapters).toHaveLength(0)
   })
 
-  it('validates complete bilingual Batch 1, Batch 2, Batch 3, Batch 4, and Batch 5 records, paragraph lengths (>=120 chars), and scientific citations', () => {
+  it('validates complete bilingual Batch 1, Batch 2, Batch 3, Batch 4, Batch 5, and Batch 6 records, paragraph lengths (>=120 chars), and scientific citations', () => {
     expect(batch1MetabolismChapters).toHaveLength(4)
     expect(batch2MetabolismChapters).toHaveLength(4)
     expect(batch3MetabolismChapters).toHaveLength(4)
     expect(batch4MetabolismChapters).toHaveLength(3)
     expect(batch5MetabolismChapters).toHaveLength(3)
-    expect(allCompletedMetabolismChapters).toHaveLength(18)
+    expect(batch6MetabolismChapters).toHaveLength(9)
+    expect(allCompletedMetabolismChapters).toHaveLength(27)
     const issues = validateLessons([...lessons, ...allCompletedChapters, ...allCompletedMetabolismChapters])
     expect(issues).toEqual([])
 
@@ -97,7 +108,7 @@ describe('Human Metabolism Academy curriculum and all 18 Chapters (Batches 1–5
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'Metabolism curriculum' })).toBeInTheDocument()
-    expect(screen.getByText(/18 \/ 18 chapters available/i)).toBeInTheDocument()
+    expect(screen.getByText(/27 \/ 27 chapters available/i)).toBeInTheDocument()
     expect(screen.getByText(/01 · Introduction to Human Metabolism & Bioenergetics/i)).toBeInTheDocument()
     expect(screen.getByText(/05 · Fatty Acid Beta-Oxidation & Ketogenesis/i)).toBeInTheDocument()
     expect(screen.getByText(/09 · Amino Acid Catabolism & Urea Cycle/i)).toBeInTheDocument()
@@ -570,6 +581,165 @@ describe('Human Metabolism Academy curriculum and all 18 Chapters (Batches 1–5
       name: /Accumulation of intracellular sn-1,2-diacylglycerol \(DAG\) activating novel PKC isoforms/i,
     })
     await user.click(pkcOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 19 (Enzyme Kinetics) and operates 3D multi-organ explorer, MM node and MCA assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/enzyme-kinetics-control')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '19 · Enzyme Kinetics, Inhibition & Metabolic Control Analysis' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Catalytic Enzyme/i)).toBeInTheDocument()
+
+    const node1 = screen.getByRole('button', {
+      name: /1\. Michaelis-Menten Hyperbolic Steady State/i,
+    })
+    await user.click(node1)
+    expect(screen.getByText(/rectangular hyperbola/i)).toBeInTheDocument()
+
+    const mcaOption = screen.getByRole('radio', {
+      name: /Pure noncompetitive inhibition/i,
+    })
+    await user.click(mcaOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 20 (Compartmentation & Shuttles) and operates 3D multi-organ explorer and assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/cellular-compartmentation-shuttles')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '20 · Cellular Compartmentation, Metabolite Transport & Shuttle Systems' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Metabolite Shuttles/i)).toBeInTheDocument()
+
+    const shuttleOption = screen.getByRole('radio', {
+      name: /ABCD1 \(Adrenoleukodystrophy protein\) in the peroxisomal membrane/i,
+    })
+    await user.click(shuttleOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 21 (Pentose Phosphate Pathway) and operates 3D explorer and G6PD assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/pentose-phosphate-pathway')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '21 · Pentose Phosphate Pathway & NADPH Generation' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Pentose Phosphate/i)).toBeInTheDocument()
+
+    const g6pdOption = screen.getByRole('radio', {
+      name: /G6PD deficiency causing inability to regenerate NADPH/i,
+    })
+    await user.click(g6pdOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 22 (Alternative Sugars) and operates 3D explorer and fructolysis assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/fructose-galactose-alternative-sugars')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '22 · Fructose, Galactose & Alternative Sugar Metabolism' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Non-Glucose Sugar/i)).toBeInTheDocument()
+
+    const khcOption = screen.getByRole('radio', {
+      name: /Aldolase B deficiency/i,
+    })
+    await user.click(khcOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 23 (Lactate Shuttle & Cori Cycle) and operates 3D explorer and lactate assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/lactate-cori-glucose-alanine')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '23 · Lactate Metabolism, Cori Cycle & Glucose–Alanine Cycle' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Inter-Tissue Lactate/i)).toBeInTheDocument()
+
+    const lactateOption = screen.getByRole('radio', {
+      name: /Type B2 lactic acidosis \(MALA\)/i,
+    })
+    await user.click(lactateOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 24 (Lipid Digestion & Chylomicrons) and operates 3D explorer and abetalipoproteinemia assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/lipid-digestion-chylomicrons')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '24 · Intestinal Lipid Digestion, Absorption & Chylomicron Assembly' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Intestinal Lipid Digestion/i)).toBeInTheDocument()
+
+    const mtpOption = screen.getByRole('radio', {
+      name: /Abetalipoproteinemia/i,
+    })
+    await user.click(mtpOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 25 (Phospholipids & Eicosanoids) and operates 3D explorer and aspirin assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/phospholipids-sphingolipids-eicosanoids')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '25 · Phospholipid, Sphingolipid & Eicosanoid Metabolism' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Phospholipid/i)).toBeInTheDocument()
+
+    const aspirinOption = screen.getByRole('radio', {
+      name: /Irreversible acetylation of platelet COX-1 Ser529 in anucleate cells/i,
+    })
+    await user.click(aspirinOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 26 (Proteostasis & Autophagy) and operates 3D explorer and bortezomib assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/protein-turnover-proteasome-autophagy')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '26 · Protein Turnover, Proteasomes, Autophagy & Amino Acid Pools' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Proteostasis/i)).toBeInTheDocument()
+
+    const borteOption = screen.getByRole('radio', {
+      name: /Beta-5 subunit \(PSMB5\) responsible for chymotrypsin-like proteolytic cleavage/i,
+    })
+    await user.click(borteOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 27 (One-Carbon & Transsulfuration) and operates 3D explorer and folate trap assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/one-carbon-methylation-transsulfuration')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '27 · One-Carbon Metabolism, Methylation & Transsulfuration' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of One-Carbon Metabolism/i)).toBeInTheDocument()
+
+    const folateTrapOption = screen.getByRole('radio', {
+      name: /Because the MTHFR reaction reducing 5,10-methylene-THF to 5-methyl-THF is irreversible/i,
+    })
+    await user.click(folateTrapOption)
     expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
   })
 })

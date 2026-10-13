@@ -45,6 +45,15 @@ import { metabolism15OrganSpecializationLesson } from './metabolism15OrganSpecia
 import { metabolism16MicronutrientsCofactorsLesson } from './metabolism16MicronutrientsCofactors'
 import { metabolism17InbornErrorsLesson } from './metabolism17InbornErrors'
 import { metabolism18MetabolicDiseaseLesson } from './metabolism18MetabolicDisease'
+import { metabolism19EnzymeKineticsLesson } from './metabolism19EnzymeKinetics'
+import { metabolism20CompartmentationShuttlesLesson } from './metabolism20CompartmentationShuttles'
+import { metabolism21PentosePhosphateLesson } from './metabolism21PentosePhosphate'
+import { metabolism22AlternativeSugarsLesson } from './metabolism22AlternativeSugars'
+import { metabolism23LactateShuttleCoriLesson } from './metabolism23LactateShuttleCori'
+import { metabolism24LipidDigestionChylomicronsLesson } from './metabolism24LipidDigestionChylomicrons'
+import { metabolism25ComplexLipidsEicosanoidsLesson } from './metabolism25ComplexLipidsEicosanoids'
+import { metabolism26ProteostasisAutophagyLesson } from './metabolism26ProteostasisAutophagy'
+import { metabolism27OneCarbonMethylationLesson } from './metabolism27OneCarbonMethylation'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -201,12 +210,25 @@ export const batch5MetabolismChapters: LessonTopic[] = [
   metabolism18MetabolicDiseaseLesson,
 ]
 
+export const batch6MetabolismChapters: LessonTopic[] = [
+  metabolism19EnzymeKineticsLesson,
+  metabolism20CompartmentationShuttlesLesson,
+  metabolism21PentosePhosphateLesson,
+  metabolism22AlternativeSugarsLesson,
+  metabolism23LactateShuttleCoriLesson,
+  metabolism24LipidDigestionChylomicronsLesson,
+  metabolism25ComplexLipidsEicosanoidsLesson,
+  metabolism26ProteostasisAutophagyLesson,
+  metabolism27OneCarbonMethylationLesson,
+]
+
 export const allCompletedMetabolismChapters: LessonTopic[] = [
   ...batch1MetabolismChapters,
   ...batch2MetabolismChapters,
   ...batch3MetabolismChapters,
   ...batch4MetabolismChapters,
   ...batch5MetabolismChapters,
+  ...batch6MetabolismChapters,
 ]
 
 export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
@@ -228,6 +250,15 @@ export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
   [metabolism16MicronutrientsCofactorsLesson.id]: metabolism16MicronutrientsCofactorsLesson,
   [metabolism17InbornErrorsLesson.id]: metabolism17InbornErrorsLesson,
   [metabolism18MetabolicDiseaseLesson.id]: metabolism18MetabolicDiseaseLesson,
+  [metabolism19EnzymeKineticsLesson.id]: metabolism19EnzymeKineticsLesson,
+  [metabolism20CompartmentationShuttlesLesson.id]: metabolism20CompartmentationShuttlesLesson,
+  [metabolism21PentosePhosphateLesson.id]: metabolism21PentosePhosphateLesson,
+  [metabolism22AlternativeSugarsLesson.id]: metabolism22AlternativeSugarsLesson,
+  [metabolism23LactateShuttleCoriLesson.id]: metabolism23LactateShuttleCoriLesson,
+  [metabolism24LipidDigestionChylomicronsLesson.id]: metabolism24LipidDigestionChylomicronsLesson,
+  [metabolism25ComplexLipidsEicosanoidsLesson.id]: metabolism25ComplexLipidsEicosanoidsLesson,
+  [metabolism26ProteostasisAutophagyLesson.id]: metabolism26ProteostasisAutophagyLesson,
+  [metabolism27OneCarbonMethylationLesson.id]: metabolism27OneCarbonMethylationLesson,
 }
 
 export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
@@ -249,6 +280,15 @@ export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
   [metabolism16MicronutrientsCofactorsLesson.slug]: metabolism16MicronutrientsCofactorsLesson,
   [metabolism17InbornErrorsLesson.slug]: metabolism17InbornErrorsLesson,
   [metabolism18MetabolicDiseaseLesson.slug]: metabolism18MetabolicDiseaseLesson,
+  [metabolism19EnzymeKineticsLesson.slug]: metabolism19EnzymeKineticsLesson,
+  [metabolism20CompartmentationShuttlesLesson.slug]: metabolism20CompartmentationShuttlesLesson,
+  [metabolism21PentosePhosphateLesson.slug]: metabolism21PentosePhosphateLesson,
+  [metabolism22AlternativeSugarsLesson.slug]: metabolism22AlternativeSugarsLesson,
+  [metabolism23LactateShuttleCoriLesson.slug]: metabolism23LactateShuttleCoriLesson,
+  [metabolism24LipidDigestionChylomicronsLesson.slug]: metabolism24LipidDigestionChylomicronsLesson,
+  [metabolism25ComplexLipidsEicosanoidsLesson.slug]: metabolism25ComplexLipidsEicosanoidsLesson,
+  [metabolism26ProteostasisAutophagyLesson.slug]: metabolism26ProteostasisAutophagyLesson,
+  [metabolism27OneCarbonMethylationLesson.slug]: metabolism27OneCarbonMethylationLesson,
 }
 
 export function getMetabolismChapterLesson(identifier?: string): LessonTopic | undefined {

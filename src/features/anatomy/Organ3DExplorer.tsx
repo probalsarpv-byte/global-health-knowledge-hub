@@ -923,7 +923,7 @@ export function Organ3DExplorer({ explorer, locale, onSectionSelect }: Organ3DEx
                     className="tab-content"
                   >
                     <h4>{isBn ? 'স্থানিক সম্পর্ক ও অ্যানাটমিক্যাল অবস্থান' : 'Spatial Relations & Orientation'}</h4>
-                    <p>{selectedOrgan.spatialRelations[lang]}</p>
+                    <p>{selectedOrgan.spatialRelations ? selectedOrgan.spatialRelations[lang] : selectedOrgan.description[lang]}</p>
                     <div className="orientation-metric-grid">
                       <div className="metric-box">
                         <small>{isBn ? 'দেহগহ্বর' : 'Body Cavity'}</small>

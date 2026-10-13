@@ -51,7 +51,7 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
 
     <section className="lesson-depth" aria-label={label('Choose lesson depth', 'পাঠের গভীরতা বাছুন')}><h2>{label('Explore by depth', 'শেখার স্তর')}</h2><div className="lesson-depth-tabs" role="group" aria-label={label('Content depth', 'বিষয়বস্তুর গভীরতা')}>{depthOrder.map((item) => <button type="button" key={item} aria-pressed={depth === item} onClick={() => setDepth(item)}>{contentLabel(lesson.levels[item].label)}</button>)}</div></section>
 
-    {chapter && chapter.organelles.length > 0 && <CellOrganelleDiagram chapter={chapter} locale={lang} onSectionSelect={jumpTo} />}
+    {chapter && Boolean(chapter.organelles?.length) && <CellOrganelleDiagram chapter={chapter} locale={lang} onSectionSelect={jumpTo} />}
     {lesson.organ3DExplorer && <Organ3DExplorer explorer={lesson.organ3DExplorer} locale={lang} onSectionSelect={jumpTo} />}
     {lesson.anatomyExplorer && <AnatomyExplorer explorer={lesson.anatomyExplorer} locale={lang} onSectionSelect={jumpTo} />}
     {lesson.interactiveDiagram && (lesson.subject === 'metabolism' ? (
