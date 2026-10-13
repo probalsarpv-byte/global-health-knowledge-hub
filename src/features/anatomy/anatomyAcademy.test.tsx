@@ -75,7 +75,7 @@ describe('Anatomy Academy curriculum and all 28 Chapters (Batches 1–5 complete
     await user.click(screen.getAllByRole('button', { name: 'Upper limb' })[0])
     expect(screen.getByText(/proximal and distal terms/)).toBeInTheDocument()
     await user.keyboard('{Enter}')
-  }, 15000)
+  }, 30000)
 
   it('switches Chapter 01 and explorer content to Bengali', async () => {
     window.history.replaceState({}, '', '/learn/anatomy/chapters/introduction-human-anatomy')

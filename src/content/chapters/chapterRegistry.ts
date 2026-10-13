@@ -79,6 +79,10 @@ import { nutrition13IronBiologyLesson } from './nutrition13IronBiology'
 import { nutrition14GutBarrierLesson } from './nutrition14GutBarrier'
 import { nutrition15GutMicrobiomeLesson } from './nutrition15GutMicrobiome'
 import { nutrition16PrebioticsProbioticsLesson } from './nutrition16PrebioticsProbiotics'
+import { nutrition17FoodIntolerancesAllergiesLesson } from './nutrition17FoodIntolerancesAllergies'
+import { nutrition18ObesityT2DMNTLesson } from './nutrition18ObesityT2DMNT'
+import { nutrition19CardiovascularDieteticsLesson } from './nutrition19CardiovascularDietetics'
+import { nutrition20RenalNutritionCKDLesson } from './nutrition20RenalNutritionCKD'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -373,6 +377,10 @@ export const allNutritionLessonsMap: Record<string, LessonTopic> = {
   [nutrition14GutBarrierLesson.id]: nutrition14GutBarrierLesson,
   [nutrition15GutMicrobiomeLesson.id]: nutrition15GutMicrobiomeLesson,
   [nutrition16PrebioticsProbioticsLesson.id]: nutrition16PrebioticsProbioticsLesson,
+  [nutrition17FoodIntolerancesAllergiesLesson.id]: nutrition17FoodIntolerancesAllergiesLesson,
+  [nutrition18ObesityT2DMNTLesson.id]: nutrition18ObesityT2DMNTLesson,
+  [nutrition19CardiovascularDieteticsLesson.id]: nutrition19CardiovascularDieteticsLesson,
+  [nutrition20RenalNutritionCKDLesson.id]: nutrition20RenalNutritionCKDLesson,
 }
 
 export const allNutritionLessonsBySlug: Record<string, LessonTopic> = {
@@ -392,6 +400,10 @@ export const allNutritionLessonsBySlug: Record<string, LessonTopic> = {
   [nutrition14GutBarrierLesson.slug]: nutrition14GutBarrierLesson,
   [nutrition15GutMicrobiomeLesson.slug]: nutrition15GutMicrobiomeLesson,
   [nutrition16PrebioticsProbioticsLesson.slug]: nutrition16PrebioticsProbioticsLesson,
+  [nutrition17FoodIntolerancesAllergiesLesson.slug]: nutrition17FoodIntolerancesAllergiesLesson,
+  [nutrition18ObesityT2DMNTLesson.slug]: nutrition18ObesityT2DMNTLesson,
+  [nutrition19CardiovascularDieteticsLesson.slug]: nutrition19CardiovascularDieteticsLesson,
+  [nutrition20RenalNutritionCKDLesson.slug]: nutrition20RenalNutritionCKDLesson,
 }
 
 export function getNutritionChapterLesson(identifier?: string): LessonTopic | undefined {
@@ -431,11 +443,19 @@ export const batch4NutritionChapters: LessonTopic[] = [
   nutrition16PrebioticsProbioticsLesson,
 ]
 
+export const batch5NutritionChapters: LessonTopic[] = [
+  nutrition17FoodIntolerancesAllergiesLesson,
+  nutrition18ObesityT2DMNTLesson,
+  nutrition19CardiovascularDieteticsLesson,
+  nutrition20RenalNutritionCKDLesson,
+]
+
 export const allCompletedNutritionChapters: LessonTopic[] = [
   ...batch1NutritionChapters,
   ...batch2NutritionChapters,
   ...batch3NutritionChapters,
   ...batch4NutritionChapters,
+  ...batch5NutritionChapters,
 ]
 
 

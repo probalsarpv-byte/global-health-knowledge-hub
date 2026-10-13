@@ -365,9 +365,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Lactase persistence genetics versus secondary deficiency, IgE-mediated type I hypersensitivity, tissue transglutaminase 2 (tTG) autoantibodies in HLA-DQ2/8 Celiac enteropathy, and NCGS.',
         'ল্যাকটেজ জিনের বংশগতি বনাম অর্জিত ঘাটতি, আইজিই-নির্ভর খাদ্য অ্যালার্জি, সিলিয়াক রোগে টিস্যু ট্রান্সগ্লুটামিনেজ-২ অ্যান্টিবডি ও অন্ত্রের ক্ষতি এবং নন-সিলিয়াক সংবেদনশীলতা।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.14'],
+      lessonId: 'topic.nutrition.food-intolerances-celiac-allergy',
       estimatedMinutes: 65,
     },
 
@@ -382,9 +383,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Hypertrophic adipocyte lipotoxicity, ectopic hepatic and skeletal muscle diacylglycerols, ADA/EASD evidence-based MNT, carbohydrate distribution, hypocaloric diet remission, and GLP-1 MNT synergy.',
         'চর্বি কোষের প্রদাহ ও লিপোটক্সিসিটি, যকৃতে চর্বি জমা, ডায়াবেটিসের আধুনিক প্রমাণভিত্তিক পুষ্টি থেরাপি, কার্বোহাইড্রেট বিন্যাস এবং নিয়ন্ত্রিত খাদ্যাভ্যাসে রোগমুক্তি।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.03', 'nutrition.chapter.07'],
+      lessonId: 'topic.nutrition.nutrition-obesity-t2d-mnt',
       estimatedMinutes: 70,
     },
     {
@@ -397,9 +399,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'ApoB particles and endothelial retention, dietary SFA modulation of hepatic LDL receptor clearance, DASH sodium-potassium hemodynamics, and Mediterranean PREDIMED trial lipidology.',
         'রক্তনালিতে এপোবি কণার সঞ্চয়ন, খাদ্যের সম্পৃক্ত চর্বির প্রভাবে এলডিএল রিসেপ্টর নিয়ন্ত্রণ, ড্যাশ ডায়েটের রক্তচাপ নিয়ন্ত্রণ ব্যবস্থা এবং ভূমধ্যসাগরীয় খাদ্যাভ্যাসের বৈজ্ঞানিক ভিত্তি।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.05', 'nutrition.chapter.08'],
+      lessonId: 'topic.nutrition.cardiovascular-dietetics-dash-mediterranean',
       estimatedMinutes: 70,
     },
     {
@@ -412,9 +415,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Glomerular hyperfiltration dynamics, dietary protein restriction in non-dialysis CKD, phosphorus binders, FGF23-Klotho axis, and hyperkalemia nutritional management in ESRD.',
         'কিডনির গ্লোমেরুলার চাপ নিয়ন্ত্রণ, ডায়ালাইসিস-পূর্ববর্তী প্রোটিন নিয়ন্ত্রণ, খাদ্য থেকে ফসফেট অপসারণ, এফজিএফ২৩ সংকেত এবং জটিল কিডনি রোগে পটাশিয়াম ব্যবস্থাপনা।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.06', 'nutrition.chapter.12'],
+      lessonId: 'topic.nutrition.renal-nutrition-ckd-mnt',
       estimatedMinutes: 65,
     },
     {

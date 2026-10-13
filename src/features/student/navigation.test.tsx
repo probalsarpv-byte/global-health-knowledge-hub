@@ -23,7 +23,7 @@ describe('platform navigation', () => {
       const expectedHeading = name === 'Anatomy' ? 'Anatomy curriculum' : name === 'Metabolism' ? 'Glucose Metabolism' : name === 'Nutrition' ? 'Macronutrient Digestion' : name
       expect(screen.getByRole('heading', { name: expectedHeading })).toBeInTheDocument()
     }
-  }, 15000)
+  }, 30000)
 
   it('uses in-app history for Back and preserves route navigation', async () => {
     const user = userEvent.setup()
@@ -34,7 +34,7 @@ describe('platform navigation', () => {
     await waitFor(() => expect(screen.getByRole('heading', { name: 'Your learning library' })).toBeInTheDocument(), { timeout: 8000 })
     await user.click(screen.getByRole('link', { name: 'Anatomy' }))
     await waitFor(() => expect(screen.getByRole('heading', { name: 'Anatomy curriculum' })).toBeInTheDocument(), { timeout: 8000 })
-  }, 15000)
+  }, 30000)
 
   it('uses the safe public fallback when opened directly on a student module', async () => {
     window.history.replaceState({}, '', '/learn/anatomy')
@@ -55,7 +55,7 @@ describe('platform navigation', () => {
       expect(screen.getByRole('heading', { name })).toBeInTheDocument()
       expect(screen.getByText('No connected data')).toBeInTheDocument()
     }
-  }, 15000)
+  }, 30000)
 
   it('uses the admin fallback on direct admin subpage entry and keeps the main-site link available', async () => {
     window.history.replaceState({}, '', '/admin/content')

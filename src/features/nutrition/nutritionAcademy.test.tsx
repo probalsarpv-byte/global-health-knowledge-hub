@@ -9,6 +9,7 @@ import {
   batch2NutritionChapters,
   batch3NutritionChapters,
   batch4NutritionChapters,
+  batch5NutritionChapters,
   allCompletedNutritionChapters,
   allCompletedChapters,
   allCompletedMetabolismChapters,
@@ -18,8 +19,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 3 & 4 Chapters', () => {
-  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1, 2, 3 & 4 (16 chapters) available', () => {
+describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 3, 4 & 5 Chapters', () => {
+  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1, 2, 3, 4 & 5 (20 chapters) available', () => {
     expect(nutritionCurriculum.chapters).toHaveLength(26)
     expect(nutritionCurriculum.groups.map((group) => group.id)).toEqual([
       'nutrition.foundations',
@@ -34,7 +35,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     )
 
     const availableChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(16)
+    expect(availableChapters).toHaveLength(20)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'nutrition.chapter.01',
       'nutrition.chapter.02',
@@ -52,18 +53,23 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
       'nutrition.chapter.14',
       'nutrition.chapter.15',
       'nutrition.chapter.16',
+      'nutrition.chapter.17',
+      'nutrition.chapter.18',
+      'nutrition.chapter.19',
+      'nutrition.chapter.20',
     ])
 
     const plannedChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(10)
+    expect(plannedChapters).toHaveLength(6)
   })
 
-  it('validates all Batches 1, 2, 3 & 4 Nutrition chapters using the strict lesson schema validator', () => {
+  it('validates all Batches 1, 2, 3, 4 & 5 Nutrition chapters using the strict lesson schema validator', () => {
     expect(batch1NutritionChapters).toHaveLength(4)
     expect(batch2NutritionChapters).toHaveLength(4)
     expect(batch3NutritionChapters).toHaveLength(4)
     expect(batch4NutritionChapters).toHaveLength(4)
-    expect(allCompletedNutritionChapters).toHaveLength(16)
+    expect(batch5NutritionChapters).toHaveLength(4)
+    expect(allCompletedNutritionChapters).toHaveLength(20)
 
     const issues = validateLessons([
       ...lessons,
@@ -80,7 +86,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     render(<App />)
 
     expect(await screen.findByRole('heading', { name: 'Nutrition & dietetics curriculum' })).toBeInTheDocument()
-    expect(screen.getByText('16 / 26 chapters available')).toBeInTheDocument()
+    expect(screen.getByText('20 / 26 chapters available')).toBeInTheDocument()
 
     // Chapter 01 and Chapter 04 visible initially
     expect(screen.getByText(/01 · Energy Balance, Basal Metabolic Rate/)).toBeInTheDocument()
@@ -419,7 +425,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     expect(screen.getAllByText(/CutC\/D cleaves dietary choline into Trimethylamine/i).length).toBeGreaterThanOrEqual(1)
   })
 
-  it('navigates to Chapter 16 (Prebiotics & Probiotics) and inspects next planned chapter indicator', async () => {
+  it('navigates to Chapter 16 (Prebiotics & Probiotics) and inspects link to Chapter 17', async () => {
     window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/prebiotics-probiotics-dysbiosis')
     render(<App />)
 
@@ -436,9 +442,93 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     }
     expect(screen.getAllByText(/Phase 1 eliminates gas-distending fermentable oligosaccharides/i).length).toBeGreaterThanOrEqual(1)
 
-    // Next chapter is Chapter 17 (planned)
+    // Next chapter is Chapter 17 (available)
+    expect(screen.getByRole('link', { name: /17 · Food Intolerances/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 17 (Food Intolerances & Celiac Disease) and operates tTG-2 deamidation node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/food-intolerances-celiac-allergy')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '17 · Food Intolerances, Non-Celiac Gluten Sensitivity, Celiac Disease & Food Allergies',
+      })
+    ).toBeInTheDocument()
+
+    // Operate tTG-2 node
+    const ttgBtns = screen.getAllByRole('button', { name: /tTG-2 Deamidation/i })
+    for (const btn of ttgBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Indigestible 33-mer gliadin traverses the epithelial barrier/i).length).toBeGreaterThanOrEqual(1)
+
+    // Link to Chapter 18
+    expect(screen.getByRole('link', { name: /18 · Nutritional Management of Obesity/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 18 (Obesity & T2D MNT) and operates DiRECT remission node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/nutrition-obesity-t2d-mnt')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '18 · Nutritional Management of Obesity, Insulin Resistance & Type 2 Diabetes',
+      })
+    ).toBeInTheDocument()
+
+    // Operate DiRECT Remission node
+    const directBtns = screen.getAllByRole('button', { name: /DiRECT Remission Rescue/i })
+    for (const btn of directBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Sustained hypocaloric energy deficit clears ectopic hepatic and pancreatic triglycerides/i).length).toBeGreaterThanOrEqual(1)
+
+    // Link to Chapter 19
+    expect(screen.getByRole('link', { name: /19 · Cardiovascular Dietetics/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 19 (Cardiovascular Dietetics) and operates ApoB retention node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/cardiovascular-dietetics-dash-mediterranean')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '19 · Cardiovascular Dietetics: Atherosclerosis, Dyslipidemia & Hypertension',
+      })
+    ).toBeInTheDocument()
+
+    // Operate ApoB retention node
+    const apobBtns = screen.getAllByRole('button', { name: /ApoB Particle Retention/i })
+    for (const btn of apobBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Circulating ApoB particles enter subendothelial intima/i).length).toBeGreaterThanOrEqual(1)
+
+    // Link to Chapter 20
+    expect(screen.getByRole('link', { name: /20 · Renal Nutrition/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 20 (Renal Nutrition & CKD MNT) and operates FGF23 mineral axis node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/renal-nutrition-ckd-mnt')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '20 · Renal Nutrition: Chronic Kidney Disease & Glomerular Filtration',
+      })
+    ).toBeInTheDocument()
+
+    // Operate FGF23 node
+    const fgfBtns = screen.getAllByRole('button', { name: /FGF23 Osteocyte Axis/i })
+    for (const btn of fgfBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Early phosphate retention drives osteocyte FGF23 secretion/i).length).toBeGreaterThanOrEqual(1)
+
+    // Next chapter is Chapter 21 (planned)
     expect(screen.getByText(/Next release/i)).toBeInTheDocument()
-    expect(screen.getByText(/17 · Food Intolerances/i)).toBeInTheDocument()
+    expect(screen.getByText(/21 · Hepatobiliary/i)).toBeInTheDocument()
     expect(screen.getByText('Planned chapter')).toBeInTheDocument()
   })
 
