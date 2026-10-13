@@ -11,6 +11,7 @@ import {
   batch4MetabolismChapters,
   batch5MetabolismChapters,
   batch6MetabolismChapters,
+  batch7MetabolismChapters,
   allCompletedMetabolismChapters,
 } from '../../content/chapters/chapterRegistry'
 import { lessons } from '../../content/lessons'
@@ -19,22 +20,23 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Human Metabolism Academy curriculum and all 27 Chapters (Batches 1–6 complete, 100% available)', () => {
-  it('defines an ordered 27-chapter curriculum with all Batches 1–6 available across 5 thematic groups', () => {
-    expect(metabolismCurriculum.chapters).toHaveLength(27)
+describe('Human Metabolism Academy curriculum and all 36 Chapters (Batches 1–7 complete, 100% available)', () => {
+  it('defines an ordered 36-chapter curriculum with all Batches 1–7 available across 6 thematic groups', () => {
+    expect(metabolismCurriculum.chapters).toHaveLength(36)
     expect(metabolismCurriculum.groups.map((group) => group.id)).toEqual([
       'metabolism.foundations',
       'metabolism.lipids',
       'metabolism.nitrogen',
       'metabolism.integration',
       'metabolism.clinical',
+      'metabolism.advanced',
     ])
     expect(metabolismCurriculum.chapters.map((chapter) => chapter.order)).toEqual(
-      Array.from({ length: 27 }, (_, index) => index + 1)
+      Array.from({ length: 36 }, (_, index) => index + 1)
     )
 
     const availableChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(27)
+    expect(availableChapters).toHaveLength(36)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'metabolism.chapter.01',
       'metabolism.chapter.02',
@@ -63,20 +65,30 @@ describe('Human Metabolism Academy curriculum and all 27 Chapters (Batches 1–6
       'metabolism.chapter.25',
       'metabolism.chapter.26',
       'metabolism.chapter.27',
+      'metabolism.chapter.28',
+      'metabolism.chapter.29',
+      'metabolism.chapter.30',
+      'metabolism.chapter.31',
+      'metabolism.chapter.32',
+      'metabolism.chapter.33',
+      'metabolism.chapter.34',
+      'metabolism.chapter.35',
+      'metabolism.chapter.36',
     ])
 
     const plannedChapters = metabolismCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
     expect(plannedChapters).toHaveLength(0)
   })
 
-  it('validates complete bilingual Batch 1, Batch 2, Batch 3, Batch 4, Batch 5, and Batch 6 records, paragraph lengths (>=120 chars), and scientific citations', () => {
+  it('validates complete bilingual Batch 1, Batch 2, Batch 3, Batch 4, Batch 5, Batch 6, and Batch 7 records, paragraph lengths (>=120 chars), and scientific citations', () => {
     expect(batch1MetabolismChapters).toHaveLength(4)
     expect(batch2MetabolismChapters).toHaveLength(4)
     expect(batch3MetabolismChapters).toHaveLength(4)
     expect(batch4MetabolismChapters).toHaveLength(3)
     expect(batch5MetabolismChapters).toHaveLength(3)
     expect(batch6MetabolismChapters).toHaveLength(9)
-    expect(allCompletedMetabolismChapters).toHaveLength(27)
+    expect(batch7MetabolismChapters).toHaveLength(9)
+    expect(allCompletedMetabolismChapters).toHaveLength(36)
     const issues = validateLessons([...lessons, ...allCompletedChapters, ...allCompletedMetabolismChapters])
     expect(issues).toEqual([])
 
@@ -108,7 +120,7 @@ describe('Human Metabolism Academy curriculum and all 27 Chapters (Batches 1–6
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'Metabolism curriculum' })).toBeInTheDocument()
-    expect(screen.getByText(/27 \/ 27 chapters available/i)).toBeInTheDocument()
+    expect(screen.getByText(/36 \/ 36 chapters available/i)).toBeInTheDocument()
     expect(screen.getByText(/01 · Introduction to Human Metabolism & Bioenergetics/i)).toBeInTheDocument()
     expect(screen.getByText(/05 · Fatty Acid Beta-Oxidation & Ketogenesis/i)).toBeInTheDocument()
     expect(screen.getByText(/09 · Amino Acid Catabolism & Urea Cycle/i)).toBeInTheDocument()
@@ -742,5 +754,74 @@ describe('Human Metabolism Academy curriculum and all 27 Chapters (Batches 1–6
     await user.click(folateTrapOption)
     expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
   })
+
+  it('navigates to Chapter 28 (Neurotransmitter Metabolism) and operates 3D explorer and assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/neurotransmitters-specialized-amines')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '28 · Neurotransmitters, Biogenic Amines & Neurochemistry' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Neurotransmitter/i)).toBeInTheDocument()
+
+    const aadcOption = screen.getByRole('radio', {
+      name: /Carbidopa selectively inhibits peripheral aromatic L-amino acid decarboxylase/i,
+    })
+    await user.click(aadcOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 34 (Cancer Reprogramming) and operates 3D explorer and assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/cancer-metabolic-reprogramming')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '34 · Cancer Metabolic Reprogramming & Oncometabolite Dynamics' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Cancer Metabolic Reprogramming/i)).toBeInTheDocument()
+
+    const pkm2Option = screen.getByRole('radio', {
+      name: /Dissociation of the highly active tetramer into the low-activity dimer/i,
+    })
+    await user.click(pkm2Option)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 35 (Flux & In Vivo Metabolomics) and operates 3D explorer and assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/flux-analysis-metabolomics')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '35 · Metabolic Flux Analysis, Stable Isotope Tracing & Metabolomics' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Mapping of Whole-Body Isotope Tracing/i)).toBeInTheDocument()
+
+    const fluxOption = screen.getByRole('radio', {
+      name: /The net rate of turnover of molecules per unit time and volume through a specific enzymatic step/i,
+    })
+    await user.click(fluxOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
+
+  it('navigates to Chapter 36 (Clinical Grand Rounds) and operates 3D explorer and assessment', async () => {
+    window.history.replaceState({}, '', '/learn/metabolism/chapters/clinical-cases-grand-rounds')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', { name: '36 · Clinical Grand Rounds: Acute Metabolic Emergencies & Inborn Errors' })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/3D Multi-Organ Landscape of Acute Metabolic Emergencies/i)).toBeInTheDocument()
+
+    const lacticOption = screen.getByRole('radio', {
+      name: /Combination of Type A lactic acidosis/i,
+    })
+    await user.click(lacticOption)
+    expect(screen.getByRole('status')).toHaveTextContent(/Correct\./i)
+  })
 })
+
 

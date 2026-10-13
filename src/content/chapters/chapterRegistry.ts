@@ -54,6 +54,15 @@ import { metabolism24LipidDigestionChylomicronsLesson } from './metabolism24Lipi
 import { metabolism25ComplexLipidsEicosanoidsLesson } from './metabolism25ComplexLipidsEicosanoids'
 import { metabolism26ProteostasisAutophagyLesson } from './metabolism26ProteostasisAutophagy'
 import { metabolism27OneCarbonMethylationLesson } from './metabolism27OneCarbonMethylation'
+import { metabolism28NeurotransmittersLesson } from './metabolism28Neurotransmitters'
+import { metabolism29GlutathioneRedoxLesson } from './metabolism29GlutathioneRedox'
+import { metabolism30MitochondrialDynamicsLesson } from './metabolism30MitochondrialDynamics'
+import { metabolism31ExerciseBioenergeticsLesson } from './metabolism31ExerciseBioenergetics'
+import { metabolism32CircadianMetabolismLesson } from './metabolism32CircadianMetabolism'
+import { metabolism33ImmunometabolismLesson } from './metabolism33Immunometabolism'
+import { metabolism34CancerReprogrammingLesson } from './metabolism34CancerReprogramming'
+import { metabolism35FluxMetabolomicsLesson } from './metabolism35FluxMetabolomics'
+import { metabolism36ClinicalCasesLesson } from './metabolism36ClinicalCases'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -222,6 +231,18 @@ export const batch6MetabolismChapters: LessonTopic[] = [
   metabolism27OneCarbonMethylationLesson,
 ]
 
+export const batch7MetabolismChapters: LessonTopic[] = [
+  metabolism28NeurotransmittersLesson,
+  metabolism29GlutathioneRedoxLesson,
+  metabolism30MitochondrialDynamicsLesson,
+  metabolism31ExerciseBioenergeticsLesson,
+  metabolism32CircadianMetabolismLesson,
+  metabolism33ImmunometabolismLesson,
+  metabolism34CancerReprogrammingLesson,
+  metabolism35FluxMetabolomicsLesson,
+  metabolism36ClinicalCasesLesson,
+]
+
 export const allCompletedMetabolismChapters: LessonTopic[] = [
   ...batch1MetabolismChapters,
   ...batch2MetabolismChapters,
@@ -229,6 +250,7 @@ export const allCompletedMetabolismChapters: LessonTopic[] = [
   ...batch4MetabolismChapters,
   ...batch5MetabolismChapters,
   ...batch6MetabolismChapters,
+  ...batch7MetabolismChapters,
 ]
 
 export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
@@ -259,6 +281,15 @@ export const allMetabolismLessonsMap: Record<string, LessonTopic> = {
   [metabolism25ComplexLipidsEicosanoidsLesson.id]: metabolism25ComplexLipidsEicosanoidsLesson,
   [metabolism26ProteostasisAutophagyLesson.id]: metabolism26ProteostasisAutophagyLesson,
   [metabolism27OneCarbonMethylationLesson.id]: metabolism27OneCarbonMethylationLesson,
+  [metabolism28NeurotransmittersLesson.id]: metabolism28NeurotransmittersLesson,
+  [metabolism29GlutathioneRedoxLesson.id]: metabolism29GlutathioneRedoxLesson,
+  [metabolism30MitochondrialDynamicsLesson.id]: metabolism30MitochondrialDynamicsLesson,
+  [metabolism31ExerciseBioenergeticsLesson.id]: metabolism31ExerciseBioenergeticsLesson,
+  [metabolism32CircadianMetabolismLesson.id]: metabolism32CircadianMetabolismLesson,
+  [metabolism33ImmunometabolismLesson.id]: metabolism33ImmunometabolismLesson,
+  [metabolism34CancerReprogrammingLesson.id]: metabolism34CancerReprogrammingLesson,
+  [metabolism35FluxMetabolomicsLesson.id]: metabolism35FluxMetabolomicsLesson,
+  [metabolism36ClinicalCasesLesson.id]: metabolism36ClinicalCasesLesson,
 }
 
 export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
@@ -289,6 +320,15 @@ export const allMetabolismLessonsBySlug: Record<string, LessonTopic> = {
   [metabolism25ComplexLipidsEicosanoidsLesson.slug]: metabolism25ComplexLipidsEicosanoidsLesson,
   [metabolism26ProteostasisAutophagyLesson.slug]: metabolism26ProteostasisAutophagyLesson,
   [metabolism27OneCarbonMethylationLesson.slug]: metabolism27OneCarbonMethylationLesson,
+  [metabolism28NeurotransmittersLesson.slug]: metabolism28NeurotransmittersLesson,
+  [metabolism29GlutathioneRedoxLesson.slug]: metabolism29GlutathioneRedoxLesson,
+  [metabolism30MitochondrialDynamicsLesson.slug]: metabolism30MitochondrialDynamicsLesson,
+  [metabolism31ExerciseBioenergeticsLesson.slug]: metabolism31ExerciseBioenergeticsLesson,
+  [metabolism32CircadianMetabolismLesson.slug]: metabolism32CircadianMetabolismLesson,
+  [metabolism33ImmunometabolismLesson.slug]: metabolism33ImmunometabolismLesson,
+  [metabolism34CancerReprogrammingLesson.slug]: metabolism34CancerReprogrammingLesson,
+  [metabolism35FluxMetabolomicsLesson.slug]: metabolism35FluxMetabolomicsLesson,
+  [metabolism36ClinicalCasesLesson.slug]: metabolism36ClinicalCasesLesson,
 }
 
 export function getMetabolismChapterLesson(identifier?: string): LessonTopic | undefined {

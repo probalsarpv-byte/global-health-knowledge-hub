@@ -81,6 +81,18 @@ export const metabolismCurriculum: MetabolismCurriculum = {
         'ভিটামিন কো-এনজাইম, জন্মগত বিপাকীয় ত্রুটি, মেটাবলিক সিন্ড্রোম, ইনসুলিন রেজিস্ট্যান্স, এমএএসএলডি এবং ক্লিনিক্যাল ল্যাবরেটরি মার্কার।'
       ),
     },
+    {
+      id: 'metabolism.advanced',
+      order: 6,
+      title: l(
+        'Advanced Systems Metabolism, Oncology & Clinical Grand Rounds',
+        'উচ্চতর সিস্টেম বিপাক, অনকোলজি ও ক্লিনিক্যাল গ্র্যান্ড রাউন্ডস'
+      ),
+      description: l(
+        'Neurotransmitter biogenesis, glutathione redox defenses, mitochondrial dynamics, exercise energetics, circadian metabolism, immunometabolism, cancer metabolic reprogramming, in vivo fluxomics, and clinical grand rounds.',
+        'নিউরোট্রান্সমিটার জৈবসংশ্লেষ, গ্লুটাথিয়ন রেডক্স প্রতিরক্ষা, মাইটোকন্ড্রিয়াল গতিবিদ্যা, ব্যায়ামের শক্তিবিজ্ঞান, বায়োলজিক্যাল রিদম, প্রতিরোধ-বিপাক, ক্যান্সার বিপাকীয় পুনর্গঠন, জীবন্ত ফ্লাক্সোমিক্স এবং ক্লিনিক্যাল গ্র্যান্ড রাউন্ডস।'
+      ),
+    },
   ],
   chapters: [
     // Group 1: Metabolic Foundations & Bioenergetics (Batch 1: Chapters 01–04 Available)
@@ -548,6 +560,179 @@ export const metabolismCurriculum: MetabolismCurriculum = {
       completionStatus: 'not-started',
       prerequisiteIds: ['metabolism.chapter.09', 'metabolism.chapter.11'],
       lessonId: 'topic.metabolism.one-carbon-methylation-transsulfuration',
+      estimatedMinutes: 50,
+    },
+
+    // Batch B: Systems Biology, Redox, Oncology & Capstone Grand Rounds (Chapters 28–36 Available)
+    {
+      id: 'metabolism.chapter.28',
+      order: 28,
+      groupId: 'metabolism.advanced',
+      slug: 'neurotransmitters-specialized-amines',
+      title: l(
+        '28 · Neurotransmitters, Biogenic Amines & Neurochemistry',
+        '২৮ · নিউরোট্রান্সমিটার, বায়োজেনিক অ্যামিন ও স্নায়ুরসায়ন'
+      ),
+      summary: l(
+        'Catecholamine synthesis via tyrosine hydroxylase (BH4) and PNMT, serotonin from tryptophan (TPH), histamine, GABA shunt, nitric oxide synthase (NOS) isoforms, and monoamine oxidase / COMT degradation pharmacology.',
+        'টাইরোসিন হাইড্রোক্সিলেজ (BH4) ও PNMT দ্বারা ক্যাটেকোলামাইন সংশ্লেষ, ট্রিপটোফ্যান থেকে সেরোটোনিন (TPH), হিস্টামিন, GABA শাট, নাইট্রিক অক্সাইড সিন্থেজ (NOS) এবং MAO/COMT ভাঙন ফার্মাকোলজি।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.10'],
+      lessonId: 'topic.metabolism.neurotransmitters-specialized-amines',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.29',
+      order: 29,
+      groupId: 'metabolism.advanced',
+      slug: 'glutathione-ros-redox-homeostasis',
+      title: l(
+        '29 · Glutathione, Reactive Oxygen Species & Cellular Redox Homeostasis',
+        '২৯ · গ্লুটাথিয়ন, প্রতিক্রিয়াশীল অক্সিজেন প্রজাতি ও কোষীয় রেডক্স ভারসাম্য'
+      ),
+      summary: l(
+        'Superoxide and hydrogen peroxide generation, SOD isoforms, 2-step GCL-GSS glutathione synthesis, glutathione peroxidase / reductase cycle, thioredoxin system, acetaminophen (NAPQI) toxicity, and ferroptosis prevention via GPX4.',
+        'সুপারঅক্সাইড ও হাইড্রোজেন পারঅক্সাইড উৎপাদন, SOD আইসোফর্ম, ২-ধাপের GCL-GSS গ্লুটাথিয়ন সংশ্লেষ, গ্লুটাথিয়ন পারঅক্সিডেজ/রিডাক্টেজ চক্র, থায়োরেডক্সিন ব্যবস্থা, প্যারাসিটামল (NAPQI) বিষক্রিয়া এবং GPX4 দ্বারা ফেরোপ্টোসিস প্রতিরোধ।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.21', 'metabolism.chapter.27'],
+      lessonId: 'topic.metabolism.glutathione-ros-redox-homeostasis',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.30',
+      order: 30,
+      groupId: 'metabolism.advanced',
+      slug: 'mitochondrial-dynamics-flexibility',
+      title: l(
+        '30 · Mitochondrial Dynamics, Mitophagy & Metabolic Flexibility',
+        '৩০ · মাইটোকন্ড্রিয়াল গতিবিদ্যা, মাইটোফ্যাজি ও বিপাকীয় নমনীয়তা'
+      ),
+      summary: l(
+        'Mitochondrial fission (DRP1, FIS1) and fusion (MFN1/2, OPA1), PINK1-Parkin quality control mitophagy, respiratory supercomplexes (respirasomes), uncoupling proteins (UCP1 thermogenesis), and Randle fatty acid-glucose cycle flexibility.',
+        'মাইটোকন্ড্রিয়াল বিভাজন (DRP1, FIS1) ও সংযোজন (MFN1/2, OPA1), PINK1-Parkin মাইটোফ্যাজি গুণমান নিয়ন্ত্রণ, শ্বাসযন্ত্রের সুপারকমপ্লেক্স, আনকপলিং প্রোটিন (UCP1 থার্মোজেনেসিস) এবং র‍্যান্ডল চক্রের বিপাকীয় নমনীয়তা।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.03', 'metabolism.chapter.26'],
+      lessonId: 'topic.metabolism.mitochondrial-dynamics-flexibility',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.31',
+      order: 31,
+      groupId: 'metabolism.advanced',
+      slug: 'exercise-bioenergetics-adaptation',
+      title: l(
+        '31 · Exercise Bioenergetics, Fatigue & Metabolic Adaptation',
+        '৩১ · ব্যায়ামের জৈবশক্তিবিজ্ঞান, ক্লান্তি ও বিপাকীয় অভিযোজন'
+      ),
+      summary: l(
+        'Temporal fuel continuum: phosphocreatine kinase buffer, anaerobic glycogenolysis, oxidative phosphorylation transition, crossover concept, AMPK/PGC-1alpha mitochondrial biogenesis, and exercise-induced myokine signaling.',
+        'সময়ভিত্তিক জ্বালানি রূপান্তর: ফসফোক্রিয়েটিন কাইনেজ বাফার, অবাত গ্লাইকোজেনোলাইসিস, জারণ শ্বসন রূপান্তর, ক্রসওভার তত্ত্ব, AMPK/PGC-1alpha মাইটোকন্ড্রিয়াল বায়োজেনেসিস এবং মায়োকাইন সংকেত।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.01', 'metabolism.chapter.15'],
+      lessonId: 'topic.metabolism.exercise-bioenergetics-adaptation',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.32',
+      order: 32,
+      groupId: 'metabolism.advanced',
+      slug: 'circadian-metabolism-rhythms',
+      title: l(
+        '32 · Circadian Metabolism, Peripheral Clocks & Chronobiology',
+        '৩২ · সার্কাডিয়ান বিপাক, প্রান্তীয় ঘড়ি ও ক্রোনোবায়োলজি'
+      ),
+      summary: l(
+        'Suprachiasmatic nucleus (SCN) central clock and peripheral tissue oscillators, CLOCK-BMAL1 / PER-CRY transcriptional feedback loop, REV-ERB/ROR lipid regulation, circadian NAD+-SIRT1 rhythmicity, and metabolic consequences of shift work and chronodisruption.',
+        'সুপ্রাকায়াজম্যাটিক নিউক্লিয়াস (SCN) কেন্দ্রীয় ঘড়ি ও প্রান্তীয় ছন্দ, CLOCK-BMAL1 ও PER-CRY নিয়ন্ত্রণ লুপ, REV-ERB/ROR লিপিড ছন্দ, NAD+-SIRT1 চক্র এবং শিফট ওয়ার্ক ও অনিয়মিত সময়ের বিপাকীয় ক্ষতি।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.14'],
+      lessonId: 'topic.metabolism.circadian-metabolism-rhythms',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.33',
+      order: 33,
+      groupId: 'metabolism.advanced',
+      slug: 'immunometabolism-inflammation',
+      title: l(
+        '33 · Immunometabolism & Metabolic Regulation of Inflammation',
+        '৩৩ · প্রতিরোধ-বিপাক ও প্রদাহের বিপাকীয় নিয়ন্ত্রণ'
+      ),
+      summary: l(
+        'Pro-inflammatory M1 macrophage aerobic glycolysis, the two-point TCA cycle break (citrate and succinate accumulation), ACOD1/IRG1 itaconate biosynthesis and SDH inhibition, succinate-mediated HIF-1alpha stabilization, M2 macrophage oxidative phosphorylation, and Teff vs Treg immunometabolism.',
+        'প্রদাহজনক এম১ ম্যাক্রোফেজের অবাধ গ্লাইকোলাইসিস, সাইট্রিক এসিড চক্রের দুই স্থানে ভাঙন (সাইট্রেট ও সাকসিনেট জমা), ACOD1 দ্বারা আইটাকোনেট তৈরি ও SDH প্রতিরোধ, সাকসিনেট দ্বারা HIF-1alpha স্থায়িত্ব, এম২ ম্যাক্রোফেজের চর্বি জারণ এবং Teff বনাম Treg রূপান্তর।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.02', 'metabolism.chapter.03'],
+      lessonId: 'topic.metabolism.immunometabolism-inflammation',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.34',
+      order: 34,
+      groupId: 'metabolism.advanced',
+      slug: 'cancer-metabolic-reprogramming',
+      title: l(
+        '34 · Cancer Metabolic Reprogramming & Oncometabolite Dynamics',
+        '৩৪ · ক্যান্সারের বিপাকীয় পুনর্বিন্যাস ও অনকোমেটাবোলাইট গতিবিদ্যা'
+      ),
+      summary: l(
+        'The Warburg effect and aerobic fermentation, dimeric vs tetrameric PKM2 regulation, glutamine addiction via ASCT2 and GLS1, IDH1/2 neomorphic mutations producing (R)-2-hydroxyglutarate (2-HG), G-CIMP hypermethylation, ACLY/FASN de novo lipogenesis, and targeted metabolic therapeutics including CB-839 and ivosidenib.',
+        'ওয়ারবার্গ প্রভাব ও অবাধ গাঁজন, ডাইমেরিক PKM2 নিয়ন্ত্রণ, ASCT2 ও GLS1 দ্বারা গ্লুটামিন নির্ভরতা, IDH1/2 মিউটেশনের মাধ্যমে (R)-2-HG তৈরি ও এপিজেনেটিক মিথাইলেশন, ACLY/FASN চর্বি সংশ্লেষ এবং আধুনিক ওষুধ CB-839 ও আইভোসিডেনিব।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.02', 'metabolism.chapter.03'],
+      lessonId: 'topic.metabolism.cancer-metabolic-reprogramming',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.35',
+      order: 35,
+      groupId: 'metabolism.advanced',
+      slug: 'flux-analysis-metabolomics',
+      title: l(
+        '35 · Metabolic Flux Analysis, Stable Isotope Tracing & Metabolomics',
+        '৩৫ · বিপাকীয় প্রবাহ বিশ্লেষণ, স্টেবল আইসোটোপ ট্রেসিং ও মেটাবোলোমিক্স'
+      ),
+      summary: l(
+        'Dynamic flux velocity (J = dC/dt, S*v = 0), stable isotope tracing using [U-13C]glucose and [13C]lactate, mass isotopomer distribution analysis (MIDA, M+0 to M+n), natural 1.1% 13C abundance correction, LC-MS/MS and Orbitrap instrumentation, 13C-MFA modeling, and intraoperative human surgical isotope infusions.',
+        'গতিশীল প্রবাহ বেগ (J = dC/dt, S*v = 0), [U-13C]গ্লুকোজ ও ল্যাকটেট দ্বারা আইসোটোপ ট্রেসিং, ম্যাস আইসোটোপোমার বণ্টন বিশ্লেষণ (MIDA), প্রাকৃতিক ১৩সি সংশোধন, এলসি-এমএস ও অরবিট্রেপ প্রযুক্তি এবং মানুষের অপারেশনের সময় জীবন্ত আইসোটোপ পরীক্ষা।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.01', 'metabolism.chapter.02'],
+      lessonId: 'topic.metabolism.flux-analysis-metabolomics',
+      estimatedMinutes: 50,
+    },
+    {
+      id: 'metabolism.chapter.36',
+      order: 36,
+      groupId: 'metabolism.advanced',
+      slug: 'clinical-cases-grand-rounds',
+      title: l(
+        '36 · Clinical Grand Rounds: Acute Metabolic Emergencies & Inborn Errors',
+        '৩৬ · ক্লিনিক্যাল গ্র্যান্ড রাউন্ডস: তীব্র বিপাকীয় জরুরি অবস্থা ও জন্মগত ত্রুটি'
+      ),
+      summary: l(
+        'Capstone grand rounds: Refeeding syndrome and lethal hypophosphatemia, Diabetic Ketoacidosis (DKA) vs Hyperosmolar Hyperglycemic State (HHS), neonatal propionic and methylmalonic acidemias with secondary hyperammonemia, Type A vs Type B lactic acidosis, and alcoholic ketoacidosis.',
+        'চূড়ান্ত গ্র্যান্ড রাউন্ডস: রিফিডিং সিন্ড্রোম ও মারাত্মক ফসফেট শূন্যতা, DKA বনাম হাইপারঅসমোলার ডায়াবেটিক সংকট, প্রোপিয়নিক ও মিথাইলম্যালনিক এসিডেমিয়া ও অ্যামোনিয়া বিষক্রিয়া, টাইপ-এ বনাম বি ল্যাকটিক এসিডোসিস এবং মদ্যপ কিটোঅ্যাসিডোসিস।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['metabolism.chapter.04', 'metabolism.chapter.05', 'metabolism.chapter.09'],
+      lessonId: 'topic.metabolism.clinical-cases-grand-rounds',
       estimatedMinutes: 50,
     },
   ],

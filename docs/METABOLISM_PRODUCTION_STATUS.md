@@ -1,8 +1,8 @@
 # Human Metabolism Curriculum — Production Status Ledger
 
 **Last Updated:** 2026-10-13  
-**Curriculum Version:** 2.5.0 (V2.5 36-Chapter Expansion Active)  
-**Total Chapters:** 36 Planned / 18 Preserved Complete (Batch A 19–27 In Production)  
+**Curriculum Version:** 2.5.0 (V2.5 36-Chapter Expansion 100% Complete)  
+**Total Chapters:** 36 Available / 36 Complete (Batches 1–7 complete)  
 **Subject ID:** `subject.metabolism`  
 **Production Status Overview:**  
 - **Batch 1 (Ch 01–04):** **COMPLETE & VERIFIED** (Foundations: Bioenergetics, Glycolysis, TCA/OxPhos, Glycogen/Gluconeogenesis)
@@ -11,7 +11,7 @@
 - **Batch 4 (Ch 13–15):** **COMPLETE & VERIFIED** (Integration: Fuel Dynamics, Endocrine Regulation, Organ Specialization)
 - **Batch 5 (Ch 16–18):** **COMPLETE & VERIFIED** (Clinical: Micronutrients, Inborn Errors, Metabolic Disease)
 - **Batch A (Ch 19–27):** **COMPLETE & VERIFIED** (Kinetics, Compartmentation, PPP, Alternative Sugars, Lactate, Lipid Digestion, Complex Lipids, Proteostasis, One-Carbon)
-- **Batch B (Ch 28–36):** **QUEUED FOR IMMEDIATE EXECUTION** (Neurotransmitters, Glutathione/ROS, Mitochondria Dynamics, Exercise, Circadian, Immunometabolism, Cancer, Flux Analysis, Clinical Cases)
+- **Batch B (Ch 28–36):** **COMPLETE & VERIFIED** (Neurotransmitters, Glutathione/ROS, Mitochondria Dynamics, Exercise, Circadian, Immunometabolism, Cancer, Flux Analysis, Clinical Cases)
 
 ---
 
@@ -46,12 +46,13 @@
 | 25 | `metabolism.chapter.25` | `phospholipids-sphingolipids-eicosanoids` | 25 · Phospholipid, Sphingolipid & Eicosanoid Metabolism / ২৫ · ফসফোলিপিড, স্ফিংগোলিপিড ও আইকোসানয়েড বিপাক | Complex Lipids | Complete & Verified | `src/content/chapters/metabolism25ComplexLipidsEicosanoids.ts` | None |
 | 26 | `metabolism.chapter.26` | `protein-turnover-proteasome-autophagy` | 26 · Protein Turnover, Proteasomes, Autophagy & Amino Acid Pools / ২৬ · প্রোটিন রূপান্তর, প্রোটিওসোম, অটোফ্যাজি ও অ্যামিনো অ্যাসিড পুল | Proteostasis | Complete & Verified | `src/content/chapters/metabolism26ProteostasisAutophagy.ts` | None |
 | 27 | `metabolism.chapter.27` | `one-carbon-methylation-transsulfuration` | 27 · One-Carbon Metabolism, Methylation & Transsulfuration / ২৭ · এক-কার্বন বিপাক, মিথাইলেশন ও ট্রান্সসালফারেশন | Methylation & Sulfur | Complete & Verified | `src/content/chapters/metabolism27OneCarbonMethylation.ts` | None |
-| 28 | `metabolism.chapter.28` | `neurotransmitters-specialized-amines` | 28 · Specialized Amino Acid Products & Neurotransmitter Metabolism / ২৮ · বিশেষ অ্যামিনো অ্যাসিড যৌগ ও নিউরোট্রান্সমিটার বিপাক | Neurobiochemistry | Queued (Batch B) | `src/content/chapters/metabolism28Neurotransmitters.ts` | Batch B Authoring |
-| 29 | `metabolism.chapter.29` | `glutathione-ros-redox-homeostasis` | 29 · Glutathione Metabolism, Reactive Oxygen Species & Redox Homeostasis / ২৯ · গ্লুটাথিয়ন বিপাক, সক্রিয় অক্সিজেন প্রজাতি ও রেডক্স ভারসাম্য | Redox Biology | Queued (Batch B) | `src/content/chapters/metabolism29GlutathioneRedox.ts` | Batch B Authoring |
-| 30 | `metabolism.chapter.30` | `mitochondrial-dynamics-flexibility` | 30 · Mitochondrial Biogenesis, Dynamics & Metabolic Flexibility / ৩০ · মাইটোকন্ড্রিয়াল জৈবজনন, গতিশীলতা ও বিপাকীয় নমনীয়তা | Organelle Dynamics | Queued (Batch B) | `src/content/chapters/metabolism30MitochondrialDynamics.ts` | Batch B Authoring |
-| 31 | `metabolism.chapter.31` | `exercise-bioenergetics-adaptation` | 31 · Exercise Metabolism, Muscle Bioenergetics & Training Adaptation / ৩১ · ব্যায়াম বিপাক, পেশির জৈবশক্তিবিজ্ঞান ও প্রশিক্ষণ অভিযোজন | Exercise Physiology | Queued (Batch B) | `src/content/chapters/metabolism31ExerciseBioenergetics.ts` | Batch B Authoring |
-| 32 | `metabolism.chapter.32` | `circadian-metabolism-rhythms` | 32 · Circadian Metabolism, Nutrient Timing & Metabolic Rhythms / ৩২ · দিবা-রাত্রি বিপাক, পুষ্টির সময়জ্ঞান ও বিপাকীয় ছন্দ | Chronobiology | Queued (Batch B) | `src/content/chapters/metabolism32CircadianMetabolism.ts` | Batch B Authoring |
-| 33 | `metabolism.chapter.33` | `immunometabolism-inflammation` | 33 · Immunometabolism & Metabolic Regulation of Inflammation / ৩৩ · প্রতিরোধ-বিপাক ও প্রদাহের বিপাকীয় নিয়ন্ত্রণ | Immunometabolism | Queued (Batch B) | `src/content/chapters/metabolism33Immunometabolism.ts` | Batch B Authoring |
-| 34 | `metabolism.chapter.34` | `cancer-metabolic-reprogramming` | 34 · Cancer Cell Metabolism & Metabolic Reprogramming / ৩৪ · ক্যান্সার কোষের বিপাক ও বিপাকীয় পুনর্বিন্যাস | Oncology Metabolism | Queued (Batch B) | `src/content/chapters/metabolism34CancerMetabolism.ts` | Batch B Authoring |
-| 35 | `metabolism.chapter.35` | `flux-analysis-metabolomics` | 35 · Metabolic Flux Analysis, Stable Isotope Tracing & Metabolomics / ৩৫ · বিপাকীয় প্রবাহ বিশ্লেষণ, স্থিতিশীল আইসোটোপ ট্রেসিং ও মেটাবোলোমিক্স | Research Methods | Queued (Batch B) | `src/content/chapters/metabolism35MetabolicFluxAnalysis.ts` | Batch B Authoring |
-| 36 | `metabolism.chapter.36` | `clinical-cases-grand-rounds` | 36 · Integrated Metabolic Case Studies & Advanced Clinical Applications / ৩৬ · সমন্বিত বিপাকীয় কেস স্টাডি ও উচ্চতর ক্লিনিক্যাল প্রয়োগ | Clinical Grand Rounds | Queued (Batch B) | `src/content/chapters/metabolism36ClinicalCaseStudies.ts` | Batch B Authoring |
+| 28 | `metabolism.chapter.28` | `neurotransmitters-specialized-amines` | 28 · Specialized Amino Acid Products & Neurotransmitter Metabolism / ২৮ · বিশেষ অ্যামিনো অ্যাসিড যৌগ ও নিউরোট্রান্সমিটার বিপাক | Advanced & Cellular | Complete & Verified | `src/content/chapters/metabolism28Neurotransmitters.ts` | None |
+| 29 | `metabolism.chapter.29` | `glutathione-ros-redox-homeostasis` | 29 · Glutathione Metabolism, Reactive Oxygen Species & Redox Homeostasis / ২৯ · গ্লুটাথিয়ন বিপাক, সক্রিয় অক্সিজেন প্রজাতি ও রেডক্স ভারসাম্য | Advanced & Cellular | Complete & Verified | `src/content/chapters/metabolism29GlutathioneRedox.ts` | None |
+| 30 | `metabolism.chapter.30` | `mitochondrial-dynamics-flexibility` | 30 · Mitochondrial Biogenesis, Dynamics & Metabolic Flexibility / ৩০ · মাইটোকন্ড্রিয়াল জৈবজনন, গতিশীলতা ও বিপাকীয় নমনীয়তা | Advanced & Cellular | Complete & Verified | `src/content/chapters/metabolism30MitochondrialDynamics.ts` | None |
+| 31 | `metabolism.chapter.31` | `exercise-bioenergetics-adaptation` | 31 · Exercise Metabolism, Muscle Bioenergetics & Training Adaptation / ৩১ · ব্যায়াম বিপাক, পেশির জৈবশক্তিবিজ্ঞান ও প্রশিক্ষণ অভিযোজন | Advanced & Cellular | Complete & Verified | `src/content/chapters/metabolism31ExerciseBioenergetics.ts` | None |
+| 32 | `metabolism.chapter.32` | `circadian-metabolism-rhythms` | 32 · Circadian Metabolism, Nutrient Timing & Metabolic Rhythms / ৩২ · দিবা-রাত্রি বিপাক, পুষ্টির সময়জ্ঞান ও বিপাকীয় ছন্দ | Advanced & Cellular | Complete & Verified | `src/content/chapters/metabolism32CircadianMetabolism.ts` | None |
+| 33 | `metabolism.chapter.33` | `immunometabolism-inflammation` | 33 · Immunometabolism & Metabolic Regulation of Inflammation / ৩৩ · প্রতিরোধ-বিপাক ও প্রদাহের বিপাকীয় নিয়ন্ত্রণ | Advanced & Cellular | Complete & Verified | `src/content/chapters/metabolism33Immunometabolism.ts` | None |
+| 34 | `metabolism.chapter.34` | `cancer-metabolic-reprogramming-warburg` | 34 · Cancer Metabolic Reprogramming & the Warburg Effect / ৩৪ · ক্যান্সার বিপাকীয় পুনর্বিন্যাস ও ওয়ারবার্গ প্রভাব | Advanced & Cellular | Complete & Verified | `src/content/chapters/metabolism34CancerReprogramming.ts` | None |
+| 35 | `metabolism.chapter.35` | `metabolic-flux-analysis-in-vivo-metabolomics` | 35 · Metabolic Flux Analysis, Stable Isotope Tracing & In Vivo Metabolomics / ৩৫ · বিপাকীয় প্রবাহ বিশ্লেষণ, স্থিতিশীল আইসোটোপ ট্রেসিং ও জীবন্ত মেটাবোলোমিক্স | Advanced & Cellular | Complete & Verified | `src/content/chapters/metabolism35FluxMetabolomics.ts` | None |
+| 36 | `metabolism.chapter.36` | `clinical-metabolism-grand-rounds-emergencies` | 36 · Clinical Metabolism Grand Rounds: Acute Decompensations & Metabolic Emergencies / ৩৬ · ক্লিনিক্যাল বিপাক গ্র্যান্ড রাউন্ডস: তীব্র রূপান্তর ও বিপাকীয় জরুরি অবস্থা | Advanced & Cellular | Complete & Verified | `src/content/chapters/metabolism36ClinicalCases.ts` | None |
+
