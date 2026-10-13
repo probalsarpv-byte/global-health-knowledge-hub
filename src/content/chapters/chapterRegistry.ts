@@ -63,6 +63,10 @@ import { metabolism33ImmunometabolismLesson } from './metabolism33Immunometaboli
 import { metabolism34CancerReprogrammingLesson } from './metabolism34CancerReprogramming'
 import { metabolism35FluxMetabolomicsLesson } from './metabolism35FluxMetabolomics'
 import { metabolism36ClinicalCasesLesson } from './metabolism36ClinicalCases'
+import { nutrition01EnergyBalanceLesson } from './nutrition01EnergyBalance'
+import { nutrition02MacronutrientDigestionLesson } from './nutrition02MacronutrientDigestion'
+import { nutrition03CarbohydrateQualityLesson } from './nutrition03CarbohydrateQuality'
+import { nutrition04DietaryFiberScfaLesson } from './nutrition04DietaryFiberScfa'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -339,3 +343,39 @@ export function getMetabolismChapterLesson(identifier?: string): LessonTopic | u
 export function getAllAvailableMetabolismLessons(): LessonTopic[] {
   return Object.values(allMetabolismLessonsMap)
 }
+
+export const allNutritionLessonsMap: Record<string, LessonTopic> = {
+  [nutrition01EnergyBalanceLesson.id]: nutrition01EnergyBalanceLesson,
+  [nutrition02MacronutrientDigestionLesson.id]: nutrition02MacronutrientDigestionLesson,
+  [nutrition03CarbohydrateQualityLesson.id]: nutrition03CarbohydrateQualityLesson,
+  [nutrition04DietaryFiberScfaLesson.id]: nutrition04DietaryFiberScfaLesson,
+}
+
+export const allNutritionLessonsBySlug: Record<string, LessonTopic> = {
+  [nutrition01EnergyBalanceLesson.slug]: nutrition01EnergyBalanceLesson,
+  [nutrition02MacronutrientDigestionLesson.slug]: nutrition02MacronutrientDigestionLesson,
+  [nutrition03CarbohydrateQualityLesson.slug]: nutrition03CarbohydrateQualityLesson,
+  [nutrition04DietaryFiberScfaLesson.slug]: nutrition04DietaryFiberScfaLesson,
+}
+
+export function getNutritionChapterLesson(identifier?: string): LessonTopic | undefined {
+  if (!identifier) return undefined
+  return allNutritionLessonsMap[identifier] || allNutritionLessonsBySlug[identifier]
+}
+
+export function getAllAvailableNutritionLessons(): LessonTopic[] {
+  return Object.values(allNutritionLessonsMap)
+}
+
+export const batch1NutritionChapters: LessonTopic[] = [
+  nutrition01EnergyBalanceLesson,
+  nutrition02MacronutrientDigestionLesson,
+  nutrition03CarbohydrateQualityLesson,
+  nutrition04DietaryFiberScfaLesson,
+]
+
+export const allCompletedNutritionChapters: LessonTopic[] = [
+  ...batch1NutritionChapters,
+]
+
+

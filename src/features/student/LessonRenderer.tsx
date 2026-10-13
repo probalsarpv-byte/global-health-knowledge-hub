@@ -7,6 +7,7 @@ import { AnatomyExplorer } from '../anatomy/AnatomyExplorer'
 import { Organ3DExplorer } from '../anatomy/Organ3DExplorer'
 import { InteractiveAnatomyDiagram } from '../anatomy/InteractiveAnatomyDiagram'
 import { InteractivePathwayDiagram } from '../metabolism/InteractivePathwayDiagram'
+import { InteractiveNutrientDiagram } from '../nutrition/InteractiveNutrientDiagram'
 import {
   buildChapterCitationMap,
   EndOfChapterReferences,
@@ -89,6 +90,8 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     {lesson.anatomyExplorer && <AnatomyExplorer explorer={lesson.anatomyExplorer} locale={lang} onSectionSelect={jumpTo} />}
     {lesson.interactiveDiagram && (lesson.subject === 'metabolism' ? (
       <InteractivePathwayDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />
+    ) : lesson.subject === 'nutrition' ? (
+      <InteractiveNutrientDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />
     ) : (
       <InteractiveAnatomyDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />
     ))}

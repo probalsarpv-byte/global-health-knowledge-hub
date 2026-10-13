@@ -15,6 +15,9 @@ import { AnatomyLegacyLessonPage } from './features/anatomy/AnatomyLegacyLessonP
 import { MetabolismSubjectPage } from './features/metabolism/MetabolismSubjectPage'
 import { MetabolismChapterPage } from './features/metabolism/MetabolismChapterPage'
 import { MetabolismLegacyLessonPage } from './features/metabolism/MetabolismLegacyLessonPage'
+import { NutritionSubjectPage } from './features/nutrition/NutritionSubjectPage'
+import { NutritionChapterPage } from './features/nutrition/NutritionChapterPage'
+import { NutritionLegacyLessonPage } from './features/nutrition/NutritionLegacyLessonPage'
 import { ThemeProvider } from './components/ThemeContext'
 
 export default function App() {
@@ -35,6 +38,9 @@ export default function App() {
             <Route path="/learn/metabolism" element={<MetabolismSubjectPage />} />
             <Route path="/learn/metabolism/chapters/:chapter" element={<MetabolismChapterPage />} />
             <Route path="/learn/metabolism/lessons/:lesson" element={<MetabolismLegacyLessonPage />} />
+            <Route path="/learn/nutrition" element={<NutritionSubjectPage />} />
+            <Route path="/learn/nutrition/chapters/:chapter" element={<NutritionChapterPage />} />
+            <Route path="/learn/nutrition/lessons/:lesson" element={<NutritionLegacyLessonPage />} />
             <Route path="/learn/:module" element={<ModulePage />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>

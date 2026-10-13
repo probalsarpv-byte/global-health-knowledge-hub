@@ -65,7 +65,7 @@ describe('scientific lesson content', () => {
   })
 
   it('renders the same full lesson in Bengali and English and switches substantive depth', async () => {
-    window.history.replaceState({}, '', '/learn/nutrition')
+    window.history.replaceState({}, '', '/learn/nutrition/lessons/macronutrient-digestion')
     const user = userEvent.setup()
     render(<App />)
     expect(screen.getByRole('heading', { name: 'Macronutrient Digestion' })).toBeInTheDocument()

@@ -12,6 +12,7 @@ export function ModulePage() {
   if (!module) return <Navigate to="/learn" replace />
   if (module.slug === 'anatomy') return <Navigate to="/learn/anatomy" replace />
   if (module.slug === 'metabolism') return <Navigate to="/learn/metabolism" replace />
+  if (module.slug === 'nutrition') return <Navigate to="/learn/nutrition" replace />
   const lesson = lessons.find((item) => item.subject === module.slug)
   if (lesson) return <div className="page-wrap module-page"><LessonRenderer lesson={lesson} /></div>
   const Icon = module.icon
