@@ -94,7 +94,7 @@ for (const curChapter of nutritionCurriculum.chapters) {
           bulletsCount: sec.bullets ? sec.bullets.length : 0,
           wordCountEn: secWordsEn,
           wordCountBn: secWordsBn,
-          citations: lesson.evidenceBySection[sec.id] || []
+          citations: lesson.evidenceBySection ? (lesson.evidenceBySection[sec.id] || []) : []
         })
       }
     }

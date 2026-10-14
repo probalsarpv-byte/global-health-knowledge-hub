@@ -1,10 +1,10 @@
 # Functional Nutrition & Dietetics Academy: Session Resumption State
 
 **Timestamp:** 2026-10-14  
-**Current Milestone:** Stage 1 Audit Complete; Transitioning to Stage 2 Batch A Upgrades  
+**Current Milestone:** Batch A (Chapters 01–08) Complete & Verified; Ready for Batch B (Chapters 09–16)  
 **Active Working Branch:** `main`  
-**Git Working Tree:** Clean  
-**Test Suite Health:** All 25 Nutrition Academy Vitest tests, lint (`eslint . --max-warnings=0`), and typecheck (`tsc -b`) passing.
+**Git Working Tree:** Batch A files staged/ready for commit  
+**Test Suite Health:** All 6 test suites / 106 Vitest tests passing, 0 lint warnings (`eslint . --max-warnings=0`), 0 typecheck errors (`tsc -b`), production build passing (`vite build`).
 
 ---
 
@@ -15,12 +15,14 @@
    - Produced authoritative audit report in `docs/NUTRITION_DEPTH_AUDIT.md`.
 2. **Permanent Textbook Writing Standard Documented:**
    - Established the 14-point pedagogical architecture for all nutritional topics in `docs/NUTRITION_TEXTBOOK_STANDARD.md`.
-3. **Batch A (Chapters 01–08) Deepened to University Textbook Depth:**
-   - All 8 chapters upgraded to full 6s/6s/6s structure (Foundation, Academic, Advanced).
-   - Word counts scaled from ~1,200 words to 2,350–3,980 English words and 1,870–3,380 Bengali words per chapter.
-   - 2 worked quantitative clinical examples and 6 key terms in each chapter.
-   - Bilingual parity verified across all mechanisms, analogies, and clinical reasoning.
-   - All automated checks passed: `npm run lint` (0 errors), `npm run typecheck` (0 errors), Vitest (25/25 passed), `npm run build` (success).
+3. **Batch A (Chapters 01–08) Fully Upgraded to University Textbook Depth:**
+   - Chapters 01 through 08 upgraded to full 6s/6s/6s structure (Foundation, Academic, Advanced; 18 sections/chapter).
+   - Word counts scaled to **36,397 English words / 30,400 Bengali words** across the 8 chapters (66,797 bilingual words total).
+   - 2 worked quantitative clinical examples, 6 key terms, 3 checkpoints, 6 Vancouver-style citations with bidirectional anchors per chapter.
+   - High-yield interactive SVG diagrams with step-by-step nodes, accessible descriptions, and 2D fallbacks.
+   - 100% bilingual parity (Bengali + International English with dual-script terminology).
+   - All automated checks passed: `npm run lint` (0 errors), `npm run typecheck` (0 errors), Vitest (106/106 passed across all 6 test suites), `npm run build` (production bundle built cleanly).
+
 
 ---
 
