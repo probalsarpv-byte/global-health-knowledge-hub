@@ -78,10 +78,19 @@ Following comprehensive pedagogical rewriting in accordance with the 14-point ac
 | **05** | `dietary-lipids-fatty-acids-pufa` | 1,552 / 1,274 | **4,864 / 4,121** | 6 / 6 / 6 | 2 | 6 | 6 | Eicosanoid Cascade | **A+** · $\Delta$-6/$\Delta$-5 desaturase rate-limiting kinetics, EPA/DHA vs ARA competition, Resolvins/Protectins/Maresins (SPMs), and industrial elaidic trans-fat atherogenesis. |
 | **06** | `protein-quality-diaas-nitrogen-balance` | 1,628 / 1,289 | **6,665 / 5,545** | 6 / 6 / 6 | 2 | 6 | 6 | DIAAS vs PDCAAS & MPS | **A+** · True ileal amino acid digestibility formulas, Sestrin2-GATOR2-mTORC1 leucine threshold, muscle-full kinetics, 24h nitrogen balance, and sarcopenic anabolic resistance. |
 | **07** | `satiety-neuroendocrinology-appetite` | 1,504 / 1,132 | **6,434 / 5,390** | 6 / 6 / 6 | 2 | 6 | 6 | Hypothalamic Circuitry | **A+** · Arcuate nucleus POMC/CART vs NPY/AgRP toggle circuits, GOAT octanoylation of ghrelin, LepRb-JAK2-STAT3 signaling, vagal mechanoreception, and multi-agonist incretin pharmacology. |
-| **08** | `hydration-electrolytes-fluid-balance` | 1,645 / 1,271 | **2,606 / 2,090** | 6 / 6 / 6 | 2 | 6 | 6 | Nephron Osmoregulation | **A+** · Starling capillary transudation forces, hypothalamic osmoreceptor threshold, AVP V2R-cAMP-AQP2 vesicular trafficking, and RAAS aldosterone principal cell mechanics. |
+| **08** | `hydration-electrolytes-fluid-balance` | 1,645 / 1,271 | **4,129 / 3,349** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Nephron Osmoregulation | **A+** · Starling capillary transudation forces, hypothalamic osmoreceptor threshold, AVP V2R-cAMP-AQP2 vesicular trafficking, and RAAS aldosterone principal cell mechanics. |
 
-**Batch A Total Volume:** **36,397 English words / 30,400 Bengali words** across 144 substantive pedagogical sections (18 sections/chapter $\times$ 8 chapters).
+**Batch A Total Volume:** **37,920 English words / 31,659 Bengali words** across 144 substantive pedagogical sections (18 sections/chapter $\times$ 8 chapters).
 **Validation Status:** 0 schema errors, 100% bilingual parity, zero lint warnings (`eslint . --max-warnings=0`), 106/106 tests passed (`vitest run`), and clean production bundle (`vite build`).
+
+### 2.2 Post-Remediation Verification Matrix: Batch B (Chapters 09 & 10 Complete)
+
+| Order | Slug / Topic | Pre Words (EN / BN) | Post Words (EN / BN) | Post Sections (F / Ac / Ad) | Worked Ex. | Key Terms | Checkpoints | Refs | Visual / SVG Diagram | Post-Upgrade Grade & Educational Impact |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **09** | `fat-soluble-vitamins` | 2,368 / 1,912 | **4,541 / 3,241** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Mixed Micelle & Genomic Signaling | **A+** · Complete retinoid RAR/RXR and visual cycle rhodopsin photoisomerization, cutaneous 7-DHC photolysis and renal CYP27B1 activation of calcitriol, alpha-tocopherol radical-trapping, and VKORC1 gamma-carboxylation. |
+| **10** | `b-complex-vitamins-bioenergetics` | 2,217 / 1,819 | **4,572 / 3,249** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Mitochondrial Coenzyme Hub | **A+** · Coenzyme kinetics across all 8 B-vitamins: TPP pyruvate decarboxylation, FAD/NAD hydride transfer, CoA thioester bonds, PLP transamination, and Folate-Cobalamin methionine synthase methyl-trap. |
+
+**Batch B Chapters 09–10 Volume:** **9,113 English words / 6,490 Bengali words** across 36 substantive pedagogical sections.
 
 ---
 

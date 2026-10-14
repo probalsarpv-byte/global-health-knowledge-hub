@@ -30,9 +30,9 @@
 | **05** | Dietary Lipids & PUFA | 1,552 / 1,274 | 2,800+ / 2,400+ | **4,864 / 4,121** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **06** | Protein Quality & DIAAS | 1,628 / 1,289 | 2,600+ / 2,100+ | **6,665 / 5,545** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **07** | Satiety Neuroendocrinology | 1,504 / 1,132 | 2,300+ / 1,800+ | **6,434 / 5,390** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
-| **08** | Cellular Hydration & Fluid Balance | 1,645 / 1,271 | 2,500+ / 2,000+ | **2,606 / 2,090** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
-| **09** | Fat-Soluble Vitamins | 2,368 / 1,912 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
-| **10** | B-Complex Coenzymes | 2,217 / 1,819 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **08** | Cellular Hydration & Fluid Balance | 1,645 / 1,271 | 2,500+ / 2,000+ | **4,129 / 3,349** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **09** | Fat-Soluble Vitamins | 2,368 / 1,912 | 3,500+ / 3,000+ | **4,541 / 3,241** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **10** | B-Complex Coenzymes | 2,217 / 1,819 | 3,500+ / 3,000+ | **4,572 / 3,249** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **11** | Vitamin C & Trace Minerals | 2,473 / 1,855 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
 | **12** | Macrominerals & Bone Matrix | 2,400 / 1,934 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
 | **13** | Iron Biology & Hepcidin | 1,116 / 896 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
