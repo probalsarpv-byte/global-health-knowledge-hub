@@ -38,25 +38,43 @@ const satietyRefs = [
     year: 2020,
     url: 'https://www.elsevier.com/books/guyton-and-hall-textbook-of-medical-physiology/hall/978-0-323-59712-8',
   },
+  {
+    id: 'wilding-nejm-step1-semaglutide',
+    authors: 'John P. H. Wilding, Rachel L. Batterham, Salvatore Calanna, et al.',
+    title: 'Once-Weekly Semaglutide in Adults with Overweight or Obesity (STEP 1 Trial)',
+    organization: 'The New England Journal of Medicine',
+    year: 2021,
+    url: 'https://doi.org/10.1056/NEJMoa2032183',
+    doi: '10.1056/NEJMoa2032183',
+  },
+  {
+    id: 'volkow-physiolrev-food-addiction',
+    authors: 'Nora D. Volkow, Gene-Jack Wang, Ruben D. Baler',
+    title: 'Reward, dopamine and the control of food intake: implications for obesity',
+    organization: 'Trends in Cognitive Sciences',
+    year: 2011,
+    url: 'https://doi.org/10.1016/j.tics.2010.11.001',
+    doi: '10.1016/j.tics.2010.11.001',
+  },
 ]
 
 export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
   id: 'topic.nutrition.satiety-neuroendocrinology-appetite',
   slug: 'satiety-neuroendocrinology-appetite',
-  version: 1,
-  updatedAt: '2026-10-13',
+  version: 2,
+  updatedAt: '2026-10-14',
   title: l(
     '07 · Satiety Neuroendocrinology: Leptin, Ghrelin, GLP-1, PYY & Appetite Regulation',
     '০৭ · তৃপ্তি ও ক্ষুধার নিউরোএন্ডোক্রিনোলজি: লেপটিন, ঘ্রেলিন, GLP-1, PYY ও ক্ষুধা নিয়ন্ত্রণ'
   ),
   summary: l(
-    'The molecular neuroendocrinology of energy intake: hypothalamic arcuate POMC/CART vs NPY/AgRP circuits, gastric ghrelin octanoylation, adipocyte leptin-STAT3 signaling, enteroendocrine incretins (GLP-1, PYY, CCK), and hedonic vs homeostatic feeding.',
-    'শক্তি গ্রহণের আণবিক নিউরোএন্ডোক্রিনোলজি: হাইপোথ্যালামাসের আর্কুয়েট নিউক্লিয়াসের POMC/CART বনাম NPY/AgRP সার্কিট, পাকস্থলীর ঘ্রেলিন হরমোন, অ্যাডিপোসাইটের লেপটিন-STAT3 সংকেত, অন্ত্রের ইনক্রিটিন (GLP-1, PYY, CCK) এবং আনন্দঘন বনাম শারীরবৃত্তীয় ক্ষুধা নিয়ন্ত্রণ।'
+    'Comprehensive university textbook analysis of energy intake neuroendocrinology: hypothalamic arcuate POMC/CART vs NPY/AgRP toggle circuits, gastric ghrelin octanoylation by GOAT, adipocyte leptin-JAK2-STAT3 signaling, enteroendocrine incretins (GLP-1, PYY, CCK), vagal-hindbrain integration, mesolimbic dopamine food reward, and clinical incretin pharmacology.',
+    'শক্তি গ্রহণের প্রামাণ্য বিশ্ববিদ্যালয় পাঠ্যপুস্তকীয় বিশ্লেষণ: হাইপোথ্যালামাসের আর্কুয়েট নিউক্লিয়াসের POMC/CART বনাম NPY/AgRP টগল সার্কিট, GOAT এনজাইম দ্বারা ঘ্রেলিনের অক্টানয়লেশন, অ্যাডিপোসাইটের লেপটিন-JAK2-STAT3 সংকেত, অন্ত্রের ইনক্রিটিন (GLP-1, PYY, CCK), ভেগাস-পশ্চাৎমস্তিষ্ক সংযোগ, ডোপামিন রিওয়ার্ড সার্কিট এবং আধুনিক ইনক্রিটিন ফার্মাকোলজি।'
   ),
   subject: 'nutrition',
   evidenceClass: 'established-textbook-synthesis',
   reviewStatus: 'source-checked-expert-review-pending',
-  lastReviewed: '2026-10-13',
+  lastReviewed: '2026-10-14',
   objectives: [
     l(
       'Contrast the neurochemical architecture of the hypothalamic arcuate nucleus: anorexigenic POMC/CART neurons (alpha-MSH acting on MC4R) versus orexigenic NPY/AgRP neurons.',
@@ -71,8 +89,8 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
       'খাওয়া সমাপ্তির অন্ত্র-মস্তিষ্ক সংকেত: L-কোষ থেকে GLP-1 ও PYY এবং I-কোষ থেকে CCK নিঃসরণ, ভেগাস স্নায়ু সংবেদন এবং পশ্চাৎমস্তিষ্কের NTS কেন্দ্রে সংকেত প্রক্রিয়াকরণ ব্যাখ্যা করতে পারা।'
     ),
     l(
-      'Evaluate the pathophysiology of leptin resistance in obesity (SOCS3 induction) and the clinical pharmacology of GLP-1 receptor agonists in weight regulation.',
-      'স্থূলতায় লেপটিন রেজিস্ট্যান্সের রোগতত্ত্ব (SOCS3 বৃদ্ধি) এবং ওজন নিয়ন্ত্রণে আধুনিক GLP-1 রিসেপ্টর অ্যাগোনিস্টের ফার্মাকোলজিক্যাল কার্যপদ্ধতি মূল্যায়ন করতে পারা।'
+      'Evaluate the molecular pathophysiology of leptin resistance in obesity (SOCS3 and PTP1B induction) and the clinical pharmacology of GLP-1 receptor agonists (semaglutide, tirzepatide) in weight regulation.',
+      'স্থূলতায় লেপটিন রেজিস্ট্যান্সের আণবিক রোগতত্ত্ব (SOCS3 ও PTP1B বৃদ্ধি) এবং ওজন নিয়ন্ত্রণে আধুনিক GLP-1 ও GIP রিসেপ্টর অ্যাগোনিস্টের ফার্মাকোলজিক্যাল কার্যপদ্ধতি মূল্যায়ন করতে পারা।'
     ),
   ],
   prerequisiteIds: ['topic.cell.structure', 'topic.nutrition.macronutrient-digestion'],
@@ -82,8 +100,8 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
     introduction: ['schwartz-nature-cns-appetite', 'guyton-medical-physiology-appetite'],
     structure: ['schwartz-nature-cns-appetite', 'cummings-jci-gut-hormones'],
     mechanism: ['holst-physiolrev-glp1', 'cummings-jci-gut-hormones'],
-    integration: ['schwartz-nature-cns-appetite', 'holst-physiolrev-glp1'],
-    practice: ['cummings-jci-gut-hormones', 'guyton-medical-physiology-appetite'],
+    integration: ['volkow-physiolrev-food-addiction', 'schwartz-nature-cns-appetite'],
+    practice: ['wilding-nejm-step1-semaglutide', 'cummings-jci-gut-hormones'],
     takeaways: ['schwartz-nature-cns-appetite', 'holst-physiolrev-glp1'],
   },
   chapter: {
@@ -91,8 +109,8 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
       { id: 'sec-intro', label: l('1. Hypothalamic Circuitry of Energy Homeostasis', '১. শক্তি ভারসাম্যের হাইপোথ্যালামিক স্নায়ুপথ'), sectionId: 'introduction' },
       { id: 'sec-ghrelin-leptin', label: l('2. Long-Term Adiposity & Acute Hunger: Leptin vs Ghrelin', '২. দীর্ঘমেয়াদী চর্বি সংকেত ও তীব্র ক্ষুধা: লেপটিন বনাম ঘ্রেলিন'), sectionId: 'structure' },
       { id: 'sec-incretins', label: l('3. Satiety Incretins: GLP-1, PYY & The Vagal Gut-Brain Axis', '৩. তৃপ্তি ইনক্রিটিন: GLP-1, PYY ও ভেগাস অন্ত্র-মস্তিষ্ক অক্ষ'), sectionId: 'mechanism' },
-      { id: 'sec-hedonic', label: l('4. Hedonic Reward vs Homeostatic Feeding & Obesity Pharmacology', '৪. আনন্দঘন ক্ষুধা বনাম শারীরবৃত্তীয় ক্ষুধা ও স্থূলতার ওষুধতত্ত্ব'), sectionId: 'integration' },
-      { id: 'sec-worked', label: l('5. Clinical Appetite Profiling & Meal Satiety Indexing', '৫. ক্লিনিক্যাল ক্ষুধা মূল্যায়ন ও খাবারের তৃপ্তি সূচক হিসাব'), sectionId: 'practice' },
+      { id: 'sec-hedonic', label: l('4. Hedonic Reward vs Homeostatic Feeding & Food Allostasis', '৪. আনন্দঘন ক্ষুধা বনাম শারীরবৃত্তীয় ক্ষুধা ও খাদ্যের আসক্তি'), sectionId: 'integration' },
+      { id: 'sec-worked', label: l('5. Clinical Appetite Profiling & Meal Satiety Calculations', '৫. ক্লিনিক্যাল ক্ষুধা মূল্যায়ন ও খাবারের তৃপ্তি সূচক হিসাব'), sectionId: 'practice' },
       { id: 'sec-summary', label: l('6. Glossary & High-Yield Summary', '৬. শব্দকোষ ও উচ্চ-গুরুত্বপূর্ণ সারাংশ'), sectionId: 'takeaways' },
     ],
     terms: [
@@ -117,13 +135,34 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
           'পাকস্থলীর মিউকোসার একটি এনজাইম যা ঘ্রেলিনের তিন নম্বর সেরিনে আট-কার্বনের অক্টানোয়িক ফ্যাটি অ্যাসিড যুক্ত করে; এই পরিবর্তন ছাড়া ঘ্রেলিন মস্তিষ্কে ক্ষুধার সংকেত পাঠাতে পারে না।'
         ),
       },
+      {
+        term: l('Leptin Resistance & SOCS3', 'লেপটিন রেজিস্ট্যান্স ও SOCS3'),
+        definition: l(
+          'A pathophysiological state in obesity where chronic hyperleptinemia induces Suppressor of Cytokine Signaling 3 (SOCS3) and PTP1B, blocking LepRb-JAK2-STAT3 phosphorylation and causing perceived central starvation.',
+          'স্থূলতায় সৃষ্ট রোগতাত্ত্বিক অবস্থা যেখানে অতিরিক্ত লেপটিনের প্রতিক্রিয়ায় কোষে SOCS3 প্রোটিন বেড়ে যায় এবং লেপটিনের সংকেত বন্ধ করে দিয়ে মস্তিষ্কে কৃত্রিম ক্ষুধার অনুভূতি জাগায়।'
+        ),
+      },
+      {
+        term: l('The Ileal Brake (GLP-1 and PYY)', 'ইলিয়াল ব্রেক (GLP-1 ও PYY)'),
+        definition: l(
+          'A nutrient-triggered physiological feedback mechanism mediated by distal enteroendocrine L-cells that delays gastric emptying and slows small intestinal transit to optimize absorption and induce prolonged satiety.',
+          'ক্ষুদ্রান্ত্রের শেষ প্রান্তে খাদ্য পৌঁছালে L-কোষ থেকে GLP-1 ও PYY নিঃসৃত হয়ে পাকস্থলী খালি হওয়ার গতি কমিয়ে দেয় এবং দীর্ঘক্ষণ পেট ভরা থাকার মানসিক প্রশান্তি দেয়।'
+        ),
+      },
+      {
+        term: l('Hedonic Allostasis', 'আনন্দঘন ক্ষুধা ও পুরষ্কার আসক্তি'),
+        definition: l(
+          'The neurobiological phenomenon where repeated overconsumption of hyper-palatable, calorie-dense foods downregulates striatal D2 dopamine receptors, driving compensatory overeating to achieve baseline pleasure.',
+          'চর্বি ও চিনিযুক্ত লোভনীয় খাবার ক্রমাগত খাওয়ার ফলে মস্তিষ্কের ডোপামিন রিসেপ্টর কমে যাওয়া, যার ফলে স্বাভাবিক আনন্দ পেতে ব্যক্তি ক্রমাগত অতিরিক্ত খাবার গ্রহণে বাধ্য হয়।'
+        ),
+      },
     ],
     workedExamples: [
       {
         title: l('Analyzing the Satiety Cascade & Macronutrient Satiety Index', 'খাদ্যের উপাদানভিত্তিক তৃপ্তি সূচক বিশ্লেষণ'),
         steps: [
           l(
-            'Step 1: Compare the satiety efficiency per calorie of the three macronutrients. Protein induces the highest satiety per kilocalorie, followed by complex fiber-rich carbohydrates, with refined fats and liquid sugars exhibiting the lowest satiety.',
+            'Step 1: Compare the satiety efficiency per calorie of the three macronutrients. Protein induces the highest satiety per kilocalorie, followed by complex fiber-rich carbohydrates, with refined fats and liquid sugars exhibiting the lowest satiety per unit energy.',
             'ধাপ ১: তিন প্রধান খাদ্য উপাদানের প্রতি ক্যালোরিতে তৃপ্তি প্রদানের ক্ষমতা তুলনা করুন। প্রোটিন সর্বাধিক তৃপ্তি তৈরি করে, এরপর আঁশযুক্ত জটিল শর্করা, এবং পরিশোধিত চর্বি ও মিষ্টি পানীয় সর্বনিম্ন তৃপ্তি দেয়।'
           ),
           l(
@@ -138,6 +177,27 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
         conclusion: l(
           'Formulating meals with ≥30 g of high-DIAAS protein, ≥10 g of viscous soluble fiber, and low glycemic load maximizes the duration of GLP-1 and PYY secretion while accelerating post-prandial ghrelin suppression, significantly reducing ad libitum energy intake at subsequent meals.',
           'প্রতি বেলায় ≥৩০ গ্রাম উচ্চমানের প্রোটিন এবং ≥১০ গ্রাম দ্রবণীয় আঁশযুক্ত খাবার রাখলে GLP-1 ও PYY নিঃসরণ দীর্ঘস্থায়ী হয় এবং ঘ্রেলিন দ্রুত কমে যায়, যা পরবর্তী বেলায় অতিরিক্ত খাওয়ার প্রবণতা রোধ করে।'
+        ),
+      },
+      {
+        title: l('Calculating Gastric Distension Thresholds & Energy Density in Meal Design', 'খাবারে পাকস্থলীর প্রসারণ সীমা ও ক্যালোরি ঘনত্ব হিসাব'),
+        steps: [
+          l(
+            'Step 1: Understand gastric mechanoreceptor threshold: In human adults, intraganglionic laminar endings (IGLEs) of the vagus nerve require approximately 400 to 500 mL of intragastric volume to generate significant mechanical tension and fire afferent meal-termination signals to the NTS.',
+            'ধাপ ১: পাকস্থলীর মেকানোরিসেপ্টর সীমা বুঝুন: প্রাপ্তবয়স্কদের ক্ষেত্রে ভেগাস স্নায়ুর সেন্সরগুলো সক্রিয় হয়ে খাওয়ার তৃপ্তি পাঠাতে পাকস্থলীতে প্রায় ৪০০ থেকে ৫০০ মিলিলিটার আয়তনের খাবার বা তরল প্রয়োজন হয়।'
+          ),
+          l(
+            'Step 2: Compare Meal A (Ultra-Processed fast food): Cheeseburger and fries provide 850 kcal in an ingested mass of only 250 g (volume ~260 mL; energy density = 3.4 kcal/g). Gastric stretch threshold (450 mL) is NOT achieved; patient remains hungry despite excessive calories.',
+            'ধাপ ২: প্রথম খাবার (ফাস্টফুড): চিজবার্গার ও ফ্রাই মাত্র ২৫০ গ্রাম ওজনে ৮৫০ কিলোক্যালরি শক্তি দেয় (ঘনত্ব = ৩.৪ kcal/g)। পাকস্থলীর প্রসারণ সীমা (৪৫০ মিলি) অর্জিত না হওয়ায় প্রচুর ক্যালোরি সত্ত্বেও পেট খালি মনে হয়।'
+          ),
+          l(
+            'Step 3: Compare Meal B (Volumetric High-Fiber Whole Food): Grilled chicken breast (150 g, 240 kcal), steamed broccoli and carrots (250 g, 90 kcal), and quinoa with lentils (150 g, 180 kcal) total 510 kcal across 550 g (volume ~560 mL; energy density = 0.93 kcal/g).',
+            'ধাপ ৩: দ্বিতীয় খাবার (উচ্চ-আঁশযুক্ত প্রাকৃতিক খাবার): মুরগির মাংস, প্রচুর সবজি এবং ডাল-কুইনোয়ার মিশ্রণ মোট ৫৫০ গ্রাম ওজনে মাত্র ৫১০ কিলোক্যালরি দেয় (ঘনত্ব = ০.৯৩ kcal/g)। এর ৫৬০ মিলিলিটার আয়তন পাকস্থলীকে পূর্ণ প্রসারিত করে।'
+          ),
+        ],
+        conclusion: l(
+          'Meal B achieves the vagal stretch threshold (560 mL > 450 mL) while delivering 340 fewer kilocalories than Meal A, demonstrating how volumetric meal engineering triggers mechanical and hormonal satiety at lower energy densities.',
+          'দ্বিতীয় খাবারটি পাকস্থলীর প্রসারণ সীমা অতিক্রম করে তৃপ্তির সংকেত পাঠায় এবং প্রথম খাবারের চেয়ে ৩৪০ কিলোক্যালরি কম গ্রহণ করেই দীর্ঘস্থায়ী পেট ভরার অনুভূতি নিশ্চিত করে।'
         ),
       },
     ],
@@ -160,6 +220,16 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
         answer: l(
           'Peripherally, GLP-1 receptor agonists bind enteric neurons to delay gastric emptying and slow nutrient entry into the duodenum. Centrally, they cross the semi-permeable median eminence and area postrema, directly exciting anorexigenic POMC neurons, inhibiting orexigenic NPY neurons, and dampening mesolimbic dopamine food reward signaling.',
           'প্রান্তীয়ভাবে এরা পাকস্থলী খালি হওয়ার গতি ধীর করে দেয়। কেন্দ্রীয়ভাবে মস্তিষ্কের এরিয়া পোস্ট্রিমা ও হাইপোথ্যালামাসে পৌঁছে এরা সরাসরি POMC নিউরনকে উত্তেজিত করে ক্ষুধা কমায় এবং ডোপামিন রিওয়ার্ড সার্কিট অবদমিত করে মিষ্টি ও চর্বিযুক্ত খাবারের প্রতি আসক্তি দূর করে।'
+        ),
+      },
+      {
+        question: l(
+          'Why is ghrelin octanoylation by GOAT biologically mandatory for appetite induction, and when does circulating ghrelin peak?',
+          'ক্ষুধা উদ্দীপনের জন্য GOAT এনজাইম দ্বারা ঘ্রেলিনের অক্টানয়লেশন কেন জৈবিকভাবে বাধ্যতামূলক এবং রক্তে ঘ্রেলিনের মাত্রা কখন শীর্ষে পৌঁছায়?'
+        ),
+        answer: l(
+          'Ghrelin O-Acyltransferase (GOAT) attaches an 8-carbon medium-chain fatty acid to Serine-3 of proghrelin. Without this hydrophobic octanoyl tail, ghrelin cannot bind or activate the GHSR1a receptor on hypothalamic NPY/AgRP neurons. Ghrelin peaks 1–2 hours prior to scheduled meal times in an anticipatory circadian pulse and plummets within 60 minutes post-prandially.',
+          'GOAT এনজাইম ঘ্রেলিনের ৩ নম্বর সেরিনে আট-কার্বনের ফ্যাটি অ্যাসিড যুক্ত করে। এই হাইড্রোফোবিক লেজ ছাড়া ঘ্রেলিন মস্তিষ্কের GHSR1a রিসেপ্টরে বসতে পারে না। নিয়মিত খাবারের ১-২ ঘণ্টা আগে রক্তে ঘ্রেলিন শীর্ষে পৌঁছায় এবং খাওয়ার ৬০ মিনিটের মধ্যে নেমে যায়।'
         ),
       },
     ],
@@ -263,7 +333,11 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
               'ক্ষুধা ও পেট ভরার অনুভূতি কেবল মানসিক ইচ্ছাশক্তির ওপর নির্ভরশীল নয়; এটি পরিপাকতন্ত্র, চর্বি কোষ এবং মস্তিষ্কের মধ্যে এক অত্যন্ত নিখুঁত ও জটিল নিউরোএন্ডোক্রিন যোগাযোগ ব্যবস্থা [১, ৪]। প্রতিটি মুহূর্তে রক্তের হরমোন এবং স্নায়ুতন্ত্রের মাধ্যমে মস্তিষ্ক খবর পায় যে পেটে খাবার আছে কিনা এবং দীর্ঘমেয়াদী শক্তি সঞ্চয়ের কী অবস্থা [১, ৩]।'
             ),
             l(
-              'When the stomach has been empty for several hours, it produces a hormone that triggers hunger sensations, compelling us to seek food. As food enters the intestines, stretching the gut walls and releasing digestive nutrients, a cascade of satiety hormones signals the brain that energy requirements have been satisfied, culminating in meal termination [3, 4].',
+              'To understand how this system operates, imagine the thermostat in your home. When the room temperature drops below a set point, the heater kicks on. Similarly, when your body energy reserves drop, your brain turns on biological hunger signals that compel you to seek food. Once you have eaten enough, internal sensors shut off the hunger signal and activate fullness [1, 4].',
+              'এই ব্যবস্থা বোঝার জন্য ঘরের এয়ার কন্ডিশনার বা থার্মোস্ট্যাটের কথা ভাবুন। তাপমাত্রা নির্দিষ্ট সীমার নিচে নেমে গেলে হিটার স্বয়ংক্রিয়ভাবে চালু হয়। একইভাবে দেহে শক্তির সঞ্চয় কমে গেলে মস্তিষ্ক ক্ষুধার অ্যালার্ম বাজিয়ে খাবার গ্রহণের নির্দেশ দেয়। খাবার খাওয়ার পর ভেতরের সেন্সরগুলো ক্ষুধা বন্ধ করে তৃপ্তির অনুভূতি জাগায় [১, ৪]।'
+            ),
+            l(
+              'When the stomach has been empty for several hours, it produces a hormone that triggers hunger sensations. As food enters the intestines, stretching the gut walls and releasing digestive nutrients, a cascade of satiety hormones signals the brain that energy requirements have been satisfied, culminating in meal termination [3, 4].',
               'পাকস্থলী খালি থাকলে এটি একটি বিশেষ হরমোন নিঃসরণ করে যা আমাদের ক্ষুধার তীব্র অনুভূতি জাগায়। খাবার খাওয়ার পর তা অন্ত্রে পৌঁছালে এবং পুষ্টি উপাদান শোষিত হতে শুরু করলে একদল তৃপ্তিদায়ক হরমোন মস্তিষ্কে পৌঁছে জানান দেয় যে খাওয়া বন্ধ করার সময় হয়েছে [৩, ৪]।'
             ),
           ],
@@ -275,6 +349,10 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
             l(
               'Ghrelin is the body only known circulating hunger-stimulating hormone [3]. Secreted primarily by specialized endocrine cells in the fundus of the stomach, ghrelin levels rise sharply during fasting, creating the physical sensation of hunger before scheduled meal times. Immediately following meal ingestion, ghrelin synthesis drops rapidly in proportion to the protein and complex carbohydrate content of the food [3, 4].',
               'দেহের একমাত্র ক্ষুধা উদ্দীপক হরমোন হলো ঘ্রেলিন [৩]। পাকস্থলীর উপরিভাগ থেকে নিঃসৃত এই হরমোন উপবাসের সময় দ্রুত বৃদ্ধি পেয়ে তীব্র ক্ষুধা তৈরি করে। খাবার গ্রহণের সাথে সাথে পাকস্থলীতে এর উৎপাদন কমে যায়, বিশেষ করে খাবারটি যদি প্রোটিন ও জটিল শর্করার সমন্বয়ে গঠিত হয় [৩, ৪]।'
+            ),
+            l(
+              'Think of ghrelin as a loud rumbling stomach alarm that goes off at your regular breakfast, lunch, or dinner hours. If you ignore it, the alarm often fades temporarily after an hour as your liver releases stored glucose, but it will ring louder at the next meal cycle [3, 4].',
+              'ঘ্রেলিনকে একটি নিয়মিত অ্যালার্ম ঘড়ির সাথে তুলনা করা যায় যা আপনার সাধারণ খাওয়ার সময়ে জোরে বেজে ওঠে। আপনি খাবার না খেলেও যকৃতের সঞ্চিত গ্লুকোজের কারণে এক ঘণ্টা পর এই তীব্রতা কিছুটা কমতে পারে, তবে পরবর্তী খাবারের সময়ে তা আরও তীব্র হয়ে ফিরে আসে [৩, ৪]।'
             ),
             l(
               'In direct contrast to ghrelin, leptin acts as the body long-term energy gauge [1]. Secreted by white adipose fat cells in direct proportion to total body fat mass, leptin travels through the bloodstream into the hypothalamus. When fat stores are abundant, high leptin levels signal the brain that energy reserves are sufficient, curbing appetite and increasing basal metabolic expenditure [1, 4].',
@@ -294,6 +372,10 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
               'Further downstream in the ileum and colon, enteroendocrine L-cells secrete Glucagon-Like Peptide-1 (GLP-1) and Peptide YY (PYY) [2, 3]. These hormones act as a physiological "ileal brake," physically slowing the rate at which the stomach empties into the intestine while simultaneously entering the brain to promote prolonged post-prandial fullness and contentment [2, 3].',
               'ক্ষুদ্রান্ত্রের শেষ প্রান্তে অবস্থিত L-কোষগুলো Glucagon-Like Peptide-1 (GLP-1) এবং Peptide YY (PYY) নিঃসরণ করে [২, ৩]। এই হরমোনগুলো পাকস্থলী খালি হওয়ার গতি কমিয়ে দেয় ("ইলিয়াল ব্রেক") এবং মস্তিষ্কে পৌঁছে দীর্ঘক্ষণ পেট ভরা থাকার মানসিক প্রশান্তি নিশ্চিত করে [২, ৩]।'
             ),
+            l(
+              'This biological process explains why eating too fast frequently leads to uncomfortable overeating: it takes approximately 15 to 20 minutes for ingested food to reach the lower gut and stimulate sufficient GLP-1 and PYY to tell your brain you are full [2, 3].',
+              'এই শারীরবৃত্তীয় প্রক্রিয়াটি ব্যাখ্যা করে কেন খুব দ্রুত খেলে অতিরিক্ত খাওয়া হয়ে যায়: খাবার ক্ষুদ্রান্ত্রে পৌঁছে পর্যাপ্ত GLP-1 ও PYY নিঃসরণ করে মস্তিষ্কে তৃপ্তির সংকেত পাঠাতে অন্তত ১৫ থেকে ২০ মিনিট সময় লাগে [২, ৩]।'
+            ),
           ],
         },
         {
@@ -305,8 +387,12 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
               'মানুষের খাওয়ার আচরণ মূলত দুটি স্নায়ুবিক ব্যবস্থার লড়াই: হাইপোথ্যালামাসের শারীরবৃত্তীয় কেন্দ্র, এবং মস্তিষ্কের ডোপামিন চালিত আনন্দঘন কেন্দ্র [১, ৪]। শারীরবৃত্তীয় ক্ষুধা তৈরি হয় যখন কোষে সত্যিই শক্তির ঘাটতি দেখা দেয় এবং বেঁচে থাকার জন্য ক্যালোরির প্রয়োজন হয় [১, ৪]।'
             ),
             l(
-              'Hedonic hunger, by contrast, is driven by the pleasure, aroma, and anticipation of ultra-palatable, calorie-dense foods combining sugar, salt, and fat [1, 4]. In modern food environments, intense dopamine release can completely override hypothalamic satiety signals, causing individuals to consume large quantities of food even when cellular energy stores and adipose tissue are completely replete [1, 4].',
-              'অন্যদিকে আনন্দঘন ক্ষুধা হলো চর্বি, মিষ্টি ও লবণে ভরা লোভনীয় খাবার দেখে মনে তৈরি হওয়া তীব্র আসক্তি [১, ৪]। আধুনিক প্রক্রিয়াজাত খাদ্যের জগতে এই ডোপামিন সংকেত মস্তিষ্কের প্রাকৃতিক তৃপ্তির সংকেতকে ছাপিয়ে যায়, ফলে পেট ভরা থাকা সত্ত্বেও মানুষ অতিরিক্ত ক্যালোরি গ্রহণ করে স্থূলতার দিকে ধাবিত হয় [১, ৪]।'
+              'Hedonic hunger, by contrast, is driven by the pleasure, aroma, and anticipation of ultra-palatable, calorie-dense foods combining sugar, salt, and fat [1, 4, 6]. This explains the common experience of having "room for dessert": your stomach may be physically full from dinner, but the sight of chocolate cake triggers a surge of dopamine in your reward centers that overrides hypothalamic fullness signals [4, 6].',
+              'অন্যদিকে আনন্দঘন ক্ষুধা হলো চর্বি, মিষ্টি ও লবণে ভরা লোভনীয় খাবার দেখে মনে তৈরি হওয়া তীব্র আসক্তি [১, ৪, ৬]। এটি ব্যাখ্যা করে কেন পেট ভরা থাকার পরও মিষ্টি খাওয়ার আলাদা ক্ষুধা তৈরি হয়: পাকস্থলী পূর্ণ থাকলেও চকোলেট কেকের দৃশ্য মস্তিষ্কের ডোপামিন কেন্দ্রকে জাগিয়ে তোলে এবং প্রাকৃতিক তৃপ্তির সংকেতকে অবদমিত করে [৪, ৬]।'
+            ),
+            l(
+              'In modern food environments, intense dopamine release can completely override hypothalamic satiety signals, causing individuals to consume large quantities of food even when cellular energy stores and adipose tissue are completely replete [1, 4, 6].',
+              'আধুনিক প্রক্রিয়াজাত খাদ্যের জগতে এই ডোপামিন সংকেত মস্তিষ্কের প্রাকৃতিক তৃপ্তির সংকেতকে ছাপিয়ে যায়, ফলে পেট ভরা থাকা সত্ত্বেও মানুষ অতিরিক্ত ক্যালোরি গ্রহণ করে স্থূলতার দিকে ধাবিত হয় [১, ৪, ৬]।'
             ),
           ],
         },
@@ -322,6 +408,10 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
               'Incorporating abundant non-starchy vegetables and legumes provides viscous soluble fiber that physically expands in the stomach, activating mechanosensitive vagal stretch receptors to signal fullness early, while slowing carbohydrate absorption to prevent rapid post-prandial hypoglycemic hunger spikes [3, 4].',
               'সবজি ও ডালজাতীয় খাবারের দ্রবণীয় আঁশ পাকস্থলীতে ফুলে ওঠে এবং ভেগাস স্নায়ুর মেকানিক্যাল সেন্সরকে সক্রিয় করে ক্যালোরি ছাড়াই দ্রুত পেট ভরার অনুভূতি দেয়, একই সাথে রক্তে গ্লুকোজের আকস্মিক ওঠানামা রোধ করে [৩, ৪]।'
             ),
+            l(
+              'Eating whole foods that require active mastication and drinking water 15 minutes before meals extends meal duration past the 20-minute threshold, giving enteroendocrine L-cells sufficient time to release their hormonal brakes before second helpings are served [3, 4].',
+              'চিবিয়ে খেতে হয় এমন প্রাকৃতিক খাবার খাওয়া এবং খাবারের ১৫ মিনিট আগে পানি পান খাওয়ার সময়কে ২০ মিনিটের সীমার ওপারে নিয়ে যায়, যা অন্ত্রের L-কোষগুলোকে পূর্ণমাত্রায় তৃপ্তির হরমোন নিঃসরণের সুযোগ দেয় [৩, ৪]।'
+            ),
           ],
         },
         {
@@ -331,6 +421,10 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
             l(
               'In summary, appetite is tightly governed by peripheral endocrine signals (ghrelin, leptin, GLP-1, PYY) communicating with hypothalamic circuits and the vagus nerve [1, 3]. Protein and dietary fiber optimize satiety hormones, while understanding the distinction between metabolic hunger and hedonic dopamine cravings is essential for long-term weight management [1, 4].',
               'সংক্ষেপে, মানুষের ক্ষুধা পাকস্থলী ও অন্ত্রের হরমোন (ঘ্রেলিন, লেপটিন, GLP-1, PYY) এবং মস্তিষ্কের ভেগাস স্নায়ু দ্বারা নিয়ন্ত্রিত [১, ৩]। প্রোটিন ও আঁশযুক্ত খাবার তৃপ্তির হরমোন বাড়িয়ে ক্ষুধা বশে রাখে, আর শারীরবৃত্তীয় ও আনন্দঘন ক্ষুধার পার্থক্য বোঝা দীর্ঘস্থায়ী স্বাস্থ্য নিয়ন্ত্রণের মূল চাবিকাঠি [১, ৪]।'
+            ),
+            l(
+              'Eating slowly, chewing thoroughly, and anchoring meals with protein and viscous fiber activates the ileal brake and satisfies stomach stretch receptors, preventing accidental caloric overconsumption [2, 3, 4].',
+              'ধীরে ধীরে খাওয়া, ভালোভাবে চিবানো এবং প্রোটিন ও আঁশের সমন্বয়ে খাবার সাজানো অন্ত্রের ব্রেক চালু করে এবং অতিরিক্ত ক্যালোরি গ্রহণ থেকে দেহকে সুরক্ষিত রাখে [২, ৩, ৪]।'
             ),
           ],
         },
@@ -351,6 +445,10 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
               'The anorexigenic (satiety-promoting) circuit comprises pro-opiomelanocortin (POMC) and cocaine- and amphetamine-regulated transcript (CART) neurons [1]. Post-translational cleavage of POMC by prohormone convertases (PC1/3 and PC2) produces alpha-Melanocyte-Stimulating Hormone (alpha-MSH), which projects to second-order neurons in the paraventricular nucleus (PVN) to activate Melanocortin-4 Receptors (MC4R), suppressing food intake and stimulating sympathetic thermogenesis [1].',
               'ক্ষুধা নিবারক সার্কিটে থাকে POMC এবং CART নিউরন [১]। বিশেষ এনজাইম দ্বারা POMC প্রোটিন ভেঙে আলফা-মেলানোসাইট-স্টিমুলেটিং হরমোন (alpha-MSH) তৈরি হয়, যা প্যারাভেন্ট্রিকুলার নিউক্লিয়াসের (PVN) মেলানোকর্টিন-৪ রিসেপ্টরে (MC4R) যুক্ত হয়ে ক্ষুধা বন্ধ করে এবং বিপাকীয় শক্তি ব্যয় বাড়িয়ে দেয় [১]।'
             ),
+            l(
+              'Mutations in the leptin-melanocortin pathway—including homozygous loss-of-function mutations in LEPR, POMC, PCSK1, or MC4R—represent the most frequent monogenic causes of severe, early-onset morbid obesity in humans, characterized by relentless hyperphagia and endocrine dysfunction [1, 4].',
+              'লেপটিন-মেলানোকর্টিন পথের জিনগত ত্রুটি—যেমন LEPR, POMC বা MC4R রিসেপ্টরের মিউটেশন—মানবদেহে শৈশবকালীন মারাত্মক স্থূলতার অন্যতম প্রধান জিনগত কারণ, যার ফলে শিশু প্রচণ্ড ক্ষুধা ও অনিয়ন্ত্রিত খাওয়ার প্রবণতায় ভোগে [১, ৪]।'
+            ),
           ],
         },
         {
@@ -364,6 +462,10 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
             l(
               'Orexigenic drive is stimulated by ghrelin, a 28-amino acid peptide synthesized by gastric oxyntic P/D1 cells [3]. To cross the median eminence and bind the Growth Hormone Secretagogue Receptor 1a (GHSR1a) on NPY/AgRP neurons, proghrelin requires post-translational modification by Ghrelin O-Acyltransferase (GOAT), an integral endoplasmic reticulum membrane enzyme that transfers an 8-carbon octanoyl moiety onto Serine-3 [3]. Des-acyl ghrelin lacks GHSR1a bioactivity, demonstrating the absolute requirement of lipid acylation for appetite signaling [3].',
               'পাকস্থলীর P/D1 কোষ থেকে নিঃসৃত ২৮-অ্যামিনো অ্যাসিডের ঘ্রেলিন এই ক্ষুধা সার্কিটকে সক্রিয় করে [৩]। মস্তিষ্কের GHSR1a রিসেপ্টরে যুক্ত হতে হলে ঘ্রেলিন ও-অ্যাসাইলট্রান্সফারেজ (GOAT) এনজাইম দ্বারা ঘ্রেলিনের তিন নম্বর সেরিনে আট-কার্বনের অক্টানয়েল ফ্যাটি অ্যাসিড যুক্ত হওয়া আবশ্যক; এই ফ্যাটি অ্যাসিড ছাড়া ঘ্রেলিন ক্ষুধার সংকেত পাঠাতে অক্ষম [৩]।'
+            ),
+            l(
+              'Nutritional status dictates GOAT enzymatic substrate availability: dietary medium-chain triglycerides (MCTs, specifically octanoic acid C8:0) provide direct fatty acyl donors for GOAT, illustrating an intimate biochemical bridge between dietary lipid composition and endocrine appetite modulation [3, 4].',
+              'খাদ্যের পুষ্টি উপাদান সরাসরি GOAT এনজাইমের কাঁচামাল সরবরাহ করে: খাদ্যের মিডিয়াম-চেইন ট্রাইগ্লিসারাইড (বিশেষ করে অক্টানোয়িক অ্যাসিড C8:0) ঘ্রেলিনের ফ্যাটি অ্যাসিড লেজ তৈরি করতে সরাসরি ব্যবহৃত হয়, যা খাদ্য চর্বি ও ক্ষুধা হরমোনের মধ্যে ঘনিষ্ঠ যোগসূত্র প্রমাণ করে [৩, ৪]।'
             ),
           ],
         },
@@ -379,6 +481,10 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
               'Distal enteroendocrine L-cells in the ileum and colon synthesize and co-secrete Glucagon-Like Peptide-1 (GLP-1) and Peptide YY (PYY3-36) [2, 3]. PYY acts as a high-affinity agonist at autoinhibitory presynaptic Neuropeptide Y Y2 receptors (NPY2R) on NPY/AgRP neurons, shutting down orexigenic peptide release [3]. Concurrently, circulating and vagal GLP-1 activates GLP-1 receptors in the NTS and hypothalamus, enhancing glucose-dependent insulin secretion, delaying gastric motility, and instigating central satiety [2, 3].',
               'ক্ষুদ্রান্ত্রের শেষ প্রান্তে অবস্থিত L-কোষগুলো GLP-1 এবং PYY(3-36) নিঃসরণ করে [২, ৩]। PYY মস্তিষ্কের NPY/AgRP নিউরনের Y2 রিসেপ্টরে যুক্ত হয়ে ক্ষুধার সংকেত বন্ধ করে দেয় [৩]। একই সাথে GLP-1 অগ্ন্যাশয়ে ইনসুলিন বাড়ায়, পাকস্থলী খালি হওয়ার গতি কমায় এবং হাইপোথ্যালামাসে পৌঁছে পেট ভরা থাকার তীব্র অনুভূতি তৈরি করে [২, ৩]।'
             ),
+            l(
+              'Native GLP-1 has an extremely brief plasma half-life of 1.5 to 2 minutes due to rapid enzymatic cleavage by Dipeptidyl Peptidase-4 (DPP-4) at alanine position 2, generating inactive GLP-1(9-36)amide. Consequently, endocrine signaling through the vagus nerve is predominantly local and paracrine before entering the portal vein [2, 3].',
+              'প্রাকৃতিক GLP-1 রক্তে মাত্র দেড় থেকে দুই মিনিট টিকে থাকে কারণ DPP-4 নামক এনজাইম একে দ্রুত ভেঙে নিষ্ক্রিয় করে ফেলে। ফলে অন্ত্রের ভেগাস স্নায়ু সংবেদন স্থানীয় প্যারাড্রিন পদ্ধতিতে অতি-দ্রুত মস্তিষ্কে এই তৃপ্তির বার্তা পৌঁছে দিতে অগ্রণী ভূমিকা পালন করে [২, ৩]।'
+            ),
           ],
         },
         {
@@ -390,8 +496,12 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
               'সুস্থ দেহে চর্বি থেকে নিঃসৃত লেপটিন LepRb রিসেপ্টরে যুক্ত হয়ে JAK2-STAT3 সংকেত চালু করে [১]। ফসফরাইলেটেড STAT3 নিউক্লিয়াসে গিয়ে সরাসরি POMC জিনের প্রকাশ বাড়ায় এবং ক্ষুধার AgRP জিনকে অবদমিত করে [১]।'
             ),
             l(
-              'In diet-induced polygenic obesity, sustained hyperleptinemia triggers negative feedback via Suppressor of Cytokine Signaling 3 (SOCS3) and protein tyrosine phosphatase 1B (PTP1B) [1]. SOCS3 binds Tyr985 of LepRb, physically inhibiting JAK2 kinase activity and decoupling leptin from downstream STAT3 signaling. To bypass leptin resistance, modern pharmacology utilizes long-acting GLP-1 and dual GIP/GLP-1 receptor agonists (e.g., semaglutide, tirzepatide), which directly engage G-protein coupled receptors in the area postrema, NTS, and arcuate nucleus, inducing potent reductions in caloric intake and body weight [2, 3].',
-              'কিন্তু অতিরিক্ত চর্বিজাত স্থূলতায় অবিরত উচ্চ লেপটিনের কারণে কোষে SOCS3 প্রোটিন বেড়ে যায় [১]। SOCS3 সরাসরি JAK2 কে অবদমিত করে লেপটিনের সংকেত বন্ধ করে দেয় ("লেপটিন রেজিস্ট্যান্স")। এই প্রতিরোধকে এড়িয়ে আধুনিক সেমাগ্লুটাইড বা টির্জেপাটাইডের মতো ওষুধগুলো সরাসরি GLP-1 রিসেপ্টরকে উত্তেজিত করে মস্তিষ্কের ক্ষুধা কেন্দ্র নিয়ন্ত্রণ করে এবং নাটকীয়ভাবে ওজন কমাতে সাহায্য করে [২, ৩]।'
+              'In diet-induced polygenic obesity, sustained hyperleptinemia triggers negative feedback via Suppressor of Cytokine Signaling 3 (SOCS3) and protein tyrosine phosphatase 1B (PTP1B) [1]. SOCS3 binds Tyr985 of LepRb, physically inhibiting JAK2 kinase activity and decoupling leptin from downstream STAT3 signaling. To bypass leptin resistance, modern pharmacology utilizes long-acting GLP-1 and dual GIP/GLP-1 receptor agonists (e.g., semaglutide, tirzepatide), which directly engage G-protein coupled receptors in the area postrema, NTS, and arcuate nucleus, inducing potent reductions in caloric intake and body weight [2, 3, 5].',
+              'কিন্তু অতিরিক্ত চর্বিজাত স্থূলতায় অবিরত উচ্চ লেপটিনের কারণে কোষে SOCS3 প্রোটিন বেড়ে যায় [১]। SOCS3 সরাসরি JAK2 কে অবদমিত করে লেপটিনের সংকেত বন্ধ করে দেয় ("লেপটিন রেজিস্ট্যান্স")। এই প্রতিরোধকে এড়িয়ে আধুনিক সেমাগ্লুটাইড বা টির্জেপাটাইডের মতো ওষুধগুলো সরাসরি GLP-1 রিসেপ্টরকে উত্তেজিত করে মস্তিষ্কের ক্ষুধা কেন্দ্র নিয়ন্ত্রণ করে এবং নাটকীয়ভাবে ওজন কমাতে সাহায্য করে [২, ৩, ৫]।'
+            ),
+            l(
+              'In the landmark STEP 1 randomized controlled trial, once-weekly subcutaneous semaglutide (2.4 mg) combined with lifestyle intervention produced a mean body weight loss of 14.9% at 68 weeks compared to 2.4% with placebo, fundamentally transforming obesity medicine from behavioral counseling into receptor-targeted neuroendocrine intervention [5].',
+              'যুগান্তকারী STEP 1 ট্রায়ালে দেখা গেছে যে সপ্তাহে একবার সেমাগ্লুটাইড (২.৪ মিগ্রা) প্রয়োগে ৬৮ সপ্তাহে রোগীদের গড় ১৪.৯% ওজন হ্রাস পেয়েছে (যেখানে প্লাসিবোতে কমেছিল মাত্র ২.৪%), যা স্থূলতার চিকিৎসাকে সাধারণ কাউন্সেলিং থেকে রিসেপ্টর-নির্দিষ্ট বিজ্ঞানে রূপান্তরিত করেছে [৫]।'
             ),
           ],
         },
@@ -407,6 +517,10 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
               'Furthermore, prescribing non-digestible prebiotic fibers (inulin, fructo-oligosaccharides) promotes colonic microbial fermentation into short-chain fatty acids (acetate, propionate, butyrate), which bind Free Fatty Acid Receptor 2 (FFAR2) and FFAR3 on colonocytes to stimulate baseline L-cell secretion of GLP-1 and PYY over a 24-hour cycle [3, 4].',
               'অতিরিক্তভাবে ইনুলিনের মতো প্রিবায়োটিক আঁশ বৃহদন্ত্রের ব্যাকটেরিয়ার মাধ্যমে শর্ট-চেইন ফ্যাটি অ্যাসিডে রূপান্তরিত হয়ে কোলনের L-কোষ থেকে সারাদিন ধরে GLP-1 ও PYY নিঃসরণ বজায় রাখে, যা স্বাভাবিকভাবে ক্ষুধা নিয়ন্ত্রণে অত্যন্ত কার্যকর [৩, ৪]।'
             ),
+            l(
+              'Clinicians should counsel patients on the mechanics of solid vs liquid calories: liquid carbohydrate and fat beverages bypass oral mastication and accelerate gastric emptying, failing to elicit adequate CCK and GLP-1 release and promoting rapid passive overconsumption [3, 4].',
+              'চিকিৎসকদের উচিত তরল বনাম কঠিন খাবারের পার্থক্যের ব্যাপারে রোগীদের সচেতন করা: জুস বা কোল্ড ড্রিংকসের মতো মিষ্টি পানীয় চিবানোর প্রয়োজন না থাকায় দ্রুত পেট থেকে নেমে যায় এবং পর্যাপ্ত তৃপ্তি হরমোন নিঃসরণ করতে ব্যর্থ হয়ে অতিরিক্ত ক্যালোরি গ্রহণের ঝুঁকি বহুগুণ বাড়ায় [৩, ৪]।'
+            ),
           ],
         },
         {
@@ -414,8 +528,12 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
           heading: l('Academic Summary & Clinical Pearls', 'একাডেমিক সারাংশ ও ক্লিনিক্যাল মুক্তা'),
           paragraphs: [
             l(
-              'Appetite regulation is governed by the coordinated interaction between peripheral endocrine sensors (ghrelin, leptin, GLP-1, PYY, CCK), vagal-hindbrain pathways, and the hypothalamic arcuate toggle switch [1, 3]. Obesity is characterized by cellular leptin resistance driven by SOCS3 [1]. Targeting incretin and gastrointestinal hormone physiology through both targeted macronutrient design and pharmacological agonists provides effective therapeutic control over human energy intake [2, 3].',
-              'ক্ষুধা ও তৃপ্তি মূলত প্রান্তীয় হরমোন, ভেগাস স্নায়ু এবং হাইপোথ্যালামাসের আর্কুয়েট নিউক্লিয়াসের মেলানোকর্টিন ব্যবস্থার সুষম সমন্বয়ে পরিচালিত হয় [১, ৩]। স্থূলতায় SOCS3 দ্বারা লেপটিন রেজিস্ট্যান্স তৈরি হয় [১]। উচ্চ প্রোটিন, আঁশযুক্ত খাবার এবং প্রয়োজনে আধুনিক ইনক্রিটিন থেরাপির মাধ্যমে এই ক্ষুধা অক্ষকে নিয়ন্ত্রণ করা সম্ভব [২, ৩]।'
+              'Appetite regulation is governed by the coordinated interaction between peripheral endocrine sensors (ghrelin, leptin, GLP-1, PYY, CCK), vagal-hindbrain pathways, and the hypothalamic arcuate toggle switch [1, 3]. Obesity is characterized by cellular leptin resistance driven by SOCS3 [1]. Targeting incretin and gastrointestinal hormone physiology through both targeted macronutrient design and pharmacological agonists provides effective therapeutic control over human energy intake [2, 3, 5].',
+              'ক্ষুধা ও তৃপ্তি মূলত প্রান্তীয় হরমোন, ভেগাস স্নায়ু এবং হাইপোথ্যালামাসের আর্কুয়েট নিউক্লিয়াসের মেলানোকর্টিন ব্যবস্থার সুষম সমন্বয়ে পরিচালিত হয় [১, ৩]। স্থূলতায় SOCS3 দ্বারা লেপটিন রেজিস্ট্যান্স তৈরি হয় [১]। উচ্চ প্রোটিন, আঁশযুক্ত খাবার এবং প্রয়োজনে আধুনিক ইনক্রিটিন থেরাপির মাধ্যমে এই ক্ষুধা অক্ষকে নিয়ন্ত্রণ করা সম্ভব [২, ৩, ৫]।'
+            ),
+            l(
+              'Optimizing protein distribution (≥30 g/meal), maximizing dietary fiber (≥35 g/day), and avoiding liquid calories form the evidence-based nutritional cornerstone for appetite control and metabolic health [3, 4].',
+              'প্রতি বেলায় কমপক্ষে ৩০ গ্রাম প্রোটিন নিশ্চিত করা, দৈনিক অন্তত ৩৫ গ্রাম আঁশ গ্রহণ এবং মিষ্টি পানীয় বর্জন করাই ক্ষুধা নিয়ন্ত্রণ ও দীর্ঘমেয়াদী বিপাকীয় সুরক্ষার প্রধান বিজ্ঞানসম্মত ভিত্তি [৩, ৪]।'
             ),
           ],
         },
@@ -425,16 +543,58 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
       label: l('Advanced / Research', 'উন্নত / গবেষণা'),
       sections: [
         {
-          id: 'integration',
-          heading: l('Optogenetics, Single-Cell Transcriptomics & Mesolimbic Crosstalk', 'অপটোজেনেটিক্স, একক কোষ ট্রান্সক্রিপ্টোমিক্স ও ডোপামিন সার্কিট'),
+          id: 'introduction',
+          heading: l('Single-Cell Transcriptomics & Hypothalamic Circuit Heterogeneity', 'একক কোষ ট্রান্সক্রিপ্টোমিক্স ও হাইপোথ্যালামিক বৈচিত্র্য'),
           paragraphs: [
             l(
-              'Single-cell RNA sequencing (scRNA-seq) has revolutionized hypothalamic neurobiology, demonstrating that arcuate POMC and AgRP populations are not monolithic, but comprise multiple transcriptionally distinct subtypes with divergent projection profiles [1]. Optogenetic channelrhodopsin photostimulation of AgRP axons projecting to the paraventricular nucleus or bed nucleus of the stria terminalis (BNST) triggers ravenous, frantic food-seeking within minutes, even in fully sated mice [1].',
-              'একক কোষ আরএনএ সিকোয়েন্সিং প্রমাণ করেছে যে হাইপোথ্যালামাসের POMC ও AgRP নিউরনগুলো একজাতীয় নয়, বরং বহু উপ-প্রকারে বিভক্ত [১]। ইঁদুরের ওপর অপটোজেনেটিক গবেষণায় দেখা গেছে যে AgRP নিউরনের অ্যাক্সনে নীল আলো ফেলে সক্রিয় করলে পেট সম্পূর্ণ ভরা থাকা সত্ত্বেও প্রাণীটি কয়েক মিনিটের মধ্যে পাগলের মতো খাবার খুঁজতে শুরু করে [১]।'
+              'Single-cell RNA sequencing (scRNA-seq) has dismantled the traditional view of monolithic POMC and AgRP neuronal pools, uncovering profound transcriptional and functional heterogeneity within the hypothalamic arcuate nucleus [1]. Sub-clustering reveals that POMC neurons bifurcate into GABAergic and glutamatergic lineages expressing distinct receptors, including serotonin 2C receptors (5-HT2CR) and cannabinoid-1 receptors (CB1R) [1].',
+              'একক কোষ আরএনএ সিকোয়েন্সিং হাইপোথ্যালামাসের POMC ও AgRP নিউরনের প্রথাগত ধারণাকে ভেঙে দিয়েছে [১]। বিশ্লেষণে দেখা গেছে যে POMC নিউরনগুলো একাধিক উপ-প্রকারে বিভক্ত; কিছু নিউরন গ্লুটামেটার্জিক এবং কিছু GABAergic সংকেত বহন করে যার ওপর সেরোটোনিন ও ক্যানাবিনয়েড রিসেপ্টরের ভিন্ন ভিন্ন নিয়ন্ত্রণ বিদ্যমান [১]।'
             ),
             l(
-              'Furthermore, tracing studies demonstrate intense bidirectional crosstalk between hypothalamic homeostatic nodes and ventral tegmental area (VTA) dopaminergic projection neurons [1, 4]. Leptin acts directly on LepRb-expressing dopamine neurons in the VTA to diminish phasic dopamine firing in response to palatable food cues, whereas ghrelin amplifies VTA dopamine burst firing, directly biasing hedonic decision-making toward high-reward, hyper-caloric food choices [1, 4].',
-              'মস্তিষ্কের হোমরিওস্ট্যাটিক কেন্দ্র এবং ডোপামিন চালিত ভেন্ট্রাল টেগমেন্টাল এরিয়ার (VTA) মধ্যে নিবিড় দ্বিমুখী যোগাযোগ রয়েছে [১, ৪]। লেপটিন VTA নিউরনে যুক্ত হয়ে লোভনীয় খাবারের প্রতি ডোপামিনের অতিরিক্ত নিঃসরণ কমায়, অন্যদিকে ঘ্রেলিন ডোপামিন প্রবাহ বাড়িয়ে ক্ষতিকর উচ্চ-ক্যালোরির খাবারের প্রতি তীব্র আকাঙ্ক্ষা তৈরি করে [১, ৪]।'
+              'Similarly, AgRP neurons exhibit distinct neuroanatomical projection topographies, projecting selectively to the lateral hypothalamic area (LHA) to stimulate motor food seeking, to the bed nucleus of the stria terminalis (BNST) to relieve negative emotional hunger valence, and to the parabrachial nucleus (PBN) to suppress visceral threat responses [1].',
+              'একইভাবে AgRP নিউরনগুলো মস্তিষ্কের ভিন্ন ভিন্ন অঞ্চলে শাখা বিস্তার করে: ল্যাটেরাল হাইপোথ্যালামাসে (LHA) সংকেত পাঠিয়ে এরা খাবার খোঁজার শারীরিক উদ্যম তৈরি করে, BNST-তে পাঠিয়ে ক্ষুধার মানসিক বিরক্তি কমায় এবং প্যারাব্রাকিয়াল নিউক্লিয়াসে গিয়ে বিপদের সংকেত অবদমিত করে খাবার খেতে বাধ্য করে [১]।'
+            ),
+          ],
+        },
+        {
+          id: 'structure',
+          heading: l('Optogenetics, Negative Valence & Feeding Motivation', 'অপটোজেনেটিক্স, নেগেটিভ ভ্যালেন্স ও খাদ্যের প্রণোদনা'),
+          paragraphs: [
+            l(
+              'Channelrhodopsin-assisted circuit mapping has revealed that hunger is primarily driven by "negative valence" rather than positive anticipation [1]. In vivo optogenetic photostimulation of AgRP neurons elicits an aversive, uncomfortable affective state in rodents. Animals actively perform operant tasks and seek food to turn off the unpleasant firing of AgRP neurons [1].',
+              'অপটোজেনেটিক গবেষণায় দেখা গেছে যে ক্ষুধা মূলত একটি "অস্বস্তিকর অনুভূতি" (নেগেটিভ ভ্যালেন্স) দ্বারা পরিচালিত হয় [১]। ইঁদুরের AgRP নিউরন নীল আলো দিয়ে সক্রিয় করলে তাদের ভেতরে তীব্র বিরক্তি ও অস্বস্তি তৈরি হয়; ফলে প্রাণীটি যেকোনো উপায়ে খাবার খুঁজে খায় কেবল সেই অপ্রীতিকর সংকেতটি বন্ধ করার জন্য [১]।'
+            ),
+            l(
+              'Remarkably, the sight or smell of food rapidly silences AgRP firing within seconds, long before nutrients enter the circulation, demonstrating predictive sensory pre-systemic feedback that reassures the brain that caloric replenishment is imminent [1, 3].',
+              'আশ্চর্যজনকভাবে খাবার দেখা বা তার ঘ্রাণ পাওয়ার মাত্র কয়েক সেকেন্ডের মধ্যেই AgRP নিউরন শান্ত হয়ে যায়—খাবার পেটে গিয়ে রক্তে মেশার অনেক আগেই মস্তিষ্ক এই পূর্বানুমানমূলক সংকেতের মাধ্যমে বুঝতে পারে যে শক্তির জোগান আসছে [১, ৩]।'
+            ),
+          ],
+        },
+        {
+          id: 'mechanism',
+          heading: l('Mesolimbic Dopaminergic Crosstalk & Food Reward Allostasis', 'মেসোলিম্বিক ডোপামিন সংকেত ও খাদ্য পুরষ্কারের অ্যালোস্ট্যাসিস'),
+          paragraphs: [
+            l(
+              'The homeostatic hypothalamic arcuate circuit engages in continuous bidirectional dialogue with the mesolimbic dopamine reward system [1, 6]. Dopaminergic neurons in the ventral tegmental area (VTA) project to the nucleus accumbens (NAc) shell, encoding the motivational salience and "wanting" of food [6]. Adiposity and satiety signals directly modulate this circuit: leptin and insulin bind receptors on VTA dopamine neurons, suppressing burst firing and lowering the reward value of food [1, 6].',
+              'হাইপোথ্যালামাসের শারীরবৃত্তীয় কেন্দ্র মস্তিষ্কের ভেন্ট্রাল টেগমেন্টাল এরিয়া (VTA) এবং নিউক্লিয়াস অ্যাকুম্বেন্সের (NAc) ডোপামিন পুরষ্কার কেন্দ্রের সাথে প্রতিনিয়ত যোগাযোগ করে [১, ৬]। লেপটিন ও ইনসুলিন VTA-র নিউরনে যুক্ত হয়ে ডোপামিনের আকস্মিক নিঃসরণ কমায় এবং খাবারের প্রতি অতিরিক্ত আসক্তিকে নিয়ন্ত্রণ করে [১, ৬]।'
+            ),
+            l(
+              'In chronic obesity, repeated consumption of ultra-processed foods rich in refined sugars and fats produces "hedonic allostasis" [6]. Striatal dopamine D2 receptor (D2R) density is progressively downregulated, mirroring the neuroadaptations observed in substance addictions [6]. Individuals with reduced D2R availability require increasingly larger portions of energy-dense foods to achieve the same dopamine reward response, reinforcing a compulsive overeating loop [4, 6].',
+              'দীর্ঘমেয়াদী স্থূলতায় অতি-প্রক্রিয়াজাত চর্বি ও চিনিযুক্ত খাবার ডোপামিন রিসেপ্টর (D2R) কমিয়ে ফেলে, যাকে বিজ্ঞানের ভাষায় "আনন্দঘন অ্যালোস্ট্যাসিস" বলা হয় [৬]। এর ফলে স্বাভাবিক খাবারে তৃপ্তি আসে না এবং পূর্বের মতো আনন্দ পেতে রোগী আরও বেশি ক্ষতিকর ক্যালোরিযুক্ত খাবার খেতে বাধ্য হয় [৪, ৬]।'
+            ),
+          ],
+        },
+        {
+          id: 'integration',
+          heading: l('Hypothalamic Gliosis & Microglial Neuroinflammation', 'হাইপোথ্যালামাসের গ্লায়োসিস ও মাইক্রোগ্লিয়াল স্নায়ুপ্রদাহ'),
+          paragraphs: [
+            l(
+              'High-fat, diet-induced obesity (DIO) provokes rapid, localized neuroinflammation within the hypothalamic arcuate nucleus [1]. Rodent models demonstrate that within 48 to 72 hours of high-saturated-fat feeding—long before significant body weight gain or systemic adiposity develops—microglia and astrocytes in the ARC proliferate and undergo reactive gliosis [1].',
+              'উচ্চ চর্বিযুক্ত খাবার গ্রহণের মাত্র ৪৮ থেকে ৭২ ঘণ্টার মধ্যেই হাইপোথ্যালামাসের আর্কুয়েট নিউক্লিয়াসে তীব্র প্রদাহ বা গ্লায়োসিস শুরু হয়—এমনকি শরীরে দৃশ্যমান ওজন বৃদ্ধির অনেক আগেই [১]। এই অঞ্চলে মাইক্রোগ্লিয়া এবং অ্যাস্ট্রোসাইট কোষগুলো অতি-সক্রিয় হয়ে স্নায়ুপ্রদাহ সৃষ্টি করে [১]।'
+            ),
+            l(
+              'Microglial activation is triggered by saturated fatty acids (e.g., palmitate) engaging Toll-Like Receptor-4 (TLR4), driving NF-kappa-B transcription of TNF-alpha, IL-1beta, and IL-6 [1]. Sustained neuroinflammation promotes endoplasmic reticulum (ER) stress and POMC neuronal apoptosis, impairing central leptin transport across the median eminence and locking the brain into an irreversible state of energy dysregulation [1, 4].',
+              'পামিটিক অ্যাসিডের মতো সম্পৃক্ত চর্বি TLR4 রিসেপ্টরের মাধ্যমে NF-kappa-B সক্রিয় করে প্রদাহজনক সাইটোকাইন তৈরি বাড়িয়ে দেয় [১]। দীর্ঘস্থায়ী প্রদাহের ফলে POMC নিউরনগুলো ক্ষতিগ্রস্ত হয়ে মারা যায়, যা হাইপোথ্যালামাসে লেপটিনের প্রবেশাধিকার স্থায়ীভাবে নষ্ট করে দেয় [১, ৪]।'
             ),
           ],
         },
@@ -447,8 +607,22 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
               'সেমাগ্লুটাইড এবং ডুয়াল অ্যাগোনিস্ট টির্জেপাটাইডের অভাবনীয় সাফল্যের পর বর্তমানে GLP-1, GIP এবং গ্লুকাগন রিসেপ্টর—এই তিনটিকে একসাথে সক্রিয়কারী ট্রাই-অ্যাগোনিস্ট (যেমন রিটাট্রুটাইড) নিয়ে ব্যাপক গবেষণা চলছে [২, ৩]। GLP-1 ও GIP ক্ষুধা নিবারণ ও ইনসুলিন নিয়ন্ত্রণ করে, আর গ্লুকাগন রিসেপ্টর সরাসরি যকৃতে চর্বি জারণ ও দৈহিক শক্তি ব্যয় বাড়িয়ে দেয় [২, ৩]।'
             ),
             l(
-              'Phase 2 clinical trial data demonstrate unprecedented mean total body weight reductions exceeding 24% at 48 weeks, approaching the efficacy of bariatric Roux-en-Y gastric bypass surgery [2, 3]. Molecular nutritional management alongside these potent pharmacotherapies requires vigilant monitoring of lean mass preservation, demanding rigorous high-DIAAS protein intake and structured resistance training to prevent severe sarcopenic muscle loss during rapid adipose mass depletion [2, 3].',
-              'ক্লিনিক্যাল ট্রায়ালে এই ট্রাই-অ্যাগোনিস্ট ব্যবহারে ৪৮ সপ্তাহে প্রায় ২৪% এরও বেশি শারীরিক ওজন কমেছে, যা বেরিয়াট্রিক সার্জারির সমকক্ষ [২, ৩]। তবে এই দ্রুত ওজন হ্রাসের সময় পেশিক্ষয় রোধ করতে রোগীদের জন্য উচ্চমানের DIAAS প্রোটিন এবং নিয়মিত রেজিস্ট্যান্স ব্যায়াম নিশ্চিত করা চিকিৎসাবিজ্ঞানের অত্যন্ত গুরুত্বপূর্ণ শর্ত [২, ৩]।'
+              'Phase 2 clinical trial data demonstrate unprecedented mean total body weight reductions exceeding 24% at 48 weeks, approaching the efficacy of bariatric Roux-en-Y gastric bypass surgery [2, 3]. Molecular nutritional management alongside these potent pharmacotherapies requires vigilant monitoring of lean mass preservation, demanding rigorous high-DIAAS protein intake and structured resistance training to prevent severe sarcopenic muscle loss during rapid adipose mass depletion [2, 3, 5].',
+              'ক্লিনিক্যাল ট্রায়ালে এই ট্রাই-অ্যাগোনিস্ট ব্যবহারে ৪৮ সপ্তাহে প্রায় ২৪% এরও বেশি শারীরিক ওজন কমেছে, যা বেরিয়াট্রিক সার্জারির সমকক্ষ [২, ৩]। তবে এই দ্রুত ওজন হ্রাসের সময় পেশিক্ষয় রোধ করতে রোগীদের জন্য উচ্চমানের DIAAS প্রোটিন এবং নিয়মিত রেজিস্ট্যান্স ব্যায়াম নিশ্চিত করা চিকিৎসাবিজ্ঞানের অত্যন্ত গুরুত্বপূর্ণ শর্ত [২, ৩, ৫]।'
+            ),
+          ],
+        },
+        {
+          id: 'takeaways',
+          heading: l('Advanced Research Frontiers & Future Directions', 'উন্নত গবেষণার দিগন্ত ও ভবিষ্যৎ সম্ভাবনা'),
+          paragraphs: [
+            l(
+              'Appetite neuroendocrinology is transitioning from simple caloric balance models to complex neuro-circuit mapping, recognizing hunger as an integrated output of hypothalamic transcriptomics, gut vagal afferents, and mesolimbic reward allostasis [1, 6].',
+              'ক্ষুধা বিজ্ঞান সাধারণ ক্যালোরি হিসাবের বাইরে গিয়ে স্নায়বিক সার্কিটের জটিল সমন্বয়ে পরিণত হয়েছে, যেখানে হাইপোথ্যালামাসের জিন প্রকাশ, ভেগাস স্নায়ু এবং মস্তিষ্কের ডোপামিন পুরষ্কার ব্যবস্থা একসাথে মানুষের ক্ষুধা নির্ধারণ করে [১, ৬]।',
+            ),
+            l(
+              'Future therapeutic breakthroughs combine gut-derived multi-incretin polypharmacology with dietary macronutrient engineering, safeguarding lean myofibrillar mass and reversing hypothalamic neuroinflammation to achieve permanent cardiometabolic remission [1, 3, 5].',
+              'ভবিষ্যতের চিকিৎসায় মাল্টি-ইনক্রিটিন ওষুধের পাশাপাশি খাদ্যের উচ্চ প্রোটিন ও আঁশের সমন্বয় ঘটিয়ে পেশির ক্ষয় রোধ করা এবং মস্তিষ্কের স্নায়ুপ্রদাহ সারিয়ে তোলাই স্থায়ীভাবে স্থূলতা ও ডায়াবেটিস নিরাময়ের মূল লক্ষ্য [১, ৩, ৫]।'
             ),
           ],
         },

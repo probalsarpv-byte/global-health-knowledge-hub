@@ -1,0 +1,47 @@
+# Functional Nutrition & Dietetics Academy: Textbook Depth Upgrade Progress Tracker
+
+**Document Version:** 2.6.1  
+**Last Updated:** October 2026  
+**Status:** Active Execution  
+**Current Milestone:** Stage 1 Audit Complete -> Initiating Batch A Deepen (Chapters 01–08)
+
+---
+
+## 1. Upgrade Batches Overview
+
+| Batch | Scope | Chapters | Target Focus | Status |
+|---|---|---|---|---|
+| Batch | Scope | Chapters | Target Focus | Status |
+|---|---|---|---|---|
+| **Batch A** | Foundations & Energetics + Lipids & Proteins | 01, 02, 03, 04, 05, 06, 07, 08 (8 chapters) | Expand Foundation, complete Academic pathways/equations, expand Advanced tier to full 6 sections, add secondary worked examples. | **COMPLETE (PASSED QA)** |
+| **Batch B** | Micronutrients, Bone, Iron, Gut Barrier & Microbiome | 09, 10, 11, 12, 13, 14, 15, 16 (8 chapters) | Rescue brief chapters (13–16), expand vitamins & coenzymes, complete junctional & microbial pathways. | **NEXT UP** |
+| **Batch C** | Clinical Dietetics & Medical Nutrition Therapy | 17, 18, 19, 20 (4 chapters) + Master Roadmap | Deepen clinical MNT guidelines, trial evidence, and provide 50-chapter master curriculum transition plan. | **SCHEDULED** |
+
+---
+
+## 2. Chapter Progress & Word Count Tracking
+
+| Chapter | Title | Pre-Upgrade Words (EN / BN) | Post-Upgrade Target (EN / BN) | Post-Upgrade Actual (EN / BN) | Sections (F / Ac / Ad) | Worked Ex. | QA Status |
+|---|---|---|---|---|---|---|---|
+| **01** | Energy Balance & TDEE | 1,282 / 1,210 | 3,000+ / 2,600+ | **3,747 / 3,383** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **02** | Macronutrient Digestion | 1,151 / 961 | 3,000+ / 2,600+ | **3,929 / 3,184** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **03** | Carbohydrate Quality & GI/GL | 1,210 / 1,111 | 3,000+ / 2,600+ | **3,988 / 3,253** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **04** | Dietary Fiber & SCFA | 1,304 / 1,089 | 3,000+ / 2,600+ | **3,915 / 3,263** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **05** | Dietary Lipids & PUFA | 1,552 / 1,274 | 2,800+ / 2,400+ | **2,844 / 2,503** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **06** | Protein Quality & DIAAS | 1,628 / 1,289 | 2,600+ / 2,100+ | **2,679 / 2,188** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **07** | Satiety Neuroendocrinology | 1,504 / 1,132 | 2,300+ / 1,800+ | **2,353 / 1,869** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **08** | Hydration & Osmoregulation | 1,645 / 1,271 | 2,500+ / 2,000+ | **2,606 / 2,090** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **09** | Fat-Soluble Vitamins | 2,368 / 1,912 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **10** | B-Complex Coenzymes | 2,217 / 1,819 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **11** | Vitamin C & Trace Minerals | 2,473 / 1,855 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **12** | Macrominerals & Bone Matrix | 2,400 / 1,934 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **13** | Iron Biology & Hepcidin | 1,116 / 896 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **14** | Gut Barrier & Tight Junctions | 849 / 692 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **15** | Gut Microbiome Metagenomics | 750 / 628 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **16** | Prebiotics & Probiotics | 748 / 645 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **17** | Food Intolerances & Celiac | 1,170 / 885 | 3,200+ / 2,800+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **18** | Obesity & T2D MNT | 1,030 / 798 | 3,200+ / 2,800+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **19** | Cardiovascular Dietetics | 985 / 709 | 3,200+ / 2,800+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **20** | Renal Nutrition & CKD | 1,009 / 770 | 3,200+ / 2,800+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+
+---
