@@ -52,8 +52,8 @@ export function NutritionSubjectPage() {
         <h2 className="sr-only">{label('Macronutrient Digestion', 'ম্যাক্রোনিউট্রিয়েন্টের পরিপাক')}</h2>
         <p>
           {label(
-            'An evidence-based curriculum tracing the bioenergetics, digestive mechanics, micronutrient cofactors, gut microbiome metagenomics, and medical nutrition therapy of human dietetics. Batch 1 chapters are available; planned chapters represent scheduled releases.',
-            'মানব খাদ্যাভ্যাসের জৈবশক্তিবিজ্ঞান, পরিপাক প্রক্রিয়া, ক্ষুদ্র পুষ্টি উপাদান, অন্ত্রীয় মাইক্রোবায়োম এবং ক্লিনিক্যাল পুষ্টি থেরাপির প্রমাণভিত্তিক কারিকুলাম। ১ম ব্যাচের অধ্যায়সমূহ উপলব্ধ; পরিকল্পিত অধ্যায়সমূহ নির্ধারিত পরবর্তী সংস্করণে প্রকাশিত হবে।'
+            'An evidence-based curriculum tracing the bioenergetics, digestive mechanics, micronutrient cofactors, gut microbiome metagenomics, and medical nutrition therapy of human dietetics. 25 comprehensive chapters are available; remaining chapters represent scheduled releases.',
+            'মানব খাদ্যাভ্যাসের জৈবশক্তিবিজ্ঞান, পরিপাক প্রক্রিয়া, ক্ষুদ্র পুষ্টি উপাদান, অন্ত্রীয় মাইক্রোবায়োম এবং ক্লিনিক্যাল পুষ্টি থেরাপির প্রমাণভিত্তিক কারিকুলাম। ২৫টি পূর্ণাঙ্গ অধ্যায় বর্তমানে উন্মুক্ত; অবশিষ্ট অধ্যায়সমূহ নির্ধারিত পরবর্তী সংস্করণে প্রকাশিত হবে।'
           )}
         </p>
         <div className="anatomy-subject-metrics">
@@ -86,8 +86,8 @@ export function NutritionSubjectPage() {
         </label>
         <p>
           {label(
-            'Batch 1 (Foundations & Energetics, Chapters 01–04) is fully verified, interactive, and aligned with the Vancouver citation standard. Groups 2–6 are in scheduled production.',
-            '১ম ব্যাচ (ভিত্তি ও শক্তিবিজ্ঞান, অধ্যায় ০১–০৪) সম্পূর্ণ যাচাইকৃত, ইন্টারেক্টিভ ও ভ্যাঙ্কুভার সাইটেশন মানসম্মত। ২–৬ গ্রুপ নির্ধারিত প্রকাশনার অপেক্ষায় রয়েছে।'
+            'Chapters 01–25 across Groups 1–6 are fully verified, interactive, and aligned with the Vancouver citation standard. Remaining scheduled chapters are in production.',
+            '১–৬ গ্রুপের ০১–২৫ অধ্যায় সম্পূর্ণ যাচাইকৃত, ইন্টারেক্টিভ ও ভ্যাঙ্কুভার সাইটেশন মানসম্মত। অবশিষ্ট নির্ধারিত অধ্যায়সমূহ নির্মাণাধীন।'
           )}
         </p>
       </section>
