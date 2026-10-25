@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Activity, ChevronLeft, ChevronRight, FlaskConical, Leaf, Sparkles } from 'lucide-react'
+import { Activity, ChevronLeft, ChevronRight, FlaskConical, ImageIcon, Leaf, Sparkles } from 'lucide-react'
 import type { InteractiveDiagramContent, LessonLocale } from '../../content/lessonSchema'
 import { useTheme } from '../../components/ThemeContext'
 
@@ -14,6 +14,7 @@ export function InteractiveNutrientDiagram({
 }) {
   const [selectedId, setSelectedId] = useState(diagram.items[0]?.id ?? '')
   const [activeIndex, setActiveIndex] = useState(0)
+  const [viewMode, setViewMode] = useState<'svg' | 'illustration'>('svg')
   const { isLab, toggleLabMode } = useTheme()
   const lang = locale === 'bn' ? 'bn' : 'en'
   const activeItem = diagram.items.find((item) => item.id === selectedId) || diagram.items[0]
@@ -126,44 +127,146 @@ export function InteractiveNutrientDiagram({
         </span>
       </div>
 
-      <div className="anatomy-explorer-layout">
-        {/* Interactive SVG Diagram Viewport */}
+      {diagram.imageUrl && (
+        <div style={{ display: 'flex', gap: '8px', margin: '12px 0 16px', flexWrap: 'wrap' }}>
+          <button
+            type="button"
+            className={viewMode === 'svg' ? 'primary-button' : 'secondary-button'}
+            style={{
+              padding: '6px 14px',
+              fontSize: '0.82rem',
+              fontWeight: 600,
+              background: viewMode === 'svg' ? 'var(--accent-nutrition, #059669)' : undefined,
+              color: viewMode === 'svg' ? '#ffffff' : undefined,
+            }}
+            onClick={() => setViewMode('svg')}
+          >
+            <Activity size={13} style={{ display: 'inline', marginRight: '5px' }} />
+            {locale === 'bn' ? 'অ্যানিমেটেড এসভিজি সিমুলেশন' : 'Animated SVG Schematic'}
+          </button>
+          <button
+            type="button"
+            className={viewMode === 'illustration' ? 'primary-button' : 'secondary-button'}
+            style={{
+              padding: '6px 14px',
+              fontSize: '0.82rem',
+              fontWeight: 600,
+              background: viewMode === 'illustration' ? 'var(--accent-nutrition, #059669)' : undefined,
+              color: viewMode === 'illustration' ? '#ffffff' : undefined,
+            }}
+            onClick={() => setViewMode('illustration')}
+          >
+            <ImageIcon size={13} style={{ display: 'inline', marginRight: '5px' }} />
+            {locale === 'bn' ? 'মেডিকেল ইনফোগ্রাফিক ও রেফারেন্স ফটো' : 'Medical Infographic / Photo'}
+          </button>
+        </div>
+      )}
+
+      {viewMode === 'illustration' && diagram.imageUrl ? (
         <div
-          className="anatomy-explorer-viewport"
           style={{
-            position: 'relative',
-            background: isLab ? '#0b1626' : 'linear-gradient(145deg, #f0fdf4 0%, #ecfdf5 100%)',
+            marginTop: '15px',
+            background: isLab ? '#0b1626' : 'var(--panel)',
+            border: `1px solid ${isLab ? '#1f385c' : 'var(--border)'}`,
             borderRadius: '12px',
-            border: `1px solid ${isLab ? '#1f385c' : '#a7f3d0'}`,
-            padding: '16px',
-            boxShadow: isLab ? 'inset 0 0 30px rgba(5, 150, 105, 0.15)' : 'none',
+            overflow: 'hidden',
           }}
         >
-          <svg
-            className="anatomy-explorer-svg"
-            viewBox="0 0 360 420"
-            role="img"
-            aria-label={diagram.title[lang]}
-            style={{ minHeight: '380px' }}
+          <img
+            src={diagram.imageUrl}
+            alt={diagram.imageCaption ? diagram.imageCaption[lang] : diagram.title[lang]}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+          {diagram.imageCaption && (
+            <div
+              style={{
+                padding: '12px 16px',
+                fontSize: '0.86rem',
+                lineHeight: '1.6',
+                color: isLab ? '#94a3b8' : 'var(--subtle)',
+                background: isLab ? '#081324' : '#f8fafc',
+                borderTop: `1px solid ${isLab ? '#1f385c' : 'var(--border)'}`,
+              }}
+            >
+              <strong style={{ color: 'var(--accent-nutrition, #059669)' }}>
+                {locale === 'bn' ? 'মেডিকেল রেফারেন্স চিত্র: ' : 'Medical Reference Figure: '}
+              </strong>
+              {diagram.imageCaption[lang]}
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="anatomy-explorer-layout">
+          {/* Interactive SVG Diagram Viewport */}
+          <div
+            className="anatomy-explorer-viewport"
+            style={{
+              position: 'relative',
+              background: isLab ? '#0b1626' : 'linear-gradient(145deg, #f0fdf4 0%, #ecfdf5 100%)',
+              borderRadius: '12px',
+              border: `1px solid ${isLab ? '#1f385c' : '#a7f3d0'}`,
+              padding: '16px',
+              boxShadow: isLab ? 'inset 0 0 30px rgba(5, 150, 105, 0.15)' : 'none',
+            }}
           >
-            {/* Background Grid Pattern for Lab Mode */}
-            {isLab && (
-              <pattern id="nutrient-lab-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(5, 150, 105, 0.12)" strokeWidth="0.8" />
-              </pattern>
-            )}
-            {isLab && <rect width="100%" height="100%" fill="url(#nutrient-lab-grid)" />}
+            <svg
+              className="anatomy-explorer-svg"
+              viewBox="0 0 360 420"
+              role="img"
+              aria-label={diagram.title[lang]}
+              style={{ minHeight: '380px' }}
+            >
+              {/* Background Grid Pattern for Lab Mode */}
+              {isLab && (
+                <pattern id="nutrient-lab-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(5, 150, 105, 0.12)" strokeWidth="0.8" />
+                </pattern>
+              )}
+              {isLab && <rect width="100%" height="100%" fill="url(#nutrient-lab-grid)" />}
 
-            {/* Connecting Guide Lines */}
-            <g className="anatomy-plane-lines" opacity={isLab ? 0.7 : 0.45}>
-              <path
-                d="M 180 50 L 180 370"
-                stroke={isLab ? '#10b981' : '#059669'}
-                strokeWidth="2.5"
-                strokeDasharray="4 4"
-                fill="none"
-              />
-            </g>
+              {/* Connecting Guide Lines */}
+              <g className="anatomy-plane-lines" opacity={isLab ? 0.7 : 0.45}>
+                <path
+                  d="M 180 50 L 180 370"
+                  stroke={isLab ? '#10b981' : '#059669'}
+                  strokeWidth="2.5"
+                  strokeDasharray="4 4"
+                  className="animated-flow"
+                  fill="none"
+                />
+              </g>
+
+              {/* Lifespan Continuum Trajectory Curve */}
+              {diagram.svgType === 'lifespan-trajectory' && (
+                <g className="lifespan-svg-curves" opacity={isLab ? 0.85 : 0.65}>
+                  <defs>
+                    <linearGradient id="lifespan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#10b981" />
+                      <stop offset="35%" stopColor="#059669" />
+                      <stop offset="65%" stopColor="#d97706" />
+                      <stop offset="100%" stopColor="#dc2626" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M 25 100 C 60 40, 140 30, 200 80 S 300 280, 335 370"
+                    fill="none"
+                    stroke="url(#lifespan-grad)"
+                    strokeWidth="3"
+                    strokeDasharray="6 4"
+                    className="animated-flow"
+                  />
+                  {/* Subtle trajectory milestone tags */}
+                  <text x="35" y="65" fill={isLab ? '#34d399' : '#059669'} fontSize="9" fontWeight="700">
+                    {locale === 'bn' ? 'শৈশব ও বৃদ্ধি' : 'Growth & Infancy'}
+                  </text>
+                  <text x="180" y="55" fill={isLab ? '#fbbf24' : '#d97706'} fontSize="9" fontWeight="700">
+                    {locale === 'bn' ? 'অস্থি সঞ্চয় ও পরিপক্কতা' : 'Peak Bone Mass'}
+                  </text>
+                  <text x="235" y="380" fill={isLab ? '#f87171' : '#dc2626'} fontSize="9" fontWeight="700">
+                    {locale === 'bn' ? 'সারকোপেনিয়া প্রতিরোধ' : 'Sarcopenia Defense'}
+                  </text>
+                </g>
+              )}
 
             {/* Interactive Nodes */}
             {diagram.items.map((item, idx) => {
@@ -336,6 +439,7 @@ export function InteractiveNutrientDiagram({
           )}
         </div>
       </div>
+      )}
     </section>
   )
 }

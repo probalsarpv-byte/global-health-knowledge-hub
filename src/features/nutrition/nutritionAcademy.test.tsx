@@ -21,7 +21,7 @@ beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
 describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 3, 4, 5 & 6 Chapters', () => {
-  it('defines an ordered 27-chapter curriculum across 6 thematic groups with Batches 1, 2, 3, 4, 5 & 6 (24 chapters) available', () => {
+  it('defines an ordered 27-chapter curriculum across 6 thematic groups with Batches 1, 2, 3, 4, 5 & 6 (25 chapters) available', () => {
     expect(nutritionCurriculum.chapters).toHaveLength(27)
     expect(nutritionCurriculum.groups.map((group) => group.id)).toEqual([
       'nutrition.foundations',
@@ -36,7 +36,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     )
 
     const availableChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(24)
+    expect(availableChapters).toHaveLength(25)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'nutrition.chapter.01',
       'nutrition.chapter.02',
@@ -62,12 +62,12 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
       'nutrition.chapter.22',
       'nutrition.chapter.23',
       'nutrition.chapter.24',
+      'nutrition.chapter.25',
     ])
 
     const plannedChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(3)
+    expect(plannedChapters).toHaveLength(2)
     expect(plannedChapters.map((chapter) => chapter.id)).toEqual([
-      'nutrition.chapter.25',
       'nutrition.chapter.26',
       'nutrition.chapter.27',
     ])
@@ -79,8 +79,8 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     expect(batch3NutritionChapters).toHaveLength(4)
     expect(batch4NutritionChapters).toHaveLength(4)
     expect(batch5NutritionChapters).toHaveLength(4)
-    expect(batch6NutritionChapters).toHaveLength(4)
-    expect(allCompletedNutritionChapters).toHaveLength(24)
+    expect(batch6NutritionChapters).toHaveLength(5)
+    expect(allCompletedNutritionChapters).toHaveLength(25)
 
     const issues = validateLessons([
       ...lessons,
@@ -97,7 +97,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     render(<App />)
 
     expect(await screen.findByRole('heading', { name: 'Nutrition & dietetics curriculum' })).toBeInTheDocument()
-    expect(screen.getByText('24 / 27 chapters available')).toBeInTheDocument()
+    expect(screen.getByText('25 / 27 chapters available')).toBeInTheDocument()
 
     // Chapter 01 and Chapter 04 visible initially
     expect(screen.getByText(/01 · Energy Balance, Basal Metabolic Rate/)).toBeInTheDocument()
@@ -621,9 +621,35 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     }
     expect(screen.getAllByText(/Dimeric PKM2 stalls glycolytic flux/i).length).toBeGreaterThanOrEqual(1)
 
-    // Next chapter is Chapter 25 (planned)
+    // Next chapter is Chapter 25 (available)
+    expect(screen.getByRole('link', { name: /25 · Pediatric, Adolescent & Geriatric Nutrition/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 25 (Pediatric, Adolescent & Geriatric Nutrition) and operates Sarcopenia node and illustration toggle', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/lifespan-pediatric-geriatric-nutrition')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '25 · Pediatric, Adolescent & Geriatric Nutrition: Growth to Sarcopenia',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Sarcopenia & Anabolic Resistance node
+    const sarcopeniaBtns = screen.getAllByRole('button', { name: /Sarcopenia & Anabolic Resistance/i })
+    for (const btn of sarcopeniaBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Aging myocytes exhibit blunted mTORC1 activation/i).length).toBeGreaterThanOrEqual(1)
+
+    // Operate Medical Infographic / Photo toggle
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /The Human Lifespan Nutrition Continuum/i })).toBeInTheDocument()
+
+    // Next chapter is Chapter 26 (planned)
     expect(screen.getByText(/Next release/i)).toBeInTheDocument()
-    expect(screen.getByText(/25 · Pediatric/i)).toBeInTheDocument()
+    expect(screen.getByText(/26 · Exercise Nutrition/i)).toBeInTheDocument()
     expect(screen.getByText('Planned chapter')).toBeInTheDocument()
   })
 

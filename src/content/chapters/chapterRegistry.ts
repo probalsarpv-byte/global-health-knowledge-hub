@@ -87,6 +87,7 @@ import { nutrition21HepatobiliaryMASLDLesson } from './nutrition21HepatobiliaryM
 import { nutrition22ClinicalMalnutritionLesson } from './nutrition22ClinicalMalnutrition'
 import { nutrition23MaternalFetalNutritionLesson } from './nutrition23MaternalFetalNutrition'
 import { nutrition24CancerNutritionLesson } from './nutrition24CancerNutrition'
+import { nutrition25LifespanNutritionLesson } from './nutrition25LifespanNutrition'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -389,6 +390,7 @@ export const allNutritionLessonsMap: Record<string, LessonTopic> = {
   [nutrition22ClinicalMalnutritionLesson.id]: nutrition22ClinicalMalnutritionLesson,
   [nutrition23MaternalFetalNutritionLesson.id]: nutrition23MaternalFetalNutritionLesson,
   [nutrition24CancerNutritionLesson.id]: nutrition24CancerNutritionLesson,
+  [nutrition25LifespanNutritionLesson.id]: nutrition25LifespanNutritionLesson,
 }
 
 export const allNutritionLessonsBySlug: Record<string, LessonTopic> = {
@@ -416,6 +418,7 @@ export const allNutritionLessonsBySlug: Record<string, LessonTopic> = {
   [nutrition22ClinicalMalnutritionLesson.slug]: nutrition22ClinicalMalnutritionLesson,
   [nutrition23MaternalFetalNutritionLesson.slug]: nutrition23MaternalFetalNutritionLesson,
   [nutrition24CancerNutritionLesson.slug]: nutrition24CancerNutritionLesson,
+  [nutrition25LifespanNutritionLesson.slug]: nutrition25LifespanNutritionLesson,
 }
 
 export function getNutritionChapterLesson(identifier?: string): LessonTopic | undefined {
@@ -467,6 +470,7 @@ export const batch6NutritionChapters: LessonTopic[] = [
   nutrition22ClinicalMalnutritionLesson,
   nutrition23MaternalFetalNutritionLesson,
   nutrition24CancerNutritionLesson,
+  nutrition25LifespanNutritionLesson,
 ]
 
 export const allCompletedNutritionChapters: LessonTopic[] = [

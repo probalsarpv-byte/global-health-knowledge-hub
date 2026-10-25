@@ -2,12 +2,13 @@ import { useState } from 'react'
 import type { CellChapter, LessonLocale } from '../../content/lessonSchema'
 
 export function CellOrganelleDiagram({ chapter, locale, onSectionSelect }: { chapter: CellChapter; locale: LessonLocale; onSectionSelect: (sectionId: string) => void }) {
-  const [selectedId, setSelectedId] = useState(chapter.organelles[0]?.id ?? '')
-  const selected = chapter.organelles.find((item) => item.id === selectedId) ?? chapter.organelles[0]
+  const organelles = chapter.organelles ?? []
+  const [selectedId, setSelectedId] = useState(organelles[0]?.id ?? '')
+  const selected = organelles.find((item) => item.id === selectedId) ?? organelles[0]
   const text = (value: { en: string; bn: string }) => value[locale]
   const select = (id: string) => {
     setSelectedId(id)
-    const organelle = chapter.organelles.find((item) => item.id === id)
+    const organelle = organelles.find((item) => item.id === id)
     if (organelle) onSectionSelect(organelle.sectionId)
   }
   const nodes = [

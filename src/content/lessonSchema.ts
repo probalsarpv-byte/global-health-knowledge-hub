@@ -111,7 +111,7 @@ export type CellChapter = {
   terms: Array<{ term: Localized; definition: Localized }>
   workedExamples: Array<{ title: Localized; steps: Localized[]; conclusion: Localized }>
   checkpoints: Array<{ question: Localized; answer: Localized }>
-  organelles: Array<{ id: string; label: Localized; description: Localized; functions: Localized[]; sectionId: string }>
+  organelles?: Array<{ id: string; label: Localized; description: Localized; functions: Localized[]; sectionId: string }>
 }
 
 export type InteractiveDiagramItem = {
@@ -140,6 +140,8 @@ export type InteractiveDiagramContent = {
   description: Localized
   svgType: string
   items: InteractiveDiagramItem[]
+  imageUrl?: string
+  imageCaption?: Localized
 }
 
 

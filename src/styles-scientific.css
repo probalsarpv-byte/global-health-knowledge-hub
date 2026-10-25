@@ -1124,8 +1124,42 @@ html[lang="bn"] .lesson-section-body p {
 
 @media (prefers-reduced-motion: reduce) {
   .reference-item.reference-target-active,
-  .citation-link.citation-return-active {
+  .citation-link.citation-return-active,
+  .nutrient-node.selected,
+  .animated-flow {
     animation: none !important;
   }
+}
+
+/* ==========================================================================
+   Interactive Nutrient Diagram & SVG Animations
+   ========================================================================== */
+
+@keyframes nutrientPulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(5, 150, 105, 0.25)); }
+  50% { transform: scale(1.012); filter: drop-shadow(0 0 8px rgba(5, 150, 105, 0.5)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(5, 150, 105, 0.25)); }
+}
+
+@keyframes dashFlow {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -20; }
+}
+
+.nutrient-node {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), filter 0.22s ease;
+  transform-origin: center;
+}
+
+.nutrient-node:hover {
+  filter: drop-shadow(0 3px 8px rgba(5, 150, 105, 0.3));
+}
+
+.nutrient-node.selected {
+  animation: nutrientPulse 3s infinite ease-in-out;
+}
+
+.animated-flow {
+  animation: dashFlow 2.4s linear infinite;
 }
 

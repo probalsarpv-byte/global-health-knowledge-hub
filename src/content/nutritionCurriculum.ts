@@ -500,10 +500,11 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'WHO pediatric growth charts, weaning nutrient density, adolescent peak bone mass accretion, and geriatric atrophic gastritis, vitamin B12 malabsorption, and muscle anabolic resistance.',
         'শিশুর বৃদ্ধি পরিমাপ, কৈশোরে অস্থির সর্বোচ্চ ঘনত্ব অর্জন এবং প্রবীণদের পাকস্থলীর অম্লস্বল্পতা, ভিটামিন বি১২ শোষণহীনতা ও পেশির অ্যানাবলিক রেজিস্ট্যান্স।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.06', 'nutrition.chapter.12'],
-      estimatedMinutes: 60,
+      lessonId: 'topic.nutrition.lifespan-pediatric-geriatric-nutrition',
+      estimatedMinutes: 65,
     },
     {
       id: 'nutrition.chapter.26',
