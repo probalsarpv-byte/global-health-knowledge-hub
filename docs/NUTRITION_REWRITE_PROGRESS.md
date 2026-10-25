@@ -48,6 +48,7 @@
 | **22** | Clinical Malnutrition & Support | New Chapter | 3,500+ / 3,000+ | **8,162 / 7,572** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **23** | Maternal, Fetal & Lactation | New Chapter | 3,500+ / 3,000+ | **8,829 / 7,616** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **24** | Oncology Nutrition & Cancer Cachexia | New Chapter | 3,500+ / 3,000+ | **8,972 / 7,563** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **25** | Pediatric, Adolescent & Geriatric Nutrition | New Chapter | 3,500+ / 3,000+ | **11,496 / 8,694** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 
 ---
 

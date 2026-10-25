@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Activity, ChevronLeft, ChevronRight, FlaskConical, ImageIcon, Leaf, Sparkles } from 'lucide-react'
+import { Activity, ChevronLeft, ChevronRight, Eye, FlaskConical, Leaf, Sparkles } from 'lucide-react'
 import type { InteractiveDiagramContent, LessonLocale } from '../../content/lessonSchema'
 import { useTheme } from '../../components/ThemeContext'
 
@@ -156,7 +156,7 @@ export function InteractiveNutrientDiagram({
             }}
             onClick={() => setViewMode('illustration')}
           >
-            <ImageIcon size={13} style={{ display: 'inline', marginRight: '5px' }} />
+            <Eye size={13} style={{ display: 'inline', marginRight: '5px' }} />
             {locale === 'bn' ? 'মেডিকেল ইনফোগ্রাফিক ও রেফারেন্স ফটো' : 'Medical Infographic / Photo'}
           </button>
         </div>

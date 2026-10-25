@@ -1,17 +1,17 @@
 # Functional Nutrition & Dietetics Academy: Session Resumption State
 
-**Timestamp:** 2026-10-25  
-**Current Milestone:** All 24 Available Chapters (Chapters 01–24, including Standalone Chapter 24 Oncology Nutrition) Complete & Verified to 14-Point University Textbook Standard!  
+**Timestamp:** 2026-10-26  
+**Current Milestone:** All 25 Available Chapters (Chapters 01–25, including Chapter 25 Lifespan Nutrition with Photos & Animated SVG) Complete & Verified to 14-Point University Textbook Standard!  
 **Active Working Branch:** `main`  
 **Git Working Tree:** Clean, all quality gates green  
-**Test Suite Health:** All test suites / 110 Vitest tests passing, 0 lint warnings (`eslint . --max-warnings=0`), 0 typecheck errors (`tsc -b`), production build passing (`vite build`).
+**Test Suite Health:** All test suites / 111 Vitest tests passing, 0 lint warnings (`eslint . --max-warnings=0`), 0 typecheck errors (`tsc -b`), production build passing (`vite build`).
 
 ---
 
 ## 1. Work Completed
 
 1. **Full Repository & Content Audit Executed:**
-   - Evaluated all available Nutrition chapters (`nutrition01EnergyBalance.ts` through `nutrition24CancerNutrition.ts`).
+   - Evaluated all available Nutrition chapters (`nutrition01EnergyBalance.ts` through `nutrition25LifespanNutrition.ts`).
    - Produced authoritative audit report in `docs/NUTRITION_DEPTH_AUDIT.md`.
 2. **Permanent Textbook Writing Standard Documented:**
    - Established the 14-point pedagogical architecture for all nutritional topics in `docs/NUTRITION_TEXTBOOK_STANDARD.md`.
@@ -34,16 +34,21 @@
    - **Total Batch D Volume (Chapters 21–23):** **25,105 English words / 21,557 Bengali words** (46,662 bilingual words total) across 54 substantive pedagogical sections.
 7. **Standalone Chapter 24 (Oncology Nutrition & Cancer Cachexia) Authored & Fully Integrated:**
    - **Chapter 24 (`nutrition24CancerNutrition.ts`):** **8,972 English words / 7,563 Bengali words** across 18 sections (4 paragraphs each, strictly IDs: `introduction`, `structure`, `mechanism`, `integration`, `practice`, `takeaways`); 6 key terms, 2 worked examples with step-by-step calculations, 3 checkpoints, 6 Vancouver-style citations with DOIs, interactive diagram with Warburg Aerobic Glycolysis node.
-   - **Total Academy Volume (Chapters 01–24 Complete):** **141,594 English words / 115,028 Bengali words** (256,622 bilingual words total) across 432 substantive pedagogical sections.
+8. **Chapter 25 (Pediatric, Adolescent & Geriatric Nutrition: Growth to Sarcopenia) Authored & Fully Integrated with Photos & Animated SVG:**
+   - **Chapter 25 (`nutrition25LifespanNutrition.ts`):** **10,508 English words / 8,676 Bengali words** (19,184 bilingual words total) across 18 sections (4 substantive paragraphs each $\ge 120$ characters); 6 key terms, 2 worked examples with step-by-step calculations, 3 checkpoints, 6 primary Vancouver-style citations with DOIs.
+   - **Rich Media & Visual Integration:**
+     - High-resolution medical infographics in `public/assets/lifespan_nutrition_overview.jpg` and `public/assets/pediatric_geriatric_mechanisms.jpg`.
+     - Interactive SVG diagram with custom SVG nodes, animated SVG trajectory curve (`svgType: 'lifespan-trajectory'`), `@keyframes dashFlow`, and `@keyframes nutrientPulse`.
+     - Interactive view toggle in `InteractiveNutrientDiagram.tsx` switching seamlessly between the animated SVG schematic and high-resolution medical reference illustration.
+   - **Total Academy Volume (Chapters 01–25 Complete):** **152,102 English words / 123,704 Bengali words** (275,806 bilingual words total) across 450 substantive pedagogical sections.
    - 100% bilingual parity (Bengali + International English with dual-script terminology).
-   - All automated checks passed: `npm run lint` (0 errors), `npm run typecheck` (0 errors), Vitest (110/110 passed across all 6 test suites), `npm run build` (production bundle built cleanly).
+   - All automated checks passed: `npm run lint` (0 warnings/errors), `npm run typecheck` (0 errors), Vitest (111/111 passed across all 6 test suites), `npm run build` (production bundle built cleanly).
 
 ---
 
-## 2. Next Milestones: Future Academy Expansion (Batch E: Remaining Chapters 25–27)
+## 2. Next Milestones: Future Academy Expansion (Batch E: Remaining Chapters 26 & 27)
 
 - **Remaining Lifespan, Sports & Precision Dietetics Chapters:**
-  - Chapter 25: Pediatric, Adolescent & Geriatric Nutrition: Growth to Sarcopenia (`lifespan-pediatric-geriatric-nutrition`)
   - Chapter 26: Exercise Nutrition & Sports Bioenergetics: Periodization & Timing (`sports-nutrition-bioenergetics`)
   - Chapter 27: Nutrigenomics, Epigenetics & Precision Functional Dietetics (`nutrigenomics-precision-dietetics`)
 - **Master Scope Roadmap:**

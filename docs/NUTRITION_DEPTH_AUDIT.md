@@ -124,7 +124,7 @@ Following comprehensive pedagogical rewriting in accordance with the 14-point ac
 - **Group 3: Micronutrients, Bioactives & Cellular Coenzymes** (Chapters 09–13) — `available`
 - **Group 4: Gastrointestinal Physiology, Microbiome & Gut Barrier** (Chapters 14–17) — `available`
 - **Group 5: Clinical Nutrition, Metabolic Health & Medical Nutrition Therapy** (Chapters 18–22, 24) — Chapters 18–22, 24 `available`
-- **Group 6: Lifespan, Sports & Functional Precision Dietetics** (Chapters 23, 25–27) — Chapter 23 `available`; Chapters 25–27 `planned`
+- **Group 6: Lifespan, Sports & Functional Precision Dietetics** (Chapters 23, 25–27) — Chapters 23, 25 `available`; Chapters 26–27 `planned`
 
 ### Mapping Against the 50-Chapter Functional Nutrition & Dietetics Master Scope:
 The comprehensive 50-chapter scope disaggregates dense multi-topic chapters into focused standalone clinical units:

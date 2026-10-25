@@ -27,7 +27,7 @@ export function CellOrganelleDiagram({ chapter, locale, onSectionSelect }: { cha
         <ellipse cx="160" cy="130" rx="137" ry="105" className="cell-diagram-body" />
         <path d="M35 78 Q160 20 285 78 M35 182 Q160 238 285 182" className="cell-diagram-membrane" />
         {nodes.map((node) => {
-          const organelle = chapter.organelles.find((item) => item.id === node.id)
+          const organelle = organelles.find((item) => item.id === node.id)
           if (!organelle) return null
           const active = organelle.id === selected?.id
           return <g key={node.id} role="button" tabIndex={0} aria-label={text(organelle.label)} aria-pressed={active} className={`cell-organelle-node node-${node.id} ${active ? 'is-selected' : ''}`} onClick={() => select(node.id)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(node.id) } }}>
@@ -40,6 +40,6 @@ export function CellOrganelleDiagram({ chapter, locale, onSectionSelect }: { cha
         {selected && <><span className="section-kicker">{locale === 'bn' ? 'SELECTED PART' : 'SELECTED PART'}</span><h3>{text(selected.label)}</h3><p>{text(selected.description)}</p><ul>{selected.functions.map((item) => <li key={item.en}>{text(item)}</li>)}</ul><button type="button" className="diagram-section-link" onClick={() => onSectionSelect(selected.sectionId)}>{locale === 'bn' ? 'অধ্যায়ের সংশ্লিষ্ট অংশে যান' : 'Go to linked chapter section'}</button></>}
       </div>
     </div>
-    <div className="cell-diagram-key" aria-label={locale === 'bn' ? 'অঙ্গাণু তালিকা' : 'Organelle list'}>{chapter.organelles.map((organelle) => <button type="button" key={organelle.id} className={organelle.id === selected?.id ? 'is-selected' : ''} onClick={() => select(organelle.id)}>{text(organelle.label)}</button>)}</div>
+    <div className="cell-diagram-key" aria-label={locale === 'bn' ? 'অঙ্গাণু তালিকা' : 'Organelle list'}>{organelles.map((organelle) => <button type="button" key={organelle.id} className={organelle.id === selected?.id ? 'is-selected' : ''} onClick={() => select(organelle.id)}>{text(organelle.label)}</button>)}</div>
   </section>
 }
