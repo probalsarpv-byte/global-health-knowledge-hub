@@ -83,14 +83,17 @@ Following comprehensive pedagogical rewriting in accordance with the 14-point ac
 **Batch A Total Volume:** **37,920 English words / 31,659 Bengali words** across 144 substantive pedagogical sections (18 sections/chapter $\times$ 8 chapters).
 **Validation Status:** 0 schema errors, 100% bilingual parity, zero lint warnings (`eslint . --max-warnings=0`), 106/106 tests passed (`vitest run`), and clean production bundle (`vite build`).
 
-### 2.2 Post-Remediation Verification Matrix: Batch B (Chapters 09 & 10 Complete)
+### 2.2 Post-Remediation Verification Matrix: Batch B (Chapters 09–13 Complete)
 
 | Order | Slug / Topic | Pre Words (EN / BN) | Post Words (EN / BN) | Post Sections (F / Ac / Ad) | Worked Ex. | Key Terms | Checkpoints | Refs | Visual / SVG Diagram | Post-Upgrade Grade & Educational Impact |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **09** | `fat-soluble-vitamins` | 2,368 / 1,912 | **4,541 / 3,241** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Mixed Micelle & Genomic Signaling | **A+** · Complete retinoid RAR/RXR and visual cycle rhodopsin photoisomerization, cutaneous 7-DHC photolysis and renal CYP27B1 activation of calcitriol, alpha-tocopherol radical-trapping, and VKORC1 gamma-carboxylation. |
 | **10** | `b-complex-vitamins-bioenergetics` | 2,217 / 1,819 | **4,572 / 3,249** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Mitochondrial Coenzyme Hub | **A+** · Coenzyme kinetics across all 8 B-vitamins: TPP pyruvate decarboxylation, FAD/NAD hydride transfer, CoA thioester bonds, PLP transamination, and Folate-Cobalamin methionine synthase methyl-trap. |
+| **11** | `vitamin-c-trace-minerals-redox` | 2,473 / 1,855 | **4,918 / 3,880** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Cellular Redox Hub & Ascorbate-GSH Cycle | **A+** · Complete prolyl/lysyl hydroxylase Fenton reduction, SVCT1/2 and GLUT1/3 kinetics, Selenoprotein GPx1–4, and Wilson/Menkes ATP7A/B copper biochemistry. |
+| **12** | `macrominerals-bone-calcium-magnesium` | 2,400 / 1,934 | **4,628 / 3,712** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Mineral Triad & Bone Remodeling Unit | **A+** · CaSR Gq/11 signaling, PTH 1-alpha-hydroxylase activation, Klotho-FGFR1 phosphaturia, TRPM6/7 active magnesium transport, and RANKL-OPG bone remodeling dynamics. |
+| **13** | `iron-biology-hepcidin-anemia` | 1,116 / 896 | **4,534 / 3,395** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Systemic Iron Circuit & Hepcidin-Ferroportin Axis | **A+** · DMT1/DCYTB non-heme iron uptake, Transferrin-TFR1 endocytosis, IRP1/2 IRE post-transcriptional gating, and BMP6/SMAD hepcidin regulation of ferroportin. |
 
-**Batch B Chapters 09–10 Volume:** **9,113 English words / 6,490 Bengali words** across 36 substantive pedagogical sections.
+**Batch B Chapters 09–13 Volume:** **23,193 English words / 17,477 Bengali words** across 90 substantive pedagogical sections (18 sections/chapter $\times$ 5 chapters).
 
 ---
 

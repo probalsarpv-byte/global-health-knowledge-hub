@@ -33,9 +33,9 @@
 | **08** | Cellular Hydration & Fluid Balance | 1,645 / 1,271 | 2,500+ / 2,000+ | **4,129 / 3,349** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **09** | Fat-Soluble Vitamins | 2,368 / 1,912 | 3,500+ / 3,000+ | **4,541 / 3,241** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **10** | B-Complex Coenzymes | 2,217 / 1,819 | 3,500+ / 3,000+ | **4,572 / 3,249** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
-| **11** | Vitamin C & Trace Minerals | 2,473 / 1,855 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
-| **12** | Macrominerals & Bone Matrix | 2,400 / 1,934 | 3,500+ / 3,000+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
-| **13** | Iron Biology & Hepcidin | 1,116 / 896 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **11** | Vitamin C & Trace Minerals | 2,473 / 1,855 | 3,500+ / 3,000+ | **4,918 / 3,880** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **12** | Macrominerals & Bone Matrix | 2,400 / 1,934 | 3,500+ / 3,000+ | **4,628 / 3,712** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **13** | Iron Biology & Hepcidin | 1,116 / 896 | 3,000+ / 2,600+ | **4,534 / 3,395** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **14** | Gut Barrier & Tight Junctions | 849 / 692 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
 | **15** | Gut Microbiome Metagenomics | 750 / 628 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
 | **16** | Prebiotics & Probiotics | 748 / 645 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
