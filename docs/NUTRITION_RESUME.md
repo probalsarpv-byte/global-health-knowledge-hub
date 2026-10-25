@@ -1,7 +1,7 @@
 # Functional Nutrition & Dietetics Academy: Session Resumption State
 
 **Timestamp:** 2026-10-25  
-**Current Milestone:** Batch A (Chapters 01–08) & Batch B Chapters 09–13 Complete & Verified; Ready for Chapters 14–16  
+**Current Milestone:** Batch A (Chapters 01–08) & Batch B (Chapters 09–16) Complete & Verified; Ready for Batch C (Chapters 17–20)  
 **Active Working Branch:** `main`  
 **Git Working Tree:** Clean, all quality gates green  
 **Test Suite Health:** All 6 test suites / 106 Vitest tests passing, 0 lint warnings (`eslint . --max-warnings=0`), 0 typecheck errors (`tsc -b`), production build passing (`vite build`).
@@ -18,13 +18,16 @@
 3. **Batch A (Chapters 01–08) Fully Upgraded to University Textbook Depth:**
    - Chapters 01 through 08 upgraded to full 6s/6s/6s structure (Foundation, Academic, Advanced; 18 sections/chapter).
    - Word counts scaled to **37,920 English words / 31,659 Bengali words** across the 8 chapters (69,579 bilingual words total).
-4. **Batch B (Chapters 09–13) Fully Upgraded to University Textbook Depth:**
+4. **Batch B (Chapters 09–16) Fully Upgraded to University Textbook Depth:**
    - **Chapter 09 (Fat-Soluble Vitamins):** **4,541 English words / 3,241 Bengali words** across 18 sections (4 paragraphs each).
    - **Chapter 10 (Water-Soluble B-Complex Vitamins):** **4,572 English words / 3,249 Bengali words** across 18 sections (4 paragraphs each).
    - **Chapter 11 (Vitamin C & Trace Minerals):** **4,918 English words / 3,880 Bengali words** across 18 sections (4 paragraphs each).
    - **Chapter 12 (Macrominerals & Bone Matrix):** **4,628 English words / 3,712 Bengali words** across 18 sections (4 paragraphs each).
    - **Chapter 13 (Iron Biology & Hepcidin):** **4,534 English words / 3,395 Bengali words** across 18 sections (4 paragraphs each).
-   - **Total Batch B Chapters 09–13 Volume:** **23,193 English words / 17,477 Bengali words** (40,670 bilingual words total) across 90 substantive pedagogical sections.
+   - **Chapter 14 (Gut Barrier & Tight Junctions):** **8,085 English words / 6,880 Bengali words** across 18 sections (4 paragraphs each).
+   - **Chapter 15 (Gut Microbiome Metagenomics):** **7,810 English words / 6,340 Bengali words** across 18 sections (4 paragraphs each).
+   - **Chapter 16 (Prebiotics, Probiotics & Synbiotics):** **6,931 English words / 5,218 Bengali words** across 18 sections (4 paragraphs each).
+   - **Total Batch B Volume (Chapters 09–16):** **46,019 English words / 35,915 Bengali words** (81,934 bilingual words total) across 144 substantive pedagogical sections.
    - Each chapter includes 2 worked quantitative clinical examples, 6 key terms, 3 checkpoints, 6 Vancouver-style citations with bidirectional anchors.
    - High-yield interactive SVG diagrams with step-by-step nodes, accessible descriptions, and 2D fallbacks.
    - 100% bilingual parity (Bengali + International English with dual-script terminology).
@@ -32,20 +35,20 @@
 
 ---
 
-## 2. Immediate Next Task: Batch B Execution Continued (Chapters 14–16)
+## 2. Immediate Next Task: Batch C Execution (Chapters 17–20: Clinical Dietetics & MNT)
 
 - **Target Chapters:**
-  1. `nutrition14GutBarrier.ts` (Gut Barrier, Tight Junctions & Mucosal Immunity)
-  2. `nutrition15GutMicrobiome.ts` (Gut Microbiome Metagenomics & Short-Chain Fatty Acids)
-  3. `nutrition16PrebioticsProbiotics.ts` (Prebiotics, Probiotics, Synbiotics & Dysbiosis)
+  1. `nutrition17FoodIntolerancesAllergies.ts` (Food Intolerances, Non-Celiac Gluten Sensitivity, Celiac Disease & Food Allergies)
+  2. `nutrition18ObesityT2DMNT.ts` (Nutritional Management of Obesity, Insulin Resistance & Type 2 Diabetes)
+  3. `nutrition19CardiovascularDietetics.ts` (Cardiovascular Dietetics: Atherosclerosis, Dyslipidemia & Hypertension [DASH/Mediterranean])
+  4. `nutrition20RenalNutritionCKD.ts` (Renal Nutrition: Chronic Kidney Disease & Glomerular Filtration MNT)
 - **Execution Strategy:**
-  - Rescue all three extremely brief chapters (currently only ~750–850 words $\rightarrow$ 3,500+ to 4,500+ words).
-  - Deepen Chapter 14 with Claudin-1 vs Claudin-2 pore/tight sealing, MLCK phosphorylation, occludin, ZO-1, and sIgA transcytosis.
-  - Deepen Chapter 15 with 16S rRNA vs shotgun metagenomics, Firmicutes/Bacteroidetes ratio, bile acid deconjugation (BSH), and choline/carnitine CutC TMAO pathway.
-  - Deepen Chapter 16 with inulin/FOS/GOS DP degrees of polymerization, probiotic strain-specific clinical evidence (L. rhamnosus GG, B. infantis 35624), and bacteriocin membrane permeabilization.
-  - Implement full 18-section structure (4 paragraphs each in EN and BN) per chapter, with 2 worked examples, 6 terms, 3 checkpoints, and 6 references.
-  - Verify bilingual equivalence and run automated QA gates.
-
+  - Upgrade all 4 clinical MNT chapters from ~1,000 words to 4,500+ English / 3,500+ Bengali words each.
+  - Implement full 18-section architecture (6 Foundation, 6 Academic, 6 Advanced; 4 substantive paragraphs per section in EN and BN).
+  - Add 2 worked quantitative clinical case examples per chapter (e.g., Celiac serological workup & biopsy staging; DiRECT hypocaloric formula titration; DASH sodium/potassium ratio calculation; KDOQI protein/phosphorus restriction formula).
+  - Include 6 key terms, 3 checkpoints, 6 Vancouver references, diagram, interactive diagram (preserving exact Vitest selectors), and assessment per chapter.
+  - Run all quality gates (`typecheck`, `lint`, `test`, `build`).
 
 ---
+
 

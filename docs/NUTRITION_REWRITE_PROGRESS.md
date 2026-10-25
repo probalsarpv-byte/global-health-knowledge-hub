@@ -14,8 +14,8 @@
 | Batch | Scope | Chapters | Target Focus | Status |
 |---|---|---|---|---|
 | **Batch A** | Foundations & Energetics + Lipids & Proteins | 01, 02, 03, 04, 05, 06, 07, 08 (8 chapters) | Expand Foundation, complete Academic pathways/equations, expand Advanced tier to full 6 sections, add secondary worked examples. | **COMPLETE (PASSED QA)** |
-| **Batch B** | Micronutrients, Bone, Iron, Gut Barrier & Microbiome | 09, 10, 11, 12, 13, 14, 15, 16 (8 chapters) | Rescue brief chapters (13–16), expand vitamins & coenzymes, complete junctional & microbial pathways. | **NEXT UP** |
-| **Batch C** | Clinical Dietetics & Medical Nutrition Therapy | 17, 18, 19, 20 (4 chapters) + Master Roadmap | Deepen clinical MNT guidelines, trial evidence, and provide 50-chapter master curriculum transition plan. | **SCHEDULED** |
+| **Batch B** | Micronutrients, Bone, Iron, Gut Barrier & Microbiome | 09, 10, 11, 12, 13, 14, 15, 16 (8 chapters) | Rescue brief chapters (13–16), expand vitamins & coenzymes, complete junctional & microbial pathways. | **COMPLETE (PASSED QA)** |
+| **Batch C** | Clinical Dietetics & Medical Nutrition Therapy | 17, 18, 19, 20 (4 chapters) + Master Roadmap | Deepen clinical MNT guidelines, trial evidence, and provide 50-chapter master curriculum transition plan. | **NEXT UP** |
 
 ---
 
@@ -36,9 +36,9 @@
 | **11** | Vitamin C & Trace Minerals | 2,473 / 1,855 | 3,500+ / 3,000+ | **4,918 / 3,880** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **12** | Macrominerals & Bone Matrix | 2,400 / 1,934 | 3,500+ / 3,000+ | **4,628 / 3,712** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **13** | Iron Biology & Hepcidin | 1,116 / 896 | 3,000+ / 2,600+ | **4,534 / 3,395** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
-| **14** | Gut Barrier & Tight Junctions | 849 / 692 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
-| **15** | Gut Microbiome Metagenomics | 750 / 628 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
-| **16** | Prebiotics & Probiotics | 748 / 645 | 3,000+ / 2,600+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
+| **14** | Gut Barrier & Tight Junctions | 849 / 692 | 3,000+ / 2,600+ | **8,085 / 6,880** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **15** | Gut Microbiome Metagenomics | 750 / 628 | 3,000+ / 2,600+ | **7,810 / 6,340** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **16** | Prebiotics & Probiotics | 748 / 645 | 3,000+ / 2,600+ | **6,931 / 5,218** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **17** | Food Intolerances & Celiac | 1,170 / 885 | 3,200+ / 2,800+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
 | **18** | Obesity & T2D MNT | 1,030 / 798 | 3,200+ / 2,800+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |
 | **19** | Cardiovascular Dietetics | 985 / 709 | 3,200+ / 2,800+ | Pending | 6 / 6 / 6 | 2+ | Scheduled |

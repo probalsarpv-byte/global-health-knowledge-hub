@@ -83,7 +83,7 @@ Following comprehensive pedagogical rewriting in accordance with the 14-point ac
 **Batch A Total Volume:** **37,920 English words / 31,659 Bengali words** across 144 substantive pedagogical sections (18 sections/chapter $\times$ 8 chapters).
 **Validation Status:** 0 schema errors, 100% bilingual parity, zero lint warnings (`eslint . --max-warnings=0`), 106/106 tests passed (`vitest run`), and clean production bundle (`vite build`).
 
-### 2.2 Post-Remediation Verification Matrix: Batch B (Chapters 09–13 Complete)
+### 2.2 Post-Remediation Verification Matrix: Batch B (Chapters 09–16 Complete)
 
 | Order | Slug / Topic | Pre Words (EN / BN) | Post Words (EN / BN) | Post Sections (F / Ac / Ad) | Worked Ex. | Key Terms | Checkpoints | Refs | Visual / SVG Diagram | Post-Upgrade Grade & Educational Impact |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -92,8 +92,12 @@ Following comprehensive pedagogical rewriting in accordance with the 14-point ac
 | **11** | `vitamin-c-trace-minerals-redox` | 2,473 / 1,855 | **4,918 / 3,880** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Cellular Redox Hub & Ascorbate-GSH Cycle | **A+** · Complete prolyl/lysyl hydroxylase Fenton reduction, SVCT1/2 and GLUT1/3 kinetics, Selenoprotein GPx1–4, and Wilson/Menkes ATP7A/B copper biochemistry. |
 | **12** | `macrominerals-bone-calcium-magnesium` | 2,400 / 1,934 | **4,628 / 3,712** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Mineral Triad & Bone Remodeling Unit | **A+** · CaSR Gq/11 signaling, PTH 1-alpha-hydroxylase activation, Klotho-FGFR1 phosphaturia, TRPM6/7 active magnesium transport, and RANKL-OPG bone remodeling dynamics. |
 | **13** | `iron-biology-hepcidin-anemia` | 1,116 / 896 | **4,534 / 3,395** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Systemic Iron Circuit & Hepcidin-Ferroportin Axis | **A+** · DMT1/DCYTB non-heme iron uptake, Transferrin-TFR1 endocytosis, IRP1/2 IRE post-transcriptional gating, and BMP6/SMAD hepcidin regulation of ferroportin. |
+| **14** | `gut-barrier-mucosal-immunity` | 849 / 692 | **8,085 / 6,880** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Gastrointestinal Barrier Architecture | **A+** · Complete claudin-1/claudin-2 pore vs leak pathway, occludin, ZO-1, MLCK phosphorylation, sIgA pIgR transcytosis, Paneth cell alpha-defensins, and dual-sugar LMR intestinal permeability testing. |
+| **15** | `gut-microbiome-metagenomics` | 750 / 628 | **7,810 / 6,340** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Gut Microbiome: Taxonomic & Metabolite Networks | **A+** · Complete microbial census, Bacillota/Bacteroidota PULs, DADA2 ASVs, Shannon H' & Simpson 1/D diversity indices, BSH FXR/TGR5 bile acid biotransformation, CutC/CutD-FMO3 TMAO atherogenesis, and tryptophan indole AhR-IL22 signaling. |
+| **16** | `prebiotics-probiotics-dysbiosis` | 748 / 645 | **6,931 / 5,218** | 6 / 6 / 6 | 2 | 6 | 3 | 6 | Biotic Continuum & Low-FODMAP Protocol | **A+** · Complete ISAPP prebiotic, probiotic, synbiotic, and postbiotic consensus criteria, FOS/GOS/2'-FL HMO kinetics, L. rhamnosus GG/B. animalis BB-12 mechanisms, bacteriocins, PRRs, and evidence-based 3-phase low-FODMAP protocol for IBS. |
 
-**Batch B Chapters 09–13 Volume:** **23,193 English words / 17,477 Bengali words** across 90 substantive pedagogical sections (18 sections/chapter $\times$ 5 chapters).
+**Batch B Total Volume (Chapters 09–16):** **46,019 English words / 35,915 Bengali words** across 144 substantive pedagogical sections (18 sections/chapter $\times$ 8 chapters).
+**Validation Status:** 0 schema errors, 100% bilingual parity, zero lint warnings (`eslint . --max-warnings=0`), 106/106 tests passed (`vitest run`), and clean production bundle (`vite build`).
 
 ---
 
