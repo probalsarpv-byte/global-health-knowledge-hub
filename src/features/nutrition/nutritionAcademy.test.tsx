@@ -21,8 +21,8 @@ beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
 describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 3, 4, 5 & 6 Chapters', () => {
-  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1, 2, 3, 4, 5 & 6 (23 chapters) available', () => {
-    expect(nutritionCurriculum.chapters).toHaveLength(26)
+  it('defines an ordered 27-chapter curriculum across 6 thematic groups with Batches 1, 2, 3, 4, 5 & 6 (24 chapters) available', () => {
+    expect(nutritionCurriculum.chapters).toHaveLength(27)
     expect(nutritionCurriculum.groups.map((group) => group.id)).toEqual([
       'nutrition.foundations',
       'nutrition.macronutrients',
@@ -32,11 +32,11 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
       'nutrition.lifespan',
     ])
     expect(nutritionCurriculum.chapters.map((chapter) => chapter.order)).toEqual(
-      Array.from({ length: 26 }, (_, index) => index + 1)
+      Array.from({ length: 27 }, (_, index) => index + 1)
     )
 
     const availableChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(23)
+    expect(availableChapters).toHaveLength(24)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'nutrition.chapter.01',
       'nutrition.chapter.02',
@@ -61,14 +61,15 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
       'nutrition.chapter.21',
       'nutrition.chapter.22',
       'nutrition.chapter.23',
+      'nutrition.chapter.24',
     ])
 
     const plannedChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
     expect(plannedChapters).toHaveLength(3)
     expect(plannedChapters.map((chapter) => chapter.id)).toEqual([
-      'nutrition.chapter.24',
       'nutrition.chapter.25',
       'nutrition.chapter.26',
+      'nutrition.chapter.27',
     ])
   })
 
@@ -78,8 +79,8 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     expect(batch3NutritionChapters).toHaveLength(4)
     expect(batch4NutritionChapters).toHaveLength(4)
     expect(batch5NutritionChapters).toHaveLength(4)
-    expect(batch6NutritionChapters).toHaveLength(3)
-    expect(allCompletedNutritionChapters).toHaveLength(23)
+    expect(batch6NutritionChapters).toHaveLength(4)
+    expect(allCompletedNutritionChapters).toHaveLength(24)
 
     const issues = validateLessons([
       ...lessons,
@@ -96,7 +97,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     render(<App />)
 
     expect(await screen.findByRole('heading', { name: 'Nutrition & dietetics curriculum' })).toBeInTheDocument()
-    expect(screen.getByText('23 / 26 chapters available')).toBeInTheDocument()
+    expect(screen.getByText('24 / 27 chapters available')).toBeInTheDocument()
 
     // Chapter 01 and Chapter 04 visible initially
     expect(screen.getByText(/01 · Energy Balance, Basal Metabolic Rate/)).toBeInTheDocument()
@@ -599,9 +600,30 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     }
     expect(screen.getAllByText(/DHFR and MTHFR enzymes coordinate thymidylate synthesis/i).length).toBeGreaterThanOrEqual(1)
 
-    // Next chapter is Chapter 24 (planned)
+    // Next chapter is Chapter 24 (available)
+    expect(screen.getByRole('link', { name: /24 · Oncology Nutrition/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 24 (Oncology Nutrition & Cancer Cachexia) and operates Warburg node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/oncology-cancer-nutrition-cachexia')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '24 · Oncology Nutrition & Cancer Cachexia: Metabolic Reprogramming & Clinical Support',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Warburg Aerobic Glycolysis node
+    const warburgBtns = screen.getAllByRole('button', { name: /Warburg Aerobic Glycolysis/i })
+    for (const btn of warburgBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Dimeric PKM2 stalls glycolytic flux/i).length).toBeGreaterThanOrEqual(1)
+
+    // Next chapter is Chapter 25 (planned)
     expect(screen.getByText(/Next release/i)).toBeInTheDocument()
-    expect(screen.getByText(/24 · Pediatric/i)).toBeInTheDocument()
+    expect(screen.getByText(/25 · Pediatric/i)).toBeInTheDocument()
     expect(screen.getByText('Planned chapter')).toBeInTheDocument()
   })
 

@@ -474,9 +474,28 @@ export const nutritionCurriculum: NutritionCurriculum = {
     {
       id: 'nutrition.chapter.24',
       order: 24,
+      groupId: 'nutrition.clinical',
+      slug: 'oncology-cancer-nutrition-cachexia',
+      title: l(
+        '24 · Oncology Nutrition & Cancer Cachexia: Metabolic Reprogramming & Clinical Support',
+        '২৪ · অনকোলজি পুষ্টি ও ক্যান্সার ক্যাক্সিয়া: বিপাকীয় পুনর্গঠন ও ক্লিনিক্যাল সহায়তা'
+      ),
+      summary: l(
+        'Tumor Warburg aerobic glycolysis, systemic inflammation-driven muscle proteolysis via ubiquitin-proteasome E3 ligases, white adipose tissue browning (UCP1), PG-SGA clinical assessment, and ESPEN medical nutrition therapy guidelines.',
+        'টিউমারের ওয়ারবার্গ অবাধ গ্লাইকোলাইসিস, ইউবিকুইটিন-প্রোটিসোম দ্বারা পেশিক্ষয়, অ্যাডিপোজ টিস্যুর বাদামী রূপান্তর (UCP1), পিজি-এসজিএ পুষ্টি মূল্যায়ন এবং ইএসপিইএন অনকোলজি নিউট্রিশন নির্দেশিকা।'
+      ),
+      status: 'available',
+      completionStatus: 'not-started',
+      prerequisiteIds: ['nutrition.chapter.06', 'nutrition.chapter.22'],
+      lessonId: 'topic.nutrition.oncology-cancer-nutrition-cachexia',
+      estimatedMinutes: 70,
+    },
+    {
+      id: 'nutrition.chapter.25',
+      order: 25,
       groupId: 'nutrition.lifespan',
       slug: 'lifespan-pediatric-geriatric-nutrition',
-      title: l('24 · Pediatric, Adolescent & Geriatric Nutrition: Growth to Sarcopenia', '২৪ · শিশু, কিশোর ও প্রবীণদের পুষ্টি: দৈহিক বৃদ্ধি থেকে বার্ধক্যের পেশিক্ষয়'),
+      title: l('25 · Pediatric, Adolescent & Geriatric Nutrition: Growth to Sarcopenia', '২৫ · শিশু, কিশোর ও প্রবীণদের পুষ্টি: দৈহিক বৃদ্ধি থেকে বার্ধক্যের পেশিক্ষয়'),
       summary: l(
         'WHO pediatric growth charts, weaning nutrient density, adolescent peak bone mass accretion, and geriatric atrophic gastritis, vitamin B12 malabsorption, and muscle anabolic resistance.',
         'শিশুর বৃদ্ধি পরিমাপ, কৈশোরে অস্থির সর্বোচ্চ ঘনত্ব অর্জন এবং প্রবীণদের পাকস্থলীর অম্লস্বল্পতা, ভিটামিন বি১২ শোষণহীনতা ও পেশির অ্যানাবলিক রেজিস্ট্যান্স।'
@@ -487,11 +506,11 @@ export const nutritionCurriculum: NutritionCurriculum = {
       estimatedMinutes: 60,
     },
     {
-      id: 'nutrition.chapter.25',
-      order: 25,
+      id: 'nutrition.chapter.26',
+      order: 26,
       groupId: 'nutrition.lifespan',
       slug: 'sports-nutrition-bioenergetics',
-      title: l('25 · Exercise Nutrition & Sports Bioenergetics: Periodization & Timing', '২৫ · ব্যায়ামের পুষ্টি ও ক্রীড়া জৈবশক্তিবিজ্ঞান: খাদ্যের সময়জ্ঞান ও কর্মক্ষমতা বৃদ্ধি'),
+      title: l('26 · Exercise Nutrition & Sports Bioenergetics: Periodization & Timing', '২৬ · ব্যায়ামের পুষ্টি ও ক্রীড়া জৈবশক্তিবিজ্ঞান: খাদ্যের সময়জ্ঞান ও কর্মক্ষমতা বৃদ্ধি'),
       summary: l(
         'Substrate oxidation crossover concept, muscle glycogen supercompensation, intra-exercise dual-source carbohydrates, post-workout MPS refractory windows, and creatine monohydrate mechanics.',
         'ব্যায়ামের তীব্রতায় জ্বালানি পরিবর্তনের বৈজ্ঞানিক সূত্র, পেশির গ্লাইকোজেন লোডিং, ব্যায়ামকালীন শর্করা গ্রহণ, ব্যায়াম-পরবর্তী প্রোটিন সংশ্লেষ এবং ক্রিয়েটিন সাপ্লিমেন্টের প্রক্রিয়া।'
@@ -502,18 +521,18 @@ export const nutritionCurriculum: NutritionCurriculum = {
       estimatedMinutes: 65,
     },
     {
-      id: 'nutrition.chapter.26',
-      order: 26,
+      id: 'nutrition.chapter.27',
+      order: 27,
       groupId: 'nutrition.lifespan',
       slug: 'nutrigenomics-precision-dietetics',
-      title: l('26 · Nutrigenomics, Epigenetics & Precision Functional Dietetics', '২৬ · নিউট্রিজেনোমিক্স, এপিজেনেটিক্স ও কার্যকরী নির্ভুল ডায়েটেটিক্স'),
+      title: l('27 · Nutrigenomics, Epigenetics & Precision Functional Dietetics', '২৭ · নিউট্রিজেনোমিক্স, এপিজেনেটিক্স ও কার্যকরী নির্ভুল ডায়েটেটিক্স'),
       summary: l(
         'Gene-diet interactions (MTHFR C677T, APOE-e4, TCF7L2), dietary methyl donors and DNA methylation, nutrient-driven histone acetylation, and clinical appraisal of direct-to-consumer genetic panels.',
         'খাদ্য ও জিনের মিথস্ক্রিয়া (MTHFR, APOE, TCF7L2), খাদ্যের মিথাইল দাতা ও ডিএনএ মিথাইলেশন, হিস্টোন এসিটাইলেশন এবং বাণিজ্যিক জেনেটিক টেস্টের ক্লিনিক্যাল সীমাবদ্ধতা।'
       ),
       status: 'planned',
       completionStatus: 'not-started',
-      prerequisiteIds: ['nutrition.chapter.10', 'nutrition.chapter.26'],
+      prerequisiteIds: ['nutrition.chapter.10', 'nutrition.chapter.24'],
       estimatedMinutes: 60,
     },
   ],
