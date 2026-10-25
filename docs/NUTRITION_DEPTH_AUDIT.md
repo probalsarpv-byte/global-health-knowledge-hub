@@ -123,8 +123,8 @@ Following comprehensive pedagogical rewriting in accordance with the 14-point ac
 - **Group 2: Lipid & Protein Nutrition** (Chapters 05–08) — `available`
 - **Group 3: Micronutrients, Bioactives & Cellular Coenzymes** (Chapters 09–13) — `available`
 - **Group 4: Gastrointestinal Physiology, Microbiome & Gut Barrier** (Chapters 14–17) — `available`
-- **Group 5: Clinical Nutrition, Metabolic Health & Medical Nutrition Therapy** (Chapters 18–22) — Chapters 18–20 `available`; Chapters 21–22 `planned`
-- **Group 6: Lifespan, Sports & Functional Precision Dietetics** (Chapters 23–26) — Chapters 23–26 `planned`
+- **Group 5: Clinical Nutrition, Metabolic Health & Medical Nutrition Therapy** (Chapters 18–22) — Chapters 18–22 `available`
+- **Group 6: Lifespan, Sports & Functional Precision Dietetics** (Chapters 23–26) — Chapter 23 `available`; Chapters 24–26 `planned`
 
 ### Mapping Against the 50-Chapter Functional Nutrition & Dietetics Master Scope:
 The comprehensive 50-chapter scope disaggregates dense multi-topic chapters into focused standalone clinical units:
@@ -133,7 +133,7 @@ The comprehensive 50-chapter scope disaggregates dense multi-topic chapters into
 3. **Lifespan and Sports Disaggregation:** Maternal/fetal, pediatric, geriatric, and sports nutrition occupy individual standalone chapters.
 
 **Audit Recommendation:**
-Preserve the existing registered 26-chapter architecture, published slugs, and URLs. Upgrade each of the 20 available chapters to true university textbook depth (targeting 2,800 to 4,500+ words across tiers with full 6 sections in Foundation, Academic, and Advanced). Maintain Chapters 21–26 in planned status and provide an explicit transition roadmap to the 50-chapter curriculum.
+Preserve the existing registered 26-chapter architecture, published slugs, and URLs. Upgrade each chapter to true university textbook depth (targeting 2,800 to 4,500+ words across tiers with full 6 sections in Foundation, Academic, and Advanced). Maintain Chapters 24–26 in planned status and provide an explicit transition roadmap to the 50-chapter curriculum.
 
 ---
 

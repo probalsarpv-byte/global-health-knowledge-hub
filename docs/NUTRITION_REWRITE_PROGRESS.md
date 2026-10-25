@@ -16,6 +16,7 @@
 | **Batch A** | Foundations & Energetics + Lipids & Proteins | 01, 02, 03, 04, 05, 06, 07, 08 (8 chapters) | Expand Foundation, complete Academic pathways/equations, expand Advanced tier to full 6 sections, add secondary worked examples. | **COMPLETE (PASSED QA)** |
 | **Batch B** | Micronutrients, Bone, Iron, Gut Barrier & Microbiome | 09, 10, 11, 12, 13, 14, 15, 16 (8 chapters) | Rescue brief chapters (13–16), expand vitamins & coenzymes, complete junctional & microbial pathways. | **COMPLETE (PASSED QA)** |
 | **Batch C** | Clinical Dietetics & Medical Nutrition Therapy | 17, 18, 19, 20 (4 chapters) + Master Roadmap | Deepen clinical MNT guidelines, trial evidence, and provide 50-chapter master curriculum transition plan. | **COMPLETE (PASSED QA)** |
+| **Batch D** | Advanced Hepatology, Malnutrition & Perinatal Nutrition | 21, 22, 23 (3 chapters) | Full authoring to 14-point university textbook standard: MASLD/MASH, GLIM malnutrition/refeeding, maternal-fetal/lactation. | **COMPLETE (PASSED QA)** |
 
 ---
 
@@ -43,5 +44,8 @@
 | **18** | Obesity & T2D MNT | 1,030 / 798 | 3,200+ / 2,800+ | **5,386 / 4,116** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **19** | Cardiovascular Dietetics | 985 / 709 | 3,200+ / 2,800+ | **5,712 / 4,388** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **20** | Renal Nutrition & CKD | 1,009 / 770 | 3,200+ / 2,800+ | **5,360 / 4,323** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **21** | Hepatobiliary MASLD, IBD & FODMAP | New Chapter | 3,500+ / 3,000+ | **8,114 / 6,369** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **22** | Clinical Malnutrition & Support | New Chapter | 3,500+ / 3,000+ | **8,162 / 7,572** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **23** | Maternal, Fetal & Lactation | New Chapter | 3,500+ / 3,000+ | **8,829 / 7,616** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 
 ---

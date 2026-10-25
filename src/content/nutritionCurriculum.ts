@@ -431,9 +431,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Fructose-driven de novo lipogenesis in MASLD/MASH, exclusive enteral nutrition in active pediatric Crohn disease, and three-phase low-FODMAP clinical protocol in IBS.',
         'এমএএসএলডি রোগে অতিরিক্ত ফ্রুক্টোজ থেকে যকৃতে চর্বি উৎপাদন, ক্রোনস রোগে বিশেষায়িত পুষ্টি থেরাপি এবং ইরিটেবল বাওয়েল সিন্ড্রোমে লো-ফোডম্যাপ ডায়েটের ৩-ধাপের ক্লিনিক্যাল প্রোটোকল।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.04', 'nutrition.chapter.17'],
+      lessonId: 'topic.nutrition.gi-liver-nutrition-masld-ibd-fodmap',
       estimatedMinutes: 65,
     },
     {
@@ -446,9 +447,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'GLIM phenotypic and etiologic criteria for malnutrition, cachexia versus sarcopenia, refeeding syndrome hypophosphatemia, and evidence-based indications for enteral versus parenteral support.',
         'গ্লিম মানদণ্ডে অপুষ্টি নির্ণয়, ক্যাক্সিয়া বনাম পেশিক্ষয়, রিফিডিং সিন্ড্রোমের মারাত্মক ফসফেট ঘাটতি এবং টিউব ফিডিং (এন্টারাল) ও শিরার মাধ্যমে (প্যারেন্টেরাল) পুষ্টি প্রদানের নিয়ম।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.06'],
+      lessonId: 'topic.nutrition.clinical-malnutrition-enteral-parenteral',
       estimatedMinutes: 70,
     },
 
@@ -463,9 +465,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Periconceptional folate one-carbon neural tube closure, placental syncytiotrophoblast nutrient transport, gestational diabetes MNT, and human milk oligosaccharides (HMO) synthesis.',
         'গর্ভধারণের পূর্বে ফোলেটের মাধ্যমে স্নায়ুনালির ত্রুটি প্রতিরোধ, গর্ভফুল দিয়ে পুষ্টি পরিবহন, গর্ভকালীন ডায়াবেটিস ব্যবস্থাপনা এবং মাতৃদুগ্ধে এইচএমও অণুর বায়োসংশ্লেষ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.10'],
+      lessonId: 'topic.nutrition.maternal-fetal-lactation-nutrition',
       estimatedMinutes: 65,
     },
     {

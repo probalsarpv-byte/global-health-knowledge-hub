@@ -10,6 +10,7 @@ import {
   batch3NutritionChapters,
   batch4NutritionChapters,
   batch5NutritionChapters,
+  batch6NutritionChapters,
   allCompletedNutritionChapters,
   allCompletedChapters,
   allCompletedMetabolismChapters,
@@ -19,8 +20,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 3, 4 & 5 Chapters', () => {
-  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1, 2, 3, 4 & 5 (20 chapters) available', () => {
+describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 3, 4, 5 & 6 Chapters', () => {
+  it('defines an ordered 26-chapter curriculum across 6 thematic groups with Batches 1, 2, 3, 4, 5 & 6 (23 chapters) available', () => {
     expect(nutritionCurriculum.chapters).toHaveLength(26)
     expect(nutritionCurriculum.groups.map((group) => group.id)).toEqual([
       'nutrition.foundations',
@@ -35,7 +36,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     )
 
     const availableChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(20)
+    expect(availableChapters).toHaveLength(23)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'nutrition.chapter.01',
       'nutrition.chapter.02',
@@ -57,19 +58,28 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
       'nutrition.chapter.18',
       'nutrition.chapter.19',
       'nutrition.chapter.20',
+      'nutrition.chapter.21',
+      'nutrition.chapter.22',
+      'nutrition.chapter.23',
     ])
 
     const plannedChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(6)
+    expect(plannedChapters).toHaveLength(3)
+    expect(plannedChapters.map((chapter) => chapter.id)).toEqual([
+      'nutrition.chapter.24',
+      'nutrition.chapter.25',
+      'nutrition.chapter.26',
+    ])
   })
 
-  it('validates all Batches 1, 2, 3, 4 & 5 Nutrition chapters using the strict lesson schema validator', () => {
+  it('validates all Batches 1, 2, 3, 4, 5 & 6 Nutrition chapters using the strict lesson schema validator', () => {
     expect(batch1NutritionChapters).toHaveLength(4)
     expect(batch2NutritionChapters).toHaveLength(4)
     expect(batch3NutritionChapters).toHaveLength(4)
     expect(batch4NutritionChapters).toHaveLength(4)
     expect(batch5NutritionChapters).toHaveLength(4)
-    expect(allCompletedNutritionChapters).toHaveLength(20)
+    expect(batch6NutritionChapters).toHaveLength(3)
+    expect(allCompletedNutritionChapters).toHaveLength(23)
 
     const issues = validateLessons([
       ...lessons,
@@ -86,7 +96,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     render(<App />)
 
     expect(await screen.findByRole('heading', { name: 'Nutrition & dietetics curriculum' })).toBeInTheDocument()
-    expect(screen.getByText('20 / 26 chapters available')).toBeInTheDocument()
+    expect(screen.getByText('23 / 26 chapters available')).toBeInTheDocument()
 
     // Chapter 01 and Chapter 04 visible initially
     expect(screen.getByText(/01 · Energy Balance, Basal Metabolic Rate/)).toBeInTheDocument()
@@ -526,9 +536,72 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     }
     expect(screen.getAllByText(/Early phosphate retention drives osteocyte FGF23 secretion/i).length).toBeGreaterThanOrEqual(1)
 
-    // Next chapter is Chapter 21 (planned)
+    // Link to Chapter 21
+    expect(screen.getByRole('link', { name: /21 · Hepatobiliary/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 21 (Hepatobiliary MASLD, IBD & FODMAP) and operates Fructose DNL node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/gi-liver-nutrition-masld-ibd-fodmap')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '21 · Hepatobiliary & Gastrointestinal Disorders: MASLD/MASH, IBD & Low-FODMAP',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Fructose DNL node
+    const dnlBtns = screen.getAllByRole('button', { name: /Fructose De Novo Lipogenesis/i })
+    for (const btn of dnlBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Fructose stimulates hepatic de novo lipogenesis/i).length).toBeGreaterThanOrEqual(1)
+
+    // Link to Chapter 22
+    expect(screen.getByRole('link', { name: /22 · Clinical Malnutrition/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 22 (Clinical Malnutrition & Nutritional Support) and operates Refeeding Surge node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/clinical-malnutrition-enteral-parenteral')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '22 · Clinical Malnutrition, Protein-Energy Wasting & Nutritional Support',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Refeeding Carbohydrate Surge node
+    const refeedBtns = screen.getAllByRole('button', { name: /Refeeding Carbohydrate Surge/i })
+    for (const btn of refeedBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Surging insulin drives rapid glucose-6-phosphate phosphorylation/i).length).toBeGreaterThanOrEqual(1)
+
+    // Link to Chapter 23
+    expect(screen.getByRole('link', { name: /23 · Maternal, Fetal & Lactational Nutrition/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 23 (Maternal, Fetal & Lactational Nutrition) and operates Folate 1-Carbon node', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/maternal-fetal-lactation-nutrition')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '23 · Maternal, Fetal & Lactational Nutrition: Embryogenesis to Breastfeeding',
+      })
+    ).toBeInTheDocument()
+
+    // Operate Folate 1-Carbon node
+    const folateBtns = screen.getAllByRole('button', { name: /Folate 1-Carbon & Neural Tube/i })
+    for (const btn of folateBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/DHFR and MTHFR enzymes coordinate thymidylate synthesis/i).length).toBeGreaterThanOrEqual(1)
+
+    // Next chapter is Chapter 24 (planned)
     expect(screen.getByText(/Next release/i)).toBeInTheDocument()
-    expect(screen.getByText(/21 · Hepatobiliary/i)).toBeInTheDocument()
+    expect(screen.getByText(/24 · Pediatric/i)).toBeInTheDocument()
     expect(screen.getByText('Planned chapter')).toBeInTheDocument()
   })
 
