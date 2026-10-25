@@ -1,7 +1,7 @@
 # Functional Nutrition & Dietetics Academy: Session Resumption State
 
 **Timestamp:** 2026-10-25  
-**Current Milestone:** Batch A (Chapters 01–08) & Batch B (Chapters 09–16) Complete & Verified; Ready for Batch C (Chapters 17–20)  
+**Current Milestone:** All 20 Available Chapters (Batches A, B & C: Chapters 01–20) Complete & Verified to 14-Point University Textbook Standard!  
 **Active Working Branch:** `main`  
 **Git Working Tree:** Clean, all quality gates green  
 **Test Suite Health:** All 6 test suites / 106 Vitest tests passing, 0 lint warnings (`eslint . --max-warnings=0`), 0 typecheck errors (`tsc -b`), production build passing (`vite build`).
@@ -19,36 +19,34 @@
    - Chapters 01 through 08 upgraded to full 6s/6s/6s structure (Foundation, Academic, Advanced; 18 sections/chapter).
    - Word counts scaled to **37,920 English words / 31,659 Bengali words** across the 8 chapters (69,579 bilingual words total).
 4. **Batch B (Chapters 09–16) Fully Upgraded to University Textbook Depth:**
-   - **Chapter 09 (Fat-Soluble Vitamins):** **4,541 English words / 3,241 Bengali words** across 18 sections (4 paragraphs each).
-   - **Chapter 10 (Water-Soluble B-Complex Vitamins):** **4,572 English words / 3,249 Bengali words** across 18 sections (4 paragraphs each).
-   - **Chapter 11 (Vitamin C & Trace Minerals):** **4,918 English words / 3,880 Bengali words** across 18 sections (4 paragraphs each).
-   - **Chapter 12 (Macrominerals & Bone Matrix):** **4,628 English words / 3,712 Bengali words** across 18 sections (4 paragraphs each).
-   - **Chapter 13 (Iron Biology & Hepcidin):** **4,534 English words / 3,395 Bengali words** across 18 sections (4 paragraphs each).
-   - **Chapter 14 (Gut Barrier & Tight Junctions):** **8,085 English words / 6,880 Bengali words** across 18 sections (4 paragraphs each).
-   - **Chapter 15 (Gut Microbiome Metagenomics):** **7,810 English words / 6,340 Bengali words** across 18 sections (4 paragraphs each).
-   - **Chapter 16 (Prebiotics, Probiotics & Synbiotics):** **6,931 English words / 5,218 Bengali words** across 18 sections (4 paragraphs each).
-   - **Total Batch B Volume (Chapters 09–16):** **46,019 English words / 35,915 Bengali words** (81,934 bilingual words total) across 144 substantive pedagogical sections.
-   - Each chapter includes 2 worked quantitative clinical examples, 6 key terms, 3 checkpoints, 6 Vancouver-style citations with bidirectional anchors.
+   - Chapters 09 through 16 upgraded to full 6s/6s/6s structure (18 sections/chapter).
+   - Word counts scaled to **46,019 English words / 35,915 Bengali words** (81,934 bilingual words total).
+5. **Batch C (Chapters 17–20: Clinical Dietetics & MNT) Fully Upgraded to University Textbook Depth:**
+   - **Chapter 17 (Food Intolerances, NCGS, Celiac & Food Allergies):** **7,120 English words / 5,507 Bengali words** across 18 sections (4 paragraphs each).
+   - **Chapter 18 (Nutritional Management of Obesity, Insulin Resistance & Type 2 Diabetes):** **5,386 English words / 4,116 Bengali words** across 18 sections (4 paragraphs each).
+   - **Chapter 19 (Cardiovascular Dietetics: Atherosclerosis, Dyslipidemia & Hypertension):** **5,712 English words / 4,388 Bengali words** across 18 sections (4 paragraphs each).
+   - **Chapter 20 (Renal Nutrition: Chronic Kidney Disease & Glomerular Filtration MNT):** **5,360 English words / 4,323 Bengali words** across 18 sections (4 paragraphs each).
+   - **Total Batch C Volume (Chapters 17–20):** **23,578 English words / 18,334 Bengali words** (41,912 bilingual words total) across 72 substantive pedagogical sections.
+   - **Total Academy Volume (Chapters 01–20 Complete):** **107,517 English words / 85,908 Bengali words** (193,425 bilingual words total) across 360 substantive pedagogical sections.
+   - Every chapter includes 2 worked quantitative clinical examples, 6 key terms, 3 checkpoints, 6+ Vancouver-style citations with bidirectional anchors.
    - High-yield interactive SVG diagrams with step-by-step nodes, accessible descriptions, and 2D fallbacks.
    - 100% bilingual parity (Bengali + International English with dual-script terminology).
    - All automated checks passed: `npm run lint` (0 errors), `npm run typecheck` (0 errors), Vitest (106/106 passed across all 6 test suites), `npm run build` (production bundle built cleanly).
 
 ---
 
-## 2. Immediate Next Task: Batch C Execution (Chapters 17–20: Clinical Dietetics & MNT)
+## 2. Next Milestones: Future Academy Expansion (Planned Chapters 21–26)
 
-- **Target Chapters:**
-  1. `nutrition17FoodIntolerancesAllergies.ts` (Food Intolerances, Non-Celiac Gluten Sensitivity, Celiac Disease & Food Allergies)
-  2. `nutrition18ObesityT2DMNT.ts` (Nutritional Management of Obesity, Insulin Resistance & Type 2 Diabetes)
-  3. `nutrition19CardiovascularDietetics.ts` (Cardiovascular Dietetics: Atherosclerosis, Dyslipidemia & Hypertension [DASH/Mediterranean])
-  4. `nutrition20RenalNutritionCKD.ts` (Renal Nutrition: Chronic Kidney Disease & Glomerular Filtration MNT)
-- **Execution Strategy:**
-  - Upgrade all 4 clinical MNT chapters from ~1,000 words to 4,500+ English / 3,500+ Bengali words each.
-  - Implement full 18-section architecture (6 Foundation, 6 Academic, 6 Advanced; 4 substantive paragraphs per section in EN and BN).
-  - Add 2 worked quantitative clinical case examples per chapter (e.g., Celiac serological workup & biopsy staging; DiRECT hypocaloric formula titration; DASH sodium/potassium ratio calculation; KDOQI protein/phosphorus restriction formula).
-  - Include 6 key terms, 3 checkpoints, 6 Vancouver references, diagram, interactive diagram (preserving exact Vitest selectors), and assessment per chapter.
-  - Run all quality gates (`typecheck`, `lint`, `test`, `build`).
+- **Planned Clinical Chapters:**
+  - Chapter 21: Hepatobiliary, MASLD/MASH, Cirrhosis & Pancreatic Exocrine Insufficiency
+  - Chapter 22: Critical Care Enteral & Parenteral Nutrition Support
+- **Planned Lifespan & Sports Chapters:**
+  - Chapter 23: Maternal, Fetal, Lactation & Neonatal Nutrition
+  - Chapter 24: Pediatric Nutrition, Growth Curves & Inborn Errors of Metabolism
+  - Chapter 25: Geriatric Nutrition, Sarcopenia & Frailty Syndrome
+  - Chapter 26: Sports Nutrition, Glycogen Supercompensation & Ergogenic Aids
+- **Master Scope Roadmap:**
+  - The 50-chapter curriculum expansion architecture documented in `docs/NUTRITION_DEPTH_AUDIT.md`.
 
----
 
 
