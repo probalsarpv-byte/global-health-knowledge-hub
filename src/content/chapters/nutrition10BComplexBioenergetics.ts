@@ -257,6 +257,13 @@ export const nutrition10BComplexBioenergeticsLesson: LessonTopic = {
       'Biochemical schematic of normal human mitochondrial bioenergetics and cytosolic one-carbon transmethylation.',
       'স্বাভাবিক মানবদেহের মাইটোকন্ড্রিয়াল শক্তি উৎপাদন এবং সাইটোসোলিক মিথাইলেশন প্রক্রিয়ার আণবিক রূপরেখা।'
     ),
+    imageUrl: '/assets/b_complex_bioenergetics_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 10.1: B-Complex Coenzyme Metabolic Architecture — Pyruvate Dehydrogenase, Krebs TCA Cycle & One-Carbon Methionine Flux.',
+      'মেডিকেল রেফারেন্স চিত্র ১০.১: বি-কমপ্লেক্স কো-এনজাইম বিপাকীয় কাঠামো — পাইরুভেট ডিহাইড্রোজিনেজ, ক্রেবস টিসিএ চক্র এবং এক-কার্বন মিথিওনিন প্রবাহ।'
+    ),
+    has3D: true,
+    threeDType: 'b-complex-bioenergetics-3d',
     svgType: 'pathway-map',
     items: [
       {
@@ -272,6 +279,7 @@ export const nutrition10BComplexBioenergeticsLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -60, y: -45, z: 20 },
       },
       {
         id: 'node-tca-nad-fad',
@@ -286,6 +294,7 @@ export const nutrition10BComplexBioenergeticsLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 55, y: -40, z: -25 },
       },
       {
         id: 'node-coa-pantothenate',
@@ -300,6 +309,7 @@ export const nutrition10BComplexBioenergeticsLesson: LessonTopic = {
         ),
         color: '#f59e0b',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -50, y: 35, z: -20 },
       },
       {
         id: 'node-plp-transamination',
@@ -314,6 +324,7 @@ export const nutrition10BComplexBioenergeticsLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 50, y: 40, z: 25 },
       },
       {
         id: 'node-folate-b12-trap',
@@ -328,6 +339,7 @@ export const nutrition10BComplexBioenergeticsLesson: LessonTopic = {
         ),
         color: '#dc2626',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 35 },
       },
     ],
   },

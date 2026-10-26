@@ -824,5 +824,80 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     fireEvent.click(photoBtn)
     expect(screen.getByRole('img', { name: /Figure 5.1/i })).toBeInTheDocument()
   })
+
+  it('renders photo and 3D interactive animation modes for Chapter 06 (Dietary Proteins)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/protein-quality-diaas-nitrogen-balance')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '06 · Dietary Proteins, Amino Acid Quality, DIAAS/PDCAAS & Nitrogen Balance' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 6.1/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 07 (Satiety Neuroendocrinology)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/satiety-neuroendocrinology-appetite')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '07 · Satiety Neuroendocrinology: Leptin, Ghrelin, GLP-1, PYY & Appetite Regulation' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 7.1/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 08 (Hydration & Electrolytes)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/hydration-electrolytes-fluid-balance')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '08 · Cellular Hydration, Fluid Balance & Electrolyte Osmoregulation' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 8.1/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 09 (Fat-Soluble Vitamins)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/fat-soluble-vitamins')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '09 · Fat-Soluble Vitamins (A, D, E, K): Genomic Signaling, Phototransduction & Antioxidation' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 9.1/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 10 (B-Complex Vitamins)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/b-complex-vitamins-bioenergetics')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '10 · Water-Soluble Vitamins: B-Complex Coenzymes in Mitochondrial Bioenergetics' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 10.1/i })).toBeInTheDocument()
+  })
 })
 

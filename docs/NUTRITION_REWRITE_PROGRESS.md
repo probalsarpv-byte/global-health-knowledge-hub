@@ -64,6 +64,11 @@
   - `carbohydrate-quality-3d` (Chapter 03): Linear tightly coiled amylose helix versus branched dendritic amylopectin tree.
   - `dietary-fiber-scfa-3d` (Chapter 04): Concentric colonic crypt rings, luminal mucus barrier wave, and SCFA signaling nodes.
   - `dietary-lipids-3d` (Chapter 05): Spherical lipoprotein micelle with ApoB/ApoA1 rings and central hydrophobic core.
+  - `protein-quality-mps-3d` (Chapter 06): Alpha-helix polypeptide strand, lysosomal outer limiting membrane ring, and mTORC1 kinase macro-complex sphere.
+  - `satiety-neuroendocrine-3d` (Chapter 07): Hypothalamic arcuate nucleus dual circuit (POMC anorexigenic vs NPY/AgRP orexigenic) with ascending helical vagus nerve tract.
+  - `hydration-osmoregulation-3d` (Chapter 08): Concentric fluid compartment cylinders (ICF K+ vs ECF Na+), Aquaporin-2 channel pore tetramer, and water flux particles.
+  - `fat-soluble-vitamins-3d` (Chapter 09): Biliary mixed micelle radial spokes and 4 specialized vitamin orbit rings for A, D, E, and K.
+  - `b-complex-bioenergetics-3d` (Chapter 10): Mitochondrial crista fold loop, matrix Krebs TCA cycle ring, PDC macro-sphere, and cytosolic Folate/B12 one-carbon infinity loop.
   - `sports-bioenergetics-3d` (Chapter 26): Mitochondrial inner membrane, Brooks substrate oxidation ribbons, phosphagen and ATP resynthesis nodes.
   - `nutrigenomics-helix-3d` (Chapter 27): 3D DNA double helix with 22 rotating base pairs, golden $-CH_3$ methyl tags on CpG sites, and histone octamer core spheres.
 - **High-Resolution Medical Reference Photography & Infographics:**
@@ -72,14 +77,18 @@
   - `public/assets/carbohydrate_quality_overview.jpg` (Chapter 03)
   - `public/assets/dietary_fiber_scfa_overview.jpg` (Chapter 04)
   - `public/assets/dietary_lipids_pufa_overview.jpg` (Chapter 05)
+  - `public/assets/protein_quality_diaas_overview.jpg` (Chapter 06)
+  - `public/assets/satiety_neuroendocrinology_overview.jpg` (Chapter 07)
+  - `public/assets/cellular_hydration_osmoregulation_overview.jpg` (Chapter 08)
+  - `public/assets/fat_soluble_vitamins_overview.jpg` (Chapter 09)
+  - `public/assets/b_complex_bioenergetics_overview.jpg` (Chapter 10)
   - `public/assets/sports_nutrition_bioenergetics_overview.jpg` (Chapter 26)
   - `public/assets/nutrigenomics_precision_dietetics_overview.jpg` (Chapter 27)
 
 ---
 
 ## 4. Next Upgrade Queue (Batches of 5)
-- **Batch 2 (Next):** Chapters 06, 07, 08, 09, 10
-- **Batch 3:** Chapters 11, 12, 13, 14, 15
+- **Batch 3 (Next):** Chapters 11, 12, 13, 14, 15
 - **Batch 4:** Chapters 16, 17, 18, 19, 20
 - **Batch 5:** Chapters 21, 22, 23, 24, 25
 

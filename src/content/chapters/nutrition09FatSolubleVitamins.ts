@@ -257,6 +257,13 @@ export const nutrition09FatSolubleVitaminsLesson: LessonTopic = {
       'Schematic representation of normal adult steady-state physiological transport and intracellular receptor signaling.',
       'সুস্থ প্রাপ্তবয়স্কদের স্বাভাবিক শারীরবৃত্তীয় পরিবহন ও ইন্ট্রাসেলুলার রিসেপ্টর সংকেতের চিত্রভিত্তিক রূপরেখা।'
     ),
+    imageUrl: '/assets/fat_soluble_vitamins_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 9.1: Fat-Soluble Vitamin Biological Routing — Mixed Micellar Uptake, Nuclear VDR/RAR Genomic Signaling & Vitamin K Cycle.',
+      'মেডিকেল রেফারেন্স চিত্র ৯.১: চর্বি-দ্রবণীয় ভিটামিনের জৈবিক গতিপথ — মিক্সড মাইসেলি শোষণ, নিউক্লিয়ার VDR/RAR জিন নিয়ন্ত্রণ এবং ভিটামিন কে চক্র।'
+    ),
+    has3D: true,
+    threeDType: 'fat-soluble-vitamins-3d',
     svgType: 'pathway-map',
     items: [
       {
@@ -272,6 +279,7 @@ export const nutrition09FatSolubleVitaminsLesson: LessonTopic = {
         ),
         color: '#059669',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 35 },
       },
       {
         id: 'vit-a-rhodopsin-node',
@@ -286,6 +294,7 @@ export const nutrition09FatSolubleVitaminsLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 25, y: 95, width: 310, height: 48 },
+        position3D: { x: -60, y: -45, z: 20 },
       },
       {
         id: 'vit-d-endocrine-node',
@@ -300,6 +309,7 @@ export const nutrition09FatSolubleVitaminsLesson: LessonTopic = {
         ),
         color: '#2563eb',
         svgCoords: { x: 25, y: 155, width: 310, height: 48 },
+        position3D: { x: 55, y: -40, z: -25 },
       },
       {
         id: 'vit-e-membrane-node',
@@ -314,6 +324,7 @@ export const nutrition09FatSolubleVitaminsLesson: LessonTopic = {
         ),
         color: '#d97706',
         svgCoords: { x: 355, y: 95, width: 310, height: 48 },
+        position3D: { x: -50, y: 40, z: -20 },
       },
       {
         id: 'vit-k-coagulation-node',
@@ -328,6 +339,7 @@ export const nutrition09FatSolubleVitaminsLesson: LessonTopic = {
         ),
         color: '#dc2626',
         svgCoords: { x: 355, y: 155, width: 310, height: 48 },
+        position3D: { x: 50, y: 45, z: 25 },
       },
     ],
   },

@@ -249,6 +249,13 @@ export const nutrition08HydrationElectrolytesLesson: LessonTopic = {
       'Biophysical fluid compartment simulation for clinical education; electrolyte correction requires venous blood gas and serum electrolyte monitoring.',
       'ক্লিনিক্যাল শিক্ষার জন্য তরল প্রকোষ্ঠের বায়োফিজিক্স সিমুলেশন; ইলেক্ট্রোলাইট সংশোধনে নিয়মিত রক্ত পরীক্ষা আবশ্যক।'
     ),
+    imageUrl: '/assets/cellular_hydration_osmoregulation_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 8.1: Fluid Compartments & Cellular Osmoregulation — Na+/K+-ATPase Gradient, Aquaporin-2 Water Channels & SGLT1 Cotransport.',
+      'মেডিকেল রেফারেন্স চিত্র ৮.১: তরল প্রকোষ্ঠ ও কোষীয় অসমোরেগুলেশন — Na+/K+-ATPase গ্রেডিয়েন্ট, অ্যাকোয়াপোরিন-২ পানি চ্যানেল এবং SGLT1 কো-ট্রান্সপোর্ট।'
+    ),
+    has3D: true,
+    threeDType: 'hydration-osmoregulation-3d',
     svgType: 'hydration-loop',
     items: [
       {
@@ -264,6 +271,7 @@ export const nutrition08HydrationElectrolytesLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -60, y: -40, z: 25 },
       },
       {
         id: 'node-ecf',
@@ -278,6 +286,7 @@ export const nutrition08HydrationElectrolytesLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 60, y: -40, z: -25 },
       },
       {
         id: 'node-osmoreceptors',
@@ -292,6 +301,7 @@ export const nutrition08HydrationElectrolytesLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -45, y: 35, z: -20 },
       },
       {
         id: 'node-aqp2',
@@ -306,6 +316,7 @@ export const nutrition08HydrationElectrolytesLesson: LessonTopic = {
         ),
         color: '#06b6d4',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 35 },
       },
       {
         id: 'node-sglt1',
@@ -320,6 +331,7 @@ export const nutrition08HydrationElectrolytesLesson: LessonTopic = {
         ),
         color: '#f59e0b',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 50, y: 40, z: 20 },
       },
     ],
   },

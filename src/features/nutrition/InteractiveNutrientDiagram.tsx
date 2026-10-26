@@ -314,6 +314,197 @@ export function InteractiveNutrientDiagram({
     return rings
   }, [diagram.threeDType])
 
+  // 3D Protein Quality & mTORC1 Lysosomal Assembly for Chapter 06
+  const proteinGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'protein-quality-mps-3d') return { helix: [], lysosome: [] }
+    const helix: Point3D[] = []
+    for (let i = 0; i < 20; i++) {
+      const theta = i * 0.52
+      const y = -75 + i * 6.5
+      helix.push({
+        x: -45 + Math.cos(theta) * 20,
+        y,
+        z: Math.sin(theta) * 20,
+      })
+    }
+    const lysosome: Point3D[] = []
+    for (let a = 0; a < 20; a++) {
+      const theta = (a / 20) * 2 * Math.PI
+      lysosome.push({
+        x: 35 + Math.cos(theta) * 45,
+        y: 40 + Math.sin(theta) * 15,
+        z: Math.sin(theta) * 35,
+      })
+    }
+    return { helix, lysosome }
+  }, [diagram.threeDType])
+
+  // 3D Satiety Neuroendocrine Axis for Chapter 07
+  const satietyGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'satiety-neuroendocrine-3d') return { pomcArc: [], npyArc: [], vagusTract: [], gutRings: [] }
+    const pomcArc: Point3D[] = []
+    const npyArc: Point3D[] = []
+    for (let i = 0; i <= 12; i++) {
+      const theta = (i / 12) * Math.PI
+      pomcArc.push({
+        x: Math.cos(theta) * 55,
+        y: -60 - Math.sin(theta) * 20,
+        z: Math.sin(theta) * 30,
+      })
+      npyArc.push({
+        x: -Math.cos(theta) * 55,
+        y: -60 + Math.sin(theta) * 20,
+        z: -Math.sin(theta) * 30,
+      })
+    }
+    const vagusTract: Point3D[] = []
+    for (let s = 0; s <= 16; s++) {
+      const progress = s / 16
+      const y = -50 + progress * 115
+      const x = Math.sin(progress * Math.PI * 2.5) * 22
+      const z = Math.cos(progress * Math.PI * 2) * 18
+      vagusTract.push({ x, y, z })
+    }
+    const gutRings: Array<{ pts: Point3D[]; color: string }> = []
+    const layers = [
+      { y: 35, r: 42, color: '#ef4444' }, // Stomach fundus (ghrelin)
+      { y: 65, r: 52, color: '#10b981' }, // Ileum L-cells (GLP-1/PYY)
+    ]
+    layers.forEach((layer) => {
+      const pts: Point3D[] = []
+      for (let a = 0; a < 16; a++) {
+        const theta = (a / 16) * 2 * Math.PI
+        pts.push({
+          x: Math.cos(theta) * layer.r,
+          y: layer.y,
+          z: Math.sin(theta) * (layer.r * 0.55),
+        })
+      }
+      gutRings.push({ pts, color: layer.color })
+    })
+    return { pomcArc, npyArc, vagusTract, gutRings }
+  }, [diagram.threeDType])
+
+  // 3D Cellular Hydration & Fluid Compartments for Chapter 08
+  const hydrationGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'hydration-osmoregulation-3d') return { compartmentRings: [], aqpColumns: [], waterFlux: [] }
+    const compartmentRings: Array<{ pts: Point3D[]; color: string }> = []
+    // ICF (inner cylinder, high K+)
+    ;[-35, 0, 35].forEach((y) => {
+      const pts: Point3D[] = []
+      for (let a = 0; a < 16; a++) {
+        const theta = (a / 16) * 2 * Math.PI
+        pts.push({ x: -35 + Math.cos(theta) * 35, y, z: Math.sin(theta) * 35 })
+      }
+      compartmentRings.push({ pts, color: '#3b82f6' })
+    })
+    // ECF (outer cylinder, high Na+)
+    ;[-35, 0, 35].forEach((y) => {
+      const pts: Point3D[] = []
+      for (let a = 0; a < 16; a++) {
+        const theta = (a / 16) * 2 * Math.PI
+        pts.push({ x: 35 + Math.cos(theta) * 35, y, z: Math.sin(theta) * 35 })
+      }
+      compartmentRings.push({ pts, color: '#10b981' })
+    })
+    // Aquaporin-2 4-tetramer columns at the membrane center
+    const aqpColumns: Array<{ top: Point3D; bot: Point3D; color: string }> = [
+      { top: { x: -10, y: -55, z: -10 }, bot: { x: -10, y: 55, z: -10 }, color: '#06b6d4' },
+      { top: { x: 10, y: -55, z: -10 }, bot: { x: 10, y: 55, z: -10 }, color: '#06b6d4' },
+      { top: { x: -10, y: -55, z: 10 }, bot: { x: -10, y: 55, z: 10 }, color: '#06b6d4' },
+      { top: { x: 10, y: -55, z: 10 }, bot: { x: 10, y: 55, z: 10 }, color: '#06b6d4' },
+    ]
+    // Water flux points traversing through channel
+    const waterFlux: Point3D[] = []
+    for (let i = 0; i < 9; i++) {
+      const y = -45 + i * 11
+      waterFlux.push({ x: Math.sin(i * 1.2) * 5, y, z: Math.cos(i * 1.2) * 5 })
+    }
+    return { compartmentRings, aqpColumns, waterFlux }
+  }, [diagram.threeDType])
+
+  // 3D Biliary Mixed Micelle & Fat-Soluble Vitamins for Chapter 09
+  const fatSolubleGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'fat-soluble-vitamins-3d') return { micelleSpokes: [], vitaminOrbits: [] }
+    const micelleSpokes: Array<{ from: Point3D; to: Point3D; color: string }> = []
+    for (let a = 0; a < 16; a++) {
+      const theta = (a / 16) * 2 * Math.PI
+      const from: Point3D = { x: Math.cos(theta) * 18, y: Math.sin(theta) * 18, z: 0 }
+      const to: Point3D = { x: Math.cos(theta) * 58, y: Math.sin(theta) * 58, z: 0 }
+      micelleSpokes.push({ from, to, color: a % 2 === 0 ? '#10b981' : '#f59e0b' })
+    }
+    const vitaminOrbits: Array<{ pts: Point3D[]; color: string; label: string }> = [
+      {
+        pts: Array.from({ length: 14 }, (_, i) => {
+          const th = (i / 14) * 2 * Math.PI
+          return { x: -55 + Math.cos(th) * 22, y: -45 + Math.sin(th) * 15, z: Math.sin(th) * 20 }
+        }),
+        color: '#10b981',
+        label: 'Vit A (RAR/RXR)',
+      },
+      {
+        pts: Array.from({ length: 14 }, (_, i) => {
+          const th = (i / 14) * 2 * Math.PI
+          return { x: 55 + Math.cos(th) * 22, y: -40 + Math.sin(th) * 15, z: Math.sin(th) * 20 }
+        }),
+        color: '#2563eb',
+        label: 'Vit D (VDR)',
+      },
+      {
+        pts: Array.from({ length: 14 }, (_, i) => {
+          const th = (i / 14) * 2 * Math.PI
+          return { x: -50 + Math.cos(th) * 20, y: 45 + Math.sin(th) * 14, z: Math.sin(th) * 20 }
+        }),
+        color: '#d97706',
+        label: 'Vit E (Antioxidant)',
+      },
+      {
+        pts: Array.from({ length: 14 }, (_, i) => {
+          const th = (i / 14) * 2 * Math.PI
+          return { x: 50 + Math.cos(th) * 20, y: 45 + Math.sin(th) * 14, z: Math.sin(th) * 20 }
+        }),
+        color: '#dc2626',
+        label: 'Vit K (VKOR Cycle)',
+      },
+    ]
+    return { micelleSpokes, vitaminOrbits }
+  }, [diagram.threeDType])
+
+  // 3D B-Complex Mitochondrial & One-Carbon Hub for Chapter 10
+  const bComplexGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'b-complex-bioenergetics-3d') return { cristaLoop: [], tcaCycle: [], oneCarbonLoop: [] }
+    // Invaginated crista fold
+    const cristaLoop: Point3D[] = []
+    for (let s = 0; s <= 20; s++) {
+      const t = s / 20
+      const y = -75 + t * 150
+      const x = Math.sin(t * Math.PI * 3) * 35
+      const z = Math.cos(t * Math.PI * 2) * 20
+      cristaLoop.push({ x, y, z })
+    }
+    // Krebs TCA cycle ring in matrix
+    const tcaCycle: Point3D[] = []
+    for (let a = 0; a < 20; a++) {
+      const theta = (a / 20) * 2 * Math.PI
+      tcaCycle.push({
+        x: 35 + Math.cos(theta) * 45,
+        y: -10 + Math.sin(theta) * 25,
+        z: Math.sin(theta) * 40,
+      })
+    }
+    // One-carbon figure-eight loop (Folate & B12)
+    const oneCarbonLoop: Point3D[] = []
+    for (let a = 0; a < 24; a++) {
+      const theta = (a / 24) * 2 * Math.PI
+      const scale = 2 / (3 - Math.cos(2 * theta))
+      const x = -35 + scale * Math.cos(theta) * 32
+      const y = 45 + (scale * Math.sin(2 * theta) * 20) / 2
+      const z = Math.sin(theta) * 25
+      oneCarbonLoop.push({ x, y, z })
+    }
+    return { cristaLoop, tcaCycle, oneCarbonLoop }
+  }, [diagram.threeDType])
+
   return (
     <section
       className={`anatomy-explorer nutrient-explorer${isLab ? ' lab-active' : ''}`}
@@ -983,6 +1174,194 @@ export function InteractiveNutrientDiagram({
                           />
                         )
                       })}
+                    </g>
+                  )}
+
+                  {/* 3D Protein Quality & mTORC1 Lysosomal Scene for Chapter 06 */}
+                  {diagram.threeDType === 'protein-quality-mps-3d' && (
+                    <g className="protein-quality-3d-scene">
+                      {/* Alpha-Helix Polypeptide Strand */}
+                      {(() => {
+                        const pHelix = proteinGeometry.helix.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathHelix = pHelix.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g>
+                            <path d={pathHelix} fill="none" stroke="#3b82f6" strokeWidth="2.8" opacity={0.85} />
+                            {pHelix.filter((_, i) => i % 2 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={2.8 * p.scale} fill="#60a5fa" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* Lysosomal Outer Limiting Membrane Ring */}
+                      {(() => {
+                        const pLyso = proteinGeometry.lysosome.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathLyso =
+                          pLyso.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <path d={pathLyso} fill="none" stroke="#ec4899" strokeWidth="2" strokeDasharray="5 3" opacity={0.7} />
+                        )
+                      })()}
+                      {/* mTORC1 Macro-Complex Sphere */}
+                      {(() => {
+                        const pMtor = projectPoint({ x: 35, y: 35, z: 15 }, rotX, rotY, zoom)
+                        const radius = 20 * pMtor.scale
+                        return (
+                          <g>
+                            <circle cx={pMtor.sx} cy={pMtor.sy} r={radius} fill="#ec4899" stroke="#db2777" strokeWidth="1.5" opacity={0.75} />
+                            <text x={pMtor.sx} y={pMtor.sy + 3} textAnchor="middle" fill="#ffffff" fontSize={Math.max(6, 8 * pMtor.scale)} fontWeight="800">
+                              mTORC1
+                            </text>
+                          </g>
+                        )
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Satiety Neuroendocrine Axis Scene for Chapter 07 */}
+                  {diagram.threeDType === 'satiety-neuroendocrine-3d' && (
+                    <g className="satiety-3d-scene">
+                      {/* Hypothalamic Arcuate Nucleus Dual Circuits */}
+                      {(() => {
+                        const pPomc = satietyGeometry.pomcArc.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pNpy = satietyGeometry.npyArc.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const dPomc = pPomc.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        const dNpy = pNpy.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g>
+                            <path d={dPomc} fill="none" stroke="#2563eb" strokeWidth="2.5" opacity={0.8} />
+                            <path d={dNpy} fill="none" stroke="#ef4444" strokeWidth="2.5" opacity={0.8} />
+                          </g>
+                        )
+                      })()}
+                      {/* Ascending Vagus Nerve Helical Tract */}
+                      {(() => {
+                        const pVagus = satietyGeometry.vagusTract.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const dVagus = pVagus.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path d={dVagus} fill="none" stroke="#06b6d4" strokeWidth="2.2" strokeDasharray="4 2" opacity={0.85} />
+                      })()}
+                      {/* Peripheral Gut Source Rings (Stomach fundus & Ileum L-cells) */}
+                      {satietyGeometry.gutRings.map((ring, idx) => {
+                        const projected = ring.pts.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathD =
+                          projected.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path key={idx} d={pathD} fill="none" stroke={ring.color} strokeWidth="2" strokeDasharray="4 3" opacity={0.7} />
+                      })}
+                    </g>
+                  )}
+
+                  {/* 3D Cellular Hydration & Fluid Compartment Scene for Chapter 08 */}
+                  {diagram.threeDType === 'hydration-osmoregulation-3d' && (
+                    <g className="hydration-3d-scene">
+                      {/* Concentric Compartment Rings (ICF blue vs ECF green) */}
+                      {hydrationGeometry.compartmentRings.map((ring, idx) => {
+                        const projected = ring.pts.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathD =
+                          projected.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path key={idx} d={pathD} fill="none" stroke={ring.color} strokeWidth="1.8" opacity={0.65} />
+                      })}
+                      {/* Aquaporin-2 Channel Columns */}
+                      {hydrationGeometry.aqpColumns.map((col, idx) => {
+                        const pTop = projectPoint(col.top, rotX, rotY, zoom)
+                        const pBot = projectPoint(col.bot, rotX, rotY, zoom)
+                        return (
+                          <line
+                            key={idx}
+                            x1={pTop.sx}
+                            y1={pTop.sy}
+                            x2={pBot.sx}
+                            y2={pBot.sy}
+                            stroke={col.color}
+                            strokeWidth={4.5 * pTop.scale}
+                            strokeLinecap="round"
+                            opacity={0.75}
+                          />
+                        )
+                      })}
+                      {/* Water Flux Traversing Pore */}
+                      {(() => {
+                        const pFlux = hydrationGeometry.waterFlux.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        return pFlux.map((p, i) => (
+                          <circle key={i} cx={p.sx} cy={p.sy} r={2.5 * p.scale} fill="#38bdf8" opacity={0.85} />
+                        ))
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Fat-Soluble Vitamin Micelle & Nuclear Routing Scene for Chapter 09 */}
+                  {diagram.threeDType === 'fat-soluble-vitamins-3d' && (
+                    <g className="fat-soluble-3d-scene">
+                      {/* Central Hydrophobic Core */}
+                      {(() => {
+                        const pCore = projectPoint({ x: 0, y: 0, z: 0 }, rotX, rotY, zoom)
+                        return (
+                          <circle cx={pCore.sx} cy={pCore.sy} r={18 * pCore.scale} fill="#059669" stroke="#047857" strokeWidth="1.5" opacity={0.75} />
+                        )
+                      })()}
+                      {/* Radial Micelle Spokes */}
+                      {fatSolubleGeometry.micelleSpokes.map((spoke, idx) => {
+                        const pFrom = projectPoint(spoke.from, rotX, rotY, zoom)
+                        const pTo = projectPoint(spoke.to, rotX, rotY, zoom)
+                        return (
+                          <line
+                            key={idx}
+                            x1={pFrom.sx}
+                            y1={pFrom.sy}
+                            x2={pTo.sx}
+                            y2={pTo.sy}
+                            stroke={spoke.color}
+                            strokeWidth={1.6 * pFrom.scale}
+                            opacity={0.7}
+                          />
+                        )
+                      })}
+                      {/* Specialized Vitamin Orbits (A, D, E, K) */}
+                      {fatSolubleGeometry.vitaminOrbits.map((orb, idx) => {
+                        const projected = orb.pts.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathD =
+                          projected.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path key={idx} d={pathD} fill="none" stroke={orb.color} strokeWidth="1.8" strokeDasharray="4 2" opacity={0.8} />
+                      })}
+                    </g>
+                  )}
+
+                  {/* 3D B-Complex Mitochondrial & One-Carbon Scene for Chapter 10 */}
+                  {diagram.threeDType === 'b-complex-bioenergetics-3d' && (
+                    <g className="b-complex-3d-scene">
+                      {/* Mitochondrial Crista Fold */}
+                      {(() => {
+                        const pCrista = bComplexGeometry.cristaLoop.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathCrista = pCrista.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path d={pathCrista} fill="none" stroke="#059669" strokeWidth="2.5" opacity={0.65} />
+                      })()}
+                      {/* Krebs TCA Cycle Ring in Matrix */}
+                      {(() => {
+                        const pTca = bComplexGeometry.tcaCycle.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathTca =
+                          pTca.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={pathTca} fill="none" stroke="#10b981" strokeWidth="2.2" strokeDasharray="5 3" opacity={0.85} />
+                            {pTca.filter((_, i) => i % 5 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3 * p.scale} fill="#f59e0b" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* One-Carbon Folate-B12 Figure-Eight Infinity Loop */}
+                      {(() => {
+                        const pOneC = bComplexGeometry.oneCarbonLoop.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathOneC =
+                          pOneC.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path d={pathOneC} fill="none" stroke="#8b5cf6" strokeWidth="2.2" opacity={0.8} />
+                      })()}
+                      {/* Pyruvate Dehydrogenase Complex Cluster */}
+                      {(() => {
+                        const pPdc = projectPoint({ x: -45, y: -45, z: 15 }, rotX, rotY, zoom)
+                        return (
+                          <circle cx={pPdc.sx} cy={pPdc.sy} r={16 * pPdc.scale} fill="#3b82f6" stroke="#2563eb" strokeWidth="1.5" opacity={0.75} />
+                        )
+                      })()}
                     </g>
                   )}
 

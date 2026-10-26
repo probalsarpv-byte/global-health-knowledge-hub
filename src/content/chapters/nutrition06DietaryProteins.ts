@@ -253,6 +253,13 @@ export const nutrition06DietaryProteinsLesson: LessonTopic = {
       'Educational biochemical pathway simulation; clinical nitrogen balance requires 24-hour urine collection.',
       'পুষ্টি শারীরবৃত্তের শিক্ষামূলক সিমুলেশন; ক্লিনিক্যাল নাইট্রোজেন ভারসাম্য নির্ণয়ে ২৪ ঘণ্টার মূত্র পরীক্ষা অপরিহার্য।'
     ),
+    imageUrl: '/assets/protein_quality_diaas_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 6.1: Skeletal Muscle Protein Synthesis & Proteostasis — Intracellular Leucine Sensing, mTORC1 Lysosomal Translocation & Translation Initiation.',
+      'মেডিকেল রেফারেন্স চিত্র ৬.১: কঙ্কাল পেশি প্রোটিন সংশ্লেষণ ও প্রোটিওস্ট্যাসিস — কোষীয় লিউসিন সংবেদন, লাইসোজোমে mTORC1 স্থানান্তর এবং অনুবাদ সূচনা প্রক্রিয়া।'
+    ),
+    has3D: true,
+    threeDType: 'protein-quality-mps-3d',
     svgType: 'protein-cascade',
     items: [
       {
@@ -268,6 +275,7 @@ export const nutrition06DietaryProteinsLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -60, y: -45, z: 20 },
       },
       {
         id: 'node-diaas',
@@ -282,6 +290,7 @@ export const nutrition06DietaryProteinsLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 55, y: -40, z: -25 },
       },
       {
         id: 'node-leucine',
@@ -296,6 +305,7 @@ export const nutrition06DietaryProteinsLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -45, y: 30, z: -20 },
       },
       {
         id: 'node-mtorc1',
@@ -310,6 +320,7 @@ export const nutrition06DietaryProteinsLesson: LessonTopic = {
         ),
         color: '#ec4899',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 50, y: 35, z: 25 },
       },
       {
         id: 'node-nitrogen',
@@ -324,6 +335,7 @@ export const nutrition06DietaryProteinsLesson: LessonTopic = {
         ),
         color: '#f59e0b',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 35 },
       },
     ],
   },

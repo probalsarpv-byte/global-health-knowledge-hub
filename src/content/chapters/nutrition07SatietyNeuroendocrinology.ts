@@ -246,6 +246,13 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
       'Neuroendocrine signaling simulation for clinical education; clinical pharmacotherapy requires licensed medical consultation.',
       'ক্লিনিক্যাল শিক্ষার জন্য নিউরোএন্ডোক্রিন সংকেত সিমুলেশন; কোনো ওষুধ সেবনে চিকিৎসকের পরামর্শ আবশ্যক।'
     ),
+    imageUrl: '/assets/satiety_neuroendocrinology_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 7.1: Gut-Brain Neuroendocrine Appetite Axis — Hypothalamic Arcuate Nucleus, Vagal Afferents, Leptin, Ghrelin & Incretin Cascades.',
+      'মেডিকেল রেফারেন্স চিত্র ৭.১: অন্ত্র-মস্তিষ্ক নিউরোএন্ডোক্রিন ক্ষুধা অক্ষ — হাইপোথ্যালামিক আর্কুয়েট নিউক্লিয়াস, ভেগাস স্নায়ুপথ, লেপটিন, ঘ্রেলিন এবং ইনক্রিটিন সংকেত প্রণালী।'
+    ),
+    has3D: true,
+    threeDType: 'satiety-neuroendocrine-3d',
     svgType: 'neuroendocrine-loop',
     items: [
       {
@@ -261,6 +268,7 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
         ),
         color: '#ef4444',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -65, y: -45, z: 25 },
       },
       {
         id: 'node-leptin',
@@ -275,6 +283,7 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 55, y: -40, z: -20 },
       },
       {
         id: 'node-lcells',
@@ -289,6 +298,7 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -50, y: 40, z: -25 },
       },
       {
         id: 'node-arcuate',
@@ -303,6 +313,7 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 35 },
       },
       {
         id: 'node-vagus',
@@ -317,6 +328,7 @@ export const nutrition07SatietyNeuroendocrinologyLesson: LessonTopic = {
         ),
         color: '#06b6d4',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 45, y: 45, z: 20 },
       },
     ],
   },
