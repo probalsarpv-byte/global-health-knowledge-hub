@@ -17,6 +17,7 @@
 | **Batch B** | Micronutrients, Bone, Iron, Gut Barrier & Microbiome | 09, 10, 11, 12, 13, 14, 15, 16 (8 chapters) | Rescue brief chapters (13–16), expand vitamins & coenzymes, complete junctional & microbial pathways. | **COMPLETE (PASSED QA)** |
 | **Batch C** | Clinical Dietetics & Medical Nutrition Therapy | 17, 18, 19, 20 (4 chapters) + Master Roadmap | Deepen clinical MNT guidelines, trial evidence, and provide 50-chapter master curriculum transition plan. | **COMPLETE (PASSED QA)** |
 | **Batch D** | Advanced Hepatology, Malnutrition & Perinatal Nutrition | 21, 22, 23 (3 chapters) | Full authoring to 14-point university textbook standard: MASLD/MASH, GLIM malnutrition/refeeding, maternal-fetal/lactation. | **COMPLETE (PASSED QA)** |
+| **Batch E** | Sports Bioenergetics, Nutrigenomics & Precision Dietetics | 26, 27 (2 chapters) | Full authoring to 14-point university textbook standard: Brooks crossover/REDs/timing, epigenetic methylation/APOE precision MNT, with 3D interactive animations and medical reference photos. | **COMPLETE (PASSED QA)** |
 
 ---
 
@@ -49,6 +50,18 @@
 | **23** | Maternal, Fetal & Lactation | New Chapter | 3,500+ / 3,000+ | **8,829 / 7,616** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **24** | Oncology Nutrition & Cancer Cachexia | New Chapter | 3,500+ / 3,000+ | **8,972 / 7,563** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 | **25** | Pediatric, Adolescent & Geriatric Nutrition | New Chapter | 3,500+ / 3,000+ | **11,496 / 8,694** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **26** | Exercise Nutrition & Sports Bioenergetics | New Chapter | 3,500+ / 3,000+ | **6,699 / 5,598** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
+| **27** | Nutrigenomics, Epigenetics & Precision Dietetics | New Chapter | 3,500+ / 3,000+ | **6,938 / 5,175** | 6 / 6 / 6 | 2 | **PASSED (100%)** |
 
 ---
+
+## 3. Visual & Interactive 3D Status
+- **Interactive 3D Engine:** Implemented in `src/features/nutrition/InteractiveNutrientDiagram.tsx` with perspective camera projection, drag-to-rotate in 3D, auto-spinning controls, and depth-sorted z-indexes.
+- **Dedicated 3D Scenes:**
+  - `sports-bioenergetics-3d`: Mitochondrial inner membrane, Brooks substrate oxidation ribbons, phosphagen and ATP resynthesis nodes.
+  - `nutrigenomics-helix-3d`: 3D DNA double helix with 22 rotating base pairs, golden $-CH_3$ methyl tags on CpG sites, and histone octamer core spheres.
+- **Medical Reference Infographics:**
+  - `public/assets/sports_nutrition_bioenergetics_overview.jpg`
+  - `public/assets/nutrigenomics_precision_dietetics_overview.jpg`
+
 

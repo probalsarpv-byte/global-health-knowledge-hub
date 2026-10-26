@@ -131,6 +131,11 @@ export type InteractiveDiagramItem = {
     width?: number
     height?: number
   }
+  position3D?: {
+    x: number
+    y: number
+    z: number
+  }
 }
 
 export type InteractiveDiagramContent = {
@@ -142,6 +147,8 @@ export type InteractiveDiagramContent = {
   items: InteractiveDiagramItem[]
   imageUrl?: string
   imageCaption?: Localized
+  has3D?: boolean
+  threeDType?: string
 }
 
 

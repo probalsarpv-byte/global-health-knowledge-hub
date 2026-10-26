@@ -516,9 +516,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Substrate oxidation crossover concept, muscle glycogen supercompensation, intra-exercise dual-source carbohydrates, post-workout MPS refractory windows, and creatine monohydrate mechanics.',
         'ব্যায়ামের তীব্রতায় জ্বালানি পরিবর্তনের বৈজ্ঞানিক সূত্র, পেশির গ্লাইকোজেন লোডিং, ব্যায়ামকালীন শর্করা গ্রহণ, ব্যায়াম-পরবর্তী প্রোটিন সংশ্লেষ এবং ক্রিয়েটিন সাপ্লিমেন্টের প্রক্রিয়া।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.01', 'nutrition.chapter.06'],
+      lessonId: 'topic.nutrition.sports-nutrition-bioenergetics',
       estimatedMinutes: 65,
     },
     {
@@ -531,9 +532,10 @@ export const nutritionCurriculum: NutritionCurriculum = {
         'Gene-diet interactions (MTHFR C677T, APOE-e4, TCF7L2), dietary methyl donors and DNA methylation, nutrient-driven histone acetylation, and clinical appraisal of direct-to-consumer genetic panels.',
         'খাদ্য ও জিনের মিথস্ক্রিয়া (MTHFR, APOE, TCF7L2), খাদ্যের মিথাইল দাতা ও ডিএনএ মিথাইলেশন, হিস্টোন এসিটাইলেশন এবং বাণিজ্যিক জেনেটিক টেস্টের ক্লিনিক্যাল সীমাবদ্ধতা।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['nutrition.chapter.10', 'nutrition.chapter.24'],
+      lessonId: 'topic.nutrition.nutrigenomics-precision-dietetics',
       estimatedMinutes: 60,
     },
   ],

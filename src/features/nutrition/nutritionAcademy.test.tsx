@@ -11,6 +11,7 @@ import {
   batch4NutritionChapters,
   batch5NutritionChapters,
   batch6NutritionChapters,
+  batch7NutritionChapters,
   allCompletedNutritionChapters,
   allCompletedChapters,
   allCompletedMetabolismChapters,
@@ -20,8 +21,8 @@ import { validateLessons } from '../../content/lessonSchema'
 beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
 afterEach(cleanup)
 
-describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 3, 4, 5 & 6 Chapters', () => {
-  it('defines an ordered 27-chapter curriculum across 6 thematic groups with Batches 1, 2, 3, 4, 5 & 6 (25 chapters) available', () => {
+describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapters (Batches 1–7 complete, 100% available)', () => {
+  it('defines an ordered 27-chapter curriculum across 6 thematic groups with all 27 chapters 100% available', () => {
     expect(nutritionCurriculum.chapters).toHaveLength(27)
     expect(nutritionCurriculum.groups.map((group) => group.id)).toEqual([
       'nutrition.foundations',
@@ -36,7 +37,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     )
 
     const availableChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(25)
+    expect(availableChapters).toHaveLength(27)
     expect(availableChapters.map((chapter) => chapter.id)).toEqual([
       'nutrition.chapter.01',
       'nutrition.chapter.02',
@@ -63,24 +64,23 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
       'nutrition.chapter.23',
       'nutrition.chapter.24',
       'nutrition.chapter.25',
-    ])
-
-    const plannedChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(2)
-    expect(plannedChapters.map((chapter) => chapter.id)).toEqual([
       'nutrition.chapter.26',
       'nutrition.chapter.27',
     ])
+
+    const plannedChapters = nutritionCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
+    expect(plannedChapters).toHaveLength(0)
   })
 
-  it('validates all Batches 1, 2, 3, 4, 5 & 6 Nutrition chapters using the strict lesson schema validator', () => {
+  it('validates all Batches 1, 2, 3, 4, 5, 6 & 7 Nutrition chapters using the strict lesson schema validator', () => {
     expect(batch1NutritionChapters).toHaveLength(4)
     expect(batch2NutritionChapters).toHaveLength(4)
     expect(batch3NutritionChapters).toHaveLength(4)
     expect(batch4NutritionChapters).toHaveLength(4)
     expect(batch5NutritionChapters).toHaveLength(4)
     expect(batch6NutritionChapters).toHaveLength(5)
-    expect(allCompletedNutritionChapters).toHaveLength(25)
+    expect(batch7NutritionChapters).toHaveLength(2)
+    expect(allCompletedNutritionChapters).toHaveLength(27)
 
     const issues = validateLessons([
       ...lessons,
@@ -97,7 +97,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     render(<App />)
 
     expect(await screen.findByRole('heading', { name: 'Nutrition & dietetics curriculum' })).toBeInTheDocument()
-    expect(screen.getByText('25 / 27 chapters available')).toBeInTheDocument()
+    expect(screen.getByText('27 / 27 chapters available')).toBeInTheDocument()
 
     // Chapter 01 and Chapter 04 visible initially
     expect(screen.getByText(/01 · Energy Balance, Basal Metabolic Rate/)).toBeInTheDocument()
@@ -647,10 +647,74 @@ describe('Functional Nutrition & Dietetics Academy curriculum and Batches 1, 2, 
     fireEvent.click(photoBtn)
     expect(screen.getByRole('img', { name: /The Human Lifespan Nutrition Continuum/i })).toBeInTheDocument()
 
-    // Next chapter is Chapter 26 (planned)
-    expect(screen.getByText(/Next release/i)).toBeInTheDocument()
-    expect(screen.getByText(/26 · Exercise Nutrition/i)).toBeInTheDocument()
-    expect(screen.getByText('Planned chapter')).toBeInTheDocument()
+    // Next chapter is Chapter 26 (now available)
+    expect(screen.getByRole('link', { name: /26 · Exercise Nutrition/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 26 (Exercise Nutrition & Sports Bioenergetics) and operates 3D animation, Crossover node, and photo toggle', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/sports-nutrition-bioenergetics')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '26 · Exercise Nutrition & Sports Bioenergetics: Periodization & Timing',
+      })
+    ).toBeInTheDocument()
+
+    // Operates Phosphagen or Crossover node
+    const crossoverBtns = screen.getAllByRole('button', { name: /The Crossover Point: CPT-1 Inhibition/i })
+    for (const btn of crossoverBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/Beyond 65% VO2max, fast-twitch Type II fibers are recruited/i).length).toBeGreaterThanOrEqual(1)
+
+    // Operate 3D rotation play/pause control
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    const pauseBtn = screen.getByRole('button', { name: /Pause 3D rotation/i })
+    expect(pauseBtn).toBeInTheDocument()
+    fireEvent.click(pauseBtn)
+
+    // Operate Medical Infographic / Photo toggle
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Exercise Sports Bioenergetics and Substrate/i })).toBeInTheDocument()
+
+    // Next chapter is Chapter 27 (available)
+    expect(screen.getByRole('link', { name: /27 · Nutrigenomics, Epigenetics & Precision/i })).toBeInTheDocument()
+  })
+
+  it('navigates to Chapter 27 (Nutrigenomics & Precision Dietetics) and operates 3D animation, Methylation node, and photo toggle', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/nutrigenomics-precision-dietetics')
+    render(<App />)
+
+    expect(
+      await screen.findByRole('heading', {
+        name: '27 · Nutrigenomics, Epigenetics & Precision Functional Dietetics',
+      })
+    ).toBeInTheDocument()
+
+    // Operates One-Carbon SAMe Cycle & CpG DNA Methylation node
+    const methylationBtns = screen.getAllByRole('button', { name: /One-Carbon SAMe Cycle & CpG DNA Methylation/i })
+    for (const btn of methylationBtns) {
+      fireEvent.click(btn)
+    }
+    expect(screen.getAllByText(/The transmethylation pathway converts methionine into S-adenosylmethionine/i).length).toBeGreaterThanOrEqual(1)
+
+    // Operate 3D rotation play/pause control
+    const spinBtn27 = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn27)
+    const pauseBtn27 = screen.getByRole('button', { name: /Pause 3D rotation/i })
+    expect(pauseBtn27).toBeInTheDocument()
+    fireEvent.click(pauseBtn27)
+
+    // Operate Medical Infographic / Photo toggle
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Nutrigenomics & Epigenetics in Precision/i })).toBeInTheDocument()
+
+    // Previous chapter is Chapter 26 (available)
+    expect(screen.getByRole('link', { name: /26 · Exercise Nutrition/i })).toBeInTheDocument()
   })
 
   it('redirects from /learn/:module when visiting /learn/nutrition to the Nutrition overview', async () => {

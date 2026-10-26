@@ -88,6 +88,8 @@ import { nutrition22ClinicalMalnutritionLesson } from './nutrition22ClinicalMaln
 import { nutrition23MaternalFetalNutritionLesson } from './nutrition23MaternalFetalNutrition'
 import { nutrition24CancerNutritionLesson } from './nutrition24CancerNutrition'
 import { nutrition25LifespanNutritionLesson } from './nutrition25LifespanNutrition'
+import { nutrition26SportsBioenergeticsLesson } from './nutrition26SportsBioenergetics'
+import { nutrition27NutrigenomicsPrecisionLesson } from './nutrition27NutrigenomicsPrecision'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -391,6 +393,8 @@ export const allNutritionLessonsMap: Record<string, LessonTopic> = {
   [nutrition23MaternalFetalNutritionLesson.id]: nutrition23MaternalFetalNutritionLesson,
   [nutrition24CancerNutritionLesson.id]: nutrition24CancerNutritionLesson,
   [nutrition25LifespanNutritionLesson.id]: nutrition25LifespanNutritionLesson,
+  [nutrition26SportsBioenergeticsLesson.id]: nutrition26SportsBioenergeticsLesson,
+  [nutrition27NutrigenomicsPrecisionLesson.id]: nutrition27NutrigenomicsPrecisionLesson,
 }
 
 export const allNutritionLessonsBySlug: Record<string, LessonTopic> = {
@@ -419,6 +423,8 @@ export const allNutritionLessonsBySlug: Record<string, LessonTopic> = {
   [nutrition23MaternalFetalNutritionLesson.slug]: nutrition23MaternalFetalNutritionLesson,
   [nutrition24CancerNutritionLesson.slug]: nutrition24CancerNutritionLesson,
   [nutrition25LifespanNutritionLesson.slug]: nutrition25LifespanNutritionLesson,
+  [nutrition26SportsBioenergeticsLesson.slug]: nutrition26SportsBioenergeticsLesson,
+  [nutrition27NutrigenomicsPrecisionLesson.slug]: nutrition27NutrigenomicsPrecisionLesson,
 }
 
 export function getNutritionChapterLesson(identifier?: string): LessonTopic | undefined {
@@ -473,6 +479,11 @@ export const batch6NutritionChapters: LessonTopic[] = [
   nutrition25LifespanNutritionLesson,
 ]
 
+export const batch7NutritionChapters: LessonTopic[] = [
+  nutrition26SportsBioenergeticsLesson,
+  nutrition27NutrigenomicsPrecisionLesson,
+]
+
 export const allCompletedNutritionChapters: LessonTopic[] = [
   ...batch1NutritionChapters,
   ...batch2NutritionChapters,
@@ -480,6 +491,7 @@ export const allCompletedNutritionChapters: LessonTopic[] = [
   ...batch4NutritionChapters,
   ...batch5NutritionChapters,
   ...batch6NutritionChapters,
+  ...batch7NutritionChapters,
 ]
 
 
