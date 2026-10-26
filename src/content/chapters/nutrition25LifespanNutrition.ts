@@ -757,6 +757,8 @@ export const nutrition25LifespanNutritionLesson: LessonTopic = {
       'Figure 25.1: The Human Lifespan Nutrition Continuum. Tracing infant growth velocity and neurodevelopment, adolescent bone mineral accretion, and geriatric muscle mass preservation against sarcopenia.',
       'চিত্র ২৫.১: মানব জীবনব্যাপী পুষ্টির অবিচ্ছিন্ন ধারা। শিশুর বৃদ্ধির গতি ও মস্তিষ্কের বিকাশ, কৈশোরের অস্থি খনিজ সঞ্চয় এবং বার্ধক্যের সারকোপেনিয়া প্রতিরোধে পেশি সংরক্ষণের সামগ্রিক চিত্র।'
     ),
+    has3D: true,
+    threeDType: 'lifespan-continuum-sarcopenia-3d',
     items: [
       {
         id: 'node-infant-growth',
@@ -772,6 +774,7 @@ export const nutrition25LifespanNutritionLesson: LessonTopic = {
         color: '#059669',
         sectionId: 'mechanism',
         svgCoords: { x: 25, y: 35, width: 310, height: 50 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-adolescent-bone',
@@ -787,6 +790,7 @@ export const nutrition25LifespanNutritionLesson: LessonTopic = {
         color: '#2563eb',
         sectionId: 'structure',
         svgCoords: { x: 25, y: 105, width: 310, height: 50 },
+        position3D: { x: 85, y: -50, z: -25 },
       },
       {
         id: 'node-adult-homeostasis',
@@ -802,6 +806,7 @@ export const nutrition25LifespanNutritionLesson: LessonTopic = {
         color: '#0891b2',
         sectionId: 'integration',
         svgCoords: { x: 25, y: 175, width: 310, height: 50 },
+        position3D: { x: -85, y: 50, z: -20 },
       },
       {
         id: 'node-geriatric-gastric',
@@ -817,6 +822,7 @@ export const nutrition25LifespanNutritionLesson: LessonTopic = {
         color: '#d97706',
         sectionId: 'integration',
         svgCoords: { x: 25, y: 245, width: 310, height: 50 },
+        position3D: { x: 85, y: 50, z: 20 },
       },
       {
         id: 'node-sarcopenia-anabolic',
@@ -832,6 +838,7 @@ export const nutrition25LifespanNutritionLesson: LessonTopic = {
         color: '#dc2626',
         sectionId: 'mechanism',
         svgCoords: { x: 25, y: 315, width: 310, height: 50 },
+        position3D: { x: 0, y: 0, z: 30 },
       },
     ],
   },

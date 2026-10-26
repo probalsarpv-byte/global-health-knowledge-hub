@@ -541,7 +541,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     expect(screen.getByRole('link', { name: /21 · Hepatobiliary/i })).toBeInTheDocument()
   })
 
-  it('navigates to Chapter 21 (Hepatobiliary MASLD, IBD & FODMAP) and operates Fructose DNL node', async () => {
+  it('navigates to Chapter 21 (Hepatobiliary MASLD, IBD & FODMAP) and operates Fructose DNL node, 3D rotation, and photo toggle', async () => {
     window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/gi-liver-nutrition-masld-ibd-fodmap')
     render(<App />)
 
@@ -558,11 +558,23 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     }
     expect(screen.getAllByText(/Fructose stimulates hepatic de novo lipogenesis/i).length).toBeGreaterThanOrEqual(1)
 
+    // Operate 3D rotation play/pause control
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    const pauseBtn = screen.getByRole('button', { name: /Pause 3D rotation/i })
+    expect(pauseBtn).toBeInTheDocument()
+    fireEvent.click(pauseBtn)
+
+    // Operate Medical Infographic / Photo toggle
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Medical textbook illustration of hepatobiliary pathophysiology/i })).toBeInTheDocument()
+
     // Link to Chapter 22
     expect(screen.getByRole('link', { name: /22 · Clinical Malnutrition/i })).toBeInTheDocument()
   })
 
-  it('navigates to Chapter 22 (Clinical Malnutrition & Nutritional Support) and operates Refeeding Surge node', async () => {
+  it('navigates to Chapter 22 (Clinical Malnutrition & Nutritional Support) and operates Refeeding Surge node, 3D rotation, and photo toggle', async () => {
     window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/clinical-malnutrition-enteral-parenteral')
     render(<App />)
 
@@ -579,11 +591,23 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     }
     expect(screen.getAllByText(/Surging insulin drives rapid glucose-6-phosphate phosphorylation/i).length).toBeGreaterThanOrEqual(1)
 
+    // Operate 3D rotation play/pause control
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    const pauseBtn = screen.getByRole('button', { name: /Pause 3D rotation/i })
+    expect(pauseBtn).toBeInTheDocument()
+    fireEvent.click(pauseBtn)
+
+    // Operate Medical Infographic / Photo toggle
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Medical textbook illustration of starvation physiology/i })).toBeInTheDocument()
+
     // Link to Chapter 23
     expect(screen.getByRole('link', { name: /23 · Maternal, Fetal & Lactational Nutrition/i })).toBeInTheDocument()
   })
 
-  it('navigates to Chapter 23 (Maternal, Fetal & Lactational Nutrition) and operates Folate 1-Carbon node', async () => {
+  it('navigates to Chapter 23 (Maternal, Fetal & Lactational Nutrition) and operates Folate 1-Carbon node, 3D rotation, and photo toggle', async () => {
     window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/maternal-fetal-lactation-nutrition')
     render(<App />)
 
@@ -600,11 +624,23 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     }
     expect(screen.getAllByText(/DHFR and MTHFR enzymes coordinate thymidylate synthesis/i).length).toBeGreaterThanOrEqual(1)
 
+    // Operate 3D rotation play/pause control
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    const pauseBtn = screen.getByRole('button', { name: /Pause 3D rotation/i })
+    expect(pauseBtn).toBeInTheDocument()
+    fireEvent.click(pauseBtn)
+
+    // Operate Medical Infographic / Photo toggle
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Medical textbook illustration of perinatal nutrition/i })).toBeInTheDocument()
+
     // Next chapter is Chapter 24 (available)
     expect(screen.getByRole('link', { name: /24 · Oncology Nutrition/i })).toBeInTheDocument()
   })
 
-  it('navigates to Chapter 24 (Oncology Nutrition & Cancer Cachexia) and operates Warburg node', async () => {
+  it('navigates to Chapter 24 (Oncology Nutrition & Cancer Cachexia) and operates Warburg node, 3D rotation, and photo toggle', async () => {
     window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/oncology-cancer-nutrition-cachexia')
     render(<App />)
 
@@ -621,11 +657,23 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     }
     expect(screen.getAllByText(/Dimeric PKM2 stalls glycolytic flux/i).length).toBeGreaterThanOrEqual(1)
 
+    // Operate 3D rotation play/pause control
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    const pauseBtn = screen.getByRole('button', { name: /Pause 3D rotation/i })
+    expect(pauseBtn).toBeInTheDocument()
+    fireEvent.click(pauseBtn)
+
+    // Operate Medical Infographic / Photo toggle
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Medical textbook illustration of cancer cachexia/i })).toBeInTheDocument()
+
     // Next chapter is Chapter 25 (available)
     expect(screen.getByRole('link', { name: /25 · Pediatric, Adolescent & Geriatric Nutrition/i })).toBeInTheDocument()
   })
 
-  it('navigates to Chapter 25 (Pediatric, Adolescent & Geriatric Nutrition) and operates Sarcopenia node and illustration toggle', async () => {
+  it('navigates to Chapter 25 (Pediatric, Adolescent & Geriatric Nutrition) and operates Sarcopenia node, 3D rotation, and photo toggle', async () => {
     window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/lifespan-pediatric-geriatric-nutrition')
     render(<App />)
 
@@ -641,6 +689,13 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
       fireEvent.click(btn)
     }
     expect(screen.getAllByText(/Aging myocytes exhibit blunted mTORC1 activation/i).length).toBeGreaterThanOrEqual(1)
+
+    // Operate 3D rotation play/pause control
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    const pauseBtn = screen.getByRole('button', { name: /Pause 3D rotation/i })
+    expect(pauseBtn).toBeInTheDocument()
+    fireEvent.click(pauseBtn)
 
     // Operate Medical Infographic / Photo toggle
     const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
@@ -1048,6 +1103,81 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
     fireEvent.click(photoBtn)
     expect(screen.getByRole('img', { name: /Brenner glomerular hyperfiltration/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 21 (Hepatobiliary MASLD & IBD)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/gi-liver-nutrition-masld-ibd-fodmap')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '21 · Hepatobiliary & Gastrointestinal Disorders: MASLD/MASH, IBD & Low-FODMAP' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /hepatobiliary pathophysiology/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 22 (Clinical Malnutrition & Refeeding)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/clinical-malnutrition-enteral-parenteral')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '22 · Clinical Malnutrition, Protein-Energy Wasting & Nutritional Support' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /starvation physiology/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 23 (Maternal-Fetal & Lactational Nutrition)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/maternal-fetal-lactation-nutrition')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '23 · Maternal, Fetal & Lactational Nutrition: Embryogenesis to Breastfeeding' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /perinatal nutrition/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 24 (Cancer Nutrition & Cachexia)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/oncology-cancer-nutrition-cachexia')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '24 · Oncology Nutrition & Cancer Cachexia: Metabolic Reprogramming & Clinical Support' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /cancer cachexia immunopathology/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 25 (Lifespan Nutrition & Sarcopenia)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/lifespan-pediatric-geriatric-nutrition')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '25 · Pediatric, Adolescent & Geriatric Nutrition: Growth to Sarcopenia' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /The Human Lifespan Nutrition Continuum/i })).toBeInTheDocument()
   })
 })
 

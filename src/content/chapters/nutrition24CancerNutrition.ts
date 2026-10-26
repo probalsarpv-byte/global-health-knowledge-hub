@@ -285,6 +285,13 @@ export const nutrition24CancerNutritionLesson: LessonTopic = {
       'শিক্ষামূলক ক্লিনিক্যাল অনকোলজি সিমুলেশন; ক্যান্সার পুষ্টি চিকিৎসায় অনকোলজিস্ট ও অভিজ্ঞ ডায়েটিশিয়ানের তত্ত্বাবধান অপরিহার্য।'
     ),
     svgType: 'cancer-cachexia-axis',
+    imageUrl: '/assets/cancer_cachexia_oncology_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of cancer cachexia immunopathology and tumor metabolic reprogramming: Tumor Warburg aerobic glycolysis with GLUT1 overexpression, dimeric PKM2 diverting carbons to anabolic pools, systemic pro-inflammatory cytokine cascade (IL-6, TNF-alpha) driving acute-phase hepatic reprioritization, MuRF1/MAFbx E3 ligase ubiquitin-proteasome myofibrillar proteolysis, adipose futile browning via UCP1, and marine EPA immunonutrition overcoming anabolic resistance.',
+      'ক্যান্সার ক্যাক্সিয়া ইমিউনোপ্যাথলজি ও টিউমার বিপাকীয় পুনর্গঠনের মেডিকেল ইলাস্ট্রেশন: অক্সিজেনের উপস্থিতিতেও টিউমার কোষে দ্রুত গ্লুকোজ ক্ষয় (ওয়ারবার্গ প্রভাব), সারাদেহে IL-6 ও TNF-alpha সাইটোকাইন ঝড়, ইউবিকুইটিন-প্রোটিসোম দ্বারা কঙ্কাল পেশির প্রোটিন ধ্বংস, UCP1 প্রোটিনের মাধ্যমে চর্বিকোষে অতিরিক্ত তাপ অপচয় এবং ওমেগা-৩ ইপিএ ও লিউসিন দিয়ে পেশি ক্ষয় রোধ।'
+    ),
+    has3D: true,
+    threeDType: 'cancer-cachexia-metabolic-3d',
     items: [
       {
         id: 'node-warburg',
@@ -299,6 +306,7 @@ export const nutrition24CancerNutritionLesson: LessonTopic = {
         ),
         color: '#f97316',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-cytokines',
@@ -313,6 +321,7 @@ export const nutrition24CancerNutritionLesson: LessonTopic = {
         ),
         color: '#ef4444',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 85, y: -50, z: -25 },
       },
       {
         id: 'node-proteasome',
@@ -327,6 +336,7 @@ export const nutrition24CancerNutritionLesson: LessonTopic = {
         ),
         color: '#dc2626',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -85, y: 50, z: -20 },
       },
       {
         id: 'node-browning',
@@ -341,6 +351,7 @@ export const nutrition24CancerNutritionLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 85, y: 50, z: 20 },
       },
       {
         id: 'node-immunonutrition',
@@ -355,6 +366,7 @@ export const nutrition24CancerNutritionLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 30 },
       },
     ],
   },

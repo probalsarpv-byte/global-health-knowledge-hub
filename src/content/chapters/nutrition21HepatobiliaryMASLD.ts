@@ -289,6 +289,13 @@ export const nutrition21HepatobiliaryMASLDLesson: LessonTopic = {
       'শিক্ষামূলক গ্যাস্ট্রোএন্টারোলজি সিমুলেশন; পথ্য পরিবর্তনের পূর্বে গ্যাস্ট্রোএন্টারোলজিস্টের পরামর্শ আবশ্যক।'
     ),
     svgType: 'masld-fructose-axis',
+    imageUrl: '/assets/hepatobiliary_masld_ibd_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of hepatobiliary pathophysiology, fructose lipogenesis, and gut quiescence: Hepatic ketohexokinase-C phosphorylation bypassing PFK-1, ChREBP/SREBP-1c driving de novo lipogenesis and steatosis lipid droplets, ileal bile acid FXR-FGF19 portal endocrine feedback to FGFR4, exclusive enteral nutrition (EEN) mucosal healing in Crohn disease, and three-phase Low-FODMAP reintroduction.',
+      'হেপাটোবিলিয়ারি প্যাথোফিজিওলজি, ফ্রুক্টোজ লিপোজেনেসিস ও অন্ত্র নিরাময়ের মেডিকেল ইলাস্ট্রেশন: ফ্রুক্টোকাইনেজ দ্বারা PFK-1 বাধা এড়িয়ে সরাসরি চর্বি তৈরি, ChREBP সক্রিয় হয়ে যকৃতে ফ্যাটি লিভার সৃষ্টি, ইলিয়ামের পিত্তরস FXR-FGF19 সংকেত দিয়ে অতিরিক্ত চর্বি দমন, ক্রোনস রোগে EEN তরল পুষ্টির মাধ্যমে আলসার নিরাময় এবং তিন-পর্যায়ের লো-FODMAP খাদ্যাভ্যাস।'
+    ),
+    has3D: true,
+    threeDType: 'hepatobiliary-masld-ibd-3d',
     items: [
       {
         id: 'node-fructose-khk',
@@ -303,6 +310,7 @@ export const nutrition21HepatobiliaryMASLDLesson: LessonTopic = {
         ),
         color: '#f97316',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-dnl-steatosis',
@@ -317,6 +325,7 @@ export const nutrition21HepatobiliaryMASLDLesson: LessonTopic = {
         ),
         color: '#ef4444',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 85, y: -50, z: -25 },
       },
       {
         id: 'node-fxr-fgf19',
@@ -331,6 +340,7 @@ export const nutrition21HepatobiliaryMASLDLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -85, y: 50, z: -20 },
       },
       {
         id: 'node-een-ibd',
@@ -345,6 +355,7 @@ export const nutrition21HepatobiliaryMASLDLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 85, y: 50, z: 20 },
       },
       {
         id: 'node-low-fodmap',
@@ -359,6 +370,7 @@ export const nutrition21HepatobiliaryMASLDLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 30 },
       },
     ],
   },

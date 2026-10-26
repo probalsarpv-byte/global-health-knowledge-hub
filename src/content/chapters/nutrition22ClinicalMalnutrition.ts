@@ -293,6 +293,13 @@ export const nutrition22ClinicalMalnutritionLesson: LessonTopic = {
       'শিক্ষামূলক ক্লিনিক্যাল নিউট্রিশন সিমুলেশন; মারাত্মক রিফিডিং সিন্ড্রোম ও টিপিএন পরিচালনায় অভিজ্ঞ মেডিকেল বোর্ডের তত্ত্বাবধান জরুরি।'
     ),
     svgType: 'clinical-malnutrition',
+    imageUrl: '/assets/clinical_malnutrition_refeeding_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of starvation physiology, refeeding syndrome, and specialized nutrition support: Prolonged starvation glycogen depletion and intracellular ion loss, carbohydrate surge triggering insulin hypersecretion, rapid hexokinase glucose-6-phosphate trapping and profound hypophosphatemia (<0.30 mmol/L) causing ATP depletion and cardiac arrest, first-line enteral nutrition preserving tight junctions, and parenteral support risks including IFALD.',
+      'অনাহারের বিপাকীয় শারীরবৃত্ত, রিফিডিং সিন্ড্রোম ও বিশেষায়িত পুষ্টি সহায়তার মেডিকেল ইলাস্ট্রেশন: দীর্ঘ অনাহারে কোষের অভ্যন্তরীণ ফসফেট নিঃশেষ, হঠাৎ শর্করা গ্রহণে ইনসুলিনের তীব্র নিঃসরণ, দ্রুত গ্লুকোজ-৬-ফসফেট তৈরির মাধ্যমে কোষে ফসফেট আটকা পড়ে রক্তে মারাত্মক ঘাটতি (<০.৩০ mmol/L) ও কার্ডিয়াক অ্যারেস্ট, অন্ত্রের মিউকোসা সুরক্ষায় এন্টারাল পুষ্টি এবং প্যারেন্টেরাল পুষ্টির লিভার জটিলতা (IFALD)।'
+    ),
+    has3D: true,
+    threeDType: 'clinical-malnutrition-refeeding-3d',
     items: [
       {
         id: 'node-starvation',
@@ -307,6 +314,7 @@ export const nutrition22ClinicalMalnutritionLesson: LessonTopic = {
         ),
         color: '#64748b',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-refeeding',
@@ -321,6 +329,7 @@ export const nutrition22ClinicalMalnutritionLesson: LessonTopic = {
         ),
         color: '#ef4444',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 85, y: -50, z: -25 },
       },
       {
         id: 'node-collapse',
@@ -335,6 +344,7 @@ export const nutrition22ClinicalMalnutritionLesson: LessonTopic = {
         ),
         color: '#dc2626',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -85, y: 50, z: -20 },
       },
       {
         id: 'node-enteral',
@@ -349,6 +359,7 @@ export const nutrition22ClinicalMalnutritionLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 85, y: 50, z: 20 },
       },
       {
         id: 'node-parenteral',
@@ -363,6 +374,7 @@ export const nutrition22ClinicalMalnutritionLesson: LessonTopic = {
         ),
         color: '#0284c7',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 30 },
       },
     ],
   },

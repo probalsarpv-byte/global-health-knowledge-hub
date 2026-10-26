@@ -293,6 +293,13 @@ export const nutrition23MaternalFetalNutritionLesson: LessonTopic = {
       'শিক্ষামূলক পেরিনেটাল ও স্তন্যদান পুষ্টি সিমুলেশন; গর্ভকালীন ডায়াবেটিস ও ফোলেটের মাত্রা নির্ধারণে বিশেষজ্ঞ চিকিৎসকের পরামর্শ আবশ্যক।'
     ),
     svgType: 'maternal-fetal-lactation',
+    imageUrl: '/assets/maternal_fetal_lactation_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of perinatal nutrition and the maternal-placental-fetal axis: Periconceptional folate one-carbon thymidylate synthesis securing neural tube closure between embryonic days 21–28, polarized syncytiotrophoblast GLUT1/SNAT active nutrient transport, placental lactogen-driven maternal insulin resistance, mammary PTHrP calcium mobilization into milk, and FUT2 secretor assembly of protective human milk oligosaccharides (2-FL HMO).',
+      'পেরিনেটাল পুষ্টি ও মাতৃ-গর্ভফুল-ভ্রূণ অক্ষের মেডিকেল ইলাস্ট্রেশন: গর্ভধারণের ২১-২৮তম দিনে স্নায়ুনালি বন্ধ হওয়া নিশ্চিত করতে ফোলেট ওয়ান-কার্বন ডিএনএ সংশ্লেষ, সিনসিটিওট্রফোব্লাস্ট পর্দায় GLUT1 ও SNAT ট্রান্সপোর্টার দ্বারা সক্রিয় পুষ্টি পরিবহন, প্লাসেন্টাল ল্যাকটোজেন চালিত মায়ের ইনসুলিন রেজিস্ট্যান্স, দুধে ক্যালসিয়াম প্রবেশ করাতে স্তনগ্রন্থির PTHrP নিঃসরণ এবং FUT2 জিন দ্বারা প্রতিরক্ষামূলক জটিল শর্করা (2-FL HMO) উৎপাদন।'
+    ),
+    has3D: true,
+    threeDType: 'maternal-fetal-lactation-3d',
     items: [
       {
         id: 'node-folate',
@@ -307,6 +314,7 @@ export const nutrition23MaternalFetalNutritionLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-placenta',
@@ -321,6 +329,7 @@ export const nutrition23MaternalFetalNutritionLesson: LessonTopic = {
         ),
         color: '#f97316',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 85, y: -50, z: -25 },
       },
       {
         id: 'node-gdm',
@@ -335,6 +344,7 @@ export const nutrition23MaternalFetalNutritionLesson: LessonTopic = {
         ),
         color: '#ef4444',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -85, y: 50, z: -20 },
       },
       {
         id: 'node-calcium',
@@ -349,6 +359,7 @@ export const nutrition23MaternalFetalNutritionLesson: LessonTopic = {
         ),
         color: '#6366f1',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 85, y: 50, z: 20 },
       },
       {
         id: 'node-hmo',
@@ -363,6 +374,7 @@ export const nutrition23MaternalFetalNutritionLesson: LessonTopic = {
         ),
         color: '#0284c7',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 30 },
       },
     ],
   },

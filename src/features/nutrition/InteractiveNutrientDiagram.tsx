@@ -913,6 +913,261 @@ export function InteractiveNutrientDiagram({
     return { capillaryTuft, arterioles, podocyteSlits, fgf23Orbit }
   }, [diagram.threeDType])
 
+  // 3D Hepatobiliary MASLD & Gut Quiescence for Chapter 21
+  const hepatobiliaryGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'hepatobiliary-masld-ibd-3d') return { hepaticLobule: [], steatosisDroplets: [], fxrPortalLoop: [], eenRepairStrands: [] }
+    const hepaticLobule: Point3D[][] = []
+    const yOffsets = [-40, 0, 40]
+    yOffsets.forEach((y) => {
+      const ring: Point3D[] = []
+      for (let i = 0; i < 6; i++) {
+        const theta = (i / 6) * 2 * Math.PI
+        ring.push({
+          x: Math.cos(theta) * 60,
+          y,
+          z: Math.sin(theta) * 45,
+        })
+      }
+      hepaticLobule.push(ring)
+    })
+    const steatosisDroplets: { center: Point3D; radius: number; color: string }[] = [
+      { center: { x: -25, y: -20, z: 15 }, radius: 14, color: '#f59e0b' },
+      { center: { x: 30, y: -25, z: -10 }, radius: 16, color: '#fbbf24' },
+      { center: { x: -10, y: 15, z: 20 }, radius: 18, color: '#eab308' },
+      { center: { x: 25, y: 25, z: 10 }, radius: 12, color: '#f59e0b' },
+    ]
+    const fxrPortalLoop: Point3D[] = []
+    for (let i = 0; i < 20; i++) {
+      const theta = (i / 20) * 2 * Math.PI
+      fxrPortalLoop.push({
+        x: Math.cos(theta) * 35,
+        y: 45 + Math.sin(theta) * 18,
+        z: Math.sin(theta * 2) * 20,
+      })
+    }
+    const eenRepairStrands: Point3D[][] = []
+    for (let s = 0; s < 3; s++) {
+      const strand: Point3D[] = []
+      const y = -15 + s * 16
+      for (let i = 0; i <= 10; i++) {
+        strand.push({
+          x: -55 + i * 11,
+          y: y + Math.sin(i * 0.8) * 6,
+          z: Math.cos(i * 0.8) * 12,
+        })
+      }
+      eenRepairStrands.push(strand)
+    }
+    return { hepaticLobule, steatosisDroplets, fxrPortalLoop, eenRepairStrands }
+  }, [diagram.threeDType])
+
+  // 3D Clinical Malnutrition & Refeeding Syndrome for Chapter 22
+  const malnutritionRefeedingGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'clinical-malnutrition-refeeding-3d') return { atrophyBoundary: [], hexokinaseCascade: [], hypophosphatemiaFunnel: [], enteralVesselTrack: [] }
+    const atrophyBoundary: Point3D[][] = []
+    const yLevels = [-45, 0, 45]
+    yLevels.forEach((y, idx) => {
+      const ring: Point3D[] = []
+      const r = 50 - idx * 10
+      for (let i = 0; i < 14; i++) {
+        const theta = (i / 14) * 2 * Math.PI
+        ring.push({
+          x: -30 + Math.cos(theta) * r,
+          y,
+          z: Math.sin(theta) * (r * 0.7),
+        })
+      }
+      atrophyBoundary.push(ring)
+    })
+    const hexokinaseCascade: Point3D[] = []
+    for (let i = 0; i <= 18; i++) {
+      const t = i / 18
+      hexokinaseCascade.push({
+        x: -40 + t * 80,
+        y: -40 + t * 50,
+        z: Math.sin(t * Math.PI * 3) * 22,
+      })
+    }
+    const hypophosphatemiaFunnel: Point3D[] = []
+    for (let i = 0; i <= 24; i++) {
+      const t = i / 24
+      const r = (1 - t * 0.8) * 45
+      const theta = t * Math.PI * 6
+      hypophosphatemiaFunnel.push({
+        x: 35 + Math.cos(theta) * r,
+        y: -30 + t * 75,
+        z: Math.sin(theta) * r,
+      })
+    }
+    const enteralVesselTrack: Point3D[] = []
+    for (let i = 0; i <= 15; i++) {
+      const t = i / 15
+      enteralVesselTrack.push({
+        x: 45 + Math.sin(t * Math.PI * 2) * 15,
+        y: -50 + t * 100,
+        z: Math.cos(t * Math.PI * 2) * 15,
+      })
+    }
+    return { atrophyBoundary, hexokinaseCascade, hypophosphatemiaFunnel, enteralVesselTrack }
+  }, [diagram.threeDType])
+
+  // 3D Maternal-Fetal & Placental/Lactational Axis for Chapter 23
+  const maternalFetalGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'maternal-fetal-lactation-3d') return { neuralTubeFolds: [], placentalVilli: [], nutrientGradients: [], mammaryAlveolus: [] }
+    const neuralTubeFolds: Point3D[][] = []
+    for (let f = 0; f < 2; f++) {
+      const arch: Point3D[] = []
+      const sign = f === 0 ? 1 : -1
+      for (let i = 0; i <= 14; i++) {
+        const t = (i / 14) * Math.PI
+        arch.push({
+          x: sign * (25 + Math.sin(t) * 18),
+          y: -55 + (i / 14) * 60,
+          z: Math.cos(t) * 20,
+        })
+      }
+      neuralTubeFolds.push(arch)
+    }
+    const placentalVilli: Point3D[][] = []
+    for (let v = 0; v < 4; v++) {
+      const villus: Point3D[] = []
+      const angle = (v / 4) * Math.PI
+      for (let s = 0; s <= 10; s++) {
+        villus.push({
+          x: -40 + Math.cos(angle) * s * 6,
+          y: 20 + s * 4,
+          z: Math.sin(angle) * s * 6,
+        })
+      }
+      placentalVilli.push(villus)
+    }
+    const nutrientGradients: Point3D[] = []
+    for (let i = 0; i < 20; i++) {
+      const theta = (i / 20) * 2 * Math.PI
+      nutrientGradients.push({
+        x: Math.cos(theta) * 45,
+        y: 20 + Math.sin(theta) * 20,
+        z: Math.sin(theta * 2) * 22,
+      })
+    }
+    const mammaryAlveolus: Point3D[] = []
+    for (let i = 0; i < 16; i++) {
+      const theta = (i / 16) * 2 * Math.PI
+      mammaryAlveolus.push({
+        x: 40 + Math.cos(theta) * 25,
+        y: -20 + Math.sin(theta) * 25,
+        z: Math.sin(theta) * 15,
+      })
+    }
+    return { neuralTubeFolds, placentalVilli, nutrientGradients, mammaryAlveolus }
+  }, [diagram.threeDType])
+
+  // 3D Oncology Nutrition & Cancer Cachexia for Chapter 24
+  const cancerCachexiaGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'cancer-cachexia-metabolic-3d') return { tumorWarburgCore: [], lactateFunnel: [], cytokineWaves: [], proteasomeBarrels: [] }
+    const tumorWarburgCore: Point3D[][] = []
+    const yRings = [-25, 0, 25]
+    yRings.forEach((y) => {
+      const ring: Point3D[] = []
+      const r = Math.sqrt(Math.max(0, 32 * 32 - y * y))
+      for (let i = 0; i < 16; i++) {
+        const theta = (i / 16) * 2 * Math.PI
+        ring.push({
+          x: -45 + Math.cos(theta) * r,
+          y: -20 + y,
+          z: Math.sin(theta) * r,
+        })
+      }
+      tumorWarburgCore.push(ring)
+    })
+    const lactateFunnel: Point3D[] = []
+    for (let i = 0; i <= 20; i++) {
+      const t = i / 20
+      lactateFunnel.push({
+        x: -45 + Math.cos(t * Math.PI * 4) * (20 - t * 12),
+        y: -20 + t * 65,
+        z: Math.sin(t * Math.PI * 4) * (20 - t * 12),
+      })
+    }
+    const cytokineWaves: Point3D[][] = []
+    for (let w = 0; w < 3; w++) {
+      const wave: Point3D[] = []
+      const r = 35 + w * 22
+      for (let i = 0; i <= 14; i++) {
+        const theta = (i / 14) * Math.PI
+        wave.push({
+          x: -20 + Math.cos(theta) * r,
+          y: 20 + Math.sin(theta) * (r * 0.6),
+          z: Math.sin(theta * 2) * 16,
+        })
+      }
+      cytokineWaves.push(wave)
+    }
+    const proteasomeBarrels: Point3D[][] = []
+    for (let b = 0; b < 2; b++) {
+      const barrel: Point3D[] = []
+      const offX = 35 + b * 25
+      for (let s = 0; s <= 12; s++) {
+        barrel.push({
+          x: offX + Math.cos(s * 0.8) * 12,
+          y: -40 + s * 6,
+          z: Math.sin(s * 0.8) * 12,
+        })
+      }
+      proteasomeBarrels.push(barrel)
+    }
+    return { tumorWarburgCore, lactateFunnel, cytokineWaves, proteasomeBarrels }
+  }, [diagram.threeDType])
+
+  // 3D Lifespan Nutrition Continuum & Sarcopenia for Chapter 25
+  const lifespanContinuumGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'lifespan-continuum-sarcopenia-3d') return { trajectoryArc: [], peakBonePrism: [], sarcopeniaFibers: [], leucineThresholdRing: [] }
+    const trajectoryArc: Point3D[] = []
+    for (let i = 0; i <= 24; i++) {
+      const t = i / 24
+      const x = -70 + t * 140
+      const y = -45 + Math.sin(t * Math.PI) * 50 - t * 25
+      const z = Math.cos(t * Math.PI * 2) * 20
+      trajectoryArc.push({ x, y, z })
+    }
+    const peakBonePrism: Point3D[][] = []
+    for (let p = 0; p < 3; p++) {
+      const strut: Point3D[] = []
+      const offX = -20 + p * 18
+      for (let s = 0; s <= 8; s++) {
+        strut.push({
+          x: offX,
+          y: -35 + s * 8,
+          z: -15 + (s % 2 === 0 ? 8 : -8),
+        })
+      }
+      peakBonePrism.push(strut)
+    }
+    const sarcopeniaFibers: Point3D[][] = []
+    for (let f = 0; f < 3; f++) {
+      const fiber: Point3D[] = []
+      const y = 20 + f * 14
+      for (let i = 0; i <= 10; i++) {
+        fiber.push({
+          x: 20 + i * 5,
+          y,
+          z: Math.sin(i * 0.9) * 12,
+        })
+      }
+      sarcopeniaFibers.push(fiber)
+    }
+    const leucineThresholdRing: Point3D[] = []
+    for (let i = 0; i < 18; i++) {
+      const theta = (i / 18) * 2 * Math.PI
+      leucineThresholdRing.push({
+        x: 45 + Math.cos(theta) * 24,
+        y: 40 + Math.sin(theta) * 14,
+        z: Math.sin(theta) * 18,
+      })
+    }
+    return { trajectoryArc, peakBonePrism, sarcopeniaFibers, leucineThresholdRing }
+  }, [diagram.threeDType])
+
   return (
     <section
       className={`anatomy-explorer nutrient-explorer${isLab ? ' lab-active' : ''}`}
@@ -2153,6 +2408,223 @@ export function InteractiveNutrientDiagram({
                             <path d={fgfD} fill="none" stroke="#8b5cf6" strokeWidth="2" strokeDasharray="5 3" opacity={0.8} />
                             {pFgf.filter((_, i) => i % 5 === 0).map((p, i) => (
                               <circle key={i} cx={p.sx} cy={p.sy} r={3.2 * p.scale} fill="#c084fc" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Hepatobiliary MASLD & Gut Quiescence for Chapter 21 */}
+                  {diagram.threeDType === 'hepatobiliary-masld-ibd-3d' && (
+                    <g className="hepatobiliary-3d-scene">
+                      {/* Hexagonal Hepatic Lobule Prisms */}
+                      {hepatobiliaryGeometry.hepaticLobule.map((ring, rIdx) => {
+                        const pRing = ring.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const ringD = pRing.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path key={rIdx} d={ringD} fill="none" stroke="#d97706" strokeWidth="2" opacity={0.7} />
+                      })}
+                      {/* Steatosis Lipid Droplet Spheres */}
+                      {hepatobiliaryGeometry.steatosisDroplets.map((drop, dIdx) => {
+                        const pDrop = projectPoint(drop.center, rotX, rotY, zoom)
+                        return (
+                          <g key={dIdx}>
+                            <circle cx={pDrop.sx} cy={pDrop.sy} r={drop.radius * pDrop.scale} fill={drop.color} opacity={0.75} />
+                            <circle cx={pDrop.sx - 3 * pDrop.scale} cy={pDrop.sy - 3 * pDrop.scale} r={(drop.radius * 0.35) * pDrop.scale} fill="#ffffff" opacity={0.6} />
+                          </g>
+                        )
+                      })}
+                      {/* FXR-FGF19 Portal Circulation Orbit */}
+                      {(() => {
+                        const pFxr = hepatobiliaryGeometry.fxrPortalLoop.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const fxrD = pFxr.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={fxrD} fill="none" stroke="#8b5cf6" strokeWidth="2.2" strokeDasharray="5 3" opacity={0.85} />
+                            {pFxr.filter((_, i) => i % 4 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3 * p.scale} fill="#a855f7" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* EEN Tight-Junction Mucosal Healing Strands */}
+                      {hepatobiliaryGeometry.eenRepairStrands.map((strand, sIdx) => {
+                        const pStrand = strand.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const strandD = pStrand.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={sIdx} d={strandD} fill="none" stroke="#10b981" strokeWidth="2" opacity={0.8} />
+                      })}
+                    </g>
+                  )}
+
+                  {/* 3D Clinical Malnutrition & Refeeding Syndrome for Chapter 22 */}
+                  {diagram.threeDType === 'clinical-malnutrition-refeeding-3d' && (
+                    <g className="malnutrition-refeeding-3d-scene">
+                      {/* Starvation Atrophy Cell Boundaries */}
+                      {malnutritionRefeedingGeometry.atrophyBoundary.map((ring, rIdx) => {
+                        const pRing = ring.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const ringD = pRing.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path key={rIdx} d={ringD} fill="none" stroke="#64748b" strokeWidth="1.8" strokeDasharray="4 3" opacity={0.65} />
+                      })}
+                      {/* Glucose Hexokinase Phosphorylation Stream */}
+                      {(() => {
+                        const pHk = malnutritionRefeedingGeometry.hexokinaseCascade.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const hkD = pHk.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g>
+                            <path d={hkD} fill="none" stroke="#ef4444" strokeWidth="2.4" opacity={0.85} />
+                            {pHk.filter((_, i) => i % 3 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3.5 * p.scale} fill="#fca5a5" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* Hypophosphatemic Intracellular Trapping Funnel */}
+                      {(() => {
+                        const pFunnel = malnutritionRefeedingGeometry.hypophosphatemiaFunnel.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const funnelD = pFunnel.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path d={funnelD} fill="none" stroke="#dc2626" strokeWidth="2" strokeDasharray="5 2" opacity={0.75} />
+                      })()}
+                      {/* Enteral Lumen Flow vs Parenteral Track */}
+                      {(() => {
+                        const pTrack = malnutritionRefeedingGeometry.enteralVesselTrack.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const trackD = pTrack.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g>
+                            <path d={trackD} fill="none" stroke="#10b981" strokeWidth="2.5" opacity={0.85} />
+                            {pTrack.filter((_, i) => i % 4 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={4 * p.scale} fill="#34d399" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Maternal-Fetal & Placental/Lactational Axis for Chapter 23 */}
+                  {diagram.threeDType === 'maternal-fetal-lactation-3d' && (
+                    <g className="maternal-fetal-3d-scene">
+                      {/* Neural Tube Closing Fold Arches */}
+                      {maternalFetalGeometry.neuralTubeFolds.map((arch, aIdx) => {
+                        const pArch = arch.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const archD = pArch.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={aIdx} d={archD} fill="none" stroke="#10b981" strokeWidth="2.4" opacity={0.85} />
+                      })}
+                      {/* Placental Syncytiotrophoblast Branching Villi */}
+                      {maternalFetalGeometry.placentalVilli.map((villus, vIdx) => {
+                        const pVillus = villus.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const villusD = pVillus.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={vIdx} d={villusD} fill="none" stroke="#f97316" strokeWidth="2" opacity={0.8} />
+                      })}
+                      {/* Transplacental Nutrient Flow Streams */}
+                      {(() => {
+                        const pNutr = maternalFetalGeometry.nutrientGradients.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const nutrD = pNutr.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={nutrD} fill="none" stroke="#ef4444" strokeWidth="1.8" strokeDasharray="4 3" opacity={0.7} />
+                            {pNutr.filter((_, i) => i % 5 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3 * p.scale} fill="#fb7185" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* Mammary Alveolus Acinar Ring with HMO Secretor Nodes */}
+                      {(() => {
+                        const pAlv = maternalFetalGeometry.mammaryAlveolus.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const alvD = pAlv.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={alvD} fill="none" stroke="#0284c7" strokeWidth="2.2" opacity={0.85} />
+                            {pAlv.filter((_, i) => i % 3 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3.2 * p.scale} fill="#38bdf8" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Oncology Nutrition & Cancer Cachexia for Chapter 24 */}
+                  {diagram.threeDType === 'cancer-cachexia-metabolic-3d' && (
+                    <g className="cancer-cachexia-3d-scene">
+                      {/* Tumor Warburg Core Rings */}
+                      {cancerCachexiaGeometry.tumorWarburgCore.map((ring, rIdx) => {
+                        const pRing = ring.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const ringD = pRing.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path key={rIdx} d={ringD} fill="none" stroke="#f97316" strokeWidth="2" opacity={0.75} />
+                      })}
+                      {/* Lactic Acid Efflux Spiral Funnel */}
+                      {(() => {
+                        const pLac = cancerCachexiaGeometry.lactateFunnel.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const lacD = pLac.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g>
+                            <path d={lacD} fill="none" stroke="#eab308" strokeWidth="2.2" strokeDasharray="4 2" opacity={0.8} />
+                            {pLac.filter((_, i) => i % 4 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={2.8 * p.scale} fill="#fde047" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* Systemic Cytokine Storm Waves (IL-6, TNF-alpha) */}
+                      {cancerCachexiaGeometry.cytokineWaves.map((wave, wIdx) => {
+                        const pWave = wave.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const waveD = pWave.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={wIdx} d={waveD} fill="none" stroke="#ef4444" strokeWidth="2" strokeDasharray="6 3" opacity={0.8} />
+                      })}
+                      {/* 26S Ubiquitin-Proteasome Degradation Barrels */}
+                      {cancerCachexiaGeometry.proteasomeBarrels.map((barrel, bIdx) => {
+                        const pBarrel = barrel.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const barrelD = pBarrel.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g key={bIdx}>
+                            <path d={barrelD} fill="none" stroke="#dc2626" strokeWidth="2.2" opacity={0.85} />
+                            {pBarrel.filter((_, i) => i % 3 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3 * p.scale} fill="#f87171" />
+                            ))}
+                          </g>
+                        )
+                      })}
+                    </g>
+                  )}
+
+                  {/* 3D Lifespan Nutrition Continuum & Sarcopenia for Chapter 25 */}
+                  {diagram.threeDType === 'lifespan-continuum-sarcopenia-3d' && (
+                    <g className="lifespan-continuum-3d-scene">
+                      {/* Lifespan Trajectory Kinetic Arc */}
+                      {(() => {
+                        const pArc = lifespanContinuumGeometry.trajectoryArc.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const arcD = pArc.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g>
+                            <path d={arcD} fill="none" stroke="#10b981" strokeWidth="3" opacity={0.85} />
+                            {pArc.filter((_, i) => i % 4 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3.5 * p.scale} fill="#34d399" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* Adolescent Peak Bone Mineral Struts */}
+                      {lifespanContinuumGeometry.peakBonePrism.map((strut, sIdx) => {
+                        const pStrut = strut.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const strutD = pStrut.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={sIdx} d={strutD} fill="none" stroke="#2563eb" strokeWidth="2.2" opacity={0.8} />
+                      })}
+                      {/* Sarcopenic Muscle Fiber Atrophy Bundles */}
+                      {lifespanContinuumGeometry.sarcopeniaFibers.map((fiber, fIdx) => {
+                        const pFiber = fiber.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const fiberD = pFiber.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={fIdx} d={fiberD} fill="none" stroke="#d97706" strokeWidth="2" strokeDasharray="5 3" opacity={0.75} />
+                      })}
+                      {/* Leucine Threshold Activation Ring */}
+                      {(() => {
+                        const pLeu = lifespanContinuumGeometry.leucineThresholdRing.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const leuD = pLeu.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={leuD} fill="none" stroke="#059669" strokeWidth="2.4" opacity={0.9} />
+                            {pLeu.filter((_, i) => i % 3 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3 * p.scale} fill="#6ee7b7" />
                             ))}
                           </g>
                         )

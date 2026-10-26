@@ -77,9 +77,14 @@
   - `obesity-t2d-mnt-3d` (Chapter 18): Hypertrophic adipocyte sphere (>100 um diffusion limit), Taylor hepatic steatosis twin cycle (Cycle 1), pancreatic islet steatosis twin cycle (Cycle 2), and DiRECT beta-cell rescue core.
   - `cardiovascular-apob-atheroma-3d` (Chapter 19): Arterial lumen curvature arcs, subendothelial proteoglycan ApoB-100 entrapment strands, uninhibited macrophage CD36 foam cell clusters, and DASH potassium vascular smooth muscle dilation ring.
   - `renal-nephron-fgf23-3d` (Chapter 20): Glomerular capillary tuft loops, Brenner dilated afferent vs constricted efferent arterioles (P_gc >65 mmHg), podocyte filtration slit strands, and osteocyte FGF23-Klotho endocrine orbit.
+  - `hepatobiliary-masld-ibd-3d` (Chapter 21): Hepatic lobule hexagonal prisms, steatosis triglyceride lipid droplets, portal bile acid FXR-FGF19 endocrine loop, and EEN mucosal healing tight junction strands.
+  - `clinical-malnutrition-refeeding-3d` (Chapter 22): Starvation cellular atrophy boundaries, rapid hexokinase glucose phosphorylation stream, hypophosphatemic intracellular ion-trapping funnel, and enteral lumen flow vs parenteral track.
+  - `maternal-fetal-lactation-3d` (Chapter 23): Periconceptional neural tube closing fold arches, syncytiotrophoblast branching villi, transplacental GLUT1/SNAT nutrient flow streams, and mammary alveolus PTHrP/2-FL secretor rings.
+  - `cancer-cachexia-metabolic-3d` (Chapter 24): Tumor Warburg core, systemic IL-6/TNF-alpha hyperinflammation wave, MuRF1/MAFbx ubiquitin-proteasome proteolysis helix, adipose UCP1 futile browning thermogenic particles, and marine EPA/leucine rescue track.
+  - `lifespan-continuum-sarcopenia-3d` (Chapter 25): Infant brain synaptogenesis / myelination curves, pubertal bone trabecular lattice, adult homeostatic organ reserve torus, senescent achlorhydric gastric crypt, and sarcopenic anabolic-resistance myofibrillar bundles.
   - `sports-bioenergetics-3d` (Chapter 26): Mitochondrial inner membrane, Brooks substrate oxidation ribbons, phosphagen and ATP resynthesis nodes.
   - `nutrigenomics-helix-3d` (Chapter 27): 3D DNA double helix with 22 rotating base pairs, golden -CH3 methyl tags on CpG sites, and histone octamer core spheres.
-- **High-Resolution Medical Reference Photography & Infographics:**
+- **High-Resolution Medical Reference Photography & Infographics (ALL 27 Chapters):**
   - `public/assets/energy_balance_tdee_overview.jpg` (Chapter 01)
   - `public/assets/macronutrient_digestion_overview.jpg` (Chapter 02)
   - `public/assets/carbohydrate_quality_overview.jpg` (Chapter 03)
@@ -100,14 +105,21 @@
   - `public/assets/obesity_t2d_mnt_overview.jpg` (Chapter 18)
   - `public/assets/cardiovascular_atherosclerosis_overview.jpg` (Chapter 19)
   - `public/assets/renal_nutrition_ckd_overview.jpg` (Chapter 20)
+  - `public/assets/hepatobiliary_masld_ibd_overview.jpg` (Chapter 21)
+  - `public/assets/clinical_malnutrition_refeeding_overview.jpg` (Chapter 22)
+  - `public/assets/maternal_fetal_lactation_overview.jpg` (Chapter 23)
+  - `public/assets/cancer_cachexia_oncology_overview.jpg` (Chapter 24)
+  - `public/assets/lifespan_nutrition_overview.jpg` (Chapter 25)
   - `public/assets/sports_nutrition_bioenergetics_overview.jpg` (Chapter 26)
   - `public/assets/nutrigenomics_precision_dietetics_overview.jpg` (Chapter 27)
 
 ---
 
-## 4. Next Upgrade Queue (Batches of 5)
+## 4. Visual & 3D Batch Execution Summary
 - **Batch 1 (COMPLETE):** Chapters 01, 02, 03, 04, 05 (100% 3D + Medical Photos + Tests)
 - **Batch 2 (COMPLETE):** Chapters 06, 07, 08, 09, 10 (100% 3D + Medical Photos + Tests)
 - **Batch 3 (COMPLETE):** Chapters 11, 12, 13, 14, 15 (100% 3D + Medical Photos + Tests)
 - **Batch 4 (COMPLETE):** Chapters 16, 17, 18, 19, 20 (100% 3D + Medical Photos + Tests)
-- **Batch 5 (Next):** Chapters 21, 22, 23, 24, 25
+- **Batch 5 (COMPLETE):** Chapters 21, 22, 23, 24, 25 (100% 3D + Medical Photos + Tests)
+- **Batch E (COMPLETE):** Chapters 26, 27 (100% 3D + Medical Photos + Tests)
+- **Platform Result:** 100% (27 of 27 chapters) completed with interactive 3D vector scenes and clinical reference photography.
