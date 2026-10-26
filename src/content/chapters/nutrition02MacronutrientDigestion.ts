@@ -257,6 +257,13 @@ export const nutrition02MacronutrientDigestionLesson: LessonTopic = {
       'সুস্থ মানব জেজুনামের পরিণত এন্টারোসাইটের চিত্র; অন্ত্রের দৈর্ঘ্য এবং ক্রিপ্ট-ভিলাস অক্ষ বরাবর এর ঘনত্ব পরিবর্তিত হতে পারে।'
     ),
     svgType: 'pathway-map',
+    imageUrl: '/assets/macronutrient_digestion_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 2.1: Human Enterocyte Brush-Border Membrane Architecture & Macronutrient Absorption Cascades — SGLT1, GLUT5, GLUT2, PepT1, and Lacteal Chylomicrons.',
+      'মেডিকেল রেফারেন্স চিত্র ২.১: এন্টারোসাইট ব্রাশ-বর্ডার ঝিল্লির গঠন ও পরিপাক শোষণ প্রণালী — SGLT1, GLUT5, GLUT2, PepT1 এবং ল্যাকটিয়েল কাইলোমাইক্রন।'
+    ),
+    has3D: true,
+    threeDType: 'enterocyte-villus-3d',
     items: [
       {
         id: 'sglt1-node',
@@ -272,6 +279,7 @@ export const nutrition02MacronutrientDigestionLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#059669',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -60, y: -50, z: 25 },
       },
       {
         id: 'pept1-node',
@@ -287,6 +295,7 @@ export const nutrition02MacronutrientDigestionLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#10b981',
         svgCoords: { x: 25, y: 95, width: 310, height: 48 },
+        position3D: { x: -10, y: -45, z: -20 },
       },
       {
         id: 'glut5-node',
@@ -302,6 +311,7 @@ export const nutrition02MacronutrientDigestionLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#34d399',
         svgCoords: { x: 25, y: 155, width: 310, height: 48 },
+        position3D: { x: 50, y: -40, z: 20 },
       },
       {
         id: 'chylomicron-node',
@@ -317,6 +327,7 @@ export const nutrition02MacronutrientDigestionLesson: LessonTopic = {
         sectionId: 'integration',
         color: '#047857',
         svgCoords: { x: 25, y: 215, width: 310, height: 48 },
+        position3D: { x: 45, y: 35, z: -25 },
       },
       {
         id: 'na-k-pump-node',
@@ -332,6 +343,7 @@ export const nutrition02MacronutrientDigestionLesson: LessonTopic = {
         sectionId: 'structure',
         color: '#065f46',
         svgCoords: { x: 25, y: 275, width: 310, height: 48 },
+        position3D: { x: -40, y: 40, z: 15 },
       },
     ],
   },

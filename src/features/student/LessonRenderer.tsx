@@ -46,7 +46,14 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
 
   const jumpTo = (sectionId: string) => {
     const target = document.getElementById(`lesson-section-${sectionId}`)
-    if (target && typeof target.scrollIntoView === 'function') target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (target) {
+      if (target instanceof HTMLDetailsElement) {
+        target.open = true
+      }
+      if (typeof target.scrollIntoView === 'function') {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
   }
 
   const renderParagraphContent = (text: string, paraKey: string) => {
@@ -71,6 +78,17 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     })
   }
 
+  const activeTocEntries = useMemo(() => {
+    if (currentLevel?.sections?.length) {
+      return currentLevel.sections.map((section, idx) => ({
+        id: `toc-${depth}-${section.id}-${idx}`,
+        label: section.heading,
+        sectionId: section.id,
+      }))
+    }
+    return chapter?.toc ?? []
+  }, [currentLevel, depth, chapter])
+
   return <article className="lesson-document">
     <header className="lesson-heading">
       <span className="section-kicker">STUDY HUB · KNOWLEDGE</span>
@@ -79,7 +97,7 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
       <p className="lesson-review-note">{label('Educational chapter; not individual medical or nutrition advice. This source-checked content has not yet completed independent subject-matter review.', 'শিক্ষামূলক অধ্যায়; ব্যক্তিগত চিকিৎসা বা পুষ্টি-পরামর্শ নয়। এই উৎস-যাচাইকৃত বিষয়বস্তুর স্বতন্ত্র বিষয়বিশেষজ্ঞ পর্যালোচনা এখনো সম্পন্ন হয়নি।')}</p>
     </header>
 
-    {chapter && <><section className="lesson-reading-progress" aria-label={label('Chapter reading progress', 'অধ্যায় পড়ার অগ্রগতি')}><div><strong>{label('Chapter progress', 'অধ্যায়ের অগ্রগতি')}</strong><span>{readingProgress}%</span></div><progress aria-label={label('Chapter reading progress', 'অধ্যায় পড়ার অগ্রগতি')} max="100" value={readingProgress}>{readingProgress}%</progress></section><nav className="lesson-toc" aria-label={label('Table of contents', 'সূচিপত্র')}><div><span className="section-kicker">{label('CHAPTER MAP', 'অধ্যায়ের মানচিত্র')}</span><h2>{label('Table of contents', 'সূচিপত্র')}</h2></div><ol>{chapter.toc.map((entry, index) => <li key={entry.id}><button type="button" onClick={() => jumpTo(entry.sectionId)}><span>{index + 1}</span>{contentLabel(entry.label)}</button></li>)}</ol></nav></>}
+    {chapter && <><section className="lesson-reading-progress" aria-label={label('Chapter reading progress', 'অধ্যায় পড়ার অগ্রগতি')}><div><strong>{label('Chapter progress', 'অধ্যায়ের অগ্রগতি')}</strong><span>{readingProgress}%</span></div><progress aria-label={label('Chapter reading progress', 'অধ্যায় পড়ার অগ্রগতি')} max="100" value={readingProgress}>{readingProgress}%</progress></section><nav className="lesson-toc" aria-label={label('Table of contents', 'সূচিপত্র')}><div><span className="section-kicker">{label('CHAPTER MAP · ', 'অধ্যায়ের মানচিত্র · ')}<strong style={{ textTransform: 'uppercase' }}>{contentLabel(currentLevel.label)}</strong></span><h2>{label('Table of contents', 'সূচিপত্র')}</h2></div><ol>{activeTocEntries.map((entry, index) => <li key={entry.id}><button type="button" onClick={() => jumpTo(entry.sectionId)}><span>{index + 1}</span>{contentLabel(entry.label)}</button></li>)}</ol></nav></>}
 
     <section className="lesson-objectives" aria-labelledby="lesson-objectives-heading"><h2 id="lesson-objectives-heading">{label('Learning objectives', 'শেখার লক্ষ্য')}</h2><ul>{lesson.objectives.map((objective, index) => <li key={index}>{contentLabel(objective)}</li>)}</ul><div className="lesson-topic-links"><span><b>{label('Prerequisites', 'পূর্বশর্ত')}:</b> {lesson.prerequisiteIds.length ? lesson.prerequisiteIds.map((id) => <span key={id}>{id}</span>) : label('No formal prerequisite', 'আনুষ্ঠানিক পূর্বশর্ত নেই')}</span><span><b>{label('Related topics', 'সম্পর্কিত বিষয়')}:</b> {lesson.relatedTopicIds.map((id) => { const title = id === 'topic.macronutrient.digestion' ? 'Macronutrient Digestion' : 'Glucose Metabolism'; const slug = id === 'topic.macronutrient.digestion' ? 'nutrition' : 'metabolism'; return <Link key={id} to={`/learn/${slug}`}>{title}</Link> })}</span></div></section>
 

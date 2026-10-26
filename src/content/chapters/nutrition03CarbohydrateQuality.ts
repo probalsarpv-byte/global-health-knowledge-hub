@@ -262,6 +262,13 @@ export const nutrition03CarbohydrateQualityLesson: LessonTopic = {
       'Representative in vivo response curves following standardized 50 g available carbohydrate ingestion in healthy non-diabetic human subjects.',
       'সুস্থ স্বাভাবিক প্রাপ্তবয়স্কদের ক্ষেত্রে ৫০ গ্রাম শর্করা গ্রহণের পর রক্তের গ্লুকোজ পরিবর্তনের প্রমিত রূপরেখা।'
     ),
+    imageUrl: '/assets/carbohydrate_quality_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 3.1: Starch Macromolecular Stereochemistry & Postprandial Glycemic Response Dynamics — Linear Amylose Helix vs Dendritic Amylopectin.',
+      'মেডিকেল রেফারেন্স চিত্র ৩.১: শ্বেতসারের ম্যাক্রোমলিকুলার স্টেরিওরসায়ন ও খাবার-পরবর্তী গ্লুকোজ প্রতিক্রিয়া — সরল অ্যামাইলোজ বনাম শাখাযুক্ত অ্যামাইলোপেকটিন।'
+    ),
+    has3D: true,
+    threeDType: 'carbohydrate-quality-3d',
     svgType: 'pathway-map',
     items: [
       {
@@ -278,6 +285,7 @@ export const nutrition03CarbohydrateQualityLesson: LessonTopic = {
         sectionId: 'structure',
         color: '#059669',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -65, y: -45, z: 20 },
       },
       {
         id: 'amylopectin-node',
@@ -293,6 +301,7 @@ export const nutrition03CarbohydrateQualityLesson: LessonTopic = {
         sectionId: 'structure',
         color: '#10b981',
         svgCoords: { x: 25, y: 95, width: 310, height: 48 },
+        position3D: { x: 55, y: -40, z: -25 },
       },
       {
         id: 'gi-curve-node',
@@ -308,6 +317,7 @@ export const nutrition03CarbohydrateQualityLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#34d399',
         svgCoords: { x: 25, y: 155, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 35 },
       },
       {
         id: 'resistant-starch-node',
@@ -323,6 +333,7 @@ export const nutrition03CarbohydrateQualityLesson: LessonTopic = {
         sectionId: 'integration',
         color: '#047857',
         svgCoords: { x: 25, y: 215, width: 310, height: 48 },
+        position3D: { x: -50, y: 45, z: -20 },
       },
       {
         id: 'incretin-axis-node',
@@ -338,6 +349,7 @@ export const nutrition03CarbohydrateQualityLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#065f46',
         svgCoords: { x: 25, y: 275, width: 310, height: 48 },
+        position3D: { x: 50, y: 50, z: 20 },
       },
     ],
   },

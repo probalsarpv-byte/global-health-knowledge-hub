@@ -262,6 +262,13 @@ export const nutrition01EnergyBalanceLesson: LessonTopic = {
       'সুস্থ আসীন প্রাপ্তবয়স্ক ব্যক্তির জন্য আদর্শ গড় মান; খেলোয়াড়দের নিবিড় প্রশিক্ষণ, পারিপার্শ্বিক তাপমাত্রা ও বিপাকীয় অভিযোজনে এই শতাংশ ব্যাপকভাবে পরিবর্তিত হতে পারে।'
     ),
     svgType: 'pathway-map',
+    imageUrl: '/assets/energy_balance_tdee_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 1.1: Human Energy Balance & Total Daily Energy Expenditure (TDEE) Compartments — BMR, TEF, EAT, and NEAT Partitioning.',
+      'মেডিকেল রেফারেন্স চিত্র ১.১: মানব শক্তি ভারসাম্য ও মোট দৈনিক শক্তি ব্যয়ের (TDEE) উপাদানসমূহ — BMR, TEF, EAT এবং NEAT বিভাজন।'
+    ),
+    has3D: true,
+    threeDType: 'tdee-energy-reactor-3d',
     items: [
       {
         id: 'bmr-rmr-node',
@@ -277,6 +284,7 @@ export const nutrition01EnergyBalanceLesson: LessonTopic = {
         sectionId: 'structure',
         color: '#059669',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -65, y: -45, z: 20 },
       },
       {
         id: 'tef-node',
@@ -292,6 +300,7 @@ export const nutrition01EnergyBalanceLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#10b981',
         svgCoords: { x: 25, y: 95, width: 310, height: 48 },
+        position3D: { x: 55, y: -35, z: -25 },
       },
       {
         id: 'neat-node',
@@ -307,6 +316,7 @@ export const nutrition01EnergyBalanceLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#34d399',
         svgCoords: { x: 25, y: 155, width: 310, height: 48 },
+        position3D: { x: -55, y: 35, z: -20 },
       },
       {
         id: 'eat-node',
@@ -322,6 +332,7 @@ export const nutrition01EnergyBalanceLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#6ee7b7',
         svgCoords: { x: 25, y: 215, width: 310, height: 48 },
+        position3D: { x: 50, y: 40, z: 30 },
       },
       {
         id: 'metabolic-adaptation-node',
@@ -337,6 +348,7 @@ export const nutrition01EnergyBalanceLesson: LessonTopic = {
         sectionId: 'integration',
         color: '#047857',
         svgCoords: { x: 25, y: 275, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 35 },
       },
     ],
   },

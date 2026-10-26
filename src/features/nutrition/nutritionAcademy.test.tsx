@@ -161,7 +161,7 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     const academicTab = screen.getByRole('button', { name: 'Academic' })
     await user.click(academicTab)
     expect(academicTab).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByText(/Thermodynamic Architecture of Energy Balance in Human Physiology/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Thermodynamic Architecture of Energy Balance in Human Physiology/i)[0]).toBeInTheDocument()
 
     // Switch Depth Levels: Advanced / Research
     const advancedTab = screen.getByRole('button', { name: 'Advanced / Research' })
@@ -723,4 +723,106 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
 
     expect(await screen.findByRole('heading', { name: 'Nutrition & dietetics curriculum' })).toBeInTheDocument()
   })
+
+  it('dynamically switches Table of Contents entries and kicker badge when changing depth tiers', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/energy-balance-tdee')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '01 · Energy Balance, Basal Metabolic Rate & Total Daily Energy Expenditure' })).toBeInTheDocument()
+
+    // Default is Foundation tier
+    expect(screen.getByText(/CHAPTER MAP/i)).toBeInTheDocument()
+    expect(screen.getByText(/Table of contents/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Thermodynamic Foundations of Human Energy Balance/i)[0]).toBeInTheDocument()
+
+    // Switch to Academic tier
+    const academicTab = screen.getByRole('button', { name: /Academic/i })
+    fireEvent.click(academicTab)
+    expect(screen.getByText(/CHAPTER MAP/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Thermodynamic Architecture of Energy Balance in Human Physiology/i)[0]).toBeInTheDocument()
+
+    // Switch to Advanced / Research tier
+    const advancedTab = screen.getByRole('button', { name: /Advanced \/ Research/i })
+    fireEvent.click(advancedTab)
+    expect(screen.getByText(/CHAPTER MAP/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Thermodynamic Limits, Energy Flux & Dynamic Systems Biology/i)[0]).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 01 (Energy Balance)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/energy-balance-tdee')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '01 · Energy Balance, Basal Metabolic Rate & Total Daily Energy Expenditure' })).toBeInTheDocument()
+
+    // 3D rotation controls
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    // Photo toggle
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 1.1/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 02 (Macronutrient Digestion)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/macronutrient-digestion-absorption')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '02 · Macronutrient Digestion, Brush-Border Transport & Absorption Mechanics' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 2.1/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 03 (Carbohydrate Quality)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/carbohydrate-quality-gi-gl')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '03 · Carbohydrate Quality: Glycemic Index, Glycemic Load & Resistant Starch' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 3.1/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 04 (Dietary Fiber & SCFA)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/dietary-fiber-scfa')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '04 · Dietary Fiber, Short-Chain Fatty Acids & Colonic Epithelial Integrity' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 4.1/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 05 (Dietary Lipids)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/dietary-lipids-fatty-acids-pufa')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '05 · Dietary Lipids: Fatty Acid Saturation, Trans-Fats & Essential PUFA Ratios' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Figure 5.1/i })).toBeInTheDocument()
+  })
 })
+

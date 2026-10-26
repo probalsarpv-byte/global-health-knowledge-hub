@@ -261,6 +261,13 @@ export const nutrition05DietaryLipidsLesson: LessonTopic = {
       'Enzymatic conversion rates reflect in vivo human tracer studies; high linoleic acid intake competitively suppresses alpha-linolenic desaturation [1, 3].',
       'মানবদেহের আইসোটোপ ট্রেসার গবেষণালব্ধ রূপান্তর গতিবিদ্যা; খাদ্যে অতিরিক্ত লিনোলিক অ্যাসিড থাকলে আলফা-লিনোলেনিক অ্যাসিডের রূপান্তর উল্লেখযোগ্যভাবে বাধাগ্রস্ত হয় [1, 3]।'
     ),
+    imageUrl: '/assets/dietary_lipids_pufa_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 5.1: Dietary Fatty Acid Saturation, Cis/Trans Double Bond Stereochemistry & Eicosanoid / Resolvin Pathway Map.',
+      'মেডিকেল রেফারেন্স চিত্র ৫.১: খাদ্য ফ্যাটি অ্যাসিডের সম্পৃক্ততা, সিস/ট্রান্স দ্বি-বন্ধনের স্টেরিওরসায়ন এবং আইকোসানয়েড/রিজলভিন রূপান্তর রূপরেখা।'
+    ),
+    has3D: true,
+    threeDType: 'dietary-lipids-3d',
     svgType: 'pathway-map',
     items: [
       {
@@ -277,6 +284,7 @@ export const nutrition05DietaryLipidsLesson: LessonTopic = {
         sectionId: 'introduction',
         color: '#f59e0b',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -60, y: -40, z: 25 },
       },
       {
         id: 'node-trans',
@@ -292,6 +300,7 @@ export const nutrition05DietaryLipidsLesson: LessonTopic = {
         sectionId: 'structure',
         color: '#ef4444',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 55, y: -35, z: -25 },
       },
       {
         id: 'node-mufa',
@@ -307,6 +316,7 @@ export const nutrition05DietaryLipidsLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#10b981',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -45, y: 35, z: -20 },
       },
       {
         id: 'node-omega6',
@@ -322,6 +332,7 @@ export const nutrition05DietaryLipidsLesson: LessonTopic = {
         sectionId: 'integration',
         color: '#f97316',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 50, y: 40, z: 20 },
       },
       {
         id: 'node-omega3',
@@ -337,6 +348,7 @@ export const nutrition05DietaryLipidsLesson: LessonTopic = {
         sectionId: 'practice',
         color: '#06b6d4',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 35 },
       },
     ],
   },

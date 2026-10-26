@@ -32,17 +32,20 @@
 9. **Batch E (Chapters 26 & 27: Sports Bioenergetics & Nutrigenomics) Authored & Fully Integrated with Photos & Interactive 3D Animations:**
    - **Chapter 26 (`nutrition26SportsBioenergetics.ts`):** **6,699 English words / 5,598 Bengali words** (12,297 bilingual words total) across 18 sections; 6 key terms, 2 worked examples (glycogen loading, protein pulse timing), 3 checkpoints, 6 Vancouver citations with DOIs, interactive 3D mitochondrial/crossover animation.
    - **Chapter 27 (`nutrition27NutrigenomicsPrecision.ts`):** **6,938 English words / 5,175 Bengali words** (12,113 bilingual words total) across 18 sections; 6 key terms, 2 worked clinical cases (MTHFR 677TT, APOE-e4 precision MNT), 3 checkpoints, 6 Vancouver citations with DOIs, interactive 3D DNA double helix & CpG methylation animation.
-   - **Interactive 3D Engine (`InteractiveNutrientDiagram.tsx`):** Added perspective 3D projection, mouse/touch drag-to-rotate in 3D, auto-spinning controls, and depth-sorted z-index rendering.
-   - **Medical Reference Infographics:** Deployed in `public/assets/sports_nutrition_bioenergetics_overview.jpg` and `public/assets/nutrigenomics_precision_dietetics_overview.jpg`.
+   - **Interactive 3D Engine (`InteractiveNutrientDiagram.tsx`):** Added perspective 3D projection, mouse/touch drag-to-rotate in 3D, auto-spinning controls, and depth-sorted z-index rendering across 7 dedicated 3D scenes (Chapters 01, 02, 03, 04, 05, 26, 27).
+   - **Table of Contents (TOC) Dynamic Tier Synchronization:** Resolved TOC bug where TOC only displayed Foundation headings; now dynamically reflects the active depth level (Foundation, Academic, or Advanced/Research) in real time with auto-scroll and open details.
+   - **Batch 1 Visual & 3D Upgrades (Chapters 01–05):** Generated and deployed 5 high-resolution medical reference photographs (`public/assets/energy_balance_tdee_overview.jpg`, `macronutrient_digestion_overview.jpg`, `carbohydrate_quality_overview.jpg`, `dietary_fiber_scfa_overview.jpg`, `dietary_lipids_pufa_overview.jpg`) and custom 3D vector scenes with bilingual captions.
    - **Total Academy Volume (All 27 Chapters Complete):** **165,739 English words / 134,477 Bengali words** (300,216 bilingual words total) across 486 substantive pedagogical sections.
    - 100% bilingual parity (Bengali + International English with dual-script terminology).
-   - All automated checks passed: `eslint . --max-warnings=0` (0 warnings/errors), `tsc -b --pretty false` (0 errors), Vitest (32/32 in Nutrition suite, all passing), `vite build` (production bundle built cleanly).
+   - All automated checks passed: `eslint . --max-warnings=0` (0 warnings/errors), `tsc -b --pretty false` (0 errors), Vitest (38/38 in Nutrition suite, all passing), `vite build` (production bundle built cleanly).
 
 ---
 
 ## 2. Next Milestones: Future Platform Expansion
 
+- **Batch 2 Visual Upgrades (Next 5 Chapters):** Chapters 06 (Proteins), 07 (Satiety), 08 (Hydration), 09 (Fat-Soluble Vitamins), 10 (B-Complex).
+- **Subsequent Batches:** Chapters 11–15, 16–20, 21–25 in groups of 5.
 - **Future Academy Extensions:**
   - The 50-chapter curriculum expansion architecture documented in `docs/NUTRITION_DEPTH_AUDIT.md`.
-  - Additional interactive 3D views for other organ and metabolic academies.
+
 

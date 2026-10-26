@@ -56,12 +56,32 @@
 ---
 
 ## 3. Visual & Interactive 3D Status
+- **Table of Contents (TOC) Dynamic Tier Synchronization:** In `LessonRenderer.tsx`, TOC entries now dynamically compute from `currentLevel.sections` for the active depth tier (`foundation`, `academic`, or `advanced`), keeping the chapter map perfectly synchronized with smooth scrolling to target sections.
 - **Interactive 3D Engine:** Implemented in `src/features/nutrition/InteractiveNutrientDiagram.tsx` with perspective camera projection, drag-to-rotate in 3D, auto-spinning controls, and depth-sorted z-indexes.
-- **Dedicated 3D Scenes:**
-  - `sports-bioenergetics-3d`: Mitochondrial inner membrane, Brooks substrate oxidation ribbons, phosphagen and ATP resynthesis nodes.
-  - `nutrigenomics-helix-3d`: 3D DNA double helix with 22 rotating base pairs, golden $-CH_3$ methyl tags on CpG sites, and histone octamer core spheres.
-- **Medical Reference Infographics:**
-  - `public/assets/sports_nutrition_bioenergetics_overview.jpg`
-  - `public/assets/nutrigenomics_precision_dietetics_overview.jpg`
+- **Dedicated 3D Scenes Implemented:**
+  - `tdee-energy-reactor-3d` (Chapter 01): Kinetic core with 4 multi-planar orbital rings for BMR, TEF, EAT, and NEAT.
+  - `enterocyte-villus-3d` (Chapter 02): 5 vertical microvilli columns, apical brush-border membrane, and basolateral transport floor.
+  - `carbohydrate-quality-3d` (Chapter 03): Linear tightly coiled amylose helix versus branched dendritic amylopectin tree.
+  - `dietary-fiber-scfa-3d` (Chapter 04): Concentric colonic crypt rings, luminal mucus barrier wave, and SCFA signaling nodes.
+  - `dietary-lipids-3d` (Chapter 05): Spherical lipoprotein micelle with ApoB/ApoA1 rings and central hydrophobic core.
+  - `sports-bioenergetics-3d` (Chapter 26): Mitochondrial inner membrane, Brooks substrate oxidation ribbons, phosphagen and ATP resynthesis nodes.
+  - `nutrigenomics-helix-3d` (Chapter 27): 3D DNA double helix with 22 rotating base pairs, golden $-CH_3$ methyl tags on CpG sites, and histone octamer core spheres.
+- **High-Resolution Medical Reference Photography & Infographics:**
+  - `public/assets/energy_balance_tdee_overview.jpg` (Chapter 01)
+  - `public/assets/macronutrient_digestion_overview.jpg` (Chapter 02)
+  - `public/assets/carbohydrate_quality_overview.jpg` (Chapter 03)
+  - `public/assets/dietary_fiber_scfa_overview.jpg` (Chapter 04)
+  - `public/assets/dietary_lipids_pufa_overview.jpg` (Chapter 05)
+  - `public/assets/sports_nutrition_bioenergetics_overview.jpg` (Chapter 26)
+  - `public/assets/nutrigenomics_precision_dietetics_overview.jpg` (Chapter 27)
+
+---
+
+## 4. Next Upgrade Queue (Batches of 5)
+- **Batch 2 (Next):** Chapters 06, 07, 08, 09, 10
+- **Batch 3:** Chapters 11, 12, 13, 14, 15
+- **Batch 4:** Chapters 16, 17, 18, 19, 20
+- **Batch 5:** Chapters 21, 22, 23, 24, 25
+
 
 

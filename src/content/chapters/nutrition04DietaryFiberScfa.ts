@@ -260,6 +260,13 @@ export const nutrition04DietaryFiberScfaLesson: LessonTopic = {
       'Molar ratios reflect steady-state human proximal colonic aspirates; distal colonic ratios shift as fermentable substrates become depleted [2, 5].',
       'প্রক্সিমাল কোলনের আদর্শ সুস্থ মানুষের নমুনাভিত্তিক মোলার অনুপাত; দূরবর্তী কোলনে খাদ্য উপাদানের ঘাটতি দেখা দিলে এই অনুপাত কিছুটা পরিবর্তিত হতে পারে [2, 5]।'
     ),
+    imageUrl: '/assets/dietary_fiber_scfa_overview.jpg',
+    imageCaption: l(
+      'Medical Reference Figure 4.1: Colonic Crypt Architecture, Anaerobic Microbial Fermentation & Short-Chain Fatty Acid (SCFA) Signaling Cascades.',
+      'মেডিকেল রেফারেন্স চিত্র ৪.১: কোলনিক ক্রিপ্ট গঠন, অবাত অণুজীবীয় গাঁজন এবং শর্ট-চেইন ফ্যাটি অ্যাসিড (SCFA) সংকেত প্রণালী।'
+    ),
+    has3D: true,
+    threeDType: 'dietary-fiber-scfa-3d',
     svgType: 'pathway-map',
     items: [
       {
@@ -276,6 +283,7 @@ export const nutrition04DietaryFiberScfaLesson: LessonTopic = {
         sectionId: 'introduction',
         color: '#059669',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -65, y: -50, z: 20 },
       },
       {
         id: 'anaerobic-fermentation-node',
@@ -291,6 +299,7 @@ export const nutrition04DietaryFiberScfaLesson: LessonTopic = {
         sectionId: 'structure',
         color: '#10b981',
         svgCoords: { x: 25, y: 95, width: 310, height: 48 },
+        position3D: { x: 50, y: -45, z: -20 },
       },
       {
         id: 'butyrate-node',
@@ -306,6 +315,7 @@ export const nutrition04DietaryFiberScfaLesson: LessonTopic = {
         sectionId: 'mechanism',
         color: '#2563eb',
         svgCoords: { x: 25, y: 155, width: 310, height: 48 },
+        position3D: { x: -55, y: 0, z: 30 },
       },
       {
         id: 'propionate-node',
@@ -321,6 +331,7 @@ export const nutrition04DietaryFiberScfaLesson: LessonTopic = {
         sectionId: 'integration',
         color: '#7c3aed',
         svgCoords: { x: 25, y: 215, width: 310, height: 48 },
+        position3D: { x: 55, y: 0, z: -15 },
       },
       {
         id: 'acetate-node',
@@ -336,6 +347,7 @@ export const nutrition04DietaryFiberScfaLesson: LessonTopic = {
         sectionId: 'practice',
         color: '#db2777',
         svgCoords: { x: 25, y: 275, width: 310, height: 48 },
+        position3D: { x: -45, y: 50, z: -25 },
       },
       {
         id: 'clinical-outcomes-node',
@@ -351,6 +363,7 @@ export const nutrition04DietaryFiberScfaLesson: LessonTopic = {
         sectionId: 'takeaways',
         color: '#0d9488',
         svgCoords: { x: 25, y: 335, width: 310, height: 48 },
+        position3D: { x: 45, y: 50, z: 25 },
       },
     ],
   },

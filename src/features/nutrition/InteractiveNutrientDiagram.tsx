@@ -108,7 +108,7 @@ export function InteractiveNutrientDiagram({
     isDraggingRef.current = true
     lastPointerRef.current = { x: e.clientX, y: e.clientY }
     setIsAutoSpinning(false)
-    if (svg3dRef.current) {
+    if (svg3dRef.current && typeof svg3dRef.current.setPointerCapture === 'function') {
       svg3dRef.current.setPointerCapture(e.pointerId)
     }
   }
@@ -125,7 +125,12 @@ export function InteractiveNutrientDiagram({
 
   const handlePointerUp = (e: React.PointerEvent<SVGSVGElement>) => {
     isDraggingRef.current = false
-    if (svg3dRef.current && svg3dRef.current.hasPointerCapture(e.pointerId)) {
+    if (
+      svg3dRef.current &&
+      typeof svg3dRef.current.hasPointerCapture === 'function' &&
+      svg3dRef.current.hasPointerCapture(e.pointerId) &&
+      typeof svg3dRef.current.releasePointerCapture === 'function'
+    ) {
       svg3dRef.current.releasePointerCapture(e.pointerId)
     }
   }
@@ -192,6 +197,120 @@ export function InteractiveNutrientDiagram({
       }
       rings.push({ pts, color: layer === 0 ? '#10b981' : '#059669' })
     }
+    return rings
+  }, [diagram.threeDType])
+
+  // 3D TDEE Reactor Orbital Rings (Chapter 01)
+  const tdeeRings = useMemo(() => {
+    if (diagram.threeDType !== 'tdee-energy-reactor-3d') return []
+    const rings: Array<{ pts: Point3D[]; color: string; label: string }> = []
+    const configs = [
+      { r: 75, tiltX: 0, tiltY: 0, color: '#059669', label: 'BMR (60-70%)' },
+      { r: 50, tiltX: 0.55, tiltY: 0.2, color: '#f59e0b', label: 'TEF (10%)' },
+      { r: 90, tiltX: -0.4, tiltY: 0.6, color: '#dc2626', label: 'EAT (15-30%)' },
+      { r: 65, tiltX: 0.3, tiltY: -0.5, color: '#10b981', label: 'NEAT' },
+    ]
+    configs.forEach((cfg) => {
+      const pts: Point3D[] = []
+      for (let a = 0; a < 20; a++) {
+        const theta = (a / 20) * 2 * Math.PI
+        const x0 = Math.cos(theta) * cfg.r
+        const z0 = Math.sin(theta) * cfg.r
+        const x = x0 * Math.cos(cfg.tiltY) + z0 * Math.sin(cfg.tiltY)
+        const y = x0 * Math.sin(cfg.tiltX)
+        const z = -x0 * Math.sin(cfg.tiltY) + z0 * Math.cos(cfg.tiltY)
+        pts.push({ x, y, z })
+      }
+      rings.push({ pts, color: cfg.color, label: cfg.label })
+    })
+    return rings
+  }, [diagram.threeDType])
+
+  // 3D Microvilli Columns for Enterocyte (Chapter 02)
+  const microvilliColumns = useMemo(() => {
+    if (diagram.threeDType !== 'enterocyte-villus-3d') return []
+    const columns: Array<{ top: Point3D; bot: Point3D; color: string }> = []
+    const xOffsets = [-70, -35, 0, 35, 70]
+    xOffsets.forEach((x, i) => {
+      const zOffset = (i % 2 === 0 ? 1 : -1) * 15
+      columns.push({
+        top: { x, y: -75, z: zOffset },
+        bot: { x, y: -20, z: zOffset },
+        color: '#10b981',
+      })
+    })
+    return columns
+  }, [diagram.threeDType])
+
+  // 3D Amylose Helix & Amylopectin Tree for Carbohydrate Quality (Chapter 03)
+  const starchGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'carbohydrate-quality-3d') return { amylose: [], amylopectin: [] }
+    const amylose: Point3D[] = []
+    for (let i = 0; i < 20; i++) {
+      const theta = i * 0.48
+      const y = -75 + i * 7
+      amylose.push({
+        x: -45 + Math.cos(theta) * 22,
+        y,
+        z: Math.sin(theta) * 22,
+      })
+    }
+    const amylopectin: Array<{ from: Point3D; to: Point3D; color: string }> = [
+      { from: { x: 35, y: -70, z: 0 }, to: { x: 35, y: 65, z: 0 }, color: '#10b981' },
+      { from: { x: 35, y: -40, z: 0 }, to: { x: 65, y: -65, z: 20 }, color: '#34d399' },
+      { from: { x: 35, y: -10, z: 0 }, to: { x: 70, y: -25, z: -25 }, color: '#34d399' },
+      { from: { x: 35, y: 20, z: 0 }, to: { x: 65, y: 5, z: 25 }, color: '#34d399' },
+      { from: { x: 35, y: 45, z: 0 }, to: { x: 70, y: 35, z: -15 }, color: '#34d399' },
+    ]
+    return { amylose, amylopectin }
+  }, [diagram.threeDType])
+
+  // 3D Colonic Crypt Rings for Dietary Fiber & SCFA (Chapter 04)
+  const colonicCryptRings = useMemo(() => {
+    if (diagram.threeDType !== 'dietary-fiber-scfa-3d') return []
+    const rings: Array<{ pts: Point3D[]; color: string }> = []
+    const layers = [
+      { y: -60, r: 70, color: '#0d9488' },
+      { y: -20, r: 55, color: '#059669' },
+      { y: 20, r: 45, color: '#10b981' },
+      { y: 60, r: 60, color: '#2563eb' },
+    ]
+    layers.forEach((layer) => {
+      const pts: Point3D[] = []
+      for (let a = 0; a < 16; a++) {
+        const theta = (a / 16) * 2 * Math.PI
+        pts.push({
+          x: Math.cos(theta) * layer.r,
+          y: layer.y,
+          z: Math.sin(theta) * (layer.r * 0.6),
+        })
+      }
+      rings.push({ pts, color: layer.color })
+    })
+    return rings
+  }, [diagram.threeDType])
+
+  // 3D Spherical Lipoprotein Micelle for Dietary Lipids (Chapter 05)
+  const lipoproteinRings = useMemo(() => {
+    if (diagram.threeDType !== 'dietary-lipids-3d') return []
+    const rings: Array<{ pts: Point3D[]; color: string }> = []
+    const latitudes = [
+      { y: -35, r: 48, color: '#06b6d4' },
+      { y: 0, r: 65, color: '#2563eb' },
+      { y: 35, r: 48, color: '#06b6d4' },
+    ]
+    latitudes.forEach((lat) => {
+      const pts: Point3D[] = []
+      for (let a = 0; a < 18; a++) {
+        const theta = (a / 18) * 2 * Math.PI
+        pts.push({
+          x: Math.cos(theta) * lat.r,
+          y: lat.y,
+          z: Math.sin(theta) * lat.r,
+        })
+      }
+      rings.push({ pts, color: lat.color })
+    })
     return rings
   }, [diagram.threeDType])
 
@@ -649,6 +768,219 @@ export function InteractiveNutrientDiagram({
                               </g>
                             )}
                           </g>
+                        )
+                      })}
+                    </g>
+                  )}
+
+                  {/* 3D TDEE Reactor Scene for Chapter 01 */}
+                  {diagram.threeDType === 'tdee-energy-reactor-3d' && (
+                    <g className="tdee-3d-scene">
+                      {/* Central TDEE Kinetic Core */}
+                      {(() => {
+                        const pCore = projectPoint({ x: 0, y: 0, z: 0 }, rotX, rotY, zoom)
+                        const radius = 22 * pCore.scale
+                        return (
+                          <g>
+                            <circle
+                              cx={pCore.sx}
+                              cy={pCore.sy}
+                              r={radius}
+                              fill="url(#tdee-core-grad)"
+                              stroke="#059669"
+                              strokeWidth="2"
+                              opacity={0.8}
+                            />
+                            <text
+                              x={pCore.sx}
+                              y={pCore.sy + 4}
+                              textAnchor="middle"
+                              fill="#ffffff"
+                              fontSize={Math.max(7, 9 * pCore.scale)}
+                              fontWeight="800"
+                            >
+                              TDEE CORE
+                            </text>
+                          </g>
+                        )
+                      })()}
+                      <defs>
+                        <radialGradient id="tdee-core-grad" cx="35%" cy="35%" r="65%">
+                          <stop offset="0%" stopColor="#34d399" />
+                          <stop offset="60%" stopColor="#059669" />
+                          <stop offset="100%" stopColor="#064e3b" />
+                        </radialGradient>
+                      </defs>
+                      {/* 4 Partition Orbital Rings */}
+                      {tdeeRings.map((ring, ringIdx) => {
+                        const projected = ring.pts.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathD =
+                          projected.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') +
+                          ' Z'
+                        return (
+                          <path
+                            key={ringIdx}
+                            d={pathD}
+                            fill="none"
+                            stroke={ring.color}
+                            strokeWidth="2"
+                            strokeDasharray={ringIdx % 2 === 0 ? '5 3' : 'none'}
+                            opacity={0.7}
+                          />
+                        )
+                      })}
+                    </g>
+                  )}
+
+                  {/* 3D Enterocyte Microvillus Scene for Chapter 02 */}
+                  {diagram.threeDType === 'enterocyte-villus-3d' && (
+                    <g className="enterocyte-3d-scene">
+                      {/* Microvilli Columns */}
+                      {microvilliColumns.map((col, idx) => {
+                        const pTop = projectPoint(col.top, rotX, rotY, zoom)
+                        const pBot = projectPoint(col.bot, rotX, rotY, zoom)
+                        return (
+                          <line
+                            key={idx}
+                            x1={pTop.sx}
+                            y1={pTop.sy}
+                            x2={pBot.sx}
+                            y2={pBot.sy}
+                            stroke={col.color}
+                            strokeWidth={7 * pTop.scale}
+                            strokeLinecap="round"
+                            opacity={0.65}
+                          />
+                        )
+                      })}
+                      {/* Basolateral Floor Line */}
+                      {(() => {
+                        const pLeft = projectPoint({ x: -85, y: 55, z: 0 }, rotX, rotY, zoom)
+                        const pRight = projectPoint({ x: 85, y: 55, z: 0 }, rotX, rotY, zoom)
+                        return (
+                          <line
+                            x1={pLeft.sx}
+                            y1={pLeft.sy}
+                            x2={pRight.sx}
+                            y2={pRight.sy}
+                            stroke="#047857"
+                            strokeWidth="3"
+                            strokeDasharray="6 4"
+                            opacity={0.7}
+                          />
+                        )
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Starch Quality & Amylose Helix Scene for Chapter 03 */}
+                  {diagram.threeDType === 'carbohydrate-quality-3d' && (
+                    <g className="carbohydrate-quality-3d-scene">
+                      {/* Amylose Tight Coiled Helix */}
+                      {(() => {
+                        const pAmy = starchGeometry.amylose.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathAmy = pAmy.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g>
+                            <path d={pathAmy} fill="none" stroke="#2563eb" strokeWidth="3" opacity={0.8} />
+                            {pAmy.filter((_, i) => i % 3 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3 * p.scale} fill="#60a5fa" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* Amylopectin Branched Tree */}
+                      {starchGeometry.amylopectin.map((b, idx) => {
+                        const pFrom = projectPoint(b.from, rotX, rotY, zoom)
+                        const pTo = projectPoint(b.to, rotX, rotY, zoom)
+                        return (
+                          <line
+                            key={idx}
+                            x1={pFrom.sx}
+                            y1={pFrom.sy}
+                            x2={pTo.sx}
+                            y2={pTo.sy}
+                            stroke={b.color}
+                            strokeWidth={idx === 0 ? 3.5 : 2.2}
+                            strokeLinecap="round"
+                            opacity={0.85}
+                          />
+                        )
+                      })}
+                    </g>
+                  )}
+
+                  {/* 3D Colonic Crypt & SCFA Fermentation Scene for Chapter 04 */}
+                  {diagram.threeDType === 'dietary-fiber-scfa-3d' && (
+                    <g className="scfa-3d-scene">
+                      {/* Colonic Crypt Concentric Rings */}
+                      {colonicCryptRings.map((ring, ringIdx) => {
+                        const projected = ring.pts.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathD =
+                          projected.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') +
+                          ' Z'
+                        return (
+                          <path
+                            key={ringIdx}
+                            d={pathD}
+                            fill="none"
+                            stroke={ring.color}
+                            strokeWidth="2"
+                            strokeDasharray={ringIdx === 0 ? 'none' : '4 3'}
+                            opacity={0.65}
+                          />
+                        )
+                      })}
+                      {/* Luminal Mucus Boundary Wave */}
+                      {(() => {
+                        const pts: Point3D[] = []
+                        for (let s = 0; s <= 10; s++) {
+                          const x = -80 + s * 16
+                          const y = -65 + Math.sin(s * 0.8) * 8
+                          pts.push({ x, y, z: 10 })
+                        }
+                        const projected = pts.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const d = projected.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path d={d} fill="none" stroke="#10b981" strokeWidth="2.5" opacity={0.7} />
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Lipoprotein & Fatty Acid Bilayer Scene for Chapter 05 */}
+                  {diagram.threeDType === 'dietary-lipids-3d' && (
+                    <g className="lipids-3d-scene">
+                      {/* Central Hydrophobic Core Sphere */}
+                      {(() => {
+                        const pCore = projectPoint({ x: 0, y: 0, z: 0 }, rotX, rotY, zoom)
+                        const radius = 24 * pCore.scale
+                        return (
+                          <circle
+                            cx={pCore.sx}
+                            cy={pCore.sy}
+                            r={radius}
+                            fill="#f59e0b"
+                            stroke="#d97706"
+                            strokeWidth="1.5"
+                            opacity={0.75}
+                          />
+                        )
+                      })()}
+                      {/* Lipoprotein Phospholipid Shell Rings */}
+                      {lipoproteinRings.map((ring, ringIdx) => {
+                        const projected = ring.pts.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathD =
+                          projected.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') +
+                          ' Z'
+                        return (
+                          <path
+                            key={ringIdx}
+                            d={pathD}
+                            fill="none"
+                            stroke={ring.color}
+                            strokeWidth="2.2"
+                            strokeDasharray="5 3"
+                            opacity={0.8}
+                          />
                         )
                       })}
                     </g>
