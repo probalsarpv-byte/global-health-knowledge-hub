@@ -69,8 +69,13 @@
   - `hydration-osmoregulation-3d` (Chapter 08): Concentric fluid compartment cylinders (ICF K+ vs ECF Na+), Aquaporin-2 channel pore tetramer, and water flux particles.
   - `fat-soluble-vitamins-3d` (Chapter 09): Biliary mixed micelle radial spokes and 4 specialized vitamin orbit rings for A, D, E, and K.
   - `b-complex-bioenergetics-3d` (Chapter 10): Mitochondrial crista fold loop, matrix Krebs TCA cycle ring, PDC macro-sphere, and cytosolic Folate/B12 one-carbon infinity loop.
+  - `antioxidant-redox-3d` (Chapter 11): Downward electron cascade redox funnel, Cu/Zn/Mn catalytic spheres, selenocysteine active center, and triple-helical prolyl collagen strands.
+  - `bone-matrix-hydroxyapatite-3d` (Chapter 12): Hexagonal hydroxyapatite crystal lattice prism with vertical pillar struts, parallel collagen fibrils, and osteoblast/osteoclast BMU remodeling loop.
+  - `iron-biology-hepcidin-3d` (Chapter 13): Apical microvillus border, 24-subunit ferritin nanocage latitude rings with iron core, and basolateral ferroportin export pore with hepcidin occlusion cap.
+  - `gut-barrier-junctions-3d` (Chapter 14): MUC2 protective mucus bilayer sheets, claudin/occludin intercellular mesh grid, and perijunctional actomyosin contractile ring.
+  - `microbiome-metagenomics-3d` (Chapter 15): Colonic lumen cylindrical rings, 4 major bacterial phyla ecosystem clusters (Bacillota, Bacteroidota, Actinomycetota, Verrucomicrobiota), and metabolite flux streams (SCFA, secondary bile acids, TMAO).
   - `sports-bioenergetics-3d` (Chapter 26): Mitochondrial inner membrane, Brooks substrate oxidation ribbons, phosphagen and ATP resynthesis nodes.
-  - `nutrigenomics-helix-3d` (Chapter 27): 3D DNA double helix with 22 rotating base pairs, golden $-CH_3$ methyl tags on CpG sites, and histone octamer core spheres.
+  - `nutrigenomics-helix-3d` (Chapter 27): 3D DNA double helix with 22 rotating base pairs, golden -CH3 methyl tags on CpG sites, and histone octamer core spheres.
 - **High-Resolution Medical Reference Photography & Infographics:**
   - `public/assets/energy_balance_tdee_overview.jpg` (Chapter 01)
   - `public/assets/macronutrient_digestion_overview.jpg` (Chapter 02)
@@ -82,14 +87,21 @@
   - `public/assets/cellular_hydration_osmoregulation_overview.jpg` (Chapter 08)
   - `public/assets/fat_soluble_vitamins_overview.jpg` (Chapter 09)
   - `public/assets/b_complex_bioenergetics_overview.jpg` (Chapter 10)
+  - `public/assets/antioxidant_trace_minerals_overview.jpg` (Chapter 11)
+  - `public/assets/macrominerals_bone_matrix_overview.jpg` (Chapter 12)
+  - `public/assets/iron_biology_hepcidin_overview.jpg` (Chapter 13)
+  - `public/assets/gut_barrier_tight_junctions_overview.jpg` (Chapter 14)
+  - `public/assets/gut_microbiome_metagenomics_overview.jpg` (Chapter 15)
   - `public/assets/sports_nutrition_bioenergetics_overview.jpg` (Chapter 26)
   - `public/assets/nutrigenomics_precision_dietetics_overview.jpg` (Chapter 27)
 
 ---
 
 ## 4. Next Upgrade Queue (Batches of 5)
-- **Batch 3 (Next):** Chapters 11, 12, 13, 14, 15
-- **Batch 4:** Chapters 16, 17, 18, 19, 20
+- **Batch 1 (COMPLETE):** Chapters 01, 02, 03, 04, 05 (100% 3D + Medical Photos + Tests)
+- **Batch 2 (COMPLETE):** Chapters 06, 07, 08, 09, 10 (100% 3D + Medical Photos + Tests)
+- **Batch 3 (COMPLETE):** Chapters 11, 12, 13, 14, 15 (100% 3D + Medical Photos + Tests)
+- **Batch 4 (Next):** Chapters 16, 17, 18, 19, 20
 - **Batch 5:** Chapters 21, 22, 23, 24, 25
 
 

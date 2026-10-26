@@ -259,6 +259,13 @@ export const nutrition14GutBarrierLesson: LessonTopic = {
       'মিউকোসাল প্রাচীরের শিক্ষামূলক সিমুলেশন; কোনো চিকিৎসার পূর্বে চিকিৎসকের পরামর্শ আবশ্যক।'
     ),
     svgType: 'barrier-cascade',
+    imageUrl: '/assets/gut_barrier_tight_junctions_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of the multilayered intestinal mucosal barrier: Goblet cell polymeric MUC2 mucus hydrogel shield with antimicrobial lectins, apical tight junction complex (Claudin-1/4, Occludin, ZO-1/actin scaffold), cytokine-driven MLCK phosphorylation opening the paracellular leak pathway, and luminal LPS translocation triggering macrophage TLR4 metabolic endotoxemia.',
+      'বহুস্তরীয় অন্ত্রীয় মিউকোসাল প্রাচীরের মেডিকেল ইলাস্ট্রেশন: গবলেট কোষের পলিমারিক MUC2 মিউসিন ঢাল ও অণুজীবনাশক পেপটাইড, শীর্ষস্থ টাইট জাংশন কমপ্লেক্স (ক্লডিন, অক্লুডিন, ZO-1/অ্যাক্টিন মাচা), সাইটোকাইন-উদ্দীপ্ত MLCK ফসফোরাইলেশনে লিক পথ উন্মোচন এবং লুমিনাল LPS প্রবেশে ম্যাক্রোফেজ TLR4 বিপাকীয় এন্ডোটক্সেমিয়া।'
+    ),
+    has3D: true,
+    threeDType: 'gut-barrier-junctions-3d',
     items: [
       {
         id: 'node-mucus-shield',
@@ -273,6 +280,7 @@ export const nutrition14GutBarrierLesson: LessonTopic = {
         ),
         color: '#f59e0b',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -80, y: -50, z: 20 },
       },
       {
         id: 'node-tight-junctions',
@@ -287,6 +295,7 @@ export const nutrition14GutBarrierLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 80, y: -50, z: -20 },
       },
       {
         id: 'node-mlck-gating',
@@ -301,6 +310,7 @@ export const nutrition14GutBarrierLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -80, y: 50, z: -20 },
       },
       {
         id: 'node-lps-endotoxemia',
@@ -315,6 +325,7 @@ export const nutrition14GutBarrierLesson: LessonTopic = {
         ),
         color: '#ec4899',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 80, y: 50, z: 25 },
       },
     ],
   },

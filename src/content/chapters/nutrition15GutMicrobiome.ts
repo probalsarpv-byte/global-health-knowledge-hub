@@ -259,6 +259,13 @@ export const nutrition15GutMicrobiomeLesson: LessonTopic = {
       'শিক্ষামূলক মেটাজেনোমিক সিমুলেশন; অণুজীব সংক্রান্ত যেকোনো ক্লিনিক্যাল চিকিৎসার পূর্বে সঠিক পরীক্ষা আবশ্যক।'
     ),
     svgType: 'microbiome-axis',
+    imageUrl: '/assets/gut_microbiome_metagenomics_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of the human gut microbiome ecosystem and metabolic networks: 3.8 x 10^13 bacterial census across Bacillota, Bacteroidota, and Verrucomicrobiota phyla, alpha vs beta ecological biodiversity metrics, microbial Bile Salt Hydrolase (BSH) and 7alpha-dehydroxylase producing secondary bile acids (DCA, LCA) for FXR/TGR5 signaling, and CutC/D choline lyase producing Trimethylamine oxidized by hepatic FMO3 into atherogenic TMAO.',
+      'মানব অন্ত্রের মাইক্রোবায়োম বাস্তুতন্ত্র ও বিপাকীয় নেটওয়ার্কের মেডিকেল ইলাস্ট্রেশন: ব্যাকিলটা, ব্যাক্টেরয়ডটা ও ভেরুকোমাইক্রোবায়োটা পর্বের ৩.৮ x ১০^১৩ ব্যাকটেরিয়াল জনশুমারি, আলফা ও বিটা পরিবেশগত জীববৈচিত্র্য পরিমাপ, ব্যাকটেরিয়াল BSH ও ৭-আলফা ডিহাইড্রোক্সিলেজে সেকেন্ডারি পিত্ত অম্ল (DCA, LCA) তৈরি যা FXR/TGR5 নিয়ন্ত্রণ করে এবং CutC/D কোলিন লাইয়েজে উৎপন্ন TMA যকৃতের FMO3 দ্বারা হৃদরোগ সৃষ্টিকারী TMAO তে রূপান্তর।'
+    ),
+    has3D: true,
+    threeDType: 'microbiome-metagenomics-3d',
     items: [
       {
         id: 'node-phyla-census',
@@ -273,6 +280,7 @@ export const nutrition15GutMicrobiomeLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -80, y: -50, z: 20 },
       },
       {
         id: 'node-alpha-beta-diversity',
@@ -287,6 +295,7 @@ export const nutrition15GutMicrobiomeLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 80, y: -50, z: -20 },
       },
       {
         id: 'node-secondary-bile-acids',
@@ -301,6 +310,7 @@ export const nutrition15GutMicrobiomeLesson: LessonTopic = {
         ),
         color: '#f59e0b',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -80, y: 50, z: -20 },
       },
       {
         id: 'node-cutc-tmao',
@@ -315,6 +325,7 @@ export const nutrition15GutMicrobiomeLesson: LessonTopic = {
         ),
         color: '#dc2626',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 80, y: 50, z: 25 },
       },
     ],
   },

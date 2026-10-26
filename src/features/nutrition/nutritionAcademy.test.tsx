@@ -899,5 +899,80 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     fireEvent.click(photoBtn)
     expect(screen.getByRole('img', { name: /Figure 10.1/i })).toBeInTheDocument()
   })
+
+  it('renders photo and 3D interactive animation modes for Chapter 11 (Vitamin C & Trace Minerals)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/vitamin-c-trace-minerals-redox')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '11 · Vitamin C, Trace Minerals & Cellular Antioxidant Defense Networks' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /antioxidant metalloenzyme/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 12 (Macrominerals & Bone Matrix)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/macrominerals-bone-calcium-magnesium')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '12 · Macrominerals & Bone Matrix: Calcium, Phosphorus, Magnesium Homeostasis' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /macromineral and bone matrix/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 13 (Iron Biology)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/iron-biology-hepcidin-anemia')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '13 · Iron Biology: Dietary Bioavailability, Ferritin, Transferrin & Hepcidin' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /iron flux/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 14 (Gut Barrier & Mucosal Immunity)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/gut-barrier-mucosal-immunity')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '14 · The Gastrointestinal Barrier: Mucosal Immunity & Tight Junction Integrity' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /mucosal barrier/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 15 (Gut Microbiome Metagenomics)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/gut-microbiome-metagenomics')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '15 · The Human Gut Microbiome: Taxonomic Architecture & Metagenomics' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /gut microbiome ecosystem/i })).toBeInTheDocument()
+  })
 })
 

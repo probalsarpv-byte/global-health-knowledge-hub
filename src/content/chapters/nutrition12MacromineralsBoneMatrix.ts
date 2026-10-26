@@ -255,6 +255,13 @@ export const nutrition12MacromineralsBoneMatrixLesson: LessonTopic = {
       'ম্যাক্রোমিনারেল শারীরবৃত্তের শিক্ষামূলক সিমুলেশন; অস্থি রোগে চিকিৎসাগত সিদ্ধান্তের জন্য রক্ত পরীক্ষা অপরিহার্য।'
     ),
     svgType: 'bone-mineral-axis',
+    imageUrl: '/assets/macrominerals_bone_matrix_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of the macromineral and bone matrix endocrine network: Parathyroid CaSR/PTH loop, enterocyte TRPV6 and renal TRPV5 calcium transport, osteocyte FGF23-Klotho phosphaturic signaling, and the osteoblast-osteoclast RANKL/OPG bone remodeling unit.',
+      'ম্যাক্রোমিনারেল ও অস্থি ম্যাট্রিক্সের এন্ডোক্রাইন নেটওয়ার্কের মেডিকেল ইলাস্ট্রেশন: প্যারাথাইরয়েড CaSR/PTH চক্র, এন্টারোসাইট TRPV6 ও রেনাল TRPV5 ক্যালসিয়াম পরিবহন, অস্টিওসাইট FGF23-Klotho ফসফেট নির্গমন সংকেত এবং অস্টিওব্লাস্ট-অস্টিওক্ল্যাস্ট RANKL/OPG অস্থি পুনর্গঠন একক।'
+    ),
+    has3D: true,
+    threeDType: 'bone-matrix-hydroxyapatite-3d',
     items: [
       {
         id: 'node-casr-pth',
@@ -269,6 +276,7 @@ export const nutrition12MacromineralsBoneMatrixLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-trpv-calbindin',
@@ -283,6 +291,7 @@ export const nutrition12MacromineralsBoneMatrixLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -85, y: 50, z: -20 },
       },
       {
         id: 'node-fgf23-klotho',
@@ -297,6 +306,7 @@ export const nutrition12MacromineralsBoneMatrixLesson: LessonTopic = {
         ),
         color: '#d97706',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 85, y: -50, z: -25 },
       },
       {
         id: 'node-rankl-opg',
@@ -311,6 +321,7 @@ export const nutrition12MacromineralsBoneMatrixLesson: LessonTopic = {
         ),
         color: '#dc2626',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 85, y: 50, z: 20 },
       },
     ],
   },

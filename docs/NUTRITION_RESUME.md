@@ -32,7 +32,7 @@
 9. **Batch E (Chapters 26 & 27: Sports Bioenergetics & Nutrigenomics) Authored & Fully Integrated with Photos & Interactive 3D Animations:**
    - **Chapter 26 (`nutrition26SportsBioenergetics.ts`):** **6,699 English words / 5,598 Bengali words** (12,297 bilingual words total) across 18 sections; 6 key terms, 2 worked examples (glycogen loading, protein pulse timing), 3 checkpoints, 6 Vancouver citations with DOIs, interactive 3D mitochondrial/crossover animation.
    - **Chapter 27 (`nutrition27NutrigenomicsPrecision.ts`):** **6,938 English words / 5,175 Bengali words** (12,113 bilingual words total) across 18 sections; 6 key terms, 2 worked clinical cases (MTHFR 677TT, APOE-e4 precision MNT), 3 checkpoints, 6 Vancouver citations with DOIs, interactive 3D DNA double helix & CpG methylation animation.
-   - **Interactive 3D Engine (`InteractiveNutrientDiagram.tsx`):** Added perspective 3D projection, mouse/touch drag-to-rotate in 3D, auto-spinning controls, and depth-sorted z-index rendering across 12 dedicated 3D scenes (Chapters 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 26, 27).
+   - **Interactive 3D Engine (`InteractiveNutrientDiagram.tsx`):** Added perspective 3D projection, mouse/touch drag-to-rotate in 3D, auto-spinning controls, and depth-sorted z-index rendering across 17 dedicated 3D scenes (Chapters 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 26, 27).
    - **Table of Contents (TOC) Dynamic Tier Synchronization:** Resolved TOC bug where TOC only displayed Foundation headings; now dynamically reflects the active depth level (Foundation, Academic, or Advanced/Research) in real time with auto-scroll and open details.
    - **Batch 1 Visual & 3D Upgrades (Chapters 01–05):** Generated and deployed 5 high-resolution medical reference photographs (`public/assets/energy_balance_tdee_overview.jpg`, `macronutrient_digestion_overview.jpg`, `carbohydrate_quality_overview.jpg`, `dietary_fiber_scfa_overview.jpg`, `dietary_lipids_pufa_overview.jpg`) and custom 3D vector scenes with bilingual captions.
    - **Batch 2 Visual & 3D Upgrades (Chapters 06–10):**
@@ -41,16 +41,22 @@
      - **Chapter 08 (`nutrition08HydrationElectrolytes.ts`):** Generated and deployed `public/assets/cellular_hydration_osmoregulation_overview.jpg` + 3D concentric fluid compartment cylinders (ICF K+ vs ECF Na+), Aquaporin-2 channel pore tetramer, and water flux particles (`hydration-osmoregulation-3d`).
      - **Chapter 09 (`nutrition09FatSolubleVitamins.ts`):** Generated and deployed `public/assets/fat_soluble_vitamins_overview.jpg` + 3D biliary mixed micelle radial spokes and 4 specialized vitamin orbit rings for A, D, E, and K (`fat-soluble-vitamins-3d`).
      - **Chapter 10 (`nutrition10BComplexBioenergetics.ts`):** Generated and deployed `public/assets/b_complex_bioenergetics_overview.jpg` + 3D mitochondrial crista fold loop, matrix Krebs TCA cycle ring, PDC macro-sphere, and cytosolic Folate/B12 one-carbon infinity loop (`b-complex-bioenergetics-3d`).
+   - **Batch 3 Visual & 3D Upgrades (Chapters 11–15):**
+     - **Chapter 11 (`nutrition11VitaminCTraceMinerals.ts`):** Generated and deployed `public/assets/antioxidant_trace_minerals_overview.jpg` + 3D electron cascade redox funnel, Cu/Zn-SOD1, Mn-SOD2, Se-GPx catalytic centers, and triple-helical prolyl collagen strands (`antioxidant-redox-3d`).
+     - **Chapter 12 (`nutrition12MacromineralsBoneMatrix.ts`):** Deployed `public/assets/macrominerals_bone_matrix_overview.jpg` + 3D hexagonal hydroxyapatite crystal lattice prism with vertical pillar struts, parallel collagen fibrils, and osteoblast/osteoclast BMU remodeling loop (`bone-matrix-hydroxyapatite-3d`).
+     - **Chapter 13 (`nutrition13IronBiology.ts`):** Deployed `public/assets/iron_biology_hepcidin_overview.jpg` + 3D apical microvillus border, 24-subunit ferritin nanocage latitude rings with iron core, and basolateral ferroportin export pore with hepcidin occlusion cap (`iron-biology-hepcidin-3d`).
+     - **Chapter 14 (`nutrition14GutBarrier.ts`):** Deployed `public/assets/gut_barrier_tight_junctions_overview.jpg` + 3D MUC2 protective mucus bilayer sheets, claudin/occludin intercellular mesh grid, and perijunctional actomyosin contractile ring (`gut-barrier-junctions-3d`).
+     - **Chapter 15 (`nutrition15GutMicrobiome.ts`):** Deployed `public/assets/gut_microbiome_metagenomics_overview.jpg` + 3D colonic lumen cylindrical rings, 4 major bacterial phyla ecosystem clusters (Bacillota, Bacteroidota, Actinomycetota, Verrucomicrobiota), and metabolite flux streams (SCFA, secondary bile acids, TMAO) (`microbiome-metagenomics-3d`).
    - **Total Academy Volume (All 27 Chapters Complete):** **165,739 English words / 134,477 Bengali words** (300,216 bilingual words total) across 486 substantive pedagogical sections.
    - 100% bilingual parity (Bengali + International English with dual-script terminology).
-   - All automated checks passed: `eslint . --max-warnings=0` (0 warnings/errors), `tsc -b --pretty false` (0 errors), Vitest (43/43 in Nutrition suite, all passing), `vite build` (production bundle built cleanly).
+   - All automated checks passed: `eslint . --max-warnings=0` (0 warnings/errors), `tsc -b --pretty false` (0 errors), Vitest (48/48 in Nutrition suite, all passing), `vite build` (production bundle built cleanly).
 
 ---
 
 ## 2. Next Milestones: Future Platform Expansion
 
-- **Batch 3 Visual Upgrades (Next 5 Chapters):** Chapters 11 (Vitamin C & Trace Minerals), 12 (Macrominerals & Bone Matrix), 13 (Iron Biology), 14 (Gut Barrier), 15 (Gut Microbiome).
-- **Subsequent Batches:** Chapters 16–20, 21–25 in groups of 5.
+- **Batch 4 Visual & 3D Upgrades (Next 5 Chapters):** Chapters 16 (Prebiotics & Probiotics), 17 (Food Intolerances & Celiac Disease), 18 (Obesity & T2D MNT), 19 (Cardiovascular Dietetics), 20 (Renal Nutrition & CKD MNT).
+- **Subsequent Batches:** Batch 5 (Chapters 21–25).
 - **Future Academy Extensions:**
   - The 50-chapter curriculum expansion architecture documented in `docs/NUTRITION_DEPTH_AUDIT.md`.
 

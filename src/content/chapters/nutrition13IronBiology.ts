@@ -259,6 +259,13 @@ export const nutrition13IronBiologyLesson: LessonTopic = {
       'শিক্ষামূলক জৈবরাসায়নিক সিমুলেশন; কোনো ধরনের আয়রন চিকিৎসা শুরুর আগে রক্ত পরীক্ষা করা আবশ্যক।'
     ),
     svgType: 'iron-flux',
+    imageUrl: '/assets/iron_biology_hepcidin_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of intestinal and systemic iron flux: Apical DCYTB ferric reductase and proton-coupled DMT1 entry, 24-subunit Ferritin nanocage storage with IRP/IRE post-transcriptional tuning, basolateral Ferroportin-1 and Hephaestin export, and hepatic Hepcidin-mediated internalization and lysosomal degradation.',
+      'অন্ত্র ও শারীরিক আয়রন প্রবাহের মেডিকেল ইলাস্ট্রেশন: শীর্ষস্থ DCYTB ও প্রোটন-সংযুক্ত DMT1 পরিবহন, ২৪-সাবইউনিট ফেরিটিন খাঁচায় সঞ্চয় ও IRP/IRE নিয়ন্ত্রণ, বেসোল্যাটারাল ফেরোপোর্টিন-১ ও হেফেস্টিন নির্গমন এবং যকৃতের হেপসিডিন-মধ্যস্থ লাইসোজোমাল ধ্বংস।'
+    ),
+    has3D: true,
+    threeDType: 'iron-biology-hepcidin-3d',
     items: [
       {
         id: 'node-luminal-dcytb',
@@ -273,6 +280,7 @@ export const nutrition13IronBiologyLesson: LessonTopic = {
         ),
         color: '#f59e0b',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -90, y: -45, z: 25 },
       },
       {
         id: 'node-ferritin-nanocage',
@@ -287,6 +295,7 @@ export const nutrition13IronBiologyLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 0, y: -10, z: 0 },
       },
       {
         id: 'node-ferroportin-hephaestin',
@@ -301,6 +310,7 @@ export const nutrition13IronBiologyLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: 90, y: 45, z: -20 },
       },
       {
         id: 'node-hepcidin-degradation',
@@ -315,6 +325,7 @@ export const nutrition13IronBiologyLesson: LessonTopic = {
         ),
         color: '#ec4899',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 0, y: 65, z: 30 },
       },
     ],
   },

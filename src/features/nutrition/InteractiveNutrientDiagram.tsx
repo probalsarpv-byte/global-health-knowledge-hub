@@ -505,6 +505,191 @@ export function InteractiveNutrientDiagram({
     return { cristaLoop, tcaCycle, oneCarbonLoop }
   }, [diagram.threeDType])
 
+  // 3D Antioxidant Metalloenzyme Redox Hierarchy for Chapter 11
+  const antioxidantGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'antioxidant-redox-3d') return { cascadeFunnel: [], collagenTripleHelix: [] }
+    const cascadeFunnel: Point3D[] = []
+    for (let s = 0; s <= 24; s++) {
+      const t = s / 24
+      const radius = 18 + (1 - t) * 55
+      const angle = t * Math.PI * 4
+      const y = -65 + t * 130
+      cascadeFunnel.push({
+        x: Math.cos(angle) * radius,
+        y,
+        z: Math.sin(angle) * radius,
+      })
+    }
+    const collagenTripleHelix: Point3D[][] = [[], [], []]
+    for (let strand = 0; strand < 3; strand++) {
+      const phase = (strand * 2 * Math.PI) / 3
+      for (let i = 0; i <= 20; i++) {
+        const t = i / 20
+        const y = -50 + t * 100
+        const theta = t * Math.PI * 3 + phase
+        collagenTripleHelix[strand].push({
+          x: 45 + Math.cos(theta) * 16,
+          y,
+          z: Math.sin(theta) * 16,
+        })
+      }
+    }
+    return { cascadeFunnel, collagenTripleHelix }
+  }, [diagram.threeDType])
+
+  // 3D Hydroxyapatite Crystal & Bone Remodeling Matrix for Chapter 12
+  const boneMatrixGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'bone-matrix-hydroxyapatite-3d') return { hexagonalLattice: { top: [], bottom: [] }, collagenFibrils: [], remodelingLoop: [] }
+    const hexagonalLattice: { top: Point3D[]; bottom: Point3D[] } = { top: [], bottom: [] }
+    for (let i = 0; i < 6; i++) {
+      const theta = (i / 6) * 2 * Math.PI
+      hexagonalLattice.top.push({
+        x: Math.cos(theta) * 35,
+        y: -45,
+        z: Math.sin(theta) * 35,
+      })
+      hexagonalLattice.bottom.push({
+        x: Math.cos(theta) * 35,
+        y: 45,
+        z: Math.sin(theta) * 35,
+      })
+    }
+    const collagenFibrils: Point3D[][] = []
+    const offsets = [-50, -25, 25, 50]
+    offsets.forEach((offX) => {
+      const fibril: Point3D[] = []
+      for (let s = 0; s <= 10; s++) {
+        const y = -60 + (s / 10) * 120
+        fibril.push({ x: offX, y, z: -20 })
+      }
+      collagenFibrils.push(fibril)
+    })
+    const remodelingLoop: Point3D[] = []
+    for (let i = 0; i < 24; i++) {
+      const theta = (i / 24) * 2 * Math.PI
+      remodelingLoop.push({
+        x: Math.cos(theta) * 65,
+        y: Math.sin(theta) * 25,
+        z: Math.sin(theta * 2) * 20,
+      })
+    }
+    return { hexagonalLattice, collagenFibrils, remodelingLoop }
+  }, [diagram.threeDType])
+
+  // 3D Duodenal Enterocyte & Ferritin Nanocage Iron Flux for Chapter 13
+  const ironBiologyGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'iron-biology-hepcidin-3d') return { ferritinShell: [], apicalBorder: [], ferroportinPore: [] }
+    const ferritinShell: Point3D[][] = []
+    const rings = [-20, 0, 20]
+    rings.forEach((ringY) => {
+      const ringRadius = Math.sqrt(Math.max(0, 32 * 32 - ringY * ringY))
+      const ringPts: Point3D[] = []
+      for (let i = 0; i < 16; i++) {
+        const theta = (i / 16) * 2 * Math.PI
+        ringPts.push({
+          x: Math.cos(theta) * ringRadius,
+          y: ringY,
+          z: Math.sin(theta) * ringRadius,
+        })
+      }
+      ferritinShell.push(ringPts)
+    })
+    const apicalBorder: Point3D[] = []
+    for (let i = 0; i <= 20; i++) {
+      const x = -70 + (i / 20) * 140
+      const y = -60 + (i % 2 === 0 ? -12 : 0)
+      apicalBorder.push({ x, y, z: 20 })
+    }
+    const ferroportinPore: Point3D[] = []
+    for (let i = 0; i < 16; i++) {
+      const theta = (i / 16) * 2 * Math.PI
+      ferroportinPore.push({
+        x: 60 + Math.cos(theta) * 18,
+        y: 50,
+        z: Math.sin(theta) * 18,
+      })
+    }
+    return { ferritinShell, apicalBorder, ferroportinPore }
+  }, [diagram.threeDType])
+
+  // 3D Gut Mucosal Barrier & Tight Junction Scaffold for Chapter 14
+  const gutBarrierGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'gut-barrier-junctions-3d') return { mucusWaves: [], junctionGrid: [], actomyosinBelt: [] }
+    const mucusWaves: Point3D[][] = []
+    for (let layer = 0; layer < 2; layer++) {
+      const yBase = -65 + layer * 20
+      const wave: Point3D[] = []
+      for (let i = 0; i <= 16; i++) {
+        const x = -75 + (i / 16) * 150
+        const y = yBase + Math.sin(i * 0.8) * 6
+        const z = Math.cos(i * 0.8) * 15
+        wave.push({ x, y, z })
+      }
+      mucusWaves.push(wave)
+    }
+    const junctionGrid: Point3D[][] = []
+    for (let row = 0; row < 4; row++) {
+      const y = -15 + row * 18
+      const rowPts: Point3D[] = []
+      for (let col = 0; col < 6; col++) {
+        const x = -40 + col * 16
+        const z = ((col + row) % 2 === 0 ? 8 : -8)
+        rowPts.push({ x, y, z })
+      }
+      junctionGrid.push(rowPts)
+    }
+    const actomyosinBelt: Point3D[] = []
+    for (let i = 0; i < 20; i++) {
+      const theta = (i / 20) * 2 * Math.PI
+      actomyosinBelt.push({
+        x: Math.cos(theta) * 55,
+        y: 45 + Math.sin(theta) * 10,
+        z: Math.sin(theta) * 30,
+      })
+    }
+    return { mucusWaves, junctionGrid, actomyosinBelt }
+  }, [diagram.threeDType])
+
+  // 3D Gut Microbiome Metagenomic Colon & Metabolite Hub for Chapter 15
+  const microbiomeGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'microbiome-metagenomics-3d') return { lumenRings: [], taxaSpheres: [], metaboliteStreams: [] }
+    const lumenRings: Point3D[][] = []
+    const yLevels = [-60, -20, 20, 60]
+    yLevels.forEach((y) => {
+      const ring: Point3D[] = []
+      for (let i = 0; i < 18; i++) {
+        const theta = (i / 18) * 2 * Math.PI
+        ring.push({
+          x: Math.cos(theta) * 60,
+          y,
+          z: Math.sin(theta) * 35,
+        })
+      }
+      lumenRings.push(ring)
+    })
+    const taxaSpheres: { center: Point3D; color: string; radius: number }[] = [
+      { center: { x: -35, y: -30, z: 15 }, color: '#10b981', radius: 14 },
+      { center: { x: 35, y: -25, z: -15 }, color: '#3b82f6', radius: 13 },
+      { center: { x: -20, y: 30, z: -20 }, color: '#f59e0b', radius: 10 },
+      { center: { x: 25, y: 35, z: 20 }, color: '#8b5cf6', radius: 11 },
+    ]
+    const metaboliteStreams: Point3D[][] = []
+    for (let s = 0; s < 3; s++) {
+      const angle = (s * 2 * Math.PI) / 3
+      const stream: Point3D[] = []
+      for (let p = 0; p <= 12; p++) {
+        const t = p / 12
+        stream.push({
+          x: Math.cos(angle) * (10 + t * 45),
+          y: -40 + t * 80,
+          z: Math.sin(angle) * (10 + t * 30),
+        })
+      }
+      metaboliteStreams.push(stream)
+    }
+    return { lumenRings, taxaSpheres, metaboliteStreams }
+  }, [diagram.threeDType])
+
   return (
     <section
       className={`anatomy-explorer nutrient-explorer${isLab ? ' lab-active' : ''}`}
@@ -1362,6 +1547,190 @@ export function InteractiveNutrientDiagram({
                           <circle cx={pPdc.sx} cy={pPdc.sy} r={16 * pPdc.scale} fill="#3b82f6" stroke="#2563eb" strokeWidth="1.5" opacity={0.75} />
                         )
                       })()}
+                    </g>
+                  )}
+
+                  {/* 3D Antioxidant Metalloenzyme Redox Scene for Chapter 11 */}
+                  {diagram.threeDType === 'antioxidant-redox-3d' && (
+                    <g className="antioxidant-redox-3d-scene">
+                      {/* Downward Electron Cascade Funnel */}
+                      {(() => {
+                        const pFunnel = antioxidantGeometry.cascadeFunnel.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathFunnel = pFunnel.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g>
+                            <path d={pathFunnel} fill="none" stroke="#f59e0b" strokeWidth="2.4" strokeDasharray="5 3" opacity={0.8} />
+                            {pFunnel.filter((_, i) => i % 6 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3.5 * p.scale} fill="#fbbf24" opacity={0.9} />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* Catalytic Metal Centers: Cu/Zn and Mn */}
+                      {(() => {
+                        const pCu = projectPoint({ x: -45, y: -35, z: 15 }, rotX, rotY, zoom)
+                        const pZn = projectPoint({ x: -25, y: -45, z: 25 }, rotX, rotY, zoom)
+                        const pMn = projectPoint({ x: -35, y: -15, z: -20 }, rotX, rotY, zoom)
+                        const pSec = projectPoint({ x: 30, y: -20, z: -15 }, rotX, rotY, zoom)
+                        return (
+                          <g>
+                            <line x1={pCu.sx} y1={pCu.sy} x2={pZn.sx} y2={pZn.sy} stroke="#38bdf8" strokeWidth="2" strokeDasharray="3 2" />
+                            <circle cx={pCu.sx} cy={pCu.sy} r={7 * pCu.scale} fill="#ea580c" stroke="#fed7aa" strokeWidth="1.5" />
+                            <circle cx={pZn.sx} cy={pZn.sy} r={6 * pZn.scale} fill="#0284c7" stroke="#bae6fd" strokeWidth="1.5" />
+                            <circle cx={pMn.sx} cy={pMn.sy} r={6.5 * pMn.scale} fill="#7c3aed" stroke="#ddd6fe" strokeWidth="1.5" />
+                            <circle cx={pSec.sx} cy={pSec.sy} r={7 * pSec.scale} fill="#059669" stroke="#a7f3d0" strokeWidth="1.5" />
+                          </g>
+                        )
+                      })()}
+                      {/* Triple-Helical Prolyl Collagen Strands */}
+                      {antioxidantGeometry.collagenTripleHelix.map((strand, sIdx) => {
+                        const pStrand = strand.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathStrand = pStrand.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        const colors = ['#10b981', '#059669', '#34d399']
+                        return <path key={sIdx} d={pathStrand} fill="none" stroke={colors[sIdx]} strokeWidth="2.2" opacity={0.85} />
+                      })}
+                    </g>
+                  )}
+
+                  {/* 3D Hydroxyapatite Crystal & Bone Remodeling Matrix for Chapter 12 */}
+                  {diagram.threeDType === 'bone-matrix-hydroxyapatite-3d' && (
+                    <g className="bone-matrix-3d-scene">
+                      {/* Hexagonal Hydroxyapatite Crystal Prism */}
+                      {(() => {
+                        const topPts = boneMatrixGeometry.hexagonalLattice.top.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const botPts = boneMatrixGeometry.hexagonalLattice.bottom.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const topD = topPts.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        const botD = botPts.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={topD} fill="none" stroke="#06b6d4" strokeWidth="2.2" opacity={0.85} />
+                            <path d={botD} fill="none" stroke="#0891b2" strokeWidth="2.2" opacity={0.7} />
+                            {topPts.map((tp, i) => {
+                              const bp = botPts[i]
+                              return <line key={i} x1={tp.sx} y1={tp.sy} x2={bp.sx} y2={bp.sy} stroke="#22d3ee" strokeWidth="1.5" opacity={0.55} />
+                            })}
+                          </g>
+                        )
+                      })()}
+                      {/* Parallel Collagen Scaffold Fibrils */}
+                      {boneMatrixGeometry.collagenFibrils.map((fibril, fIdx) => {
+                        const pFibril = fibril.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pathFibril = pFibril.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={fIdx} d={pathFibril} fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="6 3" opacity={0.75} />
+                      })}
+                      {/* Bone Remodeling Unit Coupling Orbit */}
+                      {(() => {
+                        const pLoop = boneMatrixGeometry.remodelingLoop.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const loopD = pLoop.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={loopD} fill="none" stroke="#f43f5e" strokeWidth="2" strokeDasharray="5 3" opacity={0.8} />
+                            {pLoop.filter((_, i) => i % 6 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3.5 * p.scale} fill="#fb7185" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Duodenal Enterocyte & Ferritin Nanocage Iron Flux for Chapter 13 */}
+                  {diagram.threeDType === 'iron-biology-hepcidin-3d' && (
+                    <g className="iron-biology-3d-scene">
+                      {/* Apical Microvillus Border */}
+                      {(() => {
+                        const pBorder = ironBiologyGeometry.apicalBorder.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const borderD = pBorder.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path d={borderD} fill="none" stroke="#f59e0b" strokeWidth="2.5" opacity={0.85} />
+                      })()}
+                      {/* 24-Subunit Ferritin Hollow Shell Latitude Rings */}
+                      {ironBiologyGeometry.ferritinShell.map((ring, rIdx) => {
+                        const pRing = ring.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const ringD = pRing.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path key={rIdx} d={ringD} fill="none" stroke="#10b981" strokeWidth="1.8" strokeDasharray="4 2" opacity={0.8} />
+                      })}
+                      {/* Ferrihydrite Iron Mineral Core */}
+                      {(() => {
+                        const pCore = projectPoint({ x: 0, y: 0, z: 0 }, rotX, rotY, zoom)
+                        return (
+                          <g>
+                            <circle cx={pCore.sx} cy={pCore.sy} r={14 * pCore.scale} fill="#dc2626" stroke="#fca5a5" strokeWidth="1.5" opacity={0.85} />
+                            <circle cx={pCore.sx} cy={pCore.sy} r={6 * pCore.scale} fill="#fef08a" opacity={0.9} />
+                          </g>
+                        )
+                      })()}
+                      {/* Basolateral Ferroportin Export Pore & Hepcidin Occlusion Plug */}
+                      {(() => {
+                        const pPore = ironBiologyGeometry.ferroportinPore.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const poreD = pPore.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        const pHep = projectPoint({ x: 60, y: 62, z: 0 }, rotX, rotY, zoom)
+                        return (
+                          <g>
+                            <path d={poreD} fill="none" stroke="#3b82f6" strokeWidth="2.2" opacity={0.85} />
+                            <circle cx={pHep.sx} cy={pHep.sy} r={9 * pHep.scale} fill="#ec4899" stroke="#fbcfe8" strokeWidth="1.5" opacity={0.9} />
+                          </g>
+                        )
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Gut Mucosal Barrier & Tight Junction Scaffold for Chapter 14 */}
+                  {diagram.threeDType === 'gut-barrier-junctions-3d' && (
+                    <g className="gut-barrier-3d-scene">
+                      {/* MUC2 Mucus Protective Bilayer Sheets */}
+                      {gutBarrierGeometry.mucusWaves.map((wave, wIdx) => {
+                        const pWave = wave.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const waveD = pWave.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={wIdx} d={waveD} fill="none" stroke={wIdx === 0 ? '#10b981' : '#34d399'} strokeWidth="2.4" opacity={0.75} />
+                      })}
+                      {/* Claudin & Occludin Intercellular Grid */}
+                      {gutBarrierGeometry.junctionGrid.map((row, rIdx) => {
+                        const pRow = row.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const rowD = pRow.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g key={rIdx}>
+                            <path d={rowD} fill="none" stroke="#06b6d4" strokeWidth="1.8" strokeDasharray="3 2" opacity={0.8} />
+                            {pRow.map((p, pIdx) => (
+                              <circle key={pIdx} cx={p.sx} cy={p.sy} r={2.8 * p.scale} fill="#22d3ee" />
+                            ))}
+                          </g>
+                        )
+                      })}
+                      {/* Perijunctional Actomyosin Ring */}
+                      {(() => {
+                        const pBelt = gutBarrierGeometry.actomyosinBelt.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const beltD = pBelt.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path d={beltD} fill="none" stroke="#8b5cf6" strokeWidth="2.5" opacity={0.85} />
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Gut Microbiome Metagenomic Colon & Metabolite Hub for Chapter 15 */}
+                  {diagram.threeDType === 'microbiome-metagenomics-3d' && (
+                    <g className="microbiome-3d-scene">
+                      {/* Colonic Lumen Cylindrical Rings */}
+                      {microbiomeGeometry.lumenRings.map((ring, rIdx) => {
+                        const pRing = ring.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const ringD = pRing.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path key={rIdx} d={ringD} fill="none" stroke="#64748b" strokeWidth="1.6" opacity={0.5} strokeDasharray="4 3" />
+                      })}
+                      {/* Major Bacterial Phyla Ecosystem Clusters */}
+                      {microbiomeGeometry.taxaSpheres.map((sphere, sIdx) => {
+                        const pSph = projectPoint(sphere.center, rotX, rotY, zoom)
+                        return (
+                          <g key={sIdx}>
+                            <circle cx={pSph.sx} cy={pSph.sy} r={sphere.radius * pSph.scale} fill={sphere.color} opacity={0.7} />
+                            <circle cx={pSph.sx} cy={pSph.sy} r={(sphere.radius * 0.45) * pSph.scale} fill="#ffffff" opacity={0.8} />
+                          </g>
+                        )
+                      })}
+                      {/* Metabolite Trajectory Streams: SCFA, Bile Acids, TMAO */}
+                      {microbiomeGeometry.metaboliteStreams.map((stream, stIdx) => {
+                        const pStream = stream.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const streamD = pStream.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        const colors = ['#10b981', '#f59e0b', '#dc2626']
+                        return <path key={stIdx} d={streamD} fill="none" stroke={colors[stIdx]} strokeWidth="2.2" strokeDasharray="5 3" opacity={0.8} />
+                      })}
                     </g>
                   )}
 

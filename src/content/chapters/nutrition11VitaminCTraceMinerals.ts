@@ -255,6 +255,13 @@ export const nutrition11VitaminCTraceMineralsLesson: LessonTopic = {
       'অ্যান্টিঅক্সিডেন্ট শারীরবৃত্তের শিক্ষামূলক সিমুলেশন; অতিরিক্ত ট্রেস মিনারেল সেবনে বিষক্রিয়া এড়াতে রক্ত পরীক্ষা অপরিহার্য।'
     ),
     svgType: 'redox-cascade',
+    imageUrl: '/assets/antioxidant_trace_minerals_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of the integrated antioxidant metalloenzyme hierarchy: Cu/Zn-SOD1, Mn-SOD2, Selenium Glutathione Peroxidase (GPx1-4), Ascorbate-dependent Fe2+ recycling in collagen prolyl 4-hydroxylase, and the Hepcidin-Ferroportin axis.',
+      'সমন্বিত অ্যান্টিঅক্সিডেন্ট মেটালো-এনজাইম প্রতিরক্ষা ব্যবস্থার মেডিকেল ইলাস্ট্রেশন: Cu/Zn-SOD1, Mn-SOD2, সেলেনিয়াম গ্লুটাথিয়ন পারঅক্সিডেজ (GPx1-4), কোলাজেন প্রোলাইল ৪-হাইড্রক্সিলেজে অ্যাসকরবেট-নির্ভর Fe2+ পুনরুদ্ধার এবং হেপসিডিন-ফেরোপোর্টিন অক্ষ।'
+    ),
+    has3D: true,
+    threeDType: 'antioxidant-redox-3d',
     items: [
       {
         id: 'node-superoxide-sod',
@@ -269,6 +276,7 @@ export const nutrition11VitaminCTraceMineralsLesson: LessonTopic = {
         ),
         color: '#f59e0b',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -80, y: -45, z: 20 },
       },
       {
         id: 'node-selenium-gpx',
@@ -283,6 +291,7 @@ export const nutrition11VitaminCTraceMineralsLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -80, y: 45, z: -20 },
       },
       {
         id: 'node-ascorbate-dioxygenase',
@@ -297,6 +306,7 @@ export const nutrition11VitaminCTraceMineralsLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 80, y: 45, z: 20 },
       },
       {
         id: 'node-hepcidin-ferroportin',
@@ -311,6 +321,7 @@ export const nutrition11VitaminCTraceMineralsLesson: LessonTopic = {
         ),
         color: '#ec4899',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 80, y: -45, z: -20 },
       },
     ],
   },
