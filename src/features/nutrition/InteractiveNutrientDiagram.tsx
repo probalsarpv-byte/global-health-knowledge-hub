@@ -690,6 +690,229 @@ export function InteractiveNutrientDiagram({
     return { lumenRings, taxaSpheres, metaboliteStreams }
   }, [diagram.threeDType])
 
+  // 3D Prebiotics, Probiotics, Synbiotics & FODMAP Continuum for Chapter 16
+  const bioticGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'prebiotics-probiotics-synbiotics-3d') return { prebioticChains: [], probioticBacilli: [], scfaBubbles: [], fodmapWave: [] }
+    const prebioticChains: Point3D[][] = []
+    for (let c = 0; c < 2; c++) {
+      const chain: Point3D[] = []
+      const offX = -55 + c * 30
+      for (let i = 0; i <= 16; i++) {
+        const t = i / 16
+        chain.push({
+          x: offX + Math.sin(t * Math.PI * 3) * 12,
+          y: -60 + t * 65,
+          z: Math.cos(t * Math.PI * 3) * 12,
+        })
+      }
+      prebioticChains.push(chain)
+    }
+    const probioticBacilli: { start: Point3D; end: Point3D; color: string }[] = [
+      { start: { x: 30, y: -45, z: 15 }, end: { x: 55, y: -35, z: 25 }, color: '#10b981' },
+      { start: { x: 40, y: -10, z: -20 }, end: { x: 65, y: 0, z: -10 }, color: '#059669' },
+      { start: { x: 20, y: 20, z: 10 }, end: { x: 45, y: 35, z: 20 }, color: '#34d399' },
+    ]
+    const scfaBubbles: Point3D[] = [
+      { x: -20, y: -20, z: 0 },
+      { x: -10, y: 5, z: 15 },
+      { x: 5, y: -15, z: -10 },
+      { x: -15, y: 30, z: -15 },
+      { x: 10, y: 40, z: 5 },
+    ]
+    const fodmapWave: Point3D[] = []
+    for (let i = 0; i <= 20; i++) {
+      const t = i / 20
+      fodmapWave.push({
+        x: -70 + t * 140,
+        y: 60 + Math.sin(t * Math.PI * 4) * 12,
+        z: Math.cos(t * Math.PI * 4) * 15,
+      })
+    }
+    return { prebioticChains, probioticBacilli, scfaBubbles, fodmapWave }
+  }, [diagram.threeDType])
+
+  // 3D Food Adverse Reactions, Gliadin & Celiac Enteropathy for Chapter 17
+  const foodAdverseGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'food-intolerance-celiac-3d') return { villousAtrophyProfile: [], gliadinHelix: [], hlaCleft: [], mastCellRings: [] }
+    const villousAtrophyProfile: Point3D[] = []
+    for (let i = 0; i <= 24; i++) {
+      const t = i / 24
+      const x = -75 + t * 150
+      const height = (1 - t * 0.75) * 35
+      const y = -35 + Math.sin(i * 1.3) * height
+      villousAtrophyProfile.push({ x, y, z: Math.cos(i * 1.3) * 10 })
+    }
+    const gliadinHelix: Point3D[] = []
+    for (let i = 0; i <= 22; i++) {
+      const t = i / 22
+      gliadinHelix.push({
+        x: -35 + Math.cos(t * Math.PI * 4) * 20,
+        y: 10 + t * 50,
+        z: Math.sin(t * Math.PI * 4) * 20,
+      })
+    }
+    const hlaCleft: Point3D[] = []
+    for (let i = 0; i < 8; i++) {
+      const theta = (i / 8) * 2 * Math.PI
+      hlaCleft.push({
+        x: 45 + Math.cos(theta) * 24,
+        y: 35 + Math.sin(theta) * 15,
+        z: Math.sin(theta * 2) * 12,
+      })
+    }
+    const mastCellRings: Point3D[] = []
+    for (let i = 0; i < 16; i++) {
+      const theta = (i / 16) * 2 * Math.PI
+      mastCellRings.push({
+        x: -45 + Math.cos(theta) * 22,
+        y: 50 + Math.sin(theta) * 22,
+        z: Math.sin(theta) * 15,
+      })
+    }
+    return { villousAtrophyProfile, gliadinHelix, hlaCleft, mastCellRings }
+  }, [diagram.threeDType])
+
+  // 3D Pathophysiology of T2D & DiRECT Twin Cycles for Chapter 18
+  const obesityT2DGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'obesity-t2d-mnt-3d') return { hypertrophicAdipocyte: [], twinCycleHepatic: [], twinCyclePancreatic: [], isletCore: [] }
+    const hypertrophicAdipocyte: Point3D[][] = []
+    const yRings = [-22, 0, 22]
+    yRings.forEach((y) => {
+      const r = Math.sqrt(Math.max(0, 36 * 36 - y * y))
+      const ring: Point3D[] = []
+      for (let i = 0; i < 18; i++) {
+        const theta = (i / 18) * 2 * Math.PI
+        ring.push({
+          x: -45 + Math.cos(theta) * r,
+          y: -25 + y,
+          z: Math.sin(theta) * r,
+        })
+      }
+      hypertrophicAdipocyte.push(ring)
+    })
+    const twinCycleHepatic: Point3D[] = []
+    for (let i = 0; i < 20; i++) {
+      const theta = (i / 20) * 2 * Math.PI
+      twinCycleHepatic.push({
+        x: 35 + Math.cos(theta) * 35,
+        y: -35 + Math.sin(theta) * 20,
+        z: Math.sin(theta) * 25,
+      })
+    }
+    const twinCyclePancreatic: Point3D[] = []
+    for (let i = 0; i < 20; i++) {
+      const theta = (i / 20) * 2 * Math.PI
+      twinCyclePancreatic.push({
+        x: 35 + Math.cos(theta) * 35,
+        y: 25 + Math.sin(theta) * 20,
+        z: -Math.sin(theta) * 25,
+      })
+    }
+    const isletCore: Point3D[] = []
+    for (let i = 0; i < 12; i++) {
+      const theta = (i / 12) * 2 * Math.PI
+      isletCore.push({
+        x: -45 + Math.cos(theta) * 18,
+        y: 45 + Math.sin(theta) * 18,
+        z: Math.sin(theta) * 12,
+      })
+    }
+    return { hypertrophicAdipocyte, twinCycleHepatic, twinCyclePancreatic, isletCore }
+  }, [diagram.threeDType])
+
+  // 3D Cardiovascular Atherogenesis & Hemodynamics for Chapter 19
+  const cvdAtheromaGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'cardiovascular-apob-atheroma-3d') return { arterialLumen: [], proteoglycanMatrix: [], foamCellCluster: [], dashDilationRing: [] }
+    const arterialLumen: Point3D[][] = []
+    const yLevels = [-55, -20, 20, 55]
+    yLevels.forEach((y) => {
+      const arc: Point3D[] = []
+      for (let i = 0; i <= 14; i++) {
+        const theta = (i / 14) * Math.PI
+        arc.push({
+          x: Math.cos(theta) * 65,
+          y,
+          z: Math.sin(theta) * 35,
+        })
+      }
+      arterialLumen.push(arc)
+    })
+    const proteoglycanMatrix: Point3D[][] = []
+    for (let p = 0; p < 3; p++) {
+      const strand: Point3D[] = []
+      const offX = -35 + p * 35
+      for (let s = 0; s <= 10; s++) {
+        strand.push({
+          x: offX + Math.sin(s * 1.2) * 14,
+          y: -40 + s * 8,
+          z: -15 + Math.cos(s * 1.2) * 12,
+        })
+      }
+      proteoglycanMatrix.push(strand)
+    }
+    const foamCellCluster: { center: Point3D; radius: number; color: string }[] = [
+      { center: { x: -20, y: 15, z: 10 }, radius: 15, color: '#ef4444' },
+      { center: { x: 10, y: 25, z: -10 }, radius: 13, color: '#f97316' },
+      { center: { x: -10, y: 35, z: 15 }, radius: 11, color: '#dc2626' },
+    ]
+    const dashDilationRing: Point3D[] = []
+    for (let i = 0; i < 24; i++) {
+      const theta = (i / 24) * 2 * Math.PI
+      dashDilationRing.push({
+        x: Math.cos(theta) * 55,
+        y: 50 + Math.sin(theta) * 10,
+        z: Math.sin(theta) * 35,
+      })
+    }
+    return { arterialLumen, proteoglycanMatrix, foamCellCluster, dashDilationRing }
+  }, [diagram.threeDType])
+
+  // 3D Renal Hyperfiltration & FGF23-Klotho Nephron for Chapter 20
+  const renalNephronGeometry = useMemo(() => {
+    if (diagram.threeDType !== 'renal-nephron-fgf23-3d') return { capillaryTuft: [], arterioles: [], podocyteSlits: [], fgf23Orbit: [] }
+    const capillaryTuft: Point3D[][] = []
+    for (let l = 0; l < 4; l++) {
+      const loop: Point3D[] = []
+      const angle = (l / 4) * 2 * Math.PI
+      for (let s = 0; s <= 12; s++) {
+        const t = s / 12
+        loop.push({
+          x: -35 + Math.cos(angle) * (t * 28),
+          y: -35 + Math.sin(t * Math.PI) * 22,
+          z: Math.sin(angle) * (t * 28),
+        })
+      }
+      capillaryTuft.push(loop)
+    }
+    const arterioles: { start: Point3D; end: Point3D; width: number; color: string }[] = [
+      { start: { x: -75, y: -65, z: 20 }, end: { x: -45, y: -45, z: 10 }, width: 4.5, color: '#f97316' },
+      { start: { x: -25, y: -45, z: -10 }, end: { x: 5, y: -65, z: -20 }, width: 2.2, color: '#dc2626' },
+    ]
+    const podocyteSlits: Point3D[][] = []
+    for (let row = 0; row < 3; row++) {
+      const slit: Point3D[] = []
+      const y = -10 + row * 16
+      for (let c = 0; c <= 10; c++) {
+        slit.push({
+          x: -60 + c * 12,
+          y: y + (c % 2 === 0 ? 5 : -5),
+          z: (c % 2 === 0 ? 8 : -8),
+        })
+      }
+      podocyteSlits.push(slit)
+    }
+    const fgf23Orbit: Point3D[] = []
+    for (let i = 0; i < 22; i++) {
+      const theta = (i / 22) * 2 * Math.PI
+      fgf23Orbit.push({
+        x: 40 + Math.cos(theta) * 35,
+        y: 20 + Math.sin(theta) * 25,
+        z: Math.sin(theta * 2) * 20,
+      })
+    }
+    return { capillaryTuft, arterioles, podocyteSlits, fgf23Orbit }
+  }, [diagram.threeDType])
+
   return (
     <section
       className={`anatomy-explorer nutrient-explorer${isLab ? ' lab-active' : ''}`}
@@ -1731,6 +1954,209 @@ export function InteractiveNutrientDiagram({
                         const colors = ['#10b981', '#f59e0b', '#dc2626']
                         return <path key={stIdx} d={streamD} fill="none" stroke={colors[stIdx]} strokeWidth="2.2" strokeDasharray="5 3" opacity={0.8} />
                       })}
+                    </g>
+                  )}
+
+                  {/* 3D Prebiotics, Probiotics, Synbiotics & FODMAP Continuum for Chapter 16 */}
+                  {diagram.threeDType === 'prebiotics-probiotics-synbiotics-3d' && (
+                    <g className="biotic-continuum-3d-scene">
+                      {/* Prebiotic Inulin/FOS Polysaccharide Helical Chains */}
+                      {bioticGeometry.prebioticChains.map((chain, cIdx) => {
+                        const pChain = chain.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const chainD = pChain.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g key={cIdx}>
+                            <path d={chainD} fill="none" stroke="#f59e0b" strokeWidth="2.2" strokeDasharray="5 3" opacity={0.85} />
+                            {pChain.filter((_, i) => i % 4 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3 * p.scale} fill="#fbbf24" />
+                            ))}
+                          </g>
+                        )
+                      })}
+                      {/* Probiotic Live Bacilli Rods */}
+                      {bioticGeometry.probioticBacilli.map((bac, bIdx) => {
+                        const pStart = projectPoint(bac.start, rotX, rotY, zoom)
+                        const pEnd = projectPoint(bac.end, rotX, rotY, zoom)
+                        return (
+                          <g key={bIdx}>
+                            <line x1={pStart.sx} y1={pStart.sy} x2={pEnd.sx} y2={pEnd.sy} stroke={bac.color} strokeWidth={6 * pStart.scale} strokeLinecap="round" opacity={0.85} />
+                            <circle cx={pStart.sx} cy={pStart.sy} r={3 * pStart.scale} fill="#ffffff" opacity={0.7} />
+                            <circle cx={pEnd.sx} cy={pEnd.sy} r={3 * pEnd.scale} fill="#ffffff" opacity={0.7} />
+                          </g>
+                        )
+                      })}
+                      {/* Fermentation SCFA Metabolite Bubbles */}
+                      {bioticGeometry.scfaBubbles.map((bub, bubIdx) => {
+                        const pBub = projectPoint(bub, rotX, rotY, zoom)
+                        return (
+                          <circle key={bubIdx} cx={pBub.sx} cy={pBub.sy} r={5.5 * pBub.scale} fill="#38bdf8" stroke="#bae6fd" strokeWidth="1.2" opacity={0.85} />
+                        )
+                      })}
+                      {/* 3-Phase Low-FODMAP Reintroduction Oscillation Wave */}
+                      {(() => {
+                        const pWave = bioticGeometry.fodmapWave.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const waveD = pWave.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path d={waveD} fill="none" stroke="#ec4899" strokeWidth="2.2" opacity={0.85} />
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Food Adverse Reactions, Gliadin & Celiac Enteropathy for Chapter 17 */}
+                  {diagram.threeDType === 'food-intolerance-celiac-3d' && (
+                    <g className="food-adverse-3d-scene">
+                      {/* Enterocyte Villous Architecture Profile (Atrophy Gradient) */}
+                      {(() => {
+                        const pVilli = foodAdverseGeometry.villousAtrophyProfile.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const villiD = pVilli.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path d={villiD} fill="none" stroke="#f59e0b" strokeWidth="2.4" opacity={0.85} />
+                      })()}
+                      {/* 33-mer Alpha-Gliadin Peptide Backbone Helix */}
+                      {(() => {
+                        const pGli = foodAdverseGeometry.gliadinHelix.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const gliD = pGli.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g>
+                            <path d={gliD} fill="none" stroke="#ef4444" strokeWidth="2.2" opacity={0.85} />
+                            {pGli.filter((_, i) => i % 5 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3.5 * p.scale} fill="#fca5a5" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                      {/* HLA-DQ2.5 Electrostatic Binding Cleft Cleft */}
+                      {(() => {
+                        const pHla = foodAdverseGeometry.hlaCleft.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const hlaD = pHla.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path d={hlaD} fill="none" stroke="#8b5cf6" strokeWidth="2" strokeDasharray="4 2" opacity={0.8} />
+                      })()}
+                      {/* Mast Cell IgE Anaphylactic Degranulation Ring */}
+                      {(() => {
+                        const pMast = foodAdverseGeometry.mastCellRings.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const mastD = pMast.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={mastD} fill="none" stroke="#06b6d4" strokeWidth="1.8" strokeDasharray="3 2" opacity={0.75} />
+                            {pMast.filter((_, i) => i % 4 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3 * p.scale} fill="#22d3ee" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Pathophysiology of T2D & DiRECT Twin Cycles for Chapter 18 */}
+                  {diagram.threeDType === 'obesity-t2d-mnt-3d' && (
+                    <g className="obesity-t2d-3d-scene">
+                      {/* Hypertrophic Adipocyte Distended Sphere Rings */}
+                      {obesityT2DGeometry.hypertrophicAdipocyte.map((ring, rIdx) => {
+                        const pRing = ring.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const ringD = pRing.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path key={rIdx} d={ringD} fill="none" stroke="#ef4444" strokeWidth="2" opacity={0.75} />
+                      })}
+                      {/* Hepatic Steatosis Twin Cycle (Cycle 1) */}
+                      {(() => {
+                        const pHep = obesityT2DGeometry.twinCycleHepatic.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const hepD = pHep.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path d={hepD} fill="none" stroke="#eab308" strokeWidth="2.2" strokeDasharray="5 3" opacity={0.8} />
+                      })()}
+                      {/* Pancreatic Islet Steatosis Twin Cycle (Cycle 2) */}
+                      {(() => {
+                        const pPanc = obesityT2DGeometry.twinCyclePancreatic.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const pancD = pPanc.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path d={pancD} fill="none" stroke="#8b5cf6" strokeWidth="2.2" strokeDasharray="5 3" opacity={0.8} />
+                      })()}
+                      {/* DiRECT Beta-Cell Rescue Core */}
+                      {(() => {
+                        const pIslet = obesityT2DGeometry.isletCore.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const isletD = pIslet.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={isletD} fill="none" stroke="#10b981" strokeWidth="2.4" opacity={0.9} />
+                            {pIslet.filter((_, i) => i % 3 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={4 * p.scale} fill="#34d399" />
+                            ))}
+                          </g>
+                        )
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Cardiovascular Atherogenesis & Hemodynamics for Chapter 19 */}
+                  {diagram.threeDType === 'cardiovascular-apob-atheroma-3d' && (
+                    <g className="cardiovascular-3d-scene">
+                      {/* Arterial Lumen Wall Curvature Arcs */}
+                      {cvdAtheromaGeometry.arterialLumen.map((arc, aIdx) => {
+                        const pArc = arc.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const arcD = pArc.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={aIdx} d={arcD} fill="none" stroke="#dc2626" strokeWidth="2" opacity={0.65} />
+                      })}
+                      {/* Subendothelial Proteoglycan Entrapment Strands */}
+                      {cvdAtheromaGeometry.proteoglycanMatrix.map((strand, sIdx) => {
+                        const pStrand = strand.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const strandD = pStrand.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={sIdx} d={strandD} fill="none" stroke="#f97316" strokeWidth="1.8" strokeDasharray="4 2" opacity={0.8} />
+                      })}
+                      {/* Foam Cell Macrophage Clusters */}
+                      {cvdAtheromaGeometry.foamCellCluster.map((foam, fIdx) => {
+                        const pFoam = projectPoint(foam.center, rotX, rotY, zoom)
+                        return (
+                          <g key={fIdx}>
+                            <circle cx={pFoam.sx} cy={pFoam.sy} r={foam.radius * pFoam.scale} fill={foam.color} opacity={0.8} />
+                            <circle cx={pFoam.sx} cy={pFoam.sy} r={(foam.radius * 0.4) * pFoam.scale} fill="#fef08a" opacity={0.85} />
+                          </g>
+                        )
+                      })}
+                      {/* DASH Potassium Dilation Ring */}
+                      {(() => {
+                        const pDash = cvdAtheromaGeometry.dashDilationRing.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const dashD = pDash.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return <path d={dashD} fill="none" stroke="#10b981" strokeWidth="2.2" opacity={0.85} />
+                      })()}
+                    </g>
+                  )}
+
+                  {/* 3D Renal Hyperfiltration & FGF23-Klotho Nephron for Chapter 20 */}
+                  {diagram.threeDType === 'renal-nephron-fgf23-3d' && (
+                    <g className="renal-nephron-3d-scene">
+                      {/* Glomerular Capillary Tuft Loops */}
+                      {renalNephronGeometry.capillaryTuft.map((loop, lIdx) => {
+                        const pLoop = loop.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const loopD = pLoop.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return <path key={lIdx} d={loopD} fill="none" stroke="#f97316" strokeWidth="2.2" opacity={0.8} />
+                      })}
+                      {/* Arterioles: Wide Afferent vs Constricted Efferent */}
+                      {renalNephronGeometry.arterioles.map((art, aIdx) => {
+                        const pS = projectPoint(art.start, rotX, rotY, zoom)
+                        const pE = projectPoint(art.end, rotX, rotY, zoom)
+                        return <line key={aIdx} x1={pS.sx} y1={pS.sy} x2={pE.sx} y2={pE.sy} stroke={art.color} strokeWidth={art.width * pS.scale} strokeLinecap="round" opacity={0.85} />
+                      })}
+                      {/* Podocyte Filtration Slit Strands */}
+                      {renalNephronGeometry.podocyteSlits.map((slit, sIdx) => {
+                        const pSlit = slit.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const slitD = pSlit.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '')
+                        return (
+                          <g key={sIdx}>
+                            <path d={slitD} fill="none" stroke="#ef4444" strokeWidth="1.8" strokeDasharray="4 2" opacity={0.75} />
+                            {pSlit.filter((_, i) => i % 4 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={2.6 * p.scale} fill="#fca5a5" />
+                            ))}
+                          </g>
+                        )
+                      })}
+                      {/* Osteocyte FGF23-Klotho Endocrine Axis Orbit */}
+                      {(() => {
+                        const pFgf = renalNephronGeometry.fgf23Orbit.map((pt) => projectPoint(pt, rotX, rotY, zoom))
+                        const fgfD = pFgf.reduce((acc, p, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${p.sx.toFixed(1)} ${p.sy.toFixed(1)}`, '') + ' Z'
+                        return (
+                          <g>
+                            <path d={fgfD} fill="none" stroke="#8b5cf6" strokeWidth="2" strokeDasharray="5 3" opacity={0.8} />
+                            {pFgf.filter((_, i) => i % 5 === 0).map((p, i) => (
+                              <circle key={i} cx={p.sx} cy={p.sy} r={3.2 * p.scale} fill="#c084fc" />
+                            ))}
+                          </g>
+                        )
+                      })()}
                     </g>
                   )}
 

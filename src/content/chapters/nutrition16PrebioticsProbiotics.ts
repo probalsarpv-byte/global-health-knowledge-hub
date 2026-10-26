@@ -289,6 +289,13 @@ export const nutrition16PrebioticsProbioticsLesson: LessonTopic = {
       'পুষ্টি ও প্রোবায়োটিকের শিক্ষামূলক সিমুলেশন; যেকোনো বিশেষ খাদ্যাভ্যাস শুরুর আগে পুষ্টিবিদের পরামর্শ নিন।'
     ),
     svgType: 'biotic-continuum',
+    imageUrl: '/assets/prebiotics_probiotics_synbiotics_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of the biotic continuum and clinical FODMAP intervention: Prebiotic inulin/FOS and HMO 2\'-FL selective fermentation by Bifidobacterium and Faecalibacterium yielding luminal SCFAs, probiotic colonization resistance and bacteriocin secretion, postbiotic inanimate TLR2/NOD2 signaling, and structured three-phase Low-FODMAP protocol for gut quiescence.',
+      'বায়োটিক ধারাবাহিকতা ও ক্লিনিক্যাল FODMAP চিকিৎসা ব্যবস্থার মেডিকেল ইলাস্ট্রেশন: বাইফিডোব্যাকটেরিয়া দ্বারা প্রিবায়োটিক ইনুলিন/FOS ও মাতৃদুগ্ধের 2\'-FL এর নির্বাচনশীল গাঁজনে SCFA উৎপাদন, প্রোবায়োটিকের উপনিবেশিক প্রতিরোধ ও ব্যাকটেরিওসিন ক্ষরণ, পোস্টবায়োটিকের নিরাপদ TLR2/NOD2 অনাক্রম্য সংকেত এবং অন্ত্র শান্ত করতে তিন-পর্যায়ের লো-FODMAP খাদ্যপদ্ধতি।'
+    ),
+    has3D: true,
+    threeDType: 'prebiotics-probiotics-synbiotics-3d',
     items: [
       {
         id: 'node-prebiotic-fermentation',
@@ -303,6 +310,7 @@ export const nutrition16PrebioticsProbioticsLesson: LessonTopic = {
         ),
         color: '#f59e0b',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -80, y: -45, z: 20 },
       },
       {
         id: 'node-probiotic-colonization',
@@ -317,6 +325,7 @@ export const nutrition16PrebioticsProbioticsLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 80, y: -45, z: -20 },
       },
       {
         id: 'node-postbiotic-safety',
@@ -331,6 +340,7 @@ export const nutrition16PrebioticsProbioticsLesson: LessonTopic = {
         ),
         color: '#3b82f6',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -80, y: 45, z: -20 },
       },
       {
         id: 'node-fodmap-protocol',
@@ -345,6 +355,7 @@ export const nutrition16PrebioticsProbioticsLesson: LessonTopic = {
         ),
         color: '#ec4899',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 80, y: 45, z: 20 },
       },
     ],
   },

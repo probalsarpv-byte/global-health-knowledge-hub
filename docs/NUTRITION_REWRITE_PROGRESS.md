@@ -1,16 +1,14 @@
 # Functional Nutrition & Dietetics Academy: Textbook Depth Upgrade Progress Tracker
 
-**Document Version:** 2.6.1  
+**Document Version:** 2.7.0  
 **Last Updated:** October 2026  
 **Status:** Active Execution  
-**Current Milestone:** Stage 1 Audit Complete -> Initiating Batch A Deepen (Chapters 01–08)
+**Current Milestone:** All 27 Chapters Complete & Available; Batches 1, 2, 3, 4 Visual & 3D Upgrades Complete (Chapters 01–20, 26, 27)
 
 ---
 
 ## 1. Upgrade Batches Overview
 
-| Batch | Scope | Chapters | Target Focus | Status |
-|---|---|---|---|---|
 | Batch | Scope | Chapters | Target Focus | Status |
 |---|---|---|---|---|
 | **Batch A** | Foundations & Energetics + Lipids & Proteins | 01, 02, 03, 04, 05, 06, 07, 08 (8 chapters) | Expand Foundation, complete Academic pathways/equations, expand Advanced tier to full 6 sections, add secondary worked examples. | **COMPLETE (PASSED QA)** |
@@ -58,7 +56,7 @@
 ## 3. Visual & Interactive 3D Status
 - **Table of Contents (TOC) Dynamic Tier Synchronization:** In `LessonRenderer.tsx`, TOC entries now dynamically compute from `currentLevel.sections` for the active depth tier (`foundation`, `academic`, or `advanced`), keeping the chapter map perfectly synchronized with smooth scrolling to target sections.
 - **Interactive 3D Engine:** Implemented in `src/features/nutrition/InteractiveNutrientDiagram.tsx` with perspective camera projection, drag-to-rotate in 3D, auto-spinning controls, and depth-sorted z-indexes.
-- **Dedicated 3D Scenes Implemented:**
+- **Dedicated 3D Scenes Implemented (22 Scenes Total):**
   - `tdee-energy-reactor-3d` (Chapter 01): Kinetic core with 4 multi-planar orbital rings for BMR, TEF, EAT, and NEAT.
   - `enterocyte-villus-3d` (Chapter 02): 5 vertical microvilli columns, apical brush-border membrane, and basolateral transport floor.
   - `carbohydrate-quality-3d` (Chapter 03): Linear tightly coiled amylose helix versus branched dendritic amylopectin tree.
@@ -74,6 +72,11 @@
   - `iron-biology-hepcidin-3d` (Chapter 13): Apical microvillus border, 24-subunit ferritin nanocage latitude rings with iron core, and basolateral ferroportin export pore with hepcidin occlusion cap.
   - `gut-barrier-junctions-3d` (Chapter 14): MUC2 protective mucus bilayer sheets, claudin/occludin intercellular mesh grid, and perijunctional actomyosin contractile ring.
   - `microbiome-metagenomics-3d` (Chapter 15): Colonic lumen cylindrical rings, 4 major bacterial phyla ecosystem clusters (Bacillota, Bacteroidota, Actinomycetota, Verrucomicrobiota), and metabolite flux streams (SCFA, secondary bile acids, TMAO).
+  - `prebiotics-probiotics-synbiotics-3d` (Chapter 16): Prebiotic selective inulin/FOS chains, probiotic rod-shaped bacilli clusters, postbiotic SCFA bubbles, and three-phase FODMAP wave.
+  - `food-intolerance-celiac-3d` (Chapter 17): Marsh 3 villous atrophy attenuation profile, protease-resistant 33-mer alpha-gliadin helix, electropositive HLA-DQ2.5/8 cleft pocket, and sensitized mast cell IgE degranulation ring.
+  - `obesity-t2d-mnt-3d` (Chapter 18): Hypertrophic adipocyte sphere (>100 um diffusion limit), Taylor hepatic steatosis twin cycle (Cycle 1), pancreatic islet steatosis twin cycle (Cycle 2), and DiRECT beta-cell rescue core.
+  - `cardiovascular-apob-atheroma-3d` (Chapter 19): Arterial lumen curvature arcs, subendothelial proteoglycan ApoB-100 entrapment strands, uninhibited macrophage CD36 foam cell clusters, and DASH potassium vascular smooth muscle dilation ring.
+  - `renal-nephron-fgf23-3d` (Chapter 20): Glomerular capillary tuft loops, Brenner dilated afferent vs constricted efferent arterioles (P_gc >65 mmHg), podocyte filtration slit strands, and osteocyte FGF23-Klotho endocrine orbit.
   - `sports-bioenergetics-3d` (Chapter 26): Mitochondrial inner membrane, Brooks substrate oxidation ribbons, phosphagen and ATP resynthesis nodes.
   - `nutrigenomics-helix-3d` (Chapter 27): 3D DNA double helix with 22 rotating base pairs, golden -CH3 methyl tags on CpG sites, and histone octamer core spheres.
 - **High-Resolution Medical Reference Photography & Infographics:**
@@ -92,6 +95,11 @@
   - `public/assets/iron_biology_hepcidin_overview.jpg` (Chapter 13)
   - `public/assets/gut_barrier_tight_junctions_overview.jpg` (Chapter 14)
   - `public/assets/gut_microbiome_metagenomics_overview.jpg` (Chapter 15)
+  - `public/assets/prebiotics_probiotics_synbiotics_overview.jpg` (Chapter 16)
+  - `public/assets/food_intolerances_celiac_overview.jpg` (Chapter 17)
+  - `public/assets/obesity_t2d_mnt_overview.jpg` (Chapter 18)
+  - `public/assets/cardiovascular_atherosclerosis_overview.jpg` (Chapter 19)
+  - `public/assets/renal_nutrition_ckd_overview.jpg` (Chapter 20)
   - `public/assets/sports_nutrition_bioenergetics_overview.jpg` (Chapter 26)
   - `public/assets/nutrigenomics_precision_dietetics_overview.jpg` (Chapter 27)
 
@@ -101,8 +109,5 @@
 - **Batch 1 (COMPLETE):** Chapters 01, 02, 03, 04, 05 (100% 3D + Medical Photos + Tests)
 - **Batch 2 (COMPLETE):** Chapters 06, 07, 08, 09, 10 (100% 3D + Medical Photos + Tests)
 - **Batch 3 (COMPLETE):** Chapters 11, 12, 13, 14, 15 (100% 3D + Medical Photos + Tests)
-- **Batch 4 (Next):** Chapters 16, 17, 18, 19, 20
-- **Batch 5:** Chapters 21, 22, 23, 24, 25
-
-
-
+- **Batch 4 (COMPLETE):** Chapters 16, 17, 18, 19, 20 (100% 3D + Medical Photos + Tests)
+- **Batch 5 (Next):** Chapters 21, 22, 23, 24, 25

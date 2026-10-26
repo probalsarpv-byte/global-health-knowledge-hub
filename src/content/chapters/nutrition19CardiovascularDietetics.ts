@@ -289,6 +289,13 @@ export const nutrition19CardiovascularDieteticsLesson: LessonTopic = {
       'রক্তনালির শিক্ষামূলক সিমুলেশন; হৃদরোগ ও উচ্চ রক্তচাপের চিকিৎসায় কার্ডিওলজিস্টের পরামর্শ নিন।'
     ),
     svgType: 'cardiovascular-hemodynamics',
+    imageUrl: '/assets/cardiovascular_atherosclerosis_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of atherogenesis initiation, lipoprotein clearance, and DASH hemodynamics: Subendothelial ApoB-100 proteoglycan entrapment, macrophage CD36/SR-A1 uninhibited uptake forming foam cells, saturated fatty acid suppression of hepatic SREBP-2/LDLR with PCSK9 upregulation, sodium-driven eNOS uncoupling, and DASH potassium-induced vascular smooth muscle hyperpolarization and vasodilation.',
+      'এথেরোস্ক্লেরোসিস সৃষ্টি, লিপোপ্রোটিন অপসারণ ও ড্যাশ রক্তচাপ নিয়ন্ত্রণের মেডিকেল ইলাস্ট্রেশন: রক্তনালির প্রাচীরে ApoB-100 কণা প্রোটিওগ্লাইকানে আটকে যাওয়া, ম্যাক্রোফেজ স্ক্যাভেঞ্জার রিসেপ্টরে অনিয়ন্ত্রিত জারিত চর্বি ঢুকে ফোম কোষে রূপান্তর, সম্পৃক্ত চর্বি দ্বারা লিভারের SREBP-2/LDLR দমন ও PCSK9 বৃদ্ধি, সোডিয়াম দ্বারা eNOS বিনষ্টকরণ এবং ড্যাশ পটাশিয়ামের মাধ্যমে রক্তনালির মসৃণ পেশি শিথিল ও প্রসারিতকরণ।'
+    ),
+    has3D: true,
+    threeDType: 'cardiovascular-apob-atheroma-3d',
     items: [
       {
         id: 'node-apob-retention',
@@ -303,6 +310,7 @@ export const nutrition19CardiovascularDieteticsLesson: LessonTopic = {
         ),
         color: '#f97316',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-foam-cells',
@@ -317,6 +325,7 @@ export const nutrition19CardiovascularDieteticsLesson: LessonTopic = {
         ),
         color: '#ef4444',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 85, y: -50, z: -25 },
       },
       {
         id: 'node-sfa-ldlr',
@@ -331,6 +340,7 @@ export const nutrition19CardiovascularDieteticsLesson: LessonTopic = {
         ),
         color: '#dc2626',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -85, y: 50, z: -20 },
       },
       {
         id: 'node-enos-uncoupling',
@@ -345,6 +355,7 @@ export const nutrition19CardiovascularDieteticsLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 85, y: 50, z: 20 },
       },
       {
         id: 'node-dash-potassium',
@@ -359,6 +370,7 @@ export const nutrition19CardiovascularDieteticsLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 30 },
       },
     ],
   },

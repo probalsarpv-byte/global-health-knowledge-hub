@@ -974,5 +974,80 @@ describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapter
     fireEvent.click(photoBtn)
     expect(screen.getByRole('img', { name: /gut microbiome ecosystem/i })).toBeInTheDocument()
   })
+
+  it('renders photo and 3D interactive animation modes for Chapter 16 (Prebiotics & Probiotics)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/prebiotics-probiotics-dysbiosis')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '16 · Prebiotics, Probiotics, Synbiotics & Dietary Interventions in Dysbiosis' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /biotic continuum/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 17 (Food Intolerances & Allergies)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/food-intolerances-celiac-allergy')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '17 · Food Intolerances, Non-Celiac Gluten Sensitivity, Celiac Disease & Food Allergies' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /adverse food reactions/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 18 (Obesity & T2D MNT)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/nutrition-obesity-t2d-mnt')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '18 · Nutritional Management of Obesity, Insulin Resistance & Type 2 Diabetes' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /obesity pathophysiology/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 19 (Cardiovascular Dietetics)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/cardiovascular-dietetics-dash-mediterranean')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '19 · Cardiovascular Dietetics: Atherosclerosis, Dyslipidemia & Hypertension' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /atherogenesis initiation/i })).toBeInTheDocument()
+  })
+
+  it('renders photo and 3D interactive animation modes for Chapter 20 (Renal Nutrition & CKD)', async () => {
+    window.history.replaceState({ idx: 0 }, '', '/learn/nutrition/chapters/renal-nutrition-ckd-mnt')
+    render(<App />)
+
+    expect(await screen.findByRole('heading', { name: '20 · Renal Nutrition: Chronic Kidney Disease & Glomerular Filtration' })).toBeInTheDocument()
+
+    const spinBtn = screen.getByRole('button', { name: /Play 3D rotation/i })
+    fireEvent.click(spinBtn)
+    expect(screen.getByRole('button', { name: /Pause 3D rotation/i })).toBeInTheDocument()
+
+    const photoBtn = screen.getByRole('button', { name: /Medical Infographic \/ Photo/i })
+    fireEvent.click(photoBtn)
+    expect(screen.getByRole('img', { name: /Brenner glomerular hyperfiltration/i })).toBeInTheDocument()
+  })
 })
 

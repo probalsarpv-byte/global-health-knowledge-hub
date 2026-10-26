@@ -289,6 +289,13 @@ export const nutrition20RenalNutritionCKDLesson: LessonTopic = {
       'কিডনি রোগের শিক্ষামূলক সিমুলেশন; রেনাল ডায়েটে নেফ্রোলজিস্টের প্রত্যক্ষ তত্ত্বাবধান জরুরি।'
     ),
     svgType: 'renal-hyperfiltration',
+    imageUrl: '/assets/renal_nutrition_ckd_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of Brenner glomerular hyperfiltration and the osteocyte FGF23-Klotho mineral axis: Amino acid-driven afferent arteriolar vasodilation elevating intraglomerular capillary hydrostatic pressure (P_gc >65 mmHg), podocyte foot process effacement and albuminuria triggering tubulointerstitial fibrosis, declining renal alpha-Klotho driving compensatory osteocyte FGF23 hypersecretion and vascular calcification, dialytic catabolic amino acid loss, and culinary potassium leaching.',
+      'ব্রেনার গ্লোমেরুলার অতি-পরিস্রাবণ ও অস্টিওসাইট FGF23-ক্লথো খনিজ অক্ষের মেডিকেল ইলাস্ট্রেশন: অ্যামিনো অ্যাসিডের প্রভাবে ধমনি প্রসারিত হয়ে গ্লোমেরুলার রক্তচাপ বৃদ্ধি (P_gc >৬৫ mmHg), পোডোসাইট ছিঁড়ে প্রস্রাবে প্রোটিন ক্ষরণ ও টিউবুলো-ইন্টারস্টিশিয়াল ফাইব্রোসিস, রেনাল ক্লথো প্রোটিন ধ্বংস হয়ে অস্টিওসাইট থেকে মাত্রাতিরিক্ত FGF23 ক্ষরণ ও রক্তনালি পাথুরে শক্ত হওয়া, ডায়ালাইসিসে প্রোটিন অপচয় এবং সবজি সেদ্ধ করে পটাশিয়াম দূরীকরণ।'
+    ),
+    has3D: true,
+    threeDType: 'renal-nephron-fgf23-3d',
     items: [
       {
         id: 'node-hyperfiltration',
@@ -303,6 +310,7 @@ export const nutrition20RenalNutritionCKDLesson: LessonTopic = {
         ),
         color: '#f97316',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-proteinuria-fibrosis',
@@ -317,6 +325,7 @@ export const nutrition20RenalNutritionCKDLesson: LessonTopic = {
         ),
         color: '#ef4444',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 85, y: -50, z: -25 },
       },
       {
         id: 'node-fgf23-mineral',
@@ -331,6 +340,7 @@ export const nutrition20RenalNutritionCKDLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -85, y: 50, z: -20 },
       },
       {
         id: 'node-pew-dialysis',
@@ -345,6 +355,7 @@ export const nutrition20RenalNutritionCKDLesson: LessonTopic = {
         ),
         color: '#dc2626',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 85, y: 50, z: 20 },
       },
       {
         id: 'node-potassium-leaching',
@@ -359,6 +370,7 @@ export const nutrition20RenalNutritionCKDLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 30 },
       },
     ],
   },

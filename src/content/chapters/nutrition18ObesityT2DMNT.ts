@@ -289,6 +289,13 @@ export const nutrition18ObesityT2DMNTLesson: LessonTopic = {
       'বিপাকীয় শিক্ষামূলক সিমুলেশন; ডায়াবেটিসের যেকোনো চিকিৎসায় চিকিৎসকের পরামর্শ গ্রহণ করুন।'
     ),
     svgType: 'metabolic-pathway',
+    imageUrl: '/assets/obesity_t2d_mnt_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of obesity pathophysiology, ectopic lipotoxicity, and DiRECT diabetes remission: Subcutaneous adipocyte hypertrophy exceeding 100 um diffusion limit forming M1 macrophage crown-like structures, ectopic sn-1,2-DAG novel PKC-theta/epsilon uncoupling of IRS-1, hepatic FOXO1 gluconeogenic activation, pancreatic islet steatosis causing beta-cell dedifferentiation, and DiRECT negative energy balance defatting liver/pancreas for drug-free remission.',
+      'স্থূলতার প্যাথোফিজিওলজি, এক্টোপিক বিষাক্ত চর্বি ও ডাইরেক্ট ডায়াবেটিস নিরাময়ের মেডিকেল ইলাস্ট্রেশন: ১০০ মাইক্রোমিটারের বড় চর্বি কোষে অক্সিজেনের অভাবে ম্যাক্রোফেজ বলয় গঠন, sn-1,2-DAG দ্বারা ক্ষতিকর PKC এনজাইম সক্রিয়করণ ও IRS-1 বিভাজন, যকৃতে FOXO1 এর মাধ্যমে অতিরিক্ত গ্লুকোজ উৎপাদন, অগ্ন্যাশয়ে চর্বি জমে বিটা-কোষ নিষ্ক্রিয় হওয়া এবং ডাইরেক্ট ট্রায়ালে ওজন কমার মাধ্যমে যকৃৎ ও অগ্ন্যাশয় চর্বিমুক্ত হয়ে ডায়াবেটিস সম্পূর্ণ নিরাময়।'
+    ),
+    has3D: true,
+    threeDType: 'obesity-t2d-mnt-3d',
     items: [
       {
         id: 'node-hypertrophy',
@@ -303,6 +310,7 @@ export const nutrition18ObesityT2DMNTLesson: LessonTopic = {
         ),
         color: '#ef4444',
         svgCoords: { x: 30, y: 35, width: 200, height: 48 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-dag-pkc',
@@ -317,6 +325,7 @@ export const nutrition18ObesityT2DMNTLesson: LessonTopic = {
         ),
         color: '#f97316',
         svgCoords: { x: 250, y: 35, width: 200, height: 48 },
+        position3D: { x: 0, y: -50, z: -20 },
       },
       {
         id: 'node-hepatic-foxto1',
@@ -331,6 +340,7 @@ export const nutrition18ObesityT2DMNTLesson: LessonTopic = {
         ),
         color: '#eab308',
         svgCoords: { x: 470, y: 35, width: 200, height: 48 },
+        position3D: { x: 85, y: -50, z: 25 },
       },
       {
         id: 'node-pancreatic-steatosis',
@@ -345,6 +355,7 @@ export const nutrition18ObesityT2DMNTLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 190, y: 105, width: 310, height: 48 },
+        position3D: { x: -50, y: 50, z: -20 },
       },
       {
         id: 'node-direct-remission',
@@ -359,6 +370,7 @@ export const nutrition18ObesityT2DMNTLesson: LessonTopic = {
         ),
         color: '#10b981',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 50, y: 50, z: 25 },
       },
     ],
   },

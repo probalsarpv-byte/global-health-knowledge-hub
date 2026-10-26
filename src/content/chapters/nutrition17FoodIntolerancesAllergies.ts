@@ -298,6 +298,13 @@ export const nutrition17FoodIntolerancesAllergiesLesson: LessonTopic = {
       'অনাক্রম্যতাতত্ত্বীয় শিক্ষামূলক সিমুলেশন; যেকোনো খাদ্যজনিত জটিলতায় বিশেষজ্ঞ চিকিৎসকের পরামর্শ নিন।'
     ),
     svgType: 'food-adverse-reactions',
+    imageUrl: '/assets/food_intolerances_celiac_overview.jpg',
+    imageCaption: l(
+      'Medical textbook illustration of adverse food reactions and Celiac immunopathology: Lactase non-persistence enzymology, 33-mer alpha-gliadin deamidation by calcium-dependent tTG-2, electrostatic docking into basic HLA-DQ2.5/8 pockets activating CD4+ Th1 cells, IL-15 driven intraepithelial cytotoxic enterocyte apoptosis (Marsh 3 villous atrophy), and multivalent allergen IgE cross-linking on mast cells.',
+      'খাদ্যজনিত বিরূপ প্রতিক্রিয়া ও সিলিয়াক ইমিউনোপ্যাথলজির মেডিকেল ইলাস্ট্রেশন: ল্যাকটেজ ঘাটতির শারীরবৃত্ত, ক্যালসিয়াম-নির্ভর tTG-2 দ্বারা ৩৩-মার আলফা-গ্লিয়াডিন ডিঅ্যামিডেশন, ক্ষারীয় HLA-DQ2.5/8 খাঁজে আয়নিক সংযোগে CD4+ টি-কোষ সক্রিয়করণ, IL-15 উদ্দীপ্ত ঘাতক লিম্ফোসাইটে ভিলি ধ্বংস (Marsh 3 villous atrophy) এবং মাস্ট সেলে অ্যালার্জেন-IgE সংযোগে হিস্টামিন ক্ষরণ।'
+    ),
+    has3D: true,
+    threeDType: 'food-intolerance-celiac-3d',
     items: [
       {
         id: 'node-lph',
@@ -312,6 +319,7 @@ export const nutrition17FoodIntolerancesAllergiesLesson: LessonTopic = {
         ),
         color: '#f59e0b',
         svgCoords: { x: 25, y: 35, width: 310, height: 48 },
+        position3D: { x: -85, y: -50, z: 25 },
       },
       {
         id: 'node-ttg2',
@@ -326,6 +334,7 @@ export const nutrition17FoodIntolerancesAllergiesLesson: LessonTopic = {
         ),
         color: '#ef4444',
         svgCoords: { x: 355, y: 35, width: 310, height: 48 },
+        position3D: { x: 85, y: -50, z: -25 },
       },
       {
         id: 'node-hladq2',
@@ -340,6 +349,7 @@ export const nutrition17FoodIntolerancesAllergiesLesson: LessonTopic = {
         ),
         color: '#8b5cf6',
         svgCoords: { x: 25, y: 105, width: 310, height: 48 },
+        position3D: { x: -85, y: 50, z: -20 },
       },
       {
         id: 'node-cytotoxicity',
@@ -354,6 +364,7 @@ export const nutrition17FoodIntolerancesAllergiesLesson: LessonTopic = {
         ),
         color: '#dc2626',
         svgCoords: { x: 355, y: 105, width: 310, height: 48 },
+        position3D: { x: 85, y: 50, z: 20 },
       },
       {
         id: 'node-ige-anaphylaxis',
@@ -368,6 +379,7 @@ export const nutrition17FoodIntolerancesAllergiesLesson: LessonTopic = {
         ),
         color: '#06b6d4',
         svgCoords: { x: 190, y: 175, width: 310, height: 48 },
+        position3D: { x: 0, y: 0, z: 30 },
       },
     ],
   },
