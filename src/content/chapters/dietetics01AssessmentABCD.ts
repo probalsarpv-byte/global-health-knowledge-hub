@@ -337,8 +337,8 @@ export const dietetics01AssessmentABCDLesson: LessonTopic = {
               'সূত্র: সমন্বিত ওজন (AdjBW) = IBW + ০.৪০ × (প্রকৃত ওজন - IBW)'
             ),
             l(
-              'Concurrently, Percentage Weight Loss Velocity is calculated to assess the acute severity of nutritional depletion [2]:',
-              'একই সাথে পুষ্টি ঘাটতির তাৎক্ষণিক তীব্রতা নির্ধারণ করতে অনিচ্ছাকৃত ওজন হ্রাসের শতকরা গতি পরিমাপ করা হয় [2]:'
+              'Concurrently, Percentage Weight Loss Velocity is calculated to assess the acute severity of nutritional depletion [2].',
+              'একই সাথে পুষ্টি ঘাটতির তাৎক্ষণিক তীব্রতা নির্ধারণ করতে অনিচ্ছাকৃত ওজন হ্রাসের শতকরা গতি পরিমাপ করা হয় [2]।',
             ),
             l(
               'Formula: Percentage Weight Loss (%) = [(Usual Weight - Current Dry Weight) / Usual Weight] × 100',
@@ -381,8 +381,8 @@ export const dietetics01AssessmentABCDLesson: LessonTopic = {
               'মাংসপেশির ক্ষয় শরীরের উভয় পাশের নির্দিষ্ট স্থানে পরীক্ষা করা হয়: টেম্পোরাল পেশি (কপালের পাশের গর্ত দেখা), কলারবোন ও কাঁধের পেশি (হাড় বেরিয়ে যাওয়া ও চৌকো কাঁধ দেখা), হাতের বৃদ্ধাঙ্গুলির গোড়ার পেশি (পেশির পুরুত্ব স্পর্শ করা), এবং পায়ের কোয়াড্রিসেপস ও কাফ পেশি [2, 5]। ত্বকের নিচের চর্বি স্তর পরীক্ষা করা হয় চোখের নিচে (অরবিটাল ফ্যাট প্যাড), হাতের ট্রাইসেপস পেশির চামড়া চিমটি কেটে, এবং পাঁজরের দুই পাশে।'
             ),
             l(
-              'Peripheral edema is staged using standardized 5-second digital pressure over the medial malleolus or pretibial surface [5]:',
-              'শরীরে পানি জমার মাত্রা (Peripheral Edema) পায়ের গোড়ালি বা নলার হাড়ের ওপর বুড়ো আঙুল দিয়ে পূর্ণ ৫ সেকেন্ড চাপ দিয়ে নির্ণয় করা হয় [5]:'
+              'Peripheral edema is staged using standardized 5-second digital pressure over the medial malleolus or pretibial surface [5].',
+              'শরীরে পানি জমার মাত্রা (Peripheral Edema) পায়ের গোড়ালি বা নলার হাড়ের ওপর বুড়ো আঙুল দিয়ে পূর্ণ ৫ সেকেন্ড চাপ দিয়ে নির্ণয় করা হয় [5]।',
             ),
           ],
           bullets: [
@@ -410,12 +410,12 @@ export const dietetics01AssessmentABCDLesson: LessonTopic = {
               'রোগনির্ণয় সূত্র: GLIM অপুষ্টি রোগনির্ণয় = [কমপক্ষে ১টি শারীরিক ফেনোটাইপিক মানদণ্ড] + [কমপক্ষে ১টি এটিওলজিক মূল কারণ]'
             ),
             l(
-              'The Three Phenotypic Criteria evaluate physical bodily depletion [1]:',
-              'তিনটি ফেনোটাইপিক শারীরিক মানদণ্ড দেহের দৃশ্যমান ক্ষতি পরিমাপ করে [1]:'
+              'The Three Phenotypic Criteria evaluate physical bodily depletion [1].',
+              'তিনটি ফেনোটাইপিক শারীরিক মানদণ্ড দেহের দৃশ্যমান ক্ষতি পরিমাপ করে [1]।',
             ),
             l(
-              'The Two Etiologic Criteria identify the underlying biological force driving the depletion [1]:',
-              'দুটি এটিওলজিক মূল কারণ পুষ্টি ক্ষয়ের পেছনের জৈবিক চালিকাশক্তি শনাক্ত করে [1]:'
+              'The Two Etiologic Criteria identify the underlying biological force driving the depletion [1].',
+              'দুটি এটিওলজিক মূল কারণ পুষ্টি ক্ষয়ের পেছনের জৈবিক চালিকাশক্তি শনাক্ত করে [1]।',
             ),
             l(
               'Once diagnosed, malnutrition is graded into Stage 1 (Moderate) or Stage 2 (Severe) based strictly on phenotypic severity [1]. For example, involuntary weight loss > 10% in 6 months or BMI < 17.0 kg/m² immediately classifies the patient as Stage 2 Severe Malnutrition, mandating intensive nutritional resuscitation.',

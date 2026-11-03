@@ -196,8 +196,8 @@ export const dietetics02NcpPesLesson: LessonTopic = {
               'সূত্র: সুনির্দিষ্ট সমস্যা (P) — যার মূল কারণ (related to) — শারীরবৃত্তীয় কারণ (E) — যার সুস্পষ্ট প্রমাণ (as evidenced by) — পরিমাপযোগ্য লক্ষণ (S)'
             ),
             l(
-              'Let us break down each of these three elements using simple, everyday language [3]:',
-              'আসুন এই তিনটি অংশকে দৈনন্দিন সহজ ভাষায় বুঝে নেওয়া যাক [3]:'
+              'Let us break down each of these three elements using simple, everyday language [3].',
+              'আসুন এই তিনটি অংশকে দৈনন্দিন সহজ ভাষায় বুঝে নেওয়া যাক [3]।',
             ),
           ],
           bullets: [
