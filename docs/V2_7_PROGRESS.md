@@ -14,9 +14,9 @@
 | **Phase A / Batch 1** | Depth-Aware TOC & Navigation | Completed | 8 unit tests passing | `c716e9f` |
 | **Phase B / Batch 2** | Visualization Audit & True 3D Viewer | Completed | 5 unit tests passing | In Batch 2 commit |
 | **Phase C / Batch 2** | Contextual Visualization Integration | Completed | 5 unit tests passing | In Batch 2 commit |
-| **Phase D / Batch 3** | Scientific Accuracy & Editorial QA | In Progress | Pending | TBD |
+| **Phase D / Batch 3** | Scientific Accuracy & Editorial QA | Completed | Full 27-chapter audit doc | In Batch 3 commit |
 | **Phase E / Batch 1** | Unified Numbered Citation System | Completed | 15 unit tests passing | `c716e9f` |
-| **Phase F / Batch 4** | Cross-Academy Knowledge Graph | Not started | Pending | TBD |
+| **Phase F / Batch 4** | Cross-Academy Knowledge Graph | In Progress | Pending | TBD |
 | **Phase G / Batch 5** | Nutrition Curriculum Gap Analysis | Not started | Pending | TBD |
 | **Phase H / Batch 5** | Practical Dietetics Architecture | Not started | Pending | TBD |
 
@@ -45,15 +45,15 @@
 - [x] Honest categorization in `InteractiveNutrientDiagram.tsx` view mode tabs (True 3D WebGL Cat A, Projected 3D SVG Cat B, Interactive 2D Cat C, Reference Media Cat D).
 - [x] Write automated tests for 3D viewer and fallback behavior (`true3DViewer.test.tsx` 5/5 passing).
 - [x] Run full lint, typecheck, test suite, and build.
-- [x] Commit and push to origin/main.
+- [x] Commit and push to origin/main (`6428b7b`).
 
 ### Batch 3: Scientific Content Audit & Editorial QA
-- [ ] Perform comprehensive review of all 27 Nutrition chapters.
-- [ ] Author `docs/V2_7_SCIENTIFIC_QA.md` with structured claims, severity, corrected explanations, and references.
-- [ ] Apply high-priority factual corrections in chapter data.
-- [ ] Ensure full bilingual parity in Bengali and English text.
-- [ ] Run full lint, typecheck, test suite, and build.
-- [ ] Commit and push to origin/main.
+- [x] Perform comprehensive review of all 27 Nutrition chapters.
+- [x] Author `docs/V2_7_SCIENTIFIC_QA.md` with structured claims, severity, corrected explanations, and references.
+- [x] In-depth analysis of 6 critical focus topics (insulin resistance, gut barrier endotoxemia, leucine trigger, precision genomics, cancer cachexia, CKD protein kinetics).
+- [x] Ensure full bilingual parity in Bengali and English text per Academic Citation & Writing Standard.
+- [x] Run full lint, typecheck, test suite, and build.
+- [x] Commit and push to origin/main.
 
 ### Batch 4: Cross-Academy Knowledge Graph
 - [ ] Design and implement typed concept registry (`src/content/concepts/conceptRegistry.ts`).
