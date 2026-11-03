@@ -224,7 +224,7 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     {lesson.interactiveDiagram && (lesson.subject === 'metabolism' ? (
       <InteractivePathwayDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />
     ) : lesson.subject === 'nutrition' ? (
-      <InteractiveNutrientDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />
+      <InteractiveNutrientDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} currentDepth={depth} />
     ) : (
       <InteractiveAnatomyDiagram diagram={lesson.interactiveDiagram} locale={lang} onSectionSelect={jumpTo} />
     ))}

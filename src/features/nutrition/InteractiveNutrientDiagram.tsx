@@ -14,8 +14,9 @@ import {
   ZoomIn,
   ZoomOut,
 } from 'lucide-react'
-import type { InteractiveDiagramContent, LessonLocale } from '../../content/lessonSchema'
+import type { ContentDepth, InteractiveDiagramContent, LessonLocale } from '../../content/lessonSchema'
 import { useTheme } from '../../components/ThemeContext'
+import { True3DViewer } from '../../components/visualization'
 
 interface Point3D {
   x: number
@@ -67,15 +68,18 @@ export function InteractiveNutrientDiagram({
   diagram,
   locale,
   onSectionSelect,
+  currentDepth = 'academic',
 }: {
   diagram: InteractiveDiagramContent
   locale: LessonLocale
   onSectionSelect: (sectionId: string) => void
+  currentDepth?: ContentDepth
 }) {
+  const hasTrue3D = diagram.threeDType === 'enterocyte-villus-3d'
   const [selectedId, setSelectedId] = useState(diagram.items[0]?.id ?? '')
   const [activeIndex, setActiveIndex] = useState(0)
-  const [viewMode, setViewMode] = useState<'3d' | 'svg' | 'illustration'>(
-    diagram.has3D ? '3d' : 'svg'
+  const [viewMode, setViewMode] = useState<'true-3d' | '3d' | 'svg' | 'illustration'>(
+    hasTrue3D ? 'true-3d' : diagram.has3D ? '3d' : 'svg'
   )
   const { isLab, toggleLabMode } = useTheme()
   const lang = locale === 'bn' ? 'bn' : 'en'
@@ -1277,27 +1281,54 @@ export function InteractiveNutrientDiagram({
         </span>
       </div>
 
-      {/* Multi-Modal View Selectors */}
-      <div style={{ display: 'flex', gap: '8px', margin: '12px 0 16px', flexWrap: 'wrap' }}>
+      {/* Multi-Modal View Selectors — Categorized per V2.7 Audit */}
+      <div
+        role="tablist"
+        aria-label={locale === 'bn' ? 'ভিজ্যুয়ালাইজেশন প্রদর্শন মোড' : 'Scientific visualization mode'}
+        style={{ display: 'flex', gap: '8px', margin: '12px 0 16px', flexWrap: 'wrap' }}
+      >
+        {hasTrue3D && (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={viewMode === 'true-3d'}
+            className={viewMode === 'true-3d' ? 'primary-button' : 'secondary-button'}
+            style={{
+              padding: '6px 14px',
+              fontSize: '0.82rem',
+              fontWeight: 600,
+              background: viewMode === 'true-3d' ? '#2563eb' : undefined,
+              color: viewMode === 'true-3d' ? '#ffffff' : undefined,
+            }}
+            onClick={() => setViewMode('true-3d')}
+          >
+            <Sparkles size={13} style={{ display: 'inline', marginRight: '5px' }} />
+            {locale === 'bn' ? 'ট্রু ৩ডি ওয়েবজিএল (Cat A)' : 'True 3D WebGL (Cat A)'}
+          </button>
+        )}
         {diagram.has3D && (
           <button
             type="button"
+            role="tab"
+            aria-selected={viewMode === '3d'}
             className={viewMode === '3d' ? 'primary-button' : 'secondary-button'}
             style={{
               padding: '6px 14px',
               fontSize: '0.82rem',
               fontWeight: 600,
-              background: viewMode === '3d' ? '#2563eb' : undefined,
+              background: viewMode === '3d' ? '#0891b2' : undefined,
               color: viewMode === '3d' ? '#ffffff' : undefined,
             }}
             onClick={() => setViewMode('3d')}
           >
             <Layers size={13} style={{ display: 'inline', marginRight: '5px' }} />
-            {locale === 'bn' ? 'ইন্টারঅ্যাক্টিভ ৩ডি অ্যানিমেশন' : 'Interactive 3D Animation'}
+            {locale === 'bn' ? 'প্রোজেক্টেড ৩ডি (Cat B · SVG)' : 'Projected 3D (Cat B · SVG)'}
           </button>
         )}
         <button
           type="button"
+          role="tab"
+          aria-selected={viewMode === 'svg'}
           className={viewMode === 'svg' ? 'primary-button' : 'secondary-button'}
           style={{
             padding: '6px 14px',
@@ -1309,11 +1340,13 @@ export function InteractiveNutrientDiagram({
           onClick={() => setViewMode('svg')}
         >
           <Activity size={13} style={{ display: 'inline', marginRight: '5px' }} />
-          {locale === 'bn' ? 'অ্যানিমেটেড এসভিজি সিমুলেশন' : 'Animated SVG Schematic'}
+          {locale === 'bn' ? 'ইন্টারঅ্যাক্টিভ ২ডি ডায়াগ্রাম (Cat C)' : 'Interactive 2D (Cat C)'}
         </button>
         {diagram.imageUrl && (
           <button
             type="button"
+            role="tab"
+            aria-selected={viewMode === 'illustration'}
             className={viewMode === 'illustration' ? 'primary-button' : 'secondary-button'}
             style={{
               padding: '6px 14px',
@@ -1325,12 +1358,18 @@ export function InteractiveNutrientDiagram({
             onClick={() => setViewMode('illustration')}
           >
             <Eye size={13} style={{ display: 'inline', marginRight: '5px' }} />
-            {locale === 'bn' ? 'মেডিকেল ইনফোগ্রাফিক ও রেফারেন্স ফটো' : 'Medical Infographic / Photo'}
+            {locale === 'bn' ? 'রেফারেন্স মিডিয়া (Cat D)' : 'Reference Media (Cat D)'}
           </button>
         )}
       </div>
 
-      {viewMode === 'illustration' && diagram.imageUrl ? (
+      {viewMode === 'true-3d' && hasTrue3D ? (
+        <True3DViewer
+          currentDepth={currentDepth}
+          locale={locale}
+          onSectionSelect={onSectionSelect}
+        />
+      ) : viewMode === 'illustration' && diagram.imageUrl ? (
         <div
           style={{
             marginTop: '15px',

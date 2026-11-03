@@ -11,11 +11,11 @@
 
 | Phase / Batch | Description | Status | Verification / Tests | Commit SHA |
 | :--- | :--- | :--- | :--- | :--- |
-| **Phase A / Batch 1** | Depth-Aware TOC & Navigation | Implemented | 8 unit tests passing | In Batch 1 commit |
-| **Phase B / Batch 2** | Visualization Audit & True 3D Viewer | In Progress | Pending | TBD |
-| **Phase C / Batch 2** | Contextual Visualization Integration | In Progress | Pending | TBD |
-| **Phase D / Batch 3** | Scientific Accuracy & Editorial QA | Not started | Pending | TBD |
-| **Phase E / Batch 1** | Unified Numbered Citation System | Implemented | 15 unit tests passing | In Batch 1 commit |
+| **Phase A / Batch 1** | Depth-Aware TOC & Navigation | Completed | 8 unit tests passing | `c716e9f` |
+| **Phase B / Batch 2** | Visualization Audit & True 3D Viewer | Completed | 5 unit tests passing | In Batch 2 commit |
+| **Phase C / Batch 2** | Contextual Visualization Integration | Completed | 5 unit tests passing | In Batch 2 commit |
+| **Phase D / Batch 3** | Scientific Accuracy & Editorial QA | In Progress | Pending | TBD |
+| **Phase E / Batch 1** | Unified Numbered Citation System | Completed | 15 unit tests passing | `c716e9f` |
 | **Phase F / Batch 4** | Cross-Academy Knowledge Graph | Not started | Pending | TBD |
 | **Phase G / Batch 5** | Nutrition Curriculum Gap Analysis | Not started | Pending | TBD |
 | **Phase H / Batch 5** | Practical Dietetics Architecture | Not started | Pending | TBD |
@@ -34,17 +34,18 @@
 - [x] Verify Vancouver numbered citations navigation (`[1]`, `[2]`, `[1, 3]`) and return-to-citation controls.
 - [x] Write dedicated automated unit tests (`depthAwareNavigation.test.tsx`).
 - [x] Run full lint, typecheck, test suite, and build.
-- [x] Commit and push to origin/main.
+- [x] Commit and push to origin/main (`c716e9f`).
 
 ### Batch 2: Visualization Architecture & True 3D Viewer
-- [ ] Complete comprehensive visual audit across all existing visual components.
-- [ ] Author `docs/V2_7_VISUALIZATION_AUDIT.md` classifying all visuals into Categories A, B, C, D.
-- [ ] Implement lazy-loaded True 3D WebGL viewer (`True3DViewer.tsx`) using Three.js with orbit controls, structure raycasting, labels, and 2D fallback.
-- [ ] Implement real anatomical/physiological model: Intestinal Epithelial Absorption & Enterocyte architecture with SGLT1/GLUT2 transporters.
-- [ ] Connect 3D structure selections directly to chapter sections and learning depth explanations.
-- [ ] Write automated tests for 3D viewer and fallback behavior.
-- [ ] Run full lint, typecheck, test suite, and build.
-- [ ] Commit and push to origin/main.
+- [x] Complete comprehensive visual audit across all existing visual components.
+- [x] Author `docs/V2_7_VISUALIZATION_AUDIT.md` classifying all visuals into Categories A, B, C, D.
+- [x] Implement True 3D WebGL viewer (`True3DViewer.tsx`) using Three.js with orbit controls, structure raycasting, labels, and accessible 2D fallback.
+- [x] Implement real anatomical/physiological model: Intestinal Epithelial Absorption & Enterocyte architecture with SGLT1/GLUT2/ATPase transporters.
+- [x] Connect 3D structure selections directly to chapter sections and learning depth explanations.
+- [x] Honest categorization in `InteractiveNutrientDiagram.tsx` view mode tabs (True 3D WebGL Cat A, Projected 3D SVG Cat B, Interactive 2D Cat C, Reference Media Cat D).
+- [x] Write automated tests for 3D viewer and fallback behavior (`true3DViewer.test.tsx` 5/5 passing).
+- [x] Run full lint, typecheck, test suite, and build.
+- [x] Commit and push to origin/main.
 
 ### Batch 3: Scientific Content Audit & Editorial QA
 - [ ] Perform comprehensive review of all 27 Nutrition chapters.
