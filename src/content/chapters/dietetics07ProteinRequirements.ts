@@ -58,8 +58,8 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
     '০৭ · ক্লিনিক্যাল প্রোটিন প্রেসক্রিপশন: নাইট্রোজেন ভারসাম্য ও ক্যাটাবলিক সমন্বয়'
   ),
   summary: l(
-    'Formulating clinical protein therapy across the disease spectrum: executing 24-hour urinary urea nitrogen balance kinetics, titrating hypercatabolic prescriptions from non-dialysis CKD restrictions to burn hypermetabolism, and engineering mealtime leucine trigger thresholds to maximize muscle protein synthesis.',
-    'বিভিন্ন রোগের ক্ষেত্রে প্রোটিনের বৈজ্ঞানিক ব্যবস্থাপত্র: ২৪ ঘণ্টার ইউরিনারি ইউরিয়া নাইট্রোজেনের মাধ্যমে ভারসাম্য নির্ণয়, ডায়ালাইসিসবিহীন কিডনি রোগের প্রোটিন নিয়ন্ত্রণ থেকে তীব্র পোড়া রোগীর উচ্চ-প্রোটিন নির্ধারণ এবং পেশি গঠনে লিউসিন থ্রেশহোল্ড প্রয়োগ।'
+    'A masterclass in clinical protein prescribing across human health and disease: understanding why the body has no true protein storage reservoir, calculating 24-hour urinary urea nitrogen balance kinetics, navigating the renal dichotomy between pre-dialysis restriction and dialysis hypercatabolism, and engineering the mealtime leucine trigger to overcome anabolic resistance.',
+    'মানবদেহের সুস্থতা ও বিভিন্ন রোগে প্রোটিনের বিজ্ঞানভিত্তিক ব্যবস্থাপত্র: শরীরে প্রোটিনের কোনো সঞ্চয় ভাণ্ডার না থাকার শারীরবৃত্তীয় কারণ, ২৪ ঘণ্টার ইউরিনারি ইউরিয়া নাইট্রোজেনের মাধ্যমে ভারসাম্য নির্ণয়, ডায়ালাইসিসবিহীন কিডনি রোগের প্রোটিন নিয়ন্ত্রণ বনাম ডায়ালাইসিসের উচ্চ-প্রোটিন নীতি এবং পেশি ক্ষয় রোধে লিউসিন ট্রিগারের প্রয়োগ।'
   ),
   subject: 'dietetics',
   version: 1,
@@ -71,46 +71,46 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
   relatedTopicIds: ['topic.dietetics.predictive-energy-equations', 'topic.metabolism.amino-acid-catabolism-urea-cycle'],
   objectives: [
     l(
-      'Formulate tailored daily protein targets across diverse clinical states (healthy sedentary, geriatric sarcopenia, non-dialysis CKD, hemodialysis, and severe trauma).',
-      'সুস্থ ব্যক্তি, বার্ধক্যের সারকোপেনিয়া, ডায়ালাইসিস-পূর্ব সিকেডি, হেমোডায়ালাইসিস এবং তীব্র ট্রমার জন্য সঠিক প্রোটিন প্রেসক্রিপশন নির্ধারণ করা।'
+      'Formulate precision daily protein prescriptions per kilogram body weight across diverse clinical states (healthy sedentary, geriatric sarcopenia, non-dialysis CKD, hemodialysis, and critical trauma).',
+      'সুস্থ ব্যক্তি, বার্ধক্যের সারকোপেনিয়া, ডায়ালাইসিসবিহীন সিকেডি, হেমোডায়ালাইসিস এবং তীব্র ট্রমার জন্য প্রতি কেজি ওজনে দৈনিক প্রোটিনের সঠিক ব্যবস্থাপত্র নির্ধারণ করা।'
     ),
     l(
-      'Calculate clinical Nitrogen Balance using 24-hour Urinary Urea Nitrogen (UUN) excretion to objectively evaluate tissue catabolism.',
-      '২৪ ঘণ্টার ইউরিনারি ইউরিয়া নাইট্রোজেন (UUN) পরীক্ষার মাধ্যমে নাইট্রোজেন ব্যালেন্স হিসাব করে পেশির ক্ষয় গাণিতিকভাবে নিরূপণ করা।'
+      'Calculate clinical Nitrogen Balance using timed 24-hour Urinary Urea Nitrogen (UUN) excretion to objectively quantify somatic muscle proteolysis.',
+      '২৪ ঘণ্টার ইউরিনারি ইউরিয়া নাইট্রোজেন (UUN) পরীক্ষার মাধ্যমে নাইট্রোজেন ভারসাম্য হিসাব করে রোগীর মাংসপেশি ক্ষয়ের সঠিক পরিমাণ গাণিতিকভাবে নিরূপণ করা।'
     ),
     l(
-      'Apply KDOQI guidelines to prescribe low-protein diets (0.55–0.60 g/kg/day) for non-dialysis CKD stages 3–5 to preserve remaining nephrons.',
-      'ডায়ালাইসিসবিহীন ক্রনিক কিডনি ডিজিজ স্টেজ ৩-৫ এর রোগীদের জন্য KDOQI নির্দেশিকা অনুযায়ী নিয়ন্ত্রিত প্রোটিন (০.৫৫-০.৬০ গ্রাম/কেজি) প্রদান করা।'
+      'Apply updated KDOQI guidelines to prescribe low-protein diets (0.55–0.60 g/kg/day) for non-dialysis CKD stages 3–5 to preserve glomerular architecture and delay dialysis.',
+      'ডায়ালাইসিসবিহীন ক্রনিক কিডনি ডিজিজ স্টেজ ৩-৫ এর রোগীদের জন্য KDOQI নির্দেশিকা অনুযায়ী নিয়ন্ত্রিত প্রোটিন (০.৫৫-০.৬০ গ্রাম/কেজি) প্রদান করে কিডনির আয়ু বৃদ্ধি করা।'
     ),
     l(
-      'Explain the molecular mechanism of the "Leucine Trigger" (2.5–3.0 g leucine/meal) in activating mTORC1-mediated Muscle Protein Synthesis (MPS).',
-      'প্রতিবেলার খাবারে ২.৫ থেকে ৩.০ গ্রাম লিউসিনের মাধ্যমে mTORC1 সক্রিয় করে মাংসপেশি তৈরির আণবিক প্রক্রিয়া ব্যাখ্যা করা।'
+      'Explain the molecular mechanism of the "Leucine Trigger" (2.5–3.0 g leucine per meal) in activating mTORC1-mediated Muscle Protein Synthesis (MPS) to overcome anabolic resistance.',
+      'প্রতিবেলার খাবারে ২.৫ থেকে ৩.০ গ্রাম লিউসিনের মাধ্যমে mTORC1 সক্রিয় করে বার্ধক্য ও অসুস্থতায় মাংসপেশি তৈরির আণবিক প্রক্রিয়া ব্যাখ্যা করা।'
     ),
     l(
-      'Design clinical refeeding titration schedules that target +2 to +4 g/day positive nitrogen balance for wound remodeling without precipitating uremia.',
-      'অতিরিক্ত ইউরিয়া না বাড়িয়ে ক্ষত নিরাময় ও পেশি পুনর্গঠনের জন্য দিনে +২ থেকে +৪ গ্রাম পজিটিভ নাইট্রোজেন ব্যালেন্স অর্জন করা।'
+      'Design clinical refeeding titration schedules that target +2 to +4 g/day positive nitrogen balance for wound remodeling without precipitating uremia or hyperphosphatemia.',
+      'অতিরিক্ত ইউরিয়া না বাড়িয়ে ক্ষত নিরাময় ও পেশি পুনর্গঠনের জন্য দিনে +২ থেকে +৪ গ্রাম পজিটিভ নাইট্রোজেন ভারসাম্য অর্জনের থেরাপিউটিক শিডিউল প্রণয়ন করা।'
     ),
   ],
   diagram: {
     accessibleDescription: l(
-      'A clinical decision continuum chart of daily protein prescriptions per kilogram body weight across diseases: Non-dialysis CKD Stages 3–5 sits at 0.55–0.60 g/kg; Healthy baseline RDA at 0.8 g/kg; Geriatric sarcopenia at 1.0–1.2 g/kg; Hemodialysis and Peritoneal Dialysis at 1.2–1.4 g/kg; ICU sepsis and major surgery at 1.5–2.0 g/kg; and severe thermal burns at 2.0–2.5 g/kg.',
+      'A clinical decision continuum chart of daily protein prescriptions per kilogram body weight across health and disease: Non-dialysis CKD Stages 3–5 sits at the restricted floor of 0.55–0.60 g/kg; Healthy baseline RDA sits at 0.8 g/kg; Geriatric sarcopenia optimization requires 1.0–1.2 g/kg; Hemodialysis and Peritoneal Dialysis require 1.2–1.4 g/kg; ICU sepsis and major surgery escalate to 1.5–2.0 g/kg; and severe thermal burns (> 30% TBSA) peak at 2.0–2.5 g/kg.',
       'রোগভেদে প্রতি কেজি ওজনে দৈনিক প্রোটিন প্রেসক্রিপশনের সিদ্ধান্ত রেখাচিত্র: ডায়ালাইসিসবিহীন সিকেডি স্টেজ ৩-৫ এ ০.৫৫-০.৬০ গ্রাম/কেজি; সুস্থ মানুষের RDA ০.৮ গ্রাম/কেজি; বয়স্কদের সারকোপেনিয়ায় ১.০-১.২ গ্রাম/কেজি; ডায়ালাইসিসের ক্ষেত্রে ১.২-১.৪ গ্রাম/কেজি; আইসিইউ সেপসিস ও ট্রমাতে ১.৫-২.০ গ্রাম/কেজি; এবং মারাত্মক পোড়া রোগীর ক্ষেত্রে ২.০-২.৫ গ্রাম/কেজি।'
     ),
     steps: [
       l(
-        'Step 1: Nephron Protection Window (0.55–0.60 g/kg). For non-dialysis CKD 3–5, restrict protein to decrease intraglomerular capillary hypertension and nitrogenous waste generation.',
-        'ধাপ ১: কিডনি সুরক্ষার মাত্রা (০.৫৫-০.৬০ গ্রাম/কেজি): ডায়ালাইসিসবিহীন সিকেডি ৩-৫ এ কিডনির ভেতরের রক্তচাপ ও বর্জ্য কমাতে প্রোটিন নিয়ন্ত্রণ করা হয়।'
+        'Step 1: Nephron Protection Window (0.55–0.60 g/kg). For non-dialysis CKD 3–5, restrict protein to decrease intraglomerular capillary hypertension and nitrogenous uremic waste generation.',
+        'ধাপ ১: কিডনি সুরক্ষার মাত্রা (০.৫৫-০.৬০ গ্রাম/কেজি): ডায়ালাইসিসবিহীন সিকেডি ৩-৫ এ কিডনির ভেতরের রক্তচাপ ও বিষাক্ত বর্জ্য কমাতে প্রোটিন কঠোরভাবে নিয়ন্ত্রণ করা হয়।'
       ),
       l(
-        'Step 2: Healthy Baseline & Geriatric Optimization (0.8–1.2 g/kg). Healthy adults require 0.8 g/kg; older adults require 1.0–1.2 g/kg to overcome anabolic resistance.',
-        'ধাপ ২: সুস্থ ও বয়স্কদের মাত্রা (০.৮-১.২ গ্রাম/কেজি): সাধারণ সুস্থ মানুষের ০.৮ গ্রাম/কেজি এবং বয়স্কদের পেশি ক্ষয় রোধে ১.০-১.২ গ্রাম/কেজি প্রয়োজন।'
+        'Step 2: Healthy Baseline & Geriatric Optimization (0.8–1.2 g/kg). Healthy young adults require 0.8 g/kg; older adults require 1.0–1.2 g/kg to overcome age-related anabolic resistance.',
+        'ধাপ ২: সুস্থ ও বয়স্কদের মাত্রা (০.৮-১.২ গ্রাম/কেজি): সাধারণ সুস্থ মানুষের ০.৮ গ্রাম/কেজি এবং বয়স্কদের পেশি ক্ষয় রোধে ১.০-১.২ গ্রাম/কেজি প্রোটিন প্রয়োজন।'
       ),
       l(
         'Step 3: Dialytic Replacement (1.2–1.4 g/kg). Hemodialysis filters remove 10–15g of free amino acids per session; dialysis patients require high protein to prevent protein-energy wasting.',
         'ধাপ ৩: ডায়ালাইসিস ক্ষতিপূরণ (১.২-১.৪ গ্রাম/কেজি): ডায়ালাইসিসের ফিল্টারে প্রচুর অ্যামিনো অ্যাসিড নষ্ট হয়, তাই ডায়ালাইসিসের রোগীদের উচ্চ প্রোটিন দেওয়া হয়।'
       ),
       l(
-        'Step 4: Hypercatabolic Trauma & Burns (1.5–2.5 g/kg). Severe critical illness drives massive skeletal proteolysis; high-protein titration restores nitrogen balance and wound collagen.',
+        'Step 4: Hypercatabolic Trauma & Burns (1.5–2.5 g/kg). Severe critical illness drives massive skeletal proteolysis; high-protein titration restores nitrogen balance and wound collagen synthesis.',
         'ধাপ ৪: তীব্র ট্রমা ও পোড়া রোগীর মাত্রা (১.৫-২.৫ গ্রাম/কেজি): মারাত্মক রোগ ও পোড়া রোগীদের পেশি দ্রুত ভেঙে যায়; তাই ক্ষত সারাতে উচ্চমাত্রার প্রোটিন প্রদান আবশ্যক।'
       ),
     ],
@@ -122,7 +122,7 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
     ),
     options: [
       l(
-        'Prescribe 1.5–2.0 g/kg/day (105–140 g/day) to build up muscle reserves prior to starting dialysis.',
+        'Prescribe 1.5–2.0 g/kg/day (105–140 g/day) to build up somatic muscle reserves prior to starting dialysis.',
         'ডায়ালাইসিস শুরুর আগে পেশির শক্তি বাড়াতে দিনে ১.৫-২.০ গ্রাম/কেজি (১০৫-১৪০ গ্রাম/দিন) উচ্চ প্রোটিন প্রদান করা।'
       ),
       l(
@@ -140,8 +140,8 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
     ],
     correctIndex: 1,
     explanation: l(
-      'According to the KDOQI 2020 Clinical Practice Guidelines, adults with CKD stages 3–5 who are metabolically stable and not on dialysis should be prescribed a low-protein diet of 0.55–0.60 g/kg/day (or 0.28–0.43 g/kg with keto-acid analogs). This reduces uremic toxins (BUN, p-cresyl sulfate), reduces glomerular hyperfiltration and intraglomerular pressure, slows CKD progression, and delays the onset of dialysis without causing protein-energy wasting when energy intake is adequate (25–35 kcal/kg).',
-      '২০২০ সালের KDOQI আন্তর্জাতিক নির্দেশিকা অনুসারে, ডায়ালাইসিসবিহীন সিকেডি স্টেজ ৩-৫ রোগীদের জন্য লো-প্রোটিন ডায়েট (০.৫৫-০.৬০ গ্রাম/কেজি/দিন) বা কিটো-অ্যাসিড সহ খুব কম প্রোটিন ডায়েট (০.২৮-০.৪৩ গ্রাম/কেজি/দিন) সুপারিশ করা হয়। এটি রক্তে ইউরিয়া ও বিষাক্ত বর্জ্য কমায়, কিডনির নেফ্রনের ওপর চাপ হ্রাস করে এবং রোগীকে দীর্ঘদিন ডায়ালাইসিস ছাড়াই স্বাভাবিক রাখতে সাহায্য করে।'
+      'According to the KDOQI 2020 Clinical Practice Guidelines for Nutrition in CKD, metabolically stable adults with non-dialysis CKD stages 3–5 should be prescribed a Low-Protein Diet (LPD) of 0.55–0.60 g/kg body weight/day (or 0.28–0.43 g/kg with keto-acid analogs). This therapeutic restriction reduces intraglomerular capillary hypertension, lowers production of toxic nitrogenous waste products (urea, p-cresyl sulfate), slows the rate of eGFR decline, and delays the onset of chronic maintenance dialysis. Total daily caloric intake must be maintained at 25–35 kcal/kg to prevent catabolic protein-energy wasting.',
+      '২০২০ সালের KDOQI আন্তর্জাতিক নির্দেশিকা অনুসারে, ডায়ালাইসিসবিহীন সিকেডি স্টেজ ৩-৫ রোগীদের জন্য লো-প্রোটিন ডায়েট (০.৫৫-০.৬০ গ্রাম/কেজি/দিন) বা কিটো-অ্যাসিড সহ খুব কম প্রোটিন ডায়েট (০.২৮-০.৪৩ গ্রাম/কেজি/দিন) সুপারিশ করা হয়। এটি রক্তে ইউরিয়া ও বিষাক্ত বর্জ্য কমায়, কিডনির সূক্ষ্ম ফিল্টারের রক্তচাপ হ্রাস করে এবং রোগীকে দীর্ঘদিন ডায়ালাইসিস ছাড়াই স্বাভাবিক রাখতে সাহায্য করে। তবে পেশি ক্ষয় রোধে রোগীকে পর্যাপ্ত ক্যালোরি (২৫-৩৫ kcal/কেজি) নিশ্চিত করতে হবে।'
     ),
   },
   evidenceBySection: {
@@ -160,39 +160,114 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
       sections: [
         {
           id: 'sec-protein-roles',
-          heading: l('1. Why Protein Is the Master Building Block', '১. প্রোটিন কেন শরীরের মূল নির্মাণ সামগ্রী?'),
+          heading: l(
+            '1. Why Protein Is the Master Building Block (The Reservoir That Is Not a Storage Pool)',
+            '১. প্রোটিন কেন শরীরের মূল ভিত্তি (যে ভাণ্ডারের কোনো গুদাম নেই)'
+          ),
           paragraphs: [
             l(
-              'Proteins are the structural and functional machinery of the human body [1]. Every skeletal muscle fiber, antibody, digestive enzyme, and blood clotting factor is built from amino acids. While the body can store surplus energy as fat or glycogen, it has **no true storage pool for protein**; every gram of protein in your body is actively doing work as functional tissue.',
-              'প্রোটিন হলো মানবদেহের গঠন ও কার্যক্ষমতার মূল ভিত্তি [1]। শরীরের প্রতিটি মাংসপেশি, রোগ প্রতিরোধী অ্যান্টিবডি, হজমকারী এনজাইম এবং রক্ত জমাট বাঁধার উপাদান অ্যামিনো অ্যাসিড দিয়ে তৈরি। শরীর অতিরিক্ত ক্যালোরি চর্বি বা গ্লাইকোজেন হিসেবে জমিয়ে রাখতে পারলেও, **প্রোটিনের কোনো সঞ্চয় ভাণ্ডার থাকে না**; শরীরের প্রতিটি গ্রাম প্রোটিনই কোনো না কোনো টিস্যুর অংশ হিসেবে কাজ করে।'
+              'Proteins are the living machines of the human body [1]. Every skeletal muscle fiber that allows you to walk, every antibody patrolling your bloodstream against viral invaders, every digestive enzyme breaking down a meal, and every peptide hormone orchestrating cellular communication is assembled from amino acid chains. While carbohydrates and fats provide fuel, proteins provide the actual machinery of life.',
+              'প্রোটিন হলো মানবদেহের জীবন্ত যন্ত্রপাতির মতো [1]। আপনার হাঁটাচলার প্রতিটি মাংসপেশি, ভাইরাসের বিরুদ্ধে লড়াই করা রক্তরসের প্রতিটি অ্যান্টিবডি, খাবার হজমকারী প্রতিটি এনজাইম এবং কোষের বার্তা বহনকারী প্রতিটি পেপটাইড হরমোন মূলত অ্যামিনো অ্যাসিডের শিকল দিয়ে তৈরি। কার্বোহাইড্রেট ও ফ্যাট যেখানে জ্বালানি জোগায়, প্রোটিন সেখানে জীবনের মূল কাঠামো নির্মাণ করে।'
             ),
             l(
-              'When you do not eat enough protein, or when severe illness increases your body’s breakdown rates, your liver and immune system cannibalize your skeletal muscles to harvest the amino acids needed for immediate survival [1, 2]. Over time, this leads to muscle wasting, weakness, bed sores, and immune failure.',
-              'যখন আপনি পর্যাপ্ত প্রোটিন খান না, অথবা কোনো গুরুতর রোগের কারণে প্রোটিন ক্ষয়ের হার বেড়ে যায়, তখন শরীর বেঁচে থাকার জন্য নিজের মাংসপেশি ভেঙে প্রয়োজনীয় অ্যামিনো অ্যাসিড সংগ্রহ করে [1, 2]। এর ফলে ধীরে ধীরে পেশি শুকিয়ে যায়, শরীর দুর্বল হয়, ঘা শুকায় না এবং রোগ প্রতিরোধ ক্ষমতা নষ্ট হয়ে যায়।'
+              'Crucially, unlike energy which can be stored almost indefinitely in adipose tissue as triglycerides or in the liver and muscle as glycogen, the human body has **no true storage pool for protein** [1, 2]. Every single gram of protein inside you is actively performing a vital biological function. When dietary protein is inadequate, or when severe illness increases the body’s breakdown rate, the liver and immune system cannot draw from a storage warehouse. Instead, they must literally cannibalize your living skeletal muscle fibers to harvest the amino acids required for survival.',
+              'সবচেয়ে তাৎপর্যপূর্ণ বিষয় হলো, শরীর অতিরিক্ত শক্তি যেমন চর্বি কলায় ট্রাইগ্লিসারাইড হিসেবে কিংবা লিভার ও পেশিতে গ্লাইকোজেন হিসেবে জমিয়ে রাখতে পারে, মানবদেহে **প্রোটিনের জন্য এমন কোনো সঞ্চয় ভাণ্ডার বা গুদাম নেই** [1, 2]। আপনার শরীরের প্রতিটি গ্রাম প্রোটিনই কোনো না কোনো টিস্যুর অংশ হিসেবে সক্রিয় কাজ করে চলেছে। তাই খাবারে প্রোটিন না থাকলে কিংবা গুরুতর রোগে প্রোটিন ভাঙন বেড়ে গেলে, শরীর নিজের জীবন্ত মাংসপেশি ভেঙে প্রয়োজনীয় অ্যামিনো অ্যাসিড সংগ্রহ করতে বাধ্য হয়।'
+            ),
+          ],
+          bullets: [
+            l(
+              'Muscle as a Metabolic Reservoir: Skeletal muscle represents 40% of body mass and serves as the emergency reservoir of glutamine and alanine for the immune system, heart, and liver during acute illness.',
+              'মেটাবলিক অঙ্গ হিসেবে মাংসপেশি: কঙ্কাল পেশি শরীরের ওজনের ৪০% এবং এটি অসুস্থতার সময় হৃদপিণ্ড, লিভার ও রোগ প্রতিরোধ ব্যবস্থার জন্য জরুরি গ্লুটামিন ও অ্যালানিন অ্যামিনো অ্যাসিডের প্রধান উৎস হিসেবে কাজ করে।',
+            ),
+            l(
+              'Continuous Protein Turnover: In a healthy adult, approximately 300 to 400 grams of body protein is degraded and resynthesized every single day; dietary protein supplies the net balance to replace irreversible losses.',
+              'অবিরাম প্রোটিন রূপান্তর: একজন সুস্থ মানুষের শরীরে প্রতিদিন প্রায় ৩০০ থেকে ৪০০ গ্রাম প্রোটিন ভেঙে আবার নতুন করে তৈরি হয়; খাবারে প্রোটিন খেয়ে শরীর এই দৈনন্দিন অপরিহার্য অপচয় পূরণ করে।',
+            ),
+            l(
+              'Somatic Cannibalization: When dietary intake stops or severe inflammation occurs, muscle proteolysis accelerates, causing visible muscle wasting, weakness, impaired wound healing, and vulnerability to pneumonia.',
+              'পেশির আত্মক্ষয়: খাবার বন্ধ হলে বা তীব্র প্রদাহে শরীর নিজের পেশি দ্রুত ভাঙতে শুরু করে, যার ফলে শরীর শুকিয়ে যায়, দুর্বলতা আসে, ঘা শুকাতে চায় না এবং নিউমোনিয়ার মতো মারাত্মক ইনফেকশন ঘটে।',
+            ),
+            l(
+              'The Zero-Storage Reality: You cannot "load up" on protein on Sunday to cover your needs for the rest of the week; protein must be consumed regularly throughout every single day.',
+              'গুদামবিহীন বাস্তবতা: রবিবারে একবারে অনেক প্রোটিন খেয়ে সার সপ্তাহের চাহিদা পূরণ করা অসম্ভব; প্রতিদিন প্রতিটি প্রধান খাবারে প্রোটিন নিয়মিত গ্রহণ করতে হয়।',
             ),
           ],
         },
         {
           id: 'sec-different-protein-needs',
-          heading: l('2. How Much Protein Do Different People Need?', '২. কার কতটুকু প্রোটিন প্রয়োজন?'),
+          heading: l(
+            '2. How Much Protein Do Different People Need Across Health and Disease?',
+            '২. রোগ ও বয়সের ভিত্তিতে কার কতটুকু প্রোটিন প্রয়োজন?'
+          ),
           paragraphs: [
             l(
-              'A common mistake is assuming that everyone needs the exact same amount of protein. Clinical science proves that protein needs vary dramatically depending on age and disease [2, 3]:',
-              'একটি সাধারণ ভুল হলো ভাবা যে সবার একই পরিমাণ প্রোটিন দরকার। কিন্তু বিজ্ঞান প্রমাণ করেছে যে বয়স ও রোগের ভিত্তিতে প্রোটিনের চাহিদা সম্পূর্ণ আলাদা হয় [2, 3]:'
+              'A dangerous oversimplification in nutrition is assuming that a single daily protein number applies to all human beings [2, 3]. In clinical medicine, protein requirements form a vast continuum. Prescribing the wrong amount can be equally harmful: underfeeding protein allows catastrophic muscle wasting, while overfeeding protein in advanced kidney failure accelerates uremic poisoning.',
+              'পুষ্টিবিজ্ঞানের একটি বিপজ্জনক ভুল ধারণা হলো সবার জন্য একই নির্দিষ্ট পরিমাণের প্রোটিন সুপারিশ করা [2, 3]। চিকিৎসাবিজ্ঞানে বয়স ও রোগের অবস্থার ওপর ভিত্তি করে প্রোটিনের চাহিদা সম্পূর্ণ পরিবর্তিত হয়। ভুল মাত্রায় প্রোটিন প্রেসক্রিপশন মারাত্মক ক্ষতি করতে পারে: কম প্রোটিন দিলে রোগীর মাংসপেশি ধ্বংস হয়ে যায়, আবার কিডনি ফেইলিউরে অতিরিক্ত প্রোটিন দিলে রক্তে বিষাক্ত ইউরিয়া জমে প্রাণ সংশয় দেখা দেয়।'
             ),
             l(
-              '• **Healthy Sedentary Adult:** $0.8\\text{ g per kg}$ body weight (e.g., $56\\text{ g/day}$ for a $70\\text{ kg}$ adult).\n• **Older Adults (Age 65+):** $1.0\\text{--}1.2\\text{ g per kg}$ to prevent age-related muscle loss (sarcopenia).\n• **Kidney Disease (Non-dialysis):** Reduced to $0.55\\text{--}0.60\\text{ g per kg}$ to protect damaged kidneys from working too hard.\n• **Dialysis Patients:** Increased to $1.2\\text{--}1.4\\text{ g per kg}$ to replace protein lost in the dialysis filter machine.\n• **Severe Burns or ICU Trauma:** Increased to $1.5\\text{--}2.5\\text{ g per kg}$ to heal massive open wounds and fight infections.',
-              '• **সুস্থ সাধারণ মানুষ:** প্রতি কেজি ওজনে $০.৮\text{ গ্রাম}$ প্রোটিন (যেমন ৭০ কেজি ওজনের মানুষের দিনে ৫৬ গ্রাম)।\n• **বয়োজ্যেষ্ঠ মানুষ (বয়স ৬৫+):** পেশি ক্ষয় রোধে প্রতি কেজিতে $১.০\text{ থেকে } ১.২\text{ গ্রাম}$ প্রোটিন।\n• **কিডনি রোগী (ডায়ালাইসিস ছাড়া):** কিডনির ওপর চাপ কমাতে প্রোটিন কমিয়ে প্রতি কেজিতে $০.৫৫\text{ থেকে } ০.৬০\text{ গ্রাম}$ দেওয়া হয়।\n• **ডায়ালাইসিসের রোগী:** মেশিনে প্রোটিন নষ্ট হওয়ার ক্ষতিপূরণে প্রতি কেজিতে $১.২\text{ থেকে } ১.৪\text{ গ্রাম}$ উচ্চ প্রোটিন দরকার।\n• **পোড়া বা ট্রমার রোগী:** ক্ষত নিরাময় ও ইনফেকশন ঠেকাতে প্রতি কেজিতে $১.৫\text{ থেকে } ২.৫\text{ গ্রাম}$ প্রচুর প্রোটিন প্রয়োজন।'
+              'Clinical dietitians calculate daily protein needs based on grams per kilogram of body weight (g/kg/day) [2, 3]:',
+              'দক্ষ ক্লিনিক্যাল পুষ্টিবিদরা রোগীর শরীরের ওজনের প্রতি কেজির ভিত্তিতে দৈনিক প্রোটিনের গ্রাম (g/kg/দিন) নির্ধারণ করেন [2, 3]:'
+            ),
+          ],
+          bullets: [
+            l(
+              'Healthy Sedentary Adult (0.8 g/kg/day): The baseline Recommended Dietary Allowance (RDA) designed to meet the minimum maintenance needs of 97.5% of healthy individuals (e.g., 56 g/day for a 70 kg individual).',
+              'সুস্থ সাধারণ মানুষ (০.৮ গ্রাম/কেজি/দিন): আন্তর্জাতিক RDA মানদণ্ড, যা ৯৭.৫% সুস্থ মানুষের ন্যূনতম রক্ষণাবেক্ষণের চাহিদা মেটায় (যেমন ৭০ কেজি ওজনের মানুষের দিনে ৫৬ গ্রাম)।',
+            ),
+            l(
+              'Older Adults Age 65+ (1.0 to 1.2 g/kg/day): Required to overcome age-related "anabolic resistance" and preserve skeletal muscle mass, strength, and mobility against sarcopenia.',
+              'বয়োজ্যেষ্ঠ মানুষ ৬৫+ বছর (১.০ থেকে ১.২ গ্রাম/কেজি/দিন): বার্ধক্যজনিত পেশির ক্ষয় (সারকোপেনিয়া) রোধ করতে এবং পেশির সংবেদনশীলতা বজায় রাখতে উচ্চ প্রোটিন প্রয়োজন।',
+            ),
+            l(
+              'Chronic Kidney Disease Non-Dialysis Stages 3–5 (0.55 to 0.60 g/kg/day): Strictly restricted to lower intraglomerular pressure, reduce nitrogenous toxins (BUN), and delay the need for dialysis.',
+              'ডায়ালাইসিসবিহীন কিডনি রোগী স্টেজ ৩-৫ (০.৫৫ থেকে ০.৬০ গ্রাম/কেজি/দিন): কিডনির ভেতরের রক্তনালীর চাপ কমাতে এবং রক্তে বিষাক্ত ইউরিয়া জমা প্রতিরোধ করতে নিয়ন্ত্রিত লো-প্রোটিন খাদ্য।',
+            ),
+            l(
+              'Maintenance Dialysis (Hemodialysis: 1.2 g/kg/day; Peritoneal: 1.2 to 1.3 g/kg/day): Flipped to high protein because artificial dialyzer filters remove 10 to 15 grams of amino acids per treatment session and trigger chronic inflammation.',
+              'ডায়ালাইসিসের রোগী (হেমোডায়ালাইসিস: ১.২ গ্রাম/কেজি; পেরিটনিয়াল: ১.২-১.৩ গ্রাম/কেজি): ডায়ালাইসিস মেশিনে প্রতিবার ১০-১৫ গ্রাম অ্যামিনো অ্যাসিড নষ্ট হয়, তাই অপচয় রোধে এদের উচ্চ প্রোটিন দেওয়া বাধ্যতামূলক।',
+            ),
+            l(
+              'ICU Critical Sepsis, Major Surgery & Trauma (1.5 to 2.0 g/kg/day): Required to counteract massive neuroendocrine-driven muscle proteolysis and support immune and tissue repair.',
+              'আইসিইউ সেপসিস, বড় অপারেশন ও ট্রমা (১.৫ থেকে ২.০ গ্রাম/কেজি/দিন): হরমোন ও সাইটোকাইনজনিত তীব্র মাংসপেশি ভাঙন রোধ করতে এবং টিস্যু পুনর্গঠনে উচ্চমাত্রার প্রোটিন প্রয়োজন।',
+            ),
+            l(
+              'Severe Thermal Burns > 30% TBSA (2.0 to 2.5 g/kg/day): The highest requirement in clinical medicine, compensating for massive wound exudate protein weeping and extreme hypermetabolism.',
+              'মারাত্মক পোড়া রোগী শরীরের ৩০% এর বেশি পুড়ে যাওয়া (২.০ থেকে ২.৫ গ্রাম/কেজি/দিন): চিকিৎসা বিজ্ঞানের সর্বোচ্চ মাত্রা; পোড়া ক্ষত দিয়ে পুঁজ ও প্রোটিন বের হয়ে যাওয়া ঠেকাতে এবং নতুন চামড়া তৈরিতে এটি অপরিহার্য।',
             ),
           ],
         },
         {
           id: 'sec-leucine-intro',
-          heading: l('3. The Leucine Trigger for Muscle Growth', '৩. পেশি গঠনের "লিউসিন ট্রিগার"'),
+          heading: l(
+            '3. The Mealtime Leucine Trigger for Muscle Protein Synthesis',
+            '৩. পেশি গঠনের আণবিক সুইচ: খাবারের "লিউসিন ট্রিগার"'
+          ),
           paragraphs: [
             l(
-              'Eating small dribbles of protein throughout the day (e.g., 5g here and 5g there) fails to build muscle [4]. Your muscle cells have an internal chemical switch called mTOR. To flip this switch and trigger muscle protein building, you need to eat a meal containing at least **2.5 to 3 grams of the amino acid leucine** (equivalent to ~25–30g of high-quality protein like eggs, fish, dairy, or chicken) in a single sitting [4].',
-              'সারাদিনে একটু একটু করে প্রোটিন খেলে (যেমন এখন ৫ গ্রাম, পরে ৫ গ্রাম) পেশি তৈরি হয় না [4]। পেশি কোষে mTOR নামের একটি সুইচ থাকে। পেশি তৈরির এই সুইচটি অন করতে প্রতিবেলার খাবারে অন্তত **২.৫ থেকে ৩.০ গ্রাম লিউসিন নামের অ্যামিনো অ্যাসিড** থাকতে হয় (যা ডিম, মাছ, দুধ বা মুরগির মতো উচ্চমানের প্রায় ২৫-৩০ গ্রাম প্রোটিন থেকে পাওয়া যায়) [4]।'
+              'For decades, people assumed that as long as they hit their total daily protein target by midnight, their muscles would be well nourished. Breakthrough molecular research has disproven this view [4]. Human muscle protein synthesis is not regulated like a steady water drip; it functions like an electrical light switch.',
+              'কয়েক দশক ধরে মানুষ ভাবতো সারাদিনে রাতের মধ্যে যেকোনোভাবে মোট প্রোটিনের লক্ষ্য পূরণ করলেই পেশি সুস্থ থাকবে। আধুনিক আণবিক জীববিদ্যা এই ধারণাকে ভ্রান্ত প্রমাণ করেছে [4]। মানবদেহে মাংসপেশি তৈরির প্রক্রিয়া কোনো অবিরাম পানির ফোঁটার মতো চলে না; এটি মূলত একটি বৈদ্যুতিক সুইচের মতো কাজ করে।',
+            ),
+            l(
+              'Your muscle cells contain an internal chemical switch called **mTORC1** (Mechanistic Target of Rapamycin Complex 1) [4]. To flip this switch on and initiate Muscle Protein Synthesis (MPS), you need a specific concentration of a single essential branched-chain amino acid: **Leucine**. Consuming small, scattered amounts of protein (such as 5g at breakfast, 10g at lunch) never reaches the threshold required to turn the switch on. To trigger muscle growth, a meal must deliver at least **2.5 to 3.0 grams of leucine** (found in 25–35g of high-quality protein such as eggs, fish, poultry, dairy, or soy).',
+              'আমাদের মাংসপেশির কোষে **mTORC1** নামের একটি প্রধান রাসায়নিক নিয়ন্ত্রণ সুইচ থাকে [4]। এই সুইচটি অন করে নতুন পেশি তৈরির কাজ শুরু করাতে হলে খাবারে একটি বিশেষ ব্রাঞ্চড-চেইন অ্যামিনো অ্যাসিডের সুনির্দিষ্ট মাত্রা থাকতে হয়: **লিউসিন (Leucine)**। সারাদিন ধরে অল্প অল্প প্রোটিন খেলে (যেমন সকালে ৫ গ্রাম, দুপুরে ১০ গ্রাম) তা কখনোই এই সুইচ অন করার মতো যথেষ্ট সংকেত তৈরি করতে পারে না। পেশি গঠনের কাজ চালু করতে প্রতিটি প্রধান খাবারে অন্তত **২.৫ থেকে ৩.০ গ্রাম লিউসিন** থাকতে হবে (যা ২৫-৩৫ গ্রাম ডিম, মাছ, দুধ বা মুরগির মতো উচ্চমানের প্রোটিন থেকে আসে)।',
+            ),
+          ],
+          bullets: [
+            l(
+              'The Digital Switch Concept: Muscle Protein Synthesis operates on an all-or-none threshold. A meal with 1.2g leucine produces near-zero muscle synthesis; reaching 2.7g leucine triggers maximal protein building for 3 to 4 hours.',
+              'ডিজিটাল অন-অফ সুইচ: পেশি গঠন অল-অর-নান নিয়মে চলে। খাবারে ১.২ গ্রাম লিউসিন থাকলে সুইচ অনই হয় না; কিন্তু ২.৭ গ্রাম লিউসিনের সীমা পার করলেই ৩ থেকে ৪ ঘণ্টার জন্য পেশি তৈরির প্রক্রিয়া সর্বোচ্চ গতি পায়।',
+            ),
+            l(
+              'The "Muscle Full" Refractory Period: After mTORC1 is triggered, muscle synthesis remains active for several hours before resetting. Eating more protein 45 minutes later is oxidized as energy, not muscle; meals should be spaced 3 to 5 hours apart.',
+              'পেশির পূর্ণতা ও বিরতি: একবার সুইচ চালু হলে কয়েক ঘণ্টা পেশি তৈরির কাজ চলার পর সাময়িক বিরতি আসে। আধা ঘণ্টার মধ্যে আবার প্রোটিন খেলে তা পেশি না হয়ে শক্তি হিসেবে পুড়ে যায়; তাই প্রোটিনযুক্ত খাবার ৩ থেকে ৫ ঘণ্টা পর পর খাওয়া বিজ্ঞানসম্মত।',
+            ),
+            l(
+              'High-Leucine Food Sources: Whey protein isolate (11% leucine), eggs (8.5%), beef and poultry (8%), salmon (8%), and dairy (8%). Plant sources like lentils and soy can achieve the threshold with slightly larger portion volumes.',
+              'উচ্চ-লিউসিনযুক্ত খাবার: ডিম, মাছ, মুরগির মাংস, ছানা, দুধ এবং সয়াবিন। ডাল ও উদ্ভিজ্জ প্রোটিনের পরিমাণ কিছুটা বেশি খেলে সহজেই এই কাঙ্ক্ষিত লিউসিন লক্ষ্যমাত্রা অর্জন করা যায়।',
+            ),
+            l(
+              'Clinical Application in Frailty: Older hospitalized patients with small appetites must have their limited meals strategically enriched with leucine-rich protein to prevent bedside wasting.',
+              'অসুস্থ ও বয়স্কদের ক্ষেত্রে প্রয়োগ: দুর্বল ও কম ক্ষুধা থাকা রোগীদের অল্প খাবারের ভেতরেই লিউসিন সমৃদ্ধ প্রোটিন নিশ্চিত করতে হবে যাতে বিছানায় শুয়ে তাদের মাংসপেশি শুকিয়ে না যায়।',
             ),
           ],
         },
@@ -203,37 +278,79 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
       sections: [
         {
           id: 'sec-nitrogen-balance-kinetics',
-          heading: l('1. The Quantitative Nitrogen Balance Equation and Clinical Kinetics', '১. নাইট্রোজেন ভারসাম্যের গাণিতিক সমীকরণ ও ক্লিনিক্যাল গতিবিদ্যা'),
+          heading: l(
+            '1. The Quantitative Nitrogen Balance Equation and Clinical Kinetics',
+            '১. নাইট্রোজেন ভারসাম্যের গাণিতিক সমীকরণ ও ক্লিনিক্যাল গতিবিদ্যা'
+          ),
           paragraphs: [
             l(
-              'Nitrogen balance is the reference clinical method for assessing whole-body protein turnover and adequacy of nutritional support [1, 5]. Because nitrogen constitutes approximately 16% of dietary protein by molecular weight, 1 gram of nitrogen represents $6.25\\text{ g}$ of protein ($1 / 0.16 = 6.25$).',
-              'নাইট্রোজেন ব্যালেন্স হলো শরীরের প্রোটিন বিপাক এবং পুষ্টি চিকিৎসার সাফল্য যাচাইয়ের প্রধান ক্লিনিক্যাল পদ্ধতি [1, 5]। যেহেতু প্রোটিনে গড়ে ১৬% নাইট্রোজেন থাকে, তাই ১ গ্রাম নাইট্রোজেন সমান $৬.২৫\text{ গ্রাম}$ প্রোটিন ($১ / ০.১৬ = ৬.২৫$)।'
+              'Nitrogen balance represents the historic and contemporary gold standard for evaluating whole-body protein turnover and verifying the efficacy of clinical nutrition support [1, 5]. Because elemental nitrogen constitutes approximately 16% of dietary protein by molecular weight, 1 gram of nitrogen represents exactly 6.25 grams of protein (100 / 16 = 6.25).',
+              'নাইট্রোজেন ব্যালেন্স বা ভারসাম্য হলো শরীরের সামগ্রিক প্রোটিন বিপাক এবং পুষ্টি চিকিৎসার সাফল্য যাচাইয়ের প্রধান বৈজ্ঞানিক পদ্ধতি [1, 5]। যেহেতু প্রোটিনে গড়ে ১৬% নাইট্রোজেন থাকে, তাই ১ গ্রাম নাইট্রোজেন ঠিক ৬.২৫ গ্রাম প্রোটিনের সমতুল্য (১০০ / ১৬ = ৬.২৫)।',
             ),
             l(
-              'Clinical Nitrogen Balance is calculated from a timed 24-hour urine collection measuring Urinary Urea Nitrogen (UUN) [1]:',
-              '২৪ ঘণ্টার প্রস্রাবের ইউরিয়া নাইট্রোজেন (UUN) মেপে নিচের সমীকরণে নাইট্রোজেন ভারসাম্য হিসাব করা হয় [1]:'
+              'Clinical Nitrogen Balance is measured using a timed 24-hour urine collection measuring Urinary Urea Nitrogen (UUN) [1]:',
+              '২৪ ঘণ্টার প্রস্রাবে নির্গত ইউরিয়া নাইট্রোজেন (UUN) মেপে বিশ্বস্বীকৃত সমীকরণে নাইট্রোজেন ভারসাম্য হিসাব করা হয় [1]:',
             ),
             l(
-              '$$\\text{Nitrogen Balance (g/day)} = \\left( \\frac{\\text{Protein Intake (g)}}{6.25} \\right) - \\left( \\text{24-hr UUN (g)} + 4.0 \\right)$$',
-              '$$\\text{নাইট্রোজেন ব্যালেন্স (গ্রাম/দিন)} = \\left( \\frac{\\text{প্রোটিন গ্রহণ (গ্রাম)}}{৬.২৫} \\right) - \\left( \\text{২৪ ঘণ্টার UUN (গ্রাম)} + ৪.০ \\right)$$'
+              'Nitrogen Balance (g N/day) = (Daily Protein Intake [g] / 6.25) - (24-hour Urinary Urea Nitrogen [g] + 4.0 g)',
+              'নাইট্রোজেন ব্যালেন্স (গ্রাম N/দিন) = (দৈনিক প্রোটিন গ্রহণ [গ্রাম] / ৬.২৫) - (২৪ ঘণ্টার প্রস্রাবের UUN [গ্রাম] + ৪.০ গ্রাম)',
             ),
             l(
-              'The constant $+4.0$ accounts for unmeasured nitrogen losses: $2.0\\text{ g}$ for non-urea urinary nitrogen (ammonia, creatinine, uric acid, amino acids) and $2.0\\text{ g}$ for obligatory fecal, dermal, and integumentary losses [1]. A balance of $0$ indicates maintenance; negative balance indicates active proteolysis; and $+2\\text{ to } +4\\text{ g N/day}$ is the therapeutic target for tissue remodeling.',
-              'এখানে ধ্রুবক $+৪.০$ হলো না মাপা অন্যান্য ক্ষতি: $২.০\text{ গ্রাম}$ প্রস্রাবের অন্যান্য নাইট্রোজেন (অ্যামোনিয়া, ক্রিয়েটিনিন, ইউরিক অ্যাসিড) এবং $২.০\text{ গ্রাম}$ ত্বক, ঘাম ও মলের মাধ্যমে অপচয় [1]। ব্যালেন্স $০$ হলে সমতা, মাইনাস হলে পেশি ক্ষয় এবং $+২\text{ থেকে } +৪\text{ গ্রাম/দিন}$ হলো ক্ষত সারাতে কাঙ্ক্ষিত থেরাপিউটিক লক্ষ্য।'
+              'The constant 4.0 grams in the denominator accounts for mandatory unmeasured biological nitrogen losses [1]: 2.0 grams represents non-urea urinary nitrogen (ammonia, creatinine, uric acid, and free amino acids), while 2.0 grams represents obligatory non-urinary nitrogen shed via fecal excretion, shed cutaneous keratin, and sweat. A calculated balance of 0 g/day indicates steady-state maintenance; a negative balance indicates ongoing somatic muscle proteolysis; and a positive balance of +2 to +4 g N/day is the target for clinical anabolism and wound remodeling.',
+              'এখানে ধ্রুবক ৪.০ গ্রাম হলো না মাপা অন্যান্য অনিবার্য শারীরিক অপচয় [1]: ২.০ গ্রাম হলো প্রস্রাবের ইউরিয়া ছাড়া অন্যান্য উপাদান (অ্যামোনিয়া, ক্রিয়েটিনিন, ইউরিক অ্যাসিড) এবং ২.০ গ্রাম হলো ত্বক, ঘাম ও মলের মাধ্যমে স্বাভাবিক ক্ষতি। হিসাবকৃত ব্যালেন্স ০ গ্রাম হলে সুস্থ সমতা, মাইনাস হলে তীব্র পেশি ক্ষয় এবং +২ থেকে +৪ গ্রাম/দিন হলো ক্ষত নিরাময় ও পেশি গঠনের জন্য কাঙ্ক্ষিত থেরাপিউটিক লক্ষ্য।',
+            ),
+          ],
+          bullets: [
+            l(
+              'Translating Nitrogen Loss to Muscle Wasting: Because skeletal muscle is 20% protein and 80% intracellular water, every 1.0 g of negative nitrogen balance represents the destruction of 31.25 g of living skeletal muscle tissue (1.0 g N × 6.25 protein × 5.0 wet muscle = 31.25 g).',
+              'নাইট্রোজেন ক্ষয় থেকে পেশির হিসাব: যেহেতু জীবন্ত পেশিতে ২০% প্রোটিন এবং ৮০% পানি থাকে, তাই প্রতিদিন ১ গ্রাম নেগেটিভ নাইট্রোজেন ব্যালেন্স মানে ৩১.২৫ গ্রাম জীবন্ত মাংসপেশি ধ্বংস হওয়া (১.০ × ৬.২৫ × ৫ = ৩১.২৫ গ্রাম)।',
+            ),
+            l(
+              'Catabolic Severity Staging via UUN: Normal baseline UUN = 5 to 10 g/day; Mild stress = 10 to 15 g/day; Moderate stress = 15 to 20 g/day; Severe hypercatabolism (major burns/trauma) = > 20 g/day.',
+              'UUN দেখে রোগের তীব্রতা নির্ণয়: স্বাভাবিক নির্গমন = ৫ থেকে ১০ গ্রাম/দিন; মৃদু স্ট্রেস = ১০ থেকে ১৫ গ্রাম/দিন; মাঝারি স্ট্রেস = ১৫ থেকে ২০ গ্রাম/দিন; এবং মারাত্মক ক্যাটাবলিজম = ২০ গ্রাম/দিনের বেশি।',
+            ),
+            l(
+              'The Role of Non-Protein Calories: High protein intake cannot achieve positive nitrogen balance if total caloric energy is deficient; amino acids will simply be deaminated and burned as fuel instead of building tissue.',
+              'পর্যাপ্ত ক্যালোরির অপরিহার্যতা: রোগীকে পর্যাপ্ত নন-প্রোটিন ক্যালোরি (শর্করা ও ফ্যাট) না দিলে উচ্চ প্রোটিন কোনো কাজে আসবে না; শরীর খাদ্য তৈরির বদলে সেই প্রোটিন পুড়িয়ে শক্তি মেটাতে বাধ্য হবে।',
+            ),
+            l(
+              'Limitation in Severe Renal Failure: In oliguric acute kidney injury or end-stage renal disease, urea is retained in the blood rather than excreted, requiring urea kinetic modeling (BUN rise adjustment) rather than simple 24-hr UUN.',
+              'কিডনি ফেইলিউরে সীমাবদ্ধতা: প্রস্রাব বন্ধ হয়ে কিডনি ফেইলিউর হলে ইউরিয়া প্রস্রাবে বের হতে পারে না এবং রক্তে জমে যায়; এ অবস্থায় সাধারণ UUN সূত্রের বদলে রক্তের ইউরিয়ার বৃদ্ধি সমন্বয় করে হিসাব করতে হয়।',
             ),
           ],
         },
         {
           id: 'sec-ckd-dialysis-dichotomy',
-          heading: l('2. The Renal Dichotomy: Non-Dialysis CKD vs Dialysis Hypercatabolism', '২. কিডনি রোগের দ্বিমুখী নীতি: ডায়ালাইসিসবিহীন বনাম ডায়ালাইসিস ক্যাটাবলিজম'),
+          heading: l(
+            '2. The Renal Dichotomy: Non-Dialysis CKD Restriction vs Dialytic Hypercatabolism',
+            '২. কিডনি রোগের দ্বিমুখী নীতি: ডায়ালাইসিসবিহীন নিয়ন্ত্রণ বনাম ডায়ালাইসিস ক্যাটাবলিজম'
+          ),
           paragraphs: [
             l(
-              'In clinical nephrology, protein prescribing follows a profound therapeutic dichotomy between pre-dialysis and dialysis states [3]:',
-              'কিডনি পুষ্টিতে ডায়ালাইসিস শুরুর আগে এবং পরে প্রোটিন ব্যবস্থাপত্রে এক নাটকীয় বিপরীতমুখী পরিবর্তন ঘটে [3]:'
+              'In clinical nephrology nutrition, protein prescribing follows one of the most profound therapeutic dichotomies in medicine [3]. When treating a patient with chronic kidney disease, the dietary prescription abruptly flips 180 degrees the moment the patient transitions from pre-dialysis care to maintenance dialysis.',
+              'কিডনি রোগের পুষ্টি ব্যবস্থাপনায় চিকিৎসাবিজ্ঞানের সবচেয়ে নাটকীয় বিপরীতমুখী রূপান্তর ঘটে [3]। ক্রনিক কিডনি ডিজিজে আক্রান্ত রোগী যখন ডায়ালাইসিস শুরুর আগের অবস্থা থেকে নিয়মিত ডায়ালাইসিসে প্রবেশ করেন, তখন খাদ্য নির্দেশিকা মুহূর্তেই ১৮০ ডিগ্রি উল্টে যায়।',
             ),
             l(
-              '1. **Non-Dialysis CKD Stages 3–5 ($eGFR < 60\\text{ mL/min}$):** Damaged nephrons suffer intraglomerular capillary hypertension. Amino acid catabolism generates nitrogenous uremic toxins (urea, guanidines, sulfates, indoxyl sulfate). The 2020 KDOQI guidelines recommend a **Low-Protein Diet (LPD) of 0.55–0.60 g/kg/day** to reduce glomerular hyperfiltration, slow eGFR decline, and delay dialysis onset [3].\n2. **Maintenance Dialysis (Hemodialysis & Peritoneal Dialysis):** The moment a patient initiates dialysis, the prescription flips from restriction to aggressive supplementation: **1.2–1.4 g/kg/day** [3]. Dialysis filters clear 10–15g of free amino acids per treatment, while the artificial dialyzer membrane triggers cytokine activation that drives severe protein catabolism and muscle wasting.',
-              '১. **ডায়ালাইসিসবিহীন সিকেডি স্টেজ ৩-৫ ($eGFR < ৬০\text{ mL/min}$):** ক্ষতিগ্রস্ত কিডনির নেফ্রনের ওপর রক্তচাপ কমাতে এবং বিষাক্ত বর্জ্য (ইউরিয়া, সালফেট) হ্রাস করতে ২০২০ KDOQI নির্দেশিকা অনুযায়ী **০.৫৫-০.৬০ গ্রাম/কেজি/দিন লো-প্রোটিন ডায়েট** দেওয়া হয়, যা কিডনি দীর্ঘদিন ভালো রাখতে সাহায্য করে [3]।\n২. **ডায়ালাইসিসের রোগী (হেমোডায়ালাইসিস ও পেরিটনিয়াল):** ডায়ালাইসিস শুরু হলেই নিয়ম উল্টে গিয়ে উচ্চ প্রোটিন দিতে হয়: **১.২-১.৪ গ্রাম/কেজি/দিন** [3]। প্রতিবার ডায়ালাইসিসে ১০-১৫ গ্রাম অ্যামিনো অ্যাসিড মেশিনেই নষ্ট হয়ে যায় এবং কৃত্রিম ফিল্টার রক্তে প্রদাহ তৈরি করে পেশি দ্রুত ভেঙে দেয়।'
+              'The physiological rationale governing each distinct stage includes [3]:',
+              'এই দুই বিপরীতমুখী অবস্থার পেছনের গভীর শারীরবৃত্তীয় কারণগুলো হলো [3]:',
+            ),
+          ],
+          bullets: [
+            l(
+              'Non-Dialysis CKD Stages 3–5 (eGFR < 60 mL/min): The damaged kidney contains a reduced number of surviving nephrons, which suffer from compensatory intraglomerular capillary hypertension and hyperfiltration. High protein intake increases renal blood flow and accelerates glomerular sclerosis. Furthermore, amino acid catabolism generates toxic nitrogenous uremic retention solutes (urea, indoxyl sulfate, p-cresyl sulfate). The KDOQI guidelines recommend a Low-Protein Diet (LPD) of 0.55 to 0.60 g/kg/day to shield surviving glomeruli, reduce uremic nausea, and postpone dialysis onset.',
+              'ডায়ালাইসিসবিহীন সিকেডি স্টেজ ৩-৫ (eGFR < ৬০ mL/min): কিডনির অধিকাংশ ছাঁকনি নষ্ট হওয়ায় বেঁচে থাকা নেফ্রনগুলোর ওপর অতিরিক্ত রক্তচাপ থাকে। বেশি প্রোটিন খেলে এই চাপ বাড়ে এবং বিষাক্ত বর্জ্য (ইউরিয়া, সালফেট) রক্তে জমে বমি ও বিষক্রিয়া তৈরি করে। KDOQI নির্দেশিকা অনুযায়ী ০.৫৫-০.৬০ গ্রাম/কেজি লো-প্রোটিন খাদ্য কিডনির রক্তনালী সুরক্ষা করে এবং রোগীকে দীর্ঘদিন ডায়ালাইসিস ছাড়াই বাঁচিয়ে রাখে।',
+            ),
+            l(
+              'Maintenance Hemodialysis (HD: 1.2 g/kg/day) and Peritoneal Dialysis (PD: 1.2 to 1.3 g/kg/day): The moment a patient enters dialysis, the restriction is immediately abolished. The dialysis filter is non-selective and strips 10 to 15 grams of free amino acids and peptides from the blood during every 4-hour treatment. Simultaneously, blood contact with artificial dialysis membranes triggers systemic cytokine release, while continuous glucose absorption in PD causes chronic anorexia. Providing ≥ 1.2 g/kg/day is mandatory to prevent fatal Protein-Energy Wasting (PEW).',
+              'নিয়মিত ডায়ালাইসিসের রোগী (হেমোডায়ালাইসিস: ১.২ গ্রাম/কেজি; পেরিটনিয়াল: ১.২-১.৩ গ্রাম/কেজি): ডায়ালাইসিস শুরু হলেই লো-প্রোটিন বন্ধ করে উচ্চ প্রোটিন দিতে হয়। কারণ কৃত্রিম ডায়ালাইজার ফিল্টারে প্রতি সেশনে রক্ত থেকে ১০-১৫ গ্রাম জরুরি অ্যামিনো অ্যাসিড বের হয়ে নষ্ট হয়ে যায় এবং মেশিনের কৃত্রিম সংস্পর্শ রক্তে প্রদাহ তৈরি করে পেশি দ্রুত ভেঙে দেয়। রোগীকে অপচয় ও মৃত্যু থেকে বাঁচাতে ১.২ গ্রাম/কেজির বেশি প্রোটিন দেওয়া বাধ্যতামূলক।',
+            ),
+            l(
+              'Caloric Protection Shield: To prevent patients on a Low-Protein Diet (0.55–0.60 g/kg) from breaking down their own muscle mass for fuel, clinicians must ensure robust caloric energy: 30 to 35 kcal/kg/day for adults < 60 years and 30 kcal/kg/day for adults ≥ 60 years.',
+              'ক্যালোরির সুরক্ষামূলক ঢাল: কিডনি রোগীদের লো-প্রোটিন ডায়েট দেওয়ার সময় তারা যেন নিজের পেশি ভেঙে শক্তি মেটাতে বাধ্য না হয়, সেজন্য খাবারে প্রচুর ক্যালোরি (৩০-৩৫ kcal/কেজি) নিশ্চিত করতে হবে।',
+            ),
+            l(
+              'Phosphate and Potassium Management: Restricting protein in pre-dialysis CKD has the added benefit of naturally reducing dietary organic phosphorus burden, mitigating renal osteodystrophy and vascular calcification.',
+              'ফসফেট ও পটাসিয়াম নিয়ন্ত্রণ: ডায়ালাইসিসের আগে প্রোটিন কমানোর আরেকটি বড় সুবিধা হলো খাবারে থাকা জৈব ফসফেটের বোঝা কমে যায়, যার ফলে রক্তনালীতে চুন জমা এবং হাড় ক্ষয় হওয়া প্রতিহত হয়।',
             ),
           ],
         },
@@ -244,37 +361,83 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
       sections: [
         {
           id: 'sec-leucine-threshold-mps',
-          heading: l('1. The Leucine Trigger Hypothesis and mTORC1 Signal Transduction', '১. লিউসিন ট্রিগার হাইপোথিসিস ও mTORC1 সংকেত পরিবাহন'),
+          heading: l(
+            '1. The Leucine Trigger Hypothesis and mTORC1 Signal Transduction',
+            '১. লিউসিন ট্রিগার হাইপোথিসিস ও mTORC1 সংকেত পরিবাহন'
+          ),
           paragraphs: [
             l(
-              'Muscle Protein Synthesis (MPS) is fundamentally regulated by the mechanistic Target of Rapamycin Complex 1 (mTORC1) [4]. Intracellular sensing of essential amino acids—specifically the branched-chain amino acid **L-Leucine**—activates the Sestrin2-GATOR2 pathway, recruiting mTORC1 to the lysosomal membrane via Rag GTPases.',
-              'মাংসপেশি গঠনের আণবিক প্রক্রিয়া পরিচালিত হয় mTORC1 নামের প্রোটিন কমপ্লেক্সের মাধ্যমে [4]। কোষে থাকা পুষ্টি সেন্সরগুলো মূলত ব্রাঞ্চড-চেইন অ্যামিনো অ্যাসিড **এল-লিউসিনের (L-Leucine)** উপস্থিতি শনাক্ত করে লাইসোজোমের গায়ে mTORC1 কমপ্লেক্সকে সক্রিয় করে তোলে।'
+              'Muscle Protein Synthesis (MPS) is fundamentally driven at the molecular level by the kinase complex **mTORC1** (Mechanistic Target of Rapamycin Complex 1) [4]. Inside the skeletal myofiber, specialized intracellular nutrient sensor proteins—specifically **Sestrin2** and **CASTOR1**—act as molecular gatekeepers. In the absence of essential amino acids, Sestrin2 binds to and inhibits GATOR2, keeping the Rag GTPase complex locked in an inactive state and preventing mTORC1 activation.',
+              'কঙ্কাল পেশিতে প্রোটিন তৈরির আণবিক কারখানা মূলত **mTORC1** নামের একটি প্রধান এনজাইম কমপ্লেক্স দ্বারা পরিচালিত হয় [4]। পেশি কোষের ভেতরে **সেস্ট্রিন২ (Sestrin2)** নামের একটি বিশেষ প্রোটিন খাদ্য উপাদান শনাক্তকারী প্রহরী হিসেবে কাজ করে। কোষে প্রয়োজনীয় অ্যামিনো অ্যাসিড না থাকলে সেস্ট্রিন২ অন্যান্য সংকেত আটকে রাখে, ফলে mTORC1 নিস্তেজ অবস্থায় থাকে এবং পেশি তৈরি বন্ধ থাকে।',
             ),
             l(
-              'Once activated, mTORC1 phosphorylates downstream effectors: ribosomal protein S6 kinase 1 (p70S6K) and eukaryotic initiation factor 4E-binding protein 1 (4E-BP1), initiating ribosomal translation of skeletal muscle myofibrillar actin and myosin [4].',
-              'সক্রিয় mTORC1 পরবর্তীতে p70S6K এবং 4E-BP1 কে ফসফোরাইলেশনের মাধ্যমে উদ্দীপ্ত করে রাইবোসোমে নতুন মাংসপেশির অ্যাকটিন ও মায়োসিন প্রোটিন তৈরির কাজ শুরু করায় [4]।'
+              'When the branched-chain amino acid **L-Leucine** enters the muscle cell via the LAT1 (SLC7A5) transporter, it directly binds Sestrin2 with micromolar affinity, inducing a conformational dissociation of Sestrin2 from GATOR2 [4]. This disinhibition allows GATOR2 to activate RagA/B GTPases, docking mTORC1 directly to the lysosomal membrane where Rheb-GTP activates its catalytic kinase domain.',
+              'যখন খাবার থেকে ব্রাঞ্চড-চেইন অ্যামিনো অ্যাসিড **এল-লিউসিন (L-Leucine)** পেশি কোষে প্রবেশ করে, তখন এটি সরাসরি সেস্ট্রিন২ প্রোটিনের সাথে শক্তভাবে যুক্ত হয় [4]। এর ফলে সেস্ট্রিন২ সরে যায় এবং কোষে সংকেত চালু হয়ে mTORC1 কমপ্লেক্সটি কোষের লাইসোজোমের গায়ে গিয়ে সক্রিয় রূপ ধারণ করে।',
             ),
             l(
-              'Crucially, this pathway operates as an all-or-none digital switch known as the **Leucine Trigger** [4]. In young adults, ~1.8–2.0 g of leucine per meal triggers maximal MPS. In older adults and catabolic patients with "anabolic resistance," the threshold rises to **2.5 to 3.0 g of leucine per bolus meal** [2, 4]. Consuming meals below this threshold fails to activate translation, regardless of total daily protein intake.',
-              'এই পথটি একটি "অন-অফ সুইচের" মতো কাজ করে যাকে **লিউসিন ট্রিগার** বলা হয় [4]। তরুণদের প্রতিবেলায় ১.৮-২.০ গ্রাম লিউসিন লাগলেও বয়স্ক ও অসুস্থ রোগীদের পেশি প্রতিরোধী (Anabolic resistance) হয়ে যাওয়ায় প্রতিবেলায় **২.৫ থেকে ৩.০ গ্রাম লিউসিন** অপরিহার্য [2, 4]। এই পরিমাণের কম প্রোটিন খেলে শরীরে কোনো নতুন পেশি গঠিত হয় না।'
+              'Once active, mTORC1 phosphorylates two master downstream translational effectors [4]: ribosomal protein S6 kinase 1 (p70S6K) and eukaryotic translation initiation factor 4E-binding protein 1 (4E-BP1). Phosphorylation of 4E-BP1 releases eukaryotic initiation factor 4E (eIF4E), allowing formation of the eIF4F translation pre-initiation complex and driving ribosomal translation of muscle contractile actin and myosin filaments.',
+              'সক্রিয় mTORC1 তৎক্ষণাৎ দুটি প্রধান এনজাইমকে (p70S6K এবং 4E-BP1) ফসফরিলেশনের মাধ্যমে উদ্দীপ্ত করে [4]। এর ফলে রাইবোসোমের তালা খুলে যায় এবং মাংসপেশির মূল সংকোচনশীল প্রোটিন—অ্যাকটিন ও মায়োসিন ফিলামেন্ট তৈরি শুরু হয়।',
+            ),
+          ],
+          bullets: [
+            l(
+              'The All-or-None Digital Switch: mTORC1 does not respond linearly to low amino acid levels; it behaves like a digital switch requiring an intracellular threshold of 2.5 to 3.0 grams of leucine in a single feeding bolus.',
+              'অন-অফ ডিজিটাল সুইচ: mTORC1 অল্প প্রোটিনে সাড়া দেয় না; এটি একটি অন-অফ সুইচের মতো কাজ করে যা চালু করতে প্রতিবারের খাবারে একবারে ২.৫ থেকে ৩.০ গ্রাম লিউসিনের উপস্থিতি বাধ্যতামূলক।',
+            ),
+            l(
+              'Anabolic Resistance in Sarcopenia and Illness: In older adults and catabolic ICU patients, chronic low-grade inflammation (IL-6, TNF-alpha) and intramuscular lipid accumulation blunt mTORC1 translocation, increasing the leucine threshold from 1.8g up to 3.0g per meal.',
+              'বার্ধক্য ও অসুস্থতায় অ্যানাবলিক রেজিস্ট্যান্স: বৃদ্ধ বয়সে এবং আইসিইউর রোগীদের দীর্ঘমেয়াদী মৃদু প্রদাহের কারণে mTORC1-এর সংবেদনশীলতা কমে যায়, ফলে তাদের পেশি তৈরির সুইচ অন করতে তরুণদের চেয়ে অনেক বেশি (৩.০ গ্রাম) লিউসিন প্রয়োজন হয়।',
+            ),
+            l(
+              'The "Muscle Full" Satiation Effect: Once MPS is activated, it remains elevated for ~90 to 120 minutes before returning to baseline despite persistent circulating aminoacidemia. Infusing continuous protein blunts responsiveness; pulsed bolus feeding is biologically superior.',
+              'পেশির পূর্ণতার প্রভাব: একবার পেশি তৈরির সুইচ চালু হলে তা প্রায় দেড় থেকে দুই ঘণ্টা সক্রিয় থেকে স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যায়। ক্রমাগত সারাদিন ড্রিপ করে প্রোটিন খাওয়ালে পেশির সাড়া দেওয়ার ক্ষমতা নষ্ট হয়; তাই প্রতি ৩-৫ ঘণ্টা পর পর খাবারের মাধ্যমে প্রোটিন দেওয়া শারীরবৃত্তীয়ভাবে সেরা।',
+            ),
+            l(
+              'Clinical Leucine Supplementation: In frail geriatric patients who cannot consume large meals, supplementing meals with 2 to 3 grams of free crystalline L-leucine powder successfully restores youthful muscle protein synthesis rates.',
+              'ক্লিনিক্যাল লিউসিন প্রয়োগ: দুর্বল বয়স্ক রোগীরা যারা একবারে বেশি খাবার খেতে পারেন না, তাদের সাধারণ খাবারের সাথে ২-৩ গ্রাম বিশুদ্ধ লিউসিন পাউডার যোগ করে দিলে তাদের পেশি গঠনের হার তরুণদের মতো উন্নত করা সম্ভব।',
             ),
           ],
         },
         {
           id: 'sec-icu-trauma-titration',
-          heading: l('2. Hypercatabolic Titration in Critical Trauma, Sepsis and Severe Burns', '২. ট্রমা, সেপসিস ও পোড়া রোগীদের ক্ষেত্রে ক্যাটাবলিক প্রোটিন টাইট্রেশন'),
+          heading: l(
+            '2. Hypercatabolic Titration in Critical Trauma, Sepsis and Severe Burns',
+            '২. ট্রমা, সেপসিস ও পোড়া রোগীদের ক্ষেত্রে ক্যাটাবলিক প্রোটিন টাইট্রেশন'
+          ),
           paragraphs: [
             l(
-              'In severe metabolic stress—such as polytrauma, septic shock, and thermal burns covering $>20\\%$ Total Body Surface Area (TBSA)—the hypothalamic-pituitary-adrenal axis unleashes massive spikes of cortisol, glucagon, epinephrine, and cytokines [1, 5]. This induces profound activation of the **ATP-ubiquitin-proteasome proteolytic cascade** in skeletal muscle, exporting amino acids (glutamine, alanine) to the liver for gluconeogenesis and acute-phase protein synthesis.',
-              'মারাত্মক ট্রমা, সেপসিস বা ২০%-এর বেশি পুড়ে যাওয়া রোগীদের ক্ষেত্রে কর্টিসোল, এপিনেফ্রিন ও সাইটোকাইন হরমোনের বন্যা বয়ে যায় [1, 5]। এটি পেশির ভেতরে প্রোটিন ভাঙার যন্ত্রপাতি (ATP-ubiquitin-proteasome) পুরোদমে চালু করে দেয়, যার ফলে পেশি ভেঙে গ্লুকোজ ও প্রতিরক্ষা প্রোটিন তৈরিতে ব্যবহৃত হতে থাকে।'
+              'In severe metabolic stress—such as polytrauma, septic shock, and thermal burns covering > 20% Total Body Surface Area (TBSA)—the neuroendocrine system mounts an overwhelming systemic defense [1, 5]. The hypothalamic-pituitary-adrenal axis floods the circulation with counter-regulatory hormones: cortisol, glucagon, and epinephrine, while macrophages produce an ongoing storm of IL-1, IL-6, and TNF-alpha.',
+              'মারাত্মক শারীরিক আঘাত বা পলিট্রমা, সেপটিক শক এবং শরীরের ২০%-এর বেশি পুড়ে যাওয়ার মতো সংকটাপন্ন অবস্থায় মানবদেহ এক বিধ্বংসী বিপাকীয় সংকটে পড়ে [1, 5]। মস্তিষ্কের নির্দেশে রক্তে কর্টিসোল, গ্লুকাগন এবং অ্যাড্রেনালিন হরমোনের তীব্র বন্যা বয়ে যায় এবং সাথে যুক্ত হয় সাইটোকাইনের তীব্র ঝড়।',
             ),
             l(
-              'Patients can lose over $20\\text{ g of nitrogen/day}$ (equivalent to $>600\\text{ g of wet muscle tissue/day}$) [1]. To blunt this catastrophic wasting, ASPEN guidelines mandate high-protein delivery [5]:',
-              'এই সংকটাপন্ন রোগীরা প্রতিদিন ২০ গ্রামের বেশি নাইট্রোজেন হারাতে পারে (যা দিনে ৬০০ গ্রামের বেশি পেশি ধ্বংসের সমান) [1]। এই মারাত্মক অপচয় রোধ করতে আন্তর্জাতিক নির্দেশিকা উচ্চমাত্রার প্রোটিন প্রেসক্রিপশন নির্ধারণ করে [5]:'
+              'This catabolic hormone profile relentlessly drives the **ATP-ubiquitin-proteasome system** in skeletal muscle fibers [1]. Intracellular contractile proteins (myosin heavy chains) are tagged with ubiquitin polymers and degraded inside the 26S proteasome chamber. Skeletal muscle is dismantled at an alarming velocity to export free glutamine and alanine to the liver for gluconeogenesis and acute-phase protein synthesis.',
+              'এই ক্যাটাবলিক হরমোনগুলো পেশি কোষের ভেতরের প্রোটিন ধ্বংসকারী যন্ত্রপাতি **ইউবিকুইটিন-প্রোটিওসোম সিস্টেমকে** প্রচণ্ড গতিতে সক্রিয় করে তোলে [1]। পেশির জীবন্ত অ্যাকটিন ও মায়োসিন ফিলামেন্টগুলো ভেঙে ভেঙে লিভারে পাঠিয়ে দেওয়া হয় যাতে লিভার নতুন গ্লুকোজ ও জরুরি প্রতিরক্ষা প্রোটিন তৈরি করতে পারে।',
             ),
             l(
-              '$$\\begin{aligned} &\\textbf{Major Surgery / Sepsis / Polytrauma:} \\quad 1.5\\text{--}2.0\\text{ g protein/kg actual weight/day} \\\\ &\\textbf{Severe Thermal Burns (>30% TBSA):} \\quad 2.0\\text{--}2.5\\text{ g protein/kg actual weight/day} \\\\ &\\textbf{Obese ICU Patients (BMI 30--39.9):} \\quad \\ge 2.0\\text{ g protein/kg IBW/day} \\\\ &\\textbf{Obese ICU Patients (BMI } \\ge 40\\text{):} \\quad \\ge 2.5\\text{ g protein/kg IBW/day} \\end{aligned}$$',
-              '$$\\begin{aligned} &\\textbf{বড় অস্ত্রোপচার / সেপসিস / ট্রমা:} \\quad ১.৫\\text{--}২.০\\text{ গ্রাম প্রোটিন/কেজি প্রকৃত ওজন/দিন} \\\\ &\\textbf{তীব্র পোড়া রোগী (>৩০% TBSA):} \\quad ২.০\\text{--}২.৫\\text{ গ্রাম প্রোটিন/কেজি প্রকৃত ওজন/দিন} \\\\ &\\textbf{স্থূল আইসিইউ রোগী (বিএমআই ৩০--৩৯.৯):} \\quad \\ge ২.০\\text{ গ্রাম প্রোটিন/কেজি IBW/দিন} \\\\ &\\textbf{চরম স্থূল আইসিইউ রোগী (বিএমআই } \\ge ৪০\\text{):} \\quad \\ge ২.৫\\text{ গ্রাম প্রোটিন/কেজি IBW/দিন} \\end{aligned}$$'
+              'Without aggressive nutritional intervention, critically ill patients can lose over 20 grams of nitrogen per day—equivalent to shedding more than 600 grams of living skeletal muscle mass every single day [1, 5]. To counteract this massive somatic erosion, international ASPEN and ESPEN critical care guidelines recommend escalating protein delivery based on stress severity [5]:',
+              'যদি সঠিক পুষ্টির মাধ্যমে দ্রুত চিকিৎসা না দেওয়া হয়, তবে একজন সংকটাপন্ন রোগী প্রতিদিন ২০ গ্রামের বেশি নাইট্রোজেন হারাতে পারে—যার অর্থ হলো তার শরীর থেকে প্রতিদিন ৬০০ গ্রামের বেশি জীবন্ত মাংসপেশি শুকিয়ে নিশ্চিহ্ন হয়ে যাচ্ছে [1, 5]। এই ভয়াবহ ক্ষয় রোধ করতে আন্তর্জাতিক নির্দেশিকা রোগের তীব্রতার ওপর ভিত্তি করে প্রোটিন বাড়ানোর নিয়ম নির্ধারণ করেছে [5]:',
+            ),
+            l(
+              'Major Elective Surgery, Trauma & Sepsis:\n1.5 to 2.0 g protein/kg actual weight/day\n\nSevere Thermal Burns (> 30% TBSA):\n2.0 to 2.5 g protein/kg actual weight/day\n\nObese ICU Patients (BMI 30 to 39.9, Class I and II):\n≥ 2.0 g protein/kg Ideal Body Weight/day\n\nObese ICU Patients (BMI ≥ 40, Class III severe):\n≥ 2.5 g protein/kg Ideal Body Weight/day',
+              'বড় অস্ত্রোপচার, পলিট্রমা ও সেপসিস:\nপ্রকৃত ওজনের প্রতি কেজিতে ১.৫ থেকে ২.০ গ্রাম প্রোটিন/দিন\n\nতীব্র পোড়া রোগী (শরীরের ৩০% এর বেশি পোড়া):\nপ্রকৃত ওজনের প্রতি কেজিতে ২.০ থেকে ২.৫ গ্রাম প্রোটিন/দিন\n\nস্থূল আইসিইউ রোগী (বিএমআই ৩০ থেকে ৩৯.৯):\nআদর্শ ওজনের (IBW) প্রতি কেজিতে ≥ ২.০ গ্রাম প্রোটিন/দিন\n\nচরম স্থূল আইসিইউ রোগী (বিএমআই ≥ ৪০):\nআদর্শ ওজনের (IBW) প্রতি কেজিতে ≥ ২.৫ গ্রাম প্রোটিন/দিন',
+            ),
+          ],
+          bullets: [
+            l(
+              'Protein as a Survival Factor in the ICU: Prospective randomized trials demonstrate that meeting ≥ 80% of protein targets (≥ 1.2–1.5 g/kg) within the first 48 to 72 hours of ICU admission is significantly associated with reduced 28-day mortality and shorter duration of mechanical ventilation.',
+              'আইসিইউতে জীবন বাঁচানোর হাতিয়ার: গবেষণায় অকাট্যভাবে প্রমাণিত হয়েছে যে আইসিইউতে ভর্তির প্রথম ৪৮-৭২ ঘণ্টার মধ্যে অন্তত ৮০% প্রোটিনের লক্ষ্য (≥ ১.২-১.৫ গ্রাম/কেজি) পূরণ করলে রোগীর মৃত্যুর ঝুঁকি উল্লেখযোগ্যভাবে হ্রাস পায় এবং রোগী দ্রুত ভেন্টিলেটর থেকে সুস্থ হয়ে ওঠে।',
+            ),
+            l(
+              'Preventing Sepsis Autophagy vs Supporting Healing: While total calories must be carefully controlled to prevent hypercaloric overfeeding, high protein intake provides the critical amino acid building blocks required for immune cell proliferation, wound collagen cross-linking, and respiratory diaphragm integrity.',
+              'ওভারফিডিং এড়িয়ে ক্ষত নিরাময়: ক্যালোরি যেন বেশি না হয় তা খেয়াল রাখার পাশাপাশি উচ্চ প্রোটিন নিশ্চিত করতে হবে, কারণ এই অ্যামিনো অ্যাসিডগুলোই শরীরের রোগ প্রতিরোধ কোষ গঠন, ক্ষত সারাতে কোলাজেন তৈরি এবং শ্বাসপ্রশ্বাসের ডায়াফ্রাম পেশি সচল রাখতে কাঁচামাল জোগায়।',
+            ),
+            l(
+              'Monitoring Renal Solute Load: When infusing > 2.0 g/kg protein, clinicians must monitor serum BUN, creatinine, and urine output; rising BUN with an intact BUN/Cr ratio indicates elevated amino acid deamination and requires careful hydration management.',
+              'কিডনির বর্জ্যের ভার পর্যবেক্ষণ: দিনে ২.০ গ্রাম/কেজির বেশি প্রোটিন দেওয়ার সময় রক্তে BUN, ক্রিয়েটিনিন ও প্রস্রাবের পরিমাণ লক্ষ্য রাখতে হবে এবং ইউরিয়া নির্গমন সুষ্ঠু রাখতে রোগীকে পর্যাপ্ত তরল সরবরাহ করতে হবে।',
+            ),
+            l(
+              'Glutamine and Arginine Precautions in Septic Shock: While immune-modulating amino acids (arginine) benefit elective surgical wounds, free arginine is strictly contraindicated in active septic shock due to excessive nitric oxide synthase stimulation and refractory vasoplegic shock.',
+              'সেপটিক শকে সতর্কতা: অস্ত্রোপচারের ক্ষত সারাতে আর্জিনিন কার্যকর হলেও তীব্র সেপটিক শকে আর্জিনিন দেওয়া নিষিদ্ধ, কারণ এটি অতিরিক্ত নাইট্রিক অক্সাইড তৈরি করে রক্তচাপ বিপজ্জনক মাত্রায় নামিয়ে দিতে পারে।',
             ),
           ],
         },
@@ -283,38 +446,48 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
   },
   chapter: {
     toc: [
-      { id: 'toc-1', label: l('1. Nitrogen Balance Equation & Clinical Kinetics', '১. নাইট্রোজেন ভারসাম্য সমীকরণ ও গতিবিদ্যা'), sectionId: 'sec-nitrogen-balance-kinetics' },
-      { id: 'toc-2', label: l('2. Renal Dichotomy: Non-Dialysis vs Dialysis', '২. কিডনির দ্বিমুখী নীতি: ডায়ালাইসিস ছাড়া বনাম ডায়ালাইসিস'), sectionId: 'sec-ckd-dialysis-dichotomy' },
-      { id: 'toc-3', label: l('3. Leucine Trigger Hypothesis & mTORC1', '৩. লিউসিন ট্রিগার ও mTORC1 সংকেত পথ'), sectionId: 'sec-leucine-threshold-mps' },
-      { id: 'toc-4', label: l('4. Hypercatabolic Titration in Burns & Trauma', '৪. ট্রমা ও পোড়া রোগীর প্রোটিন টাইট্রেশন'), sectionId: 'sec-icu-trauma-titration' },
+      { id: 'toc-1', label: l('1. Why Protein Is the Master Building Block', '১. প্রোটিন কেন শরীরের মূল ভিত্তি'), sectionId: 'sec-protein-roles' },
+      { id: 'toc-2', label: l('2. How Much Protein Do Different People Need?', '২. কার কতটুকু প্রোটিন প্রয়োজন?'), sectionId: 'sec-different-protein-needs' },
+      { id: 'toc-3', label: l('3. The Mealtime Leucine Trigger', '৩. খাবারের লিউসিন ট্রিগার'), sectionId: 'sec-leucine-intro' },
+      { id: 'toc-4', label: l('4. Nitrogen Balance Equation & Clinical Kinetics', '৪. নাইট্রোজেন ভারসাম্য সমীকরণ ও গতিবিদ্যা'), sectionId: 'sec-nitrogen-balance-kinetics' },
+      { id: 'toc-5', label: l('5. Renal Dichotomy: Non-Dialysis vs Dialysis', '৫. কিডনির দ্বিমুখী নীতি: ডায়ালাইসিস ছাড়া বনাম ডায়ালাইসিস'), sectionId: 'sec-ckd-dialysis-dichotomy' },
+      { id: 'toc-6', label: l('6. Leucine Trigger Hypothesis & mTORC1', '৬. লিউসিন ট্রিগার ও mTORC1 সংকেত পথ'), sectionId: 'sec-leucine-threshold-mps' },
+      { id: 'toc-7', label: l('7. Hypercatabolic Titration in Burns & Trauma', '৭. ট্রমা ও পোড়া রোগীর প্রোটিন টাইট্রেশন'), sectionId: 'sec-icu-trauma-titration' },
     ],
     terms: [
       {
         term: l('Nitrogen Balance', 'নাইট্রোজেন ভারসাম্য (Nitrogen Balance)'),
         definition: l(
-          'The quantitative mathematical difference between dietary nitrogen intake and total biological nitrogen excretion: (Protein / 6.25) - (UUN + 4).',
-          'খাদ্যে গৃহীত নাইট্রোজেন এবং শরীর থেকে নির্গত নাইট্রোজেনের গাণিতিক পার্থক্য: (প্রোটিন / ৬.২৫) - (UUN + ৪)।'
+          'The quantitative mathematical difference between dietary nitrogen intake and total biological nitrogen excretion: (Daily Protein / 6.25) - (24-hr UUN + 4.0 g).',
+          'খাদ্যে গৃহীত নাইট্রোজেন এবং শরীর থেকে নির্গত নাইট্রোজেনের গাণিতিক পার্থক্য: (দৈনিক প্রোটিন / ৬.২৫) - (২৪ ঘণ্টার UUN + ৪.০ গ্রাম)।',
         ),
       },
       {
         term: l('Urinary Urea Nitrogen (UUN)', 'ইউরিনারি ইউরিয়া নাইট্রোজেন (UUN)'),
         definition: l(
-          'The mass of urea nitrogen excreted in a 24-hour urine collection, reflecting the catabolic rate of systemic protein breakdown.',
-          '২৪ ঘণ্টার প্রস্রাবে নির্গত ইউরিয়ার নাইট্রোজেনের মোট পরিমাণ, যা শরীরে প্রোটিন ভাঙার গতি নির্দেশ করে।'
+          'The mass of urea nitrogen excreted in a timed 24-hour urine collection, reflecting the catabolic rate of systemic protein breakdown.',
+          '২৪ ঘণ্টার প্রস্রাবে নির্গত ইউরিয়ার নাইট্রোজেনের মোট পরিমাণ, যা শরীরে প্রোটিন ভাঙার গতি নির্দেশ করে।',
         ),
       },
       {
         term: l('Leucine Trigger', 'লিউসিন ট্রিগার (Leucine Trigger)'),
         definition: l(
           'The minimum intracellular concentration of leucine (~2.5–3.0 g/meal) required to activate mTORC1 and initiate muscle protein synthesis.',
-          'প্রতিবেলার খাবারে লিউসিনের ন্যূনতম মাত্রা (~২.৫-৩.০ গ্রাম), যা কোষে mTORC1 সক্রিয় করে পেশি তৈরির সংকেত দেয়।'
+          'প্রতিবেলার খাবারে লিউসিনের ন্যূনতম মাত্রা (~২.৫-৩.০ গ্রাম), যা কোষে mTORC1 সক্রিয় করে পেশি তৈরির সংকেত দেয়।',
         ),
       },
       {
         term: l('mTORC1', 'এমটরসি১ (mTORC1)'),
         definition: l(
-          'Mechanistic Target of Rapamycin Complex 1; the master cellular serine/threonine protein kinase orchestrating cell growth and protein translation.',
-          'কোষের প্রধান নিয়ন্ত্রক এনজাইম কমপ্লেক্স, যা পুষ্টি ও অ্যামিনো অ্যাসিডের সংকেত পেয়ে পেশি প্রোটিন সংশ্লেষণ পরিচালনা করে।'
+          'Mechanistic Target of Rapamycin Complex 1; the master cellular serine/threonine protein kinase orchestrating cell growth, translation, and muscle protein synthesis.',
+          'কোষের প্রধান নিয়ন্ত্রক এনজাইম কমপ্লেক্স, যা পুষ্টি ও অ্যামিনো অ্যাসিডের সংকেত পেয়ে পেশি প্রোটিন সংশ্লেষণ পরিচালনা করে।',
+        ),
+      },
+      {
+        term: l('Anabolic Resistance', 'অ্যানাবলিক রেজিস্ট্যান্স (Anabolic Resistance)'),
+        definition: l(
+          'The blunted muscle protein synthesis response to dietary protein and hyperinsulinemia seen in aging, physical immobilization, and chronic systemic inflammation.',
+          'বার্ধক্য, শারীরিক অক্ষমতা ও দীর্ঘমেয়াদী প্রদাহের কারণে খাবারের প্রোটিনের প্রতি পেশি কোষের সংবেদনশীলতা কমে যাওয়ার শারীরবৃত্তীয় অবস্থা।',
         ),
       },
     ],
@@ -326,29 +499,29 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
         ),
         steps: [
           l(
-            'Step 1: Patient Profile & Current Nutrition. A 62-year-old male post-motor vehicle collision with multiple pelvic fractures is intubated in the ICU. Weight = 75 kg. He is receiving a standard 1.0 kcal/mL enteral formula delivering 1,800 kcal and 60 g protein/day ($0.8\\text{ g/kg}$).',
-            'ধাপ ১: রোগীর তথ্য ও বর্তমান খাদ্য: সড়ক দুর্ঘটনায় মারাত্মক আহত ৬২ বছর বয়সী ভেন্টিলেটরের পুরুষ রোগী (ওজন ৭৫ কেজি)। তিনি সাধারণ টিউব ফিডিংয়ে দিনে ১৮০০ ক্যালোরি ও ৬০ গ্রাম প্রোটিন ($০.৮\text{ গ্রাম/কেজি}$) পাচ্ছেন।'
+            'Step 1: Patient Profile & Current Nutrition. A 62-year-old male post-motor vehicle collision with multiple unstable pelvic fractures and diffuse soft-tissue crush injury is intubated in the ICU. Weight = 75 kg. He is receiving a standard 1.0 kcal/mL enteral tube feeding formula delivering 1,800 kcal and 60 g protein/day (0.8 g/kg).',
+            'ধাপ ১: রোগীর তথ্য ও বর্তমান খাদ্য: সড়ক দুর্ঘটনায় মারাত্মক আহত ও পেলভিক ফ্র্যাকচারে আক্রান্ত ৬২ বছর বয়সী ভেন্টিলেটরের পুরুষ রোগী (ওজন ৭৫ কেজি)। তিনি সাধারণ টিউব ফিডিংয়ে দিনে ১৮০০ ক্যালোরি ও ৬০ গ্রাম প্রোটিন (০.৮ গ্রাম/কেজি) পাচ্ছেন।',
           ),
           l(
-            'Step 2: Measure 24-Hour Urinary Urea Nitrogen (UUN). A 24-hour urine collection reveals an excreted UUN of 18.5 g.',
-            'ধাপ ২: ২৪ ঘণ্টার প্রস্রাবের নাইট্রোজেন পরীক্ষা: ল্যাবে ২৪ ঘণ্টার প্রস্রাবের UUN পাওয়া গেল ১৮.৫ গ্রাম।'
+            'Step 2: Measure 24-Hour Urinary Urea Nitrogen (UUN). A timed 24-hour urine collection reveals an excreted UUN of 18.5 g.',
+            'ধাপ ২: ২৪ ঘণ্টার প্রস্রাবের নাইট্রোজেন পরীক্ষা: ল্যাবে ২৪ ঘণ্টার প্রস্রাবের UUN পাওয়া গেল ১৮.৫ গ্রাম।',
           ),
           l(
-            'Step 3: Calculate Current Nitrogen Balance. $\\text{Nitrogen Intake} = 60 / 6.25 = 9.6\\text{ g N/day}$. $\\text{Nitrogen Output} = 18.5 + 4.0 = 22.5\\text{ g N/day}$. $\\text{Nitrogen Balance} = 9.6 - 22.5 = -12.9\\text{ g N/day}$.',
-            'ধাপ ৩: বর্তমান নাইট্রোজেন ব্যালেন্স হিসাব: গৃহীত নাইট্রোজেন = ৬০ / ৬.২৫ = ৯.৬ গ্রাম। নির্গত নাইট্রোজেন = ১৮.৫ + ৪.০ = ২২.৫ গ্রাম। ব্যালেন্স = ৯.৬ - ২২.৫ = -১২.৯ গ্রাম/দিন।'
+            'Step 3: Calculate Current Nitrogen Balance. Nitrogen Intake = 60 / 6.25 = 9.6 g N/day. Nitrogen Output = 18.5 + 4.0 = 22.5 g N/day. Nitrogen Balance = 9.6 - 22.5 = -12.9 g N/day. The patient is in profound negative nitrogen balance.',
+            'ধাপ ৩: বর্তমান নাইট্রোজেন ব্যালেন্স হিসাব: গৃহীত নাইট্রোজেন = ৬০ / ৬.২৫ = ৯.৬ গ্রাম। নির্গত নাইট্রোজেন = ১৮.৫ + ৪.০ = ২২.৫ গ্রাম। ব্যালেন্স = ৯.৬ - ২২.৫ = -১২.৯ গ্রাম/দিন। রোগী তীব্র নেগেটিভ নাইট্রোজেন ভারসাম্যে আছেন।',
           ),
           l(
-            'Step 4: Quantify Muscle Loss. Losing $12.9\\text{ g of nitrogen/day}$ means losing: $12.9 \\times 6.25 = 80.6\\text{ g of dry protein/day}$. Because wet muscle is ~20% protein and 80% water, this equates to losing: $80.6 \\times 5 = 403\\text{ g of skeletal muscle tissue}$ (nearly 1 pound of muscle) every single day!',
-            'ধাপ ৪: পেশি ক্ষয়ের পরিমাণ হিসাব: দিনে ১২.৯ গ্রাম নাইট্রোজেন হারানোর অর্থ হলো দিনে ৮০.৬ গ্রাম বিশুদ্ধ প্রোটিন ধ্বংস হওয়া। যেহেতু জীবন্ত মাংসপেশিতে ৮০% পানি থাকে, তাই রোগী দিনে ৮০.৬ x ৫ = ৪০৩ গ্রাম জীবন্ত মাংসপেশি হারাচ্ছেন (প্রতিদিন প্রায় আধা কেজি পেশি ধ্বংস)!'
+            'Step 4: Quantify Living Muscle Loss. Losing 12.9 g of nitrogen/day means losing: 12.9 × 6.25 = 80.6 g of pure dry protein/day. Because skeletal muscle is approximately 20% protein and 80% water, this equates to losing: 80.6 × 5 = 403 g of living skeletal muscle tissue (nearly 1 full pound of muscle) every single day!',
+            'ধাপ ৪: পেশি ক্ষয়ের পরিমাণ হিসাব: দিনে ১২.৯ গ্রাম নাইট্রোজেন হারানোর অর্থ হলো দিনে ৮০.৬ গ্রাম বিশুদ্ধ প্রোটিন ধ্বংস হওয়া। যেহেতু জীবন্ত মাংসপেশিতে ৮০% পানি থাকে, তাই রোগী দিনে ৮০.৬ × ৫ = ৪০৩ গ্রাম জীবন্ত মাংসপেশি হারাচ্ছেন (প্রতিদিন প্রায় আধা কেজি পেশি শুকিয়ে যাচ্ছে)!',
           ),
           l(
-            'Step 5: Formulate the Titrated Prescription. Target a positive nitrogen balance of $+2.0\\text{ g N/day}$ for pelvic bone healing. Target Nitrogen Intake = $22.5 + 2.0 = 24.5\\text{ g N/day}$. Target Protein Intake = $24.5 \\times 6.25 = 153.1\\text{ g protein/day} \\approx 150\\text{ g/day}$ ($2.0\\text{ g/kg}$). The dietitian switches to a high-protein ICU formula providing 150g protein/day.',
-            'ধাপ ৫: সঠিক প্রোটিন প্রেসক্রিপশন: হাড় ও ক্ষত সারাতে কাঙ্ক্ষিত লক্ষ্য $+২.০\\text{ গ্রাম N/দিন}$। প্রয়োজনীয় নাইট্রোজেন = ২২.৫ + ২.০ = ২৪.৫ গ্রাম। প্রয়োজনীয় প্রোটিন = ২৪.৫ x ৬.২৫ = ১৫৩ গ্রাম প্রোটিন/দিন ($\\approx ২.০\\text{ গ্রাম/কেজি}$)। পুষ্টি দল অবিলম্বে উচ্চ-প্রোটিন ফর্মুলায় উন্নীত করে দিনে ১৫০ গ্রাম প্রোটিন সরবরাহ নিশ্চিত করে।'
+            'Step 5: Formulate the Titrated Protein Prescription. Target an anabolic positive nitrogen balance of +2.0 g N/day to support pelvic bone remodeling and wound closure. Target Nitrogen Intake = 22.5 + 2.0 = 24.5 g N/day. Target Protein Intake = 24.5 × 6.25 = 153.1 g protein/day ≈ 150 g/day (2.0 g/kg actual weight). The clinical dietitian switches the patient to a specialized high-protein ICU formula delivering 1,800 kcal and 150 g protein/day.',
+            'ধাপ ৫: সঠিক প্রোটিন প্রেসক্রিপশন: হাড় ও ক্ষত সারাতে কাঙ্ক্ষিত লক্ষ্য +২.০ গ্রাম N/দিন। প্রয়োজনীয় নাইট্রোজেন = ২২.৫ + ২.০ = ২৪.৫ গ্রাম। প্রয়োজনীয় প্রোটিন = ২৪.৫ × ৬.২৫ = ১৫৩ গ্রাম প্রোটিন/দিন (২.০ গ্রাম/কেজি)। পুষ্টি দল অবিলম্বে উচ্চ-প্রোটিন ফর্মুলায় উন্নীত করে দিনে ১৫০ গ্রাম প্রোটিন সরবরাহ নিশ্চিত করে।',
           ),
         ],
         conclusion: l(
-          'Quantifying nitrogen balance revealed that standard feeding was allowing massive daily skeletal muscle destruction. Titrating protein to 2.0 g/kg (150 g/day) halted proteolysis and enabled successful wound healing and extubation.',
-          'নাইট্রোজেন ব্যালেন্স পরীক্ষার মাধ্যমে প্রমাণিত হয় যে সাধারণ খাবারে রোগীর দিনে ৪০০ গ্রাম করে মাংসপেশি ধ্বংস হচ্ছিল। প্রোটিন বাড়িয়ে ১৫০ গ্রাম (২.০ গ্রাম/কেজি) করায় পেশি ক্ষয় বন্ধ হয় এবং রোগী দ্রুত সুস্থ হয়ে ভেন্টিলেটর মুক্ত হন।'
+          'Quantifying nitrogen balance revealed that standard hospital feeding was allowing massive daily skeletal muscle destruction (403 g/day). Titrating protein to 2.0 g/kg (150 g/day) halted proteolysis, restored anabolism, and enabled successful wound healing and extubation.',
+          'নাইট্রোজেন ব্যালেন্স পরীক্ষার মাধ্যমে প্রমাণিত হয় যে সাধারণ খাবারে রোগীর দিনে ৪০০ গ্রাম করে মাংসপেশি ধ্বংস হচ্ছিল। প্রোটিন বাড়িয়ে ১৫০ গ্রাম (২.০ গ্রাম/কেজি) করায় পেশি ক্ষয় বন্ধ হয় এবং রোগী দ্রুত সুস্থ হয়ে ভেন্টিলেটর মুক্ত হন।',
         ),
       },
     ],
@@ -359,8 +532,8 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
           'মাংসপেশি তৈরির সংকেত জাগাতে তরুণদের চেয়ে বয়স্কদের প্রতিবেলার খাবারে কেন বেশি লিউসিন (২.৫-৩.০ গ্রাম) প্রয়োজন হয়?'
         ),
         answer: l(
-          'Aging is characterized by "anabolic resistance," where skeletal muscle tissue exhibits diminished sensitivity to amino acid stimulation and hyperinsulinemia. Downstream signaling kinases (mTORC1, p70S6K) require a higher intracellular concentration of leucine to surpass the activation threshold and initiate myofibrillar protein translation in senescent muscle fibers.',
-          'বয়স বাড়ার সাথে সাথে পেশি কোষগুলোতে "অ্যানাবলিক রেজিস্ট্যান্স" তৈরি হয়, যার ফলে অ্যামিনো অ্যাসিডের প্রতি পেশির সংবেদনশীলতা কমে যায়। তাই বয়স্ক পেশি কোষে প্রোটিন তৈরির প্রধান সুইচ mTORC1 সক্রিয় করতে তরুণদের চেয়ে অনেক বেশি ঘনত্বের লিউসিন (প্রতিবেলায় ২.৫-৩.০ গ্রাম) প্রয়োজন হয়।'
+          'Aging is characterized by "anabolic resistance," where senescent skeletal muscle tissue exhibits blunted sensitivity to hyperaminoacidemia and insulin. Downstream signaling kinases (mTORC1, p70S6K) require a higher intracellular concentration of leucine to achieve Sestrin2-GATOR2 dissociation, surpass the activation threshold, and initiate myofibrillar protein translation in aging muscle fibers.',
+          'বয়স বাড়ার সাথে সাথে পেশি কোষগুলোতে "অ্যানাবলিক রেজিস্ট্যান্স" তৈরি হয়, যার ফলে অ্যামিনো অ্যাসিডের প্রতি পেশির সংবেদনশীলতা কমে যায়। তাই বয়স্ক পেশি কোষে প্রোটিন তৈরির প্রধান সুইচ mTORC1 সক্রিয় করতে তরুণদের চেয়ে অনেক বেশি ঘনত্বের লিউসিন (প্রতিবেলায় ২.৫-৩.০ গ্রাম) প্রয়োজন হয়।',
         ),
       },
       {
@@ -369,11 +542,10 @@ export const dietetics07ProteinRequirementsLesson: LessonTopic = {
           'ডায়ালাইসিস ছাড়া স্টেজ ৪ সিকেডিতে কেন প্রোটিন কমানো হয়, অথচ হেমোডায়ালাইসিস শুরু করার সাথে সাথেই কেন প্রচুর প্রোটিন দেওয়া হয়?'
         ),
         answer: l(
-          'In non-dialysis CKD, restricting protein (0.55–0.60 g/kg) reduces intraglomerular hypertension and slows the accumulation of toxic nitrogenous uremic waste products in diseased kidneys. However, once dialysis begins, the artificial filter clears 10–15g of amino acids per run, and blood contact with dialyzer tubing triggers massive inflammatory cytokines that accelerate proteolysis. High protein (1.2–1.4 g/kg) is required to prevent fatal Protein-Energy Wasting (PEW).',
-          'ডায়ালাইসিসের আগে প্রোটিন কমালে কিডনির রক্তনালীর চাপ কমে এবং ইউরিয়া কম জমে কিডনির আয়ু বাড়ে। কিন্তু একবার ডায়ালাইসিস শুরু হলে ডায়ালাইসিস মেশিনের ফিল্টারে প্রতিবার ১০-১৫ গ্রাম জরুরি অ্যামিনো অ্যাসিড রক্ত থেকে বের হয়ে নষ্ট হয়ে যায় এবং মেশিনের কৃত্রিম নল রক্তে প্রদাহ সৃষ্টি করে পেশি দ্রুত ভেঙে দেয়। তাই ডায়ালাইসিসের রোগীকে অপুষ্টি ও মৃত্যু থেকে বাঁচাতে উচ্চমাত্রার প্রোটিন (১.২-১.৪ গ্রাম/কেজি) দেওয়া বাধ্যতামূলক।'
+          'In non-dialysis CKD, restricting protein (0.55–0.60 g/kg) reduces intraglomerular capillary hypertension and slows the accumulation of toxic nitrogenous uremic waste products in diseased kidneys. However, once dialysis begins, the artificial filter clears 10 to 15 grams of amino acids per treatment session, and blood contact with dialyzer tubing triggers massive inflammatory cytokines that accelerate proteolysis. High protein (1.2–1.4 g/kg) is required to prevent fatal Protein-Energy Wasting (PEW).',
+          'ডায়ালাইসিসের আগে প্রোটিন কমালে কিডনির রক্তনালীর চাপ কমে এবং ইউরিয়া কম জমে কিডনির আয়ু বাড়ে। কিন্তু একবার ডায়ালাইসিস শুরু হলে ডায়ালাইসিস মেশিনের ফিল্টারে প্রতিবার ১০-১৫ গ্রাম জরুরি অ্যামিনো অ্যাসিড রক্ত থেকে বের হয়ে নষ্ট হয়ে যায় এবং মেশিনের কৃত্রিম নল রক্তে প্রদাহ সৃষ্টি করে পেশি দ্রুত ভেঙে দেয়। তাই ডায়ালাইসিসের রোগীকে অপুষ্টি ও মৃত্যু থেকে বাঁচাতে উচ্চমাত্রার প্রোটিন (১.২-১.৪ গ্রাম/কেজি) দেওয়া বাধ্যতামূলক।',
         ),
       },
     ],
   },
 }
-
