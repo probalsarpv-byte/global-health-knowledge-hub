@@ -9,6 +9,7 @@ import {
   FlaskConical,
   HeartPulse,
   Info,
+  Layers3,
   Leaf,
   ShieldCheck,
   Utensils,
@@ -24,28 +25,42 @@ export function PublicHome() {
 
   const destinations = [
     {
+      title: isBn ? 'ডায়েটেটিক্স অ্যাকাডেমি' : 'Dietetics Academy',
+      desc: isBn
+        ? 'ক্লিনিক্যাল অ্যাসেসমেন্ট, ই-এনসিপিটি পিইএস (PES) রোগনির্ণয়, শক্তি ও প্রোটিন প্রেসক্রিপশন ইঞ্জিন।'
+        : 'Clinical assessment, standardized eNCPT PES diagnostics, energy & protein prescription engines, and MNT.',
+      to: '/learn/dietetics',
+      icon: Layers3,
+      accent: 'var(--accent-dietetics, #E11D48)',
+      badge: isBn ? '১০/৩২ অধ্যায় (নতুন V2.8)' : '10 / 32 Chapters (New V2.8)',
+    },
+    {
+      title: isBn ? 'পুষ্টিবিজ্ঞান অ্যাকাডেমি' : 'Nutrition Academy',
+      desc: isBn
+        ? 'ম্যাক্রোনিউট্রিয়েন্ট গতিবিদ্যা, মাইক্রোনিউট্রিয়েন্ট বায়োএনার্জেটিক্স ও জীবনব্যাপী পুষ্টি।'
+        : 'Macronutrient kinetics, micronutrient bioenergetics, gut microbiome, and clinical malnutrition.',
+      to: '/learn/nutrition',
+      icon: Utensils,
+      accent: 'var(--accent-nutrition)',
+      badge: isBn ? '২৭ অধ্যায়' : '27 Chapters',
+    },
+    {
+      title: isBn ? 'মেটাবলিজম অ্যাকাডেমি' : 'Metabolism Academy',
+      desc: isBn
+        ? 'গ্লুকোজ, লিপিড ও শক্তি বিপাকের পূর্ণাঙ্গ জৈবরাসায়নিক গতিপথ ও মেটাবলিক রোগ।'
+        : 'Comprehensive biochemical pathways, fuel flux, endocrine regulation, and inborn errors of metabolism.',
+      to: '/learn/metabolism',
+      icon: Activity,
+      accent: 'var(--accent-metabolism, #D97706)',
+      badge: isBn ? '৩৬ অধ্যায়' : '36 Chapters',
+    },
+    {
       title: t('studyHub'),
       desc: t('studyHubDesc'),
       to: '/learn/anatomy',
       icon: BookOpen,
       accent: 'var(--accent-anatomy)',
       badge: isBn ? '২৮ অধ্যায়' : '28 Chapters',
-    },
-    {
-      title: t('navKnowledge'),
-      desc: t('knowledgeHubDesc'),
-      to: '/knowledge',
-      icon: Dna,
-      accent: 'var(--accent-physiology)',
-      badge: isBn ? 'পর্যালোচিত' : 'Peer-Reviewed',
-    },
-    {
-      title: t('virtualLabs'),
-      desc: t('virtualLabsDesc'),
-      to: '/learn/anatomy',
-      icon: FlaskConical,
-      accent: 'var(--sci-teal)',
-      badge: isBn ? 'ইন্টারঅ্যাক্টিভ' : 'Interactive',
     },
     {
       title: t('healthCalculators'),
@@ -56,20 +71,12 @@ export function PublicHome() {
       badge: isBn ? 'বৈজ্ঞানিক' : 'Scientific',
     },
     {
-      title: t('nutritionTools'),
-      desc: t('nutritionToolsDesc'),
-      to: '/learn/nutrition',
-      icon: Utensils,
-      accent: 'var(--accent-nutrition)',
-      badge: isBn ? 'শারীরবৃত্তীয়' : 'Physiological',
-    },
-    {
-      title: t('digitalHealth'),
-      desc: t('digitalHealthDesc'),
-      to: '/learn/biochemistry',
-      icon: Atom,
-      accent: 'var(--accent-digitalHealth, #4F46E5)',
-      badge: isBn ? 'প্রযুক্তি' : 'Informatics',
+      title: t('navKnowledge'),
+      desc: t('knowledgeHubDesc'),
+      to: '/knowledge',
+      icon: Dna,
+      accent: 'var(--accent-physiology)',
+      badge: isBn ? 'পর্যালোচিত' : 'Peer-Reviewed',
     },
   ]
 
