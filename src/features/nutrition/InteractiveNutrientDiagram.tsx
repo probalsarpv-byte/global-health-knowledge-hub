@@ -79,7 +79,7 @@ export function InteractiveNutrientDiagram({
   const [selectedId, setSelectedId] = useState(diagram.items[0]?.id ?? '')
   const [activeIndex, setActiveIndex] = useState(0)
   const [viewMode, setViewMode] = useState<'true-3d' | '3d' | 'svg' | 'illustration'>(
-    hasTrue3D ? 'true-3d' : diagram.has3D ? '3d' : 'svg'
+    diagram.has3D ? '3d' : 'svg'
   )
   const { isLab, toggleLabMode } = useTheme()
   const lang = locale === 'bn' ? 'bn' : 'en'
@@ -1290,8 +1290,7 @@ export function InteractiveNutrientDiagram({
         {hasTrue3D && (
           <button
             type="button"
-            role="tab"
-            aria-selected={viewMode === 'true-3d'}
+            aria-pressed={viewMode === 'true-3d'}
             className={viewMode === 'true-3d' ? 'primary-button' : 'secondary-button'}
             style={{
               padding: '6px 14px',
@@ -1309,8 +1308,7 @@ export function InteractiveNutrientDiagram({
         {diagram.has3D && (
           <button
             type="button"
-            role="tab"
-            aria-selected={viewMode === '3d'}
+            aria-pressed={viewMode === '3d'}
             className={viewMode === '3d' ? 'primary-button' : 'secondary-button'}
             style={{
               padding: '6px 14px',
@@ -1322,13 +1320,12 @@ export function InteractiveNutrientDiagram({
             onClick={() => setViewMode('3d')}
           >
             <Layers size={13} style={{ display: 'inline', marginRight: '5px' }} />
-            {locale === 'bn' ? 'প্রোজেক্টেড ৩ডি (Cat B · SVG)' : 'Projected 3D (Cat B · SVG)'}
+            {locale === 'bn' ? 'প্রোজেক্টেড ৩ডি মডেল (Cat B · SVG)' : '3D Structure Model (Cat B · SVG)'}
           </button>
         )}
         <button
           type="button"
-          role="tab"
-          aria-selected={viewMode === 'svg'}
+          aria-pressed={viewMode === 'svg'}
           className={viewMode === 'svg' ? 'primary-button' : 'secondary-button'}
           style={{
             padding: '6px 14px',
@@ -1340,13 +1337,12 @@ export function InteractiveNutrientDiagram({
           onClick={() => setViewMode('svg')}
         >
           <Activity size={13} style={{ display: 'inline', marginRight: '5px' }} />
-          {locale === 'bn' ? 'ইন্টারঅ্যাক্টিভ ২ডি ডায়াগ্রাম (Cat C)' : 'Interactive 2D (Cat C)'}
+          {locale === 'bn' ? 'ইন্টারঅ্যাক্টিভ ডায়াগ্রাম (Cat C)' : 'Interactive Diagram (Cat C)'}
         </button>
         {diagram.imageUrl && (
           <button
             type="button"
-            role="tab"
-            aria-selected={viewMode === 'illustration'}
+            aria-pressed={viewMode === 'illustration'}
             className={viewMode === 'illustration' ? 'primary-button' : 'secondary-button'}
             style={{
               padding: '6px 14px',
@@ -1358,7 +1354,7 @@ export function InteractiveNutrientDiagram({
             onClick={() => setViewMode('illustration')}
           >
             <Eye size={13} style={{ display: 'inline', marginRight: '5px' }} />
-            {locale === 'bn' ? 'রেফারেন্স মিডিয়া (Cat D)' : 'Reference Media (Cat D)'}
+            {locale === 'bn' ? 'মেডিকেল ইনফোগ্রাফিক / ফটো (Cat D Reference Media)' : 'Medical Infographic / Photo (Cat D Reference Media)'}
           </button>
         )}
       </div>

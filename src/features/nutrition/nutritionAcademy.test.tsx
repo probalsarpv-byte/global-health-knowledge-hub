@@ -18,7 +18,12 @@ import {
 } from '../../content/chapters/chapterRegistry'
 import { validateLessons } from '../../content/lessonSchema'
 
-beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
+beforeEach(() => {
+  window.history.replaceState({ idx: 0 }, '', '/')
+  if (typeof window !== 'undefined' && window.sessionStorage) {
+    window.sessionStorage.clear()
+  }
+})
 afterEach(cleanup)
 
 describe('Functional Nutrition & Dietetics Academy curriculum and all 27 Chapters (Batches 1–7 complete, 100% available)', () => {

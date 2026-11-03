@@ -1,0 +1,2 @@
+export { CrossAcademyConceptCard } from './CrossAcademyConceptCard'
+

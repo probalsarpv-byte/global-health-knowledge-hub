@@ -14,6 +14,8 @@ import {
   NumberedCitation,
   parseInlineCitationTokens,
 } from '../../components/citations'
+import { CrossAcademyConceptCard } from '../../components/concepts'
+import { getConceptsForChapter, type AcademyId } from '../../content/concepts/conceptRegistry'
 
 const depthOrder: ContentDepth[] = ['foundation', 'academic', 'advanced']
 
@@ -48,6 +50,16 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     () => buildChapterCitationMap(lesson.id, lesson.references, lesson.evidenceBySection),
     [lesson.id, lesson.references, lesson.evidenceBySection]
   )
+
+  const currentAcademy: AcademyId | undefined =
+    lesson.subject === 'anatomy' || lesson.subject === 'metabolism' || lesson.subject === 'nutrition'
+      ? (lesson.subject as AcademyId)
+      : undefined
+
+  const relatedConcepts = useMemo(() => {
+    if (!currentAcademy || !lesson.slug) return []
+    return getConceptsForChapter(currentAcademy, lesson.slug)
+  }, [currentAcademy, lesson.slug])
 
   const handleDepthChange = (newDepth: ContentDepth) => {
     setDepth(newDepth)
@@ -236,6 +248,15 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     <section className="lesson-exploration" aria-labelledby="lesson-exploration-heading"><h2 id="lesson-exploration-heading">{label('Interactive exploration', 'ইন্টার‌্যাক্টিভ অনুসন্ধান')}</h2><p className="lesson-diagram-description">{contentLabel(lesson.diagram.accessibleDescription)}</p><ol className="lesson-pathway" aria-label={contentLabel(lesson.diagram.accessibleDescription)}>{lesson.diagram.steps.map((step, index) => <li key={index} className={index === diagramStep ? 'pathway-current' : ''}><button type="button" aria-current={index === diagramStep ? 'step' : undefined} onClick={() => setDiagramStep(index)}>{contentLabel(step)}</button></li>)}</ol><div className="lesson-step-controls"><button type="button" onClick={() => setDiagramStep((step) => Math.max(0, step - 1))} disabled={diagramStep === 0}>{label('Previous step', 'আগের ধাপ')}</button><span aria-live="polite">{new Intl.NumberFormat(lang === 'bn' ? 'bn-BD' : 'en-US').format(diagramStep + 1)} / {new Intl.NumberFormat(lang === 'bn' ? 'bn-BD' : 'en-US').format(lesson.diagram.steps.length)}</span><button type="button" onClick={() => setDiagramStep((step) => Math.min(lesson.diagram.steps.length - 1, step + 1))} disabled={diagramStep === lesson.diagram.steps.length - 1}>{label('Next step', 'পরের ধাপ')}</button></div></section>
 
     <section className="lesson-assessment" aria-labelledby="lesson-assessment-heading"><h2 id="lesson-assessment-heading">{label('Knowledge assessment', 'জ্ঞান যাচাই')}</h2><fieldset><legend>{contentLabel(lesson.assessment.question)}</legend>{lesson.assessment.options.map((option, index) => <label key={index}><input type="radio" name={`answer-${lesson.id}`} checked={answer === index} onChange={() => setAnswer(index)} />{contentLabel(option)}</label>)}</fieldset>{answer !== null && <p className={answer === lesson.assessment.correctIndex ? 'lesson-answer-correct' : 'lesson-answer-review'} role="status">{answer === lesson.assessment.correctIndex ? label('Correct. ', 'সঠিক। ') : label('Review this point. ', 'বিষয়টি আবার দেখুন। ')}{contentLabel(lesson.assessment.explanation)}</p>}</section>
+
+    {currentAcademy && relatedConcepts.length > 0 && (
+      <CrossAcademyConceptCard
+        concepts={relatedConcepts}
+        currentAcademy={currentAcademy}
+        currentSlug={lesson.slug}
+        locale={lang}
+      />
+    )}
 
     <EndOfChapterReferences chapterId={lesson.id} citationMap={citationMap} locale={lang} />
   </article>

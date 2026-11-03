@@ -144,3 +144,4 @@ All 27 chapters were audited for strict adherence to the bilingual academic stan
 3. **Safety Disclaimers**: Clarified that clinical MNT examples are for educational training and do not constitute personal medical prescriptions.
 
 *Audit completed and certified by the Global Health Knowledge Hub Biomedical Review Board.*
+

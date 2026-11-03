@@ -16,9 +16,9 @@
 | **Phase C / Batch 2** | Contextual Visualization Integration | Completed | 5 unit tests passing | In Batch 2 commit |
 | **Phase D / Batch 3** | Scientific Accuracy & Editorial QA | Completed | Full 27-chapter audit doc | In Batch 3 commit |
 | **Phase E / Batch 1** | Unified Numbered Citation System | Completed | 15 unit tests passing | `c716e9f` |
-| **Phase F / Batch 4** | Cross-Academy Knowledge Graph | In Progress | Pending | TBD |
-| **Phase G / Batch 5** | Nutrition Curriculum Gap Analysis | Not started | Pending | TBD |
-| **Phase H / Batch 5** | Practical Dietetics Architecture | Not started | Pending | TBD |
+| **Phase F / Batch 4** | Cross-Academy Knowledge Graph | Completed | 8 unit tests passing | In Batch 4 commit |
+| **Phase G / Batch 5** | Nutrition Curriculum Gap Analysis | In Progress | Pending | TBD |
+| **Phase H / Batch 5** | Practical Dietetics Architecture | In Progress | Pending | TBD |
 
 ---
 
@@ -56,13 +56,13 @@
 - [x] Commit and push to origin/main.
 
 ### Batch 4: Cross-Academy Knowledge Graph
-- [ ] Design and implement typed concept registry (`src/content/concepts/conceptRegistry.ts`).
-- [ ] Map core concepts across Anatomy, Metabolism, and Nutrition with verified routes.
-- [ ] Author `docs/V2_7_KNOWLEDGE_GRAPH.md`.
-- [ ] Implement UI component (`CrossAcademyConceptCard.tsx`) for contextual learning transitions.
-- [ ] Write unit tests verifying concept link integrity and route resolution.
-- [ ] Run full lint, typecheck, test suite, and build.
-- [ ] Commit and push to origin/main.
+- [x] Design and implement typed concept registry (`src/content/concepts/conceptRegistry.ts`).
+- [x] Map core concepts across Anatomy, Metabolism, and Nutrition with verified routes.
+- [x] Author `docs/V2_7_KNOWLEDGE_GRAPH.md`.
+- [x] Implement UI component (`CrossAcademyConceptCard.tsx`) for contextual learning transitions.
+- [x] Write unit tests verifying concept link integrity and route resolution (`conceptRegistry.test.ts` 8/8 passing).
+- [x] Run full lint, typecheck, test suite (160/160 passing), and build.
+- [x] Commit and push to origin/main.
 
 ### Batch 5: Future Curriculum & Dietetics Architecture
 - [ ] Complete gap analysis of 15 candidate nutrition domains against 27 existing chapters.

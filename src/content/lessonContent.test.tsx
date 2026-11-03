@@ -5,7 +5,12 @@ import App from '../App'
 import { lessons } from './lessons'
 import { validateLessons, type LessonTopic } from './lessonSchema'
 
-beforeEach(() => window.history.replaceState({ idx: 0 }, '', '/'))
+beforeEach(() => {
+  window.history.replaceState({ idx: 0 }, '', '/')
+  if (typeof window !== 'undefined' && window.sessionStorage) {
+    window.sessionStorage.clear()
+  }
+})
 afterEach(cleanup)
 
 describe('scientific lesson content', () => {
