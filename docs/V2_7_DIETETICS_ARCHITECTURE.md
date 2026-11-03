@@ -192,3 +192,4 @@ The architecture documented here ensures that:
 - The existing 27-chapter **Human Nutrition Science** textbook remains focused on deep, rigorous biomedical mechanisms.
 - The future **Practical Diet Planning & Therapeutic Dietetics** book has an authoritative, clinically grounded curriculum plan ready for implementation in subsequent release cycles.
 - Every practical dietetics calculation, exchange list, and case study will be tied back to its foundational biochemical mechanisms in the Global Health Knowledge Hub.
+
