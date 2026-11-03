@@ -18,6 +18,9 @@ import { MetabolismLegacyLessonPage } from './features/metabolism/MetabolismLega
 import { NutritionSubjectPage } from './features/nutrition/NutritionSubjectPage'
 import { NutritionChapterPage } from './features/nutrition/NutritionChapterPage'
 import { NutritionLegacyLessonPage } from './features/nutrition/NutritionLegacyLessonPage'
+import { DieteticsSubjectPage } from './features/dietetics/DieteticsSubjectPage'
+import { DieteticsChapterPage } from './features/dietetics/DieteticsChapterPage'
+import { DieteticsLegacyLessonPage } from './features/dietetics/DieteticsLegacyLessonPage'
 import { ThemeProvider } from './components/ThemeContext'
 
 export default function App() {
@@ -41,6 +44,9 @@ export default function App() {
             <Route path="/learn/nutrition" element={<NutritionSubjectPage />} />
             <Route path="/learn/nutrition/chapters/:chapter" element={<NutritionChapterPage />} />
             <Route path="/learn/nutrition/lessons/:lesson" element={<NutritionLegacyLessonPage />} />
+            <Route path="/learn/dietetics" element={<DieteticsSubjectPage />} />
+            <Route path="/learn/dietetics/chapters/:chapter" element={<DieteticsChapterPage />} />
+            <Route path="/learn/dietetics/lessons/:lesson" element={<DieteticsLegacyLessonPage />} />
             <Route path="/learn/:module" element={<ModulePage />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>

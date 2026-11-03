@@ -52,7 +52,10 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
   )
 
   const currentAcademy: AcademyId | undefined =
-    lesson.subject === 'anatomy' || lesson.subject === 'metabolism' || lesson.subject === 'nutrition'
+    lesson.subject === 'anatomy' ||
+    lesson.subject === 'metabolism' ||
+    lesson.subject === 'nutrition' ||
+    lesson.subject === 'dietetics'
       ? (lesson.subject as AcademyId)
       : undefined
 

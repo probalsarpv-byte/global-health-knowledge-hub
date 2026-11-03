@@ -90,6 +90,7 @@ import { nutrition24CancerNutritionLesson } from './nutrition24CancerNutrition'
 import { nutrition25LifespanNutritionLesson } from './nutrition25LifespanNutrition'
 import { nutrition26SportsBioenergeticsLesson } from './nutrition26SportsBioenergetics'
 import { nutrition27NutrigenomicsPrecisionLesson } from './nutrition27NutrigenomicsPrecision'
+import { dietetics01AssessmentABCDLesson } from './dietetics01AssessmentABCD'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -492,6 +493,31 @@ export const allCompletedNutritionChapters: LessonTopic[] = [
   ...batch5NutritionChapters,
   ...batch6NutritionChapters,
   ...batch7NutritionChapters,
+]
+
+export const allDieteticsLessonsMap: Record<string, LessonTopic> = {
+  [dietetics01AssessmentABCDLesson.id]: dietetics01AssessmentABCDLesson,
+}
+
+export const allDieteticsLessonsBySlug: Record<string, LessonTopic> = {
+  [dietetics01AssessmentABCDLesson.slug]: dietetics01AssessmentABCDLesson,
+}
+
+export function getDieteticsChapterLesson(identifier?: string): LessonTopic | undefined {
+  if (!identifier) return undefined
+  return allDieteticsLessonsMap[identifier] || allDieteticsLessonsBySlug[identifier]
+}
+
+export function getAllAvailableDieteticsLessons(): LessonTopic[] {
+  return Object.values(allDieteticsLessonsMap)
+}
+
+export const batch1DieteticsChapters: LessonTopic[] = [
+  dietetics01AssessmentABCDLesson,
+]
+
+export const allCompletedDieteticsChapters: LessonTopic[] = [
+  ...batch1DieteticsChapters,
 ]
 
 

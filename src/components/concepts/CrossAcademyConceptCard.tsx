@@ -41,6 +41,12 @@ const ACADEMY_THEME: Record<
     bgLight: 'var(--accent-nutrition-pale, #ECFDF5)',
     borderColor: 'var(--accent-nutrition-border, #A7F3D0)',
   },
+  dietetics: {
+    name: { en: 'Dietetics', bn: 'ডায়েটেটিক্স' },
+    color: 'var(--accent-dietetics, #E11D48)',
+    bgLight: 'var(--accent-dietetics-pale, #FFF1F2)',
+    borderColor: 'var(--accent-dietetics-border, #FECDD3)',
+  },
 }
 
 const RELATIONSHIP_LABELS: Record<ConceptRelationship, { en: string; bn: string }> = {

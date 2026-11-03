@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Activity, ArrowDownRight, ArrowRight, Bone, BookOpen, Calculator, ChevronDown, Command, FlaskConical, HeartPulse, Home, Menu, Search, Settings2, Sparkles, Utensils, X } from 'lucide-react'
+import { Activity, ArrowDownRight, ArrowRight, Bone, BookOpen, Calculator, ChevronDown, Command, FlaskConical, HeartPulse, Home, Layers3, Menu, Search, Settings2, Sparkles, Utensils, X } from 'lucide-react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { Brand } from '../../components/Brand'
 import { BackButton } from '../../components/BackButton'
@@ -15,6 +15,7 @@ const navigation = [
   { key: 'navBiochemistry' as const, to: '/learn/biochemistry', icon: FlaskConical },
   { key: 'navMetabolism' as const, to: '/learn/metabolism', icon: Activity },
   { key: 'navNutrition' as const, to: '/learn/nutrition', icon: Utensils },
+  { key: 'navDietetics' as const, to: '/learn/dietetics', icon: Layers3 },
   { key: 'navCalculators' as const, to: '/learn/calculators', icon: Calculator },
 ]
 

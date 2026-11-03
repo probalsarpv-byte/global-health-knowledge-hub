@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { anatomyCurriculum } from '../anatomyCurriculum'
 import { metabolismCurriculum } from '../metabolismCurriculum'
 import { nutritionCurriculum } from '../nutritionCurriculum'
+import { dieteticsCurriculum } from '../dieteticsCurriculum'
 import {
   crossAcademyConcepts,
   getAllCrossAcademyConcepts,
@@ -14,6 +15,7 @@ describe('Cross-Academy Knowledge Graph Registry', () => {
   const anatomySlugs = new Set(anatomyCurriculum.chapters.map((c) => c.slug))
   const metabolismSlugs = new Set(metabolismCurriculum.chapters.map((c) => c.slug))
   const nutritionSlugs = new Set(nutritionCurriculum.chapters.map((c) => c.slug))
+  const dieteticsSlugs = new Set(dieteticsCurriculum.chapters.map((c) => c.slug))
 
   it('contains at least 10 core cross-academy biological concepts', () => {
     const concepts = getAllCrossAcademyConcepts()
@@ -72,6 +74,11 @@ describe('Cross-Academy Knowledge Graph Registry', () => {
           expect(
             nutritionSlugs.has(link.chapterSlug),
             `Nutrition chapter slug "${link.chapterSlug}" in concept "${concept.id}" must exist in nutritionCurriculum`
+          ).toBe(true)
+        } else if (link.academy === 'dietetics') {
+          expect(
+            dieteticsSlugs.has(link.chapterSlug),
+            `Dietetics chapter slug "${link.chapterSlug}" in concept "${concept.id}" must exist in dieteticsCurriculum`
           ).toBe(true)
         }
       })

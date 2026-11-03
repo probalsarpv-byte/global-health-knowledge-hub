@@ -1,6 +1,6 @@
 import type { Localized } from '../lessonSchema'
 
-export type AcademyId = 'anatomy' | 'metabolism' | 'nutrition'
+export type AcademyId = 'anatomy' | 'metabolism' | 'nutrition' | 'dietetics'
 
 export type ConceptRelationship =
   | 'metabolic-substrate'
@@ -516,6 +516,63 @@ export const crossAcademyConcepts: CrossAcademyConcept[] = [
           'ভিটামিন সি দ্বারা আয়রন বিজারণ, পলিফেনল ও ক্যালসিয়ামের বাধা এবং হেপসিডিনের দৈনিক ছন্দ।'
         ),
         route: '/learn/nutrition/chapters/iron-biology-hepcidin-anemia',
+      },
+    ],
+  },
+  {
+    id: 'clinical-nutrition-assessment-metabolic-flux',
+    name: l(
+      'Clinical Nutrition Assessment & Metabolic Stress Kinetics',
+      'ক্লিনিক্যাল পুষ্টি মূল্যায়ন ও বিপাকীয় স্ট্রেস গতিবিদ্যা'
+    ),
+    summary: l(
+      'Integration of anthropometric body composition and visceral negative acute-phase reactants with cellular bioenergetics and clinical malnutrition staging.',
+      'শারীরিক গঠন ও রক্তরসের একিউট-ফেজ প্রোটিনের সাথে কোষীয় শক্তিবিজ্ঞান এবং ক্লিনিক্যাল অপুষ্টির সমন্বিত মূল্যায়ন অক্ষ।'
+    ),
+    biologicalScale: 'whole-organism',
+    clinicalRelevance: l(
+      'Distinguishing inflammatory hypercatabolism and cytokine-driven hypoalbuminemia from pure starvation is essential for preventing refeeding syndrome and optimizing protein titration in clinical care.',
+      'প্রদাহজনিত ক্যাটাবলিক প্রতিক্রিয়া এবং সাইটোকাইন-প্ররোচিত অ্যালবুমিন হ্রাসকে সাধারণ অনাহার থেকে আলাদা করা রিফিডিং সিন্ড্রোম প্রতিরোধ ও সঠিক প্রোটিন নির্ধারণের জন্য অপরিহার্য।'
+    ),
+    links: [
+      {
+        academy: 'anatomy',
+        chapterSlug: 'digestive',
+        chapterTitle: l('12 · Digestive anatomy', '১২ · পরিপাকতন্ত্রের শারীরস্থান'),
+        relationship: 'anatomical-site',
+        note: l(
+          'Gastrointestinal mucosal architecture, nutrient absorptive surface area, and digestive gland secretion.',
+          'পরিপাকনালির শ্লৈষ্মিক গঠন, পুষ্টি শোষণের ক্ষেত্রফল এবং পাচক গ্রন্থির ক্ষরণ।'
+        ),
+        route: '/learn/anatomy/chapters/digestive',
+      },
+      {
+        academy: 'nutrition',
+        chapterSlug: 'clinical-malnutrition-enteral-parenteral',
+        chapterTitle: l(
+          '22 · Clinical Malnutrition, Enteral & Parenteral Nutrition',
+          '২২ · ক্লিনিক্যাল অপুষ্টি, এন্টারাল ও প্যারেন্টেরাল পুষ্টি'
+        ),
+        relationship: 'pathophysiology',
+        note: l(
+          'Starvation biology, metabolic adaptation, refeeding syndrome risks, and specialized medical nutrition support.',
+          'অনাহার শারীরবৃত্ত, বিপাকীয় অভিযোজন, রিফিডিং সিন্ড্রোম ঝুঁকি এবং বিশেষায়িত চিকিৎসা পুষ্টি সহায়তা।'
+        ),
+        route: '/learn/nutrition/chapters/clinical-malnutrition-enteral-parenteral',
+      },
+      {
+        academy: 'dietetics',
+        chapterSlug: 'clinical-nutrition-assessment-abcd',
+        chapterTitle: l(
+          '01 · Clinical Nutrition Assessment: ABCD Model & Anthropometrics',
+          '০১ · ক্লিনিক্যাল পুষ্টি মূল্যায়ন: এ-বি-সি-ডি মডেল ও নৃতাত্ত্বিক পরিমাপ'
+        ),
+        relationship: 'clinical-counterpart',
+        note: l(
+          'Application of Hamwi equations, Adjusted Body Weight, visceral acute-phase protein kinetics, and GLIM diagnostic criteria.',
+          'হ্যামউই সমীকরণ, সমন্বিত দেহের ওজন, একিউট-ফেজ প্রোটিন গতিবিদ্যা এবং আন্তর্জাতিক GLIM মানদণ্ডের ক্লিনিক্যাল প্রয়োগ।'
+        ),
+        route: '/learn/dietetics/chapters/clinical-nutrition-assessment-abcd',
       },
     ],
   },
