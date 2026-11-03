@@ -58,6 +58,6 @@ Batch A establishes the entire infrastructural foundation of the new Practical D
 - **Curriculum Integrity:** 32 chapters, 7 groups, 1 available chapter, 31 planned chapters.
 - **Linter (`npm.cmd run lint`):** 0 errors, 0 warnings.
 - **Typecheck (`npm.cmd run typecheck`):** 0 errors.
-- **Unit & Integration Tests (`npm.cmd run test`):** 100% passing across all test files including `dieteticsAcademy.test.tsx`.
-- **Production Build (`npm.cmd run build`):** Clean build.
+- **Unit & Integration Tests (`npm.cmd run test`):** 100% passing across all 10 test files and 164 unit/integration tests (including `dieteticsAcademy.test.tsx`, `citationSystem.test.tsx`, `depthAwareNavigation.test.tsx`, etc.).
+- **Production Build (`npm.cmd run build`):** Clean Vite production build in `dist/` (1,740 modules transformed, 0 build errors).
 

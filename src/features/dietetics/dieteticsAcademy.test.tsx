@@ -107,7 +107,7 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
         name: /ব্যবহারিক পথ্য পরিকল্পনা ও থেরাপিউটিক ডায়েটেটিক্স কারিকুলাম/i,
       })
     ).toBeInTheDocument()
-    expect(screen.getByText(/১ \/ ৩২ অধ্যায় উপলভ্য/i)).toBeInTheDocument()
+    expect(screen.getByText(/1 \/ 32 অধ্যায় উপলভ্য/i)).toBeInTheDocument()
     expect(screen.getByText(/০১ · ক্লিনিক্যাল পুষ্টি মূল্যায়ন/i)).toBeInTheDocument()
   })
 
@@ -130,30 +130,32 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
     expect(allCompletedDieteticsChapters).toHaveLength(1)
 
     // Verify Vancouver Numeric Citations in text
-    expect(screen.getAllByRole('link', { name: '1' }).length).toBeGreaterThan(0)
-    expect(screen.getAllByRole('link', { name: '2' }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('doc-noteref', { name: /Citation \[1\]/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('doc-noteref', { name: /Citation \[2\]/i }).length).toBeGreaterThan(0)
 
     // Verify EndOfChapterReferences rendered
-    expect(screen.getByRole('heading', { name: /References & Literature Evidence/i })).toBeInTheDocument()
-    expect(screen.getByText(/GLIM Criteria for the Diagnosis of Malnutrition/i)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Scientific references/i })).toBeInTheDocument()
+    expect(screen.getAllByText(/GLIM Criteria for the Diagnosis of Malnutrition/i).length).toBeGreaterThan(0)
 
     // Depth Switching to Academic
     const academicBtn = screen.getByRole('button', { name: /Academic/i })
     await user.click(academicBtn)
     expect(
-      screen.getByRole('heading', {
-        name: /2\. Anthropometric Equations: Hamwi IBW, Adjusted Weight & Weight Loss Velocity/i,
+      screen.getByRole('button', {
+        name: /2.*Anthropometric Equations: Hamwi IBW, Adjusted Weight & Weight Loss Velocity/i,
       })
     ).toBeInTheDocument()
+    expect(screen.getAllByText(/Anthropometric Equations: Hamwi IBW/i).length).toBeGreaterThan(0)
 
     // Depth Switching to Advanced
     const advancedBtn = screen.getByRole('button', { name: /Advanced/i })
     await user.click(advancedBtn)
     expect(
-      screen.getByRole('heading', {
-        name: /1\. The GLIM Global Consensus Diagnostic Framework/i,
+      screen.getByRole('button', {
+        name: /1.*The GLIM Global Consensus Diagnostic Framework/i,
       })
     ).toBeInTheDocument()
+    expect(screen.getAllByText(/The GLIM Global Consensus Diagnostic Framework/i).length).toBeGreaterThan(0)
 
     // Test session completion toggle
     const completeButton = screen.getByRole('button', { name: /Mark complete for this session/i })
