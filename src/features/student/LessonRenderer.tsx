@@ -141,14 +141,42 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     }
   }
 
+function renderFormattedText(text: string): React.ReactNode {
+  if (!text.includes('**') && !text.includes('*') && !text.includes('`')) {
+    return text
+  }
+  const parts: React.ReactNode[] = []
+  const regex = /(\*\*[^*]+\*\*|`[^`]+`|\*[^*]+\*)/g
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index))
+    }
+    const chunk = match[0]
+    if (chunk.startsWith('**') && chunk.endsWith('**')) {
+      parts.push(<strong key={match.index}>{chunk.slice(2, -2)}</strong>)
+    } else if (chunk.startsWith('`') && chunk.endsWith('`')) {
+      parts.push(<code key={match.index}>{chunk.slice(1, -1)}</code>)
+    } else if (chunk.startsWith('*') && chunk.endsWith('*')) {
+      parts.push(<em key={match.index}>{chunk.slice(1, -1)}</em>)
+    }
+    lastIndex = regex.lastIndex
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex))
+  }
+  return parts
+}
+
   const renderParagraphContent = (text: string, paraKey: string) => {
     const tokens = parseInlineCitationTokens(text)
     if (tokens.length === 1 && tokens[0].type === 'text') {
-      return text
+      return renderFormattedText(text)
     }
     return tokens.map((token, idx) => {
       if (token.type === 'text') {
-        return <span key={idx}>{token.value}</span>
+        return <span key={idx}>{renderFormattedText(token.value)}</span>
       }
       return (
         <NumberedCitation
