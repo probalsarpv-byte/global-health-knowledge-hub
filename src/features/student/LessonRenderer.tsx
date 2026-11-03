@@ -19,7 +19,22 @@ const depthOrder: ContentDepth[] = ['foundation', 'academic', 'advanced']
 
 export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
   const { locale } = useLocale()
-  const [depth, setDepth] = useState<ContentDepth>('foundation')
+  const [depth, setDepth] = useState<ContentDepth>(() => {
+    if (typeof window !== 'undefined' && window.sessionStorage) {
+      try {
+        const stored = window.sessionStorage.getItem('ghkh_learning_depth') as ContentDepth | null
+        if (stored && depthOrder.includes(stored)) {
+          return stored
+        }
+      } catch {
+        // Fall back gracefully if storage is restricted
+      }
+    }
+    return 'foundation'
+  })
+  const [activeSectionId, setActiveSectionId] = useState<string>(
+    () => lesson.levels[depth]?.sections?.[0]?.id ?? ''
+  )
   const [diagramStep, setDiagramStep] = useState(0)
   const [answer, setAnswer] = useState<number | null>(null)
   const [readingProgress, setReadingProgress] = useState(0)
@@ -34,6 +49,21 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     [lesson.id, lesson.references, lesson.evidenceBySection]
   )
 
+  const handleDepthChange = (newDepth: ContentDepth) => {
+    setDepth(newDepth)
+    const newLvl = lesson.levels[newDepth]
+    if (newLvl?.sections?.[0]) {
+      setActiveSectionId(newLvl.sections[0].id)
+    }
+    if (typeof window !== 'undefined' && window.sessionStorage) {
+      try {
+        window.sessionStorage.setItem('ghkh_learning_depth', newDepth)
+      } catch {
+        // Fall back gracefully
+      }
+    }
+  }
+
   useEffect(() => {
     const updateProgress = () => {
       const max = document.documentElement.scrollHeight - window.innerHeight
@@ -44,15 +74,55 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
     return () => window.removeEventListener('scroll', updateProgress)
   }, [])
 
+  // Track active section via IntersectionObserver when scrolling
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id.replace('lesson-section-', '')
+            setActiveSectionId(id)
+          }
+        })
+      },
+      {
+        rootMargin: '-80px 0px -55% 0px',
+        threshold: 0.1,
+      }
+    )
+
+    const sectionElements = document.querySelectorAll('.lesson-section')
+    sectionElements.forEach((el) => observer.observe(el))
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [depth, currentLevel])
+
   const jumpTo = (sectionId: string) => {
+    setActiveSectionId(sectionId)
     const target = document.getElementById(`lesson-section-${sectionId}`)
     if (target) {
       if (target instanceof HTMLDetailsElement) {
         target.open = true
       }
+      const prefersReducedMotion =
+        typeof window !== 'undefined' &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
       if (typeof target.scrollIntoView === 'function') {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        target.scrollIntoView({
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+          block: 'start',
+        })
       }
+      if (target.tabIndex < 0) {
+        target.tabIndex = -1
+      }
+      target.focus({ preventScroll: true })
     }
   }
 
@@ -97,11 +167,56 @@ export function LessonRenderer({ lesson }: { lesson: LessonTopic }) {
       <p className="lesson-review-note">{label('Educational chapter; not individual medical or nutrition advice. This source-checked content has not yet completed independent subject-matter review.', 'শিক্ষামূলক অধ্যায়; ব্যক্তিগত চিকিৎসা বা পুষ্টি-পরামর্শ নয়। এই উৎস-যাচাইকৃত বিষয়বস্তুর স্বতন্ত্র বিষয়বিশেষজ্ঞ পর্যালোচনা এখনো সম্পন্ন হয়নি।')}</p>
     </header>
 
-    {chapter && <><section className="lesson-reading-progress" aria-label={label('Chapter reading progress', 'অধ্যায় পড়ার অগ্রগতি')}><div><strong>{label('Chapter progress', 'অধ্যায়ের অগ্রগতি')}</strong><span>{readingProgress}%</span></div><progress aria-label={label('Chapter reading progress', 'অধ্যায় পড়ার অগ্রগতি')} max="100" value={readingProgress}>{readingProgress}%</progress></section><nav className="lesson-toc" aria-label={label('Table of contents', 'সূচিপত্র')}><div><span className="section-kicker">{label('CHAPTER MAP · ', 'অধ্যায়ের মানচিত্র · ')}<strong style={{ textTransform: 'uppercase' }}>{contentLabel(currentLevel.label)}</strong></span><h2>{label('Table of contents', 'সূচিপত্র')}</h2></div><ol>{activeTocEntries.map((entry, index) => <li key={entry.id}><button type="button" onClick={() => jumpTo(entry.sectionId)}><span>{index + 1}</span>{contentLabel(entry.label)}</button></li>)}</ol></nav></>}
+    {/* Depth Selector placed before TOC in recommended visual hierarchy */}
+    <section className="lesson-depth" aria-label={label('Choose lesson depth', 'পাঠের গভীরতা বাছুন')}>
+      <h2>{label('Explore by depth', 'শেখার স্তর')}</h2>
+      <div className="lesson-depth-tabs" role="group" aria-label={label('Content depth', 'বিষয়বস্তুর গভীরতা')}>
+        {depthOrder.map((item) => (
+          <button
+            type="button"
+            key={item}
+            aria-pressed={depth === item}
+            className={depth === item ? 'is-active' : ''}
+            onClick={() => handleDepthChange(item)}
+          >
+            {contentLabel(lesson.levels[item].label)}
+          </button>
+        ))}
+      </div>
+    </section>
+
+    {chapter && <>
+      <section className="lesson-reading-progress" aria-label={label('Chapter reading progress', 'অধ্যায় পড়ার অগ্রগতি')}>
+        <div><strong>{label('Chapter progress', 'অধ্যায়ের অগ্রগতি')}</strong><span>{readingProgress}%</span></div>
+        <progress aria-label={label('Chapter reading progress', 'অধ্যায় পড়ার অগ্রগতি')} max="100" value={readingProgress}>{readingProgress}%</progress>
+      </section>
+      <nav className="lesson-toc" aria-label={label('Table of contents', 'সূচিপত্র')}>
+        <div>
+          <span className="section-kicker">{label('CHAPTER MAP · ', 'অধ্যায়ের মানচিত্র · ')}<strong style={{ textTransform: 'uppercase' }}>{contentLabel(currentLevel.label)}</strong></span>
+          <h2>{label('Table of contents', 'সূচিপত্র')}</h2>
+        </div>
+        <ol>
+          {activeTocEntries.map((entry, index) => {
+            const isActive = activeSectionId === entry.sectionId
+            return (
+              <li key={entry.id}>
+                <button
+                  type="button"
+                  className={isActive ? 'is-active-section' : ''}
+                  aria-current={isActive ? 'location' : undefined}
+                  onClick={() => jumpTo(entry.sectionId)}
+                >
+                  <span className={isActive ? 'toc-num-active' : ''}>{index + 1}</span>
+                  {contentLabel(entry.label)}
+                </button>
+              </li>
+            )
+          })}
+        </ol>
+      </nav>
+    </>}
 
     <section className="lesson-objectives" aria-labelledby="lesson-objectives-heading"><h2 id="lesson-objectives-heading">{label('Learning objectives', 'শেখার লক্ষ্য')}</h2><ul>{lesson.objectives.map((objective, index) => <li key={index}>{contentLabel(objective)}</li>)}</ul><div className="lesson-topic-links"><span><b>{label('Prerequisites', 'পূর্বশর্ত')}:</b> {lesson.prerequisiteIds.length ? lesson.prerequisiteIds.map((id) => <span key={id}>{id}</span>) : label('No formal prerequisite', 'আনুষ্ঠানিক পূর্বশর্ত নেই')}</span><span><b>{label('Related topics', 'সম্পর্কিত বিষয়')}:</b> {lesson.relatedTopicIds.map((id) => { const title = id === 'topic.macronutrient.digestion' ? 'Macronutrient Digestion' : 'Glucose Metabolism'; const slug = id === 'topic.macronutrient.digestion' ? 'nutrition' : 'metabolism'; return <Link key={id} to={`/learn/${slug}`}>{title}</Link> })}</span></div></section>
-
-    <section className="lesson-depth" aria-label={label('Choose lesson depth', 'পাঠের গভীরতা বাছুন')}><h2>{label('Explore by depth', 'শেখার স্তর')}</h2><div className="lesson-depth-tabs" role="group" aria-label={label('Content depth', 'বিষয়বস্তুর গভীরতা')}>{depthOrder.map((item) => <button type="button" key={item} aria-pressed={depth === item} onClick={() => setDepth(item)}>{contentLabel(lesson.levels[item].label)}</button>)}</div></section>
 
     {chapter && Boolean(chapter.organelles?.length) && <CellOrganelleDiagram chapter={chapter} locale={lang} onSectionSelect={jumpTo} />}
     {lesson.organ3DExplorer && <Organ3DExplorer explorer={lesson.organ3DExplorer} locale={lang} onSectionSelect={jumpTo} />}
