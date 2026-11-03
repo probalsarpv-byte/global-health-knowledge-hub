@@ -1,7 +1,6 @@
 import {
   Activity,
   ArrowRight,
-  Atom,
   BookOpen,
   CircleCheck,
   Compass,
@@ -353,10 +352,22 @@ export function PublicHome() {
                 <b>{t('navBiochemistry')}</b>
               </div>
             </Link>
+            <Link to="/learn/metabolism" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div>
+                <Activity size={23} />
+                <b>{t('navMetabolism')}</b>
+              </div>
+            </Link>
             <Link to="/learn/nutrition" style={{ textDecoration: 'none', color: 'inherit' }}>
               <div>
                 <Leaf size={23} />
                 <b>{t('navNutrition')}</b>
+              </div>
+            </Link>
+            <Link to="/learn/dietetics" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div>
+                <Layers3 size={23} />
+                <b>{t('navDietetics')}</b>
               </div>
             </Link>
             <Link to="/learn/calculators" style={{ textDecoration: 'none', color: 'inherit' }}>
