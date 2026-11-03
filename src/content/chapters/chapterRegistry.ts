@@ -91,6 +91,15 @@ import { nutrition25LifespanNutritionLesson } from './nutrition25LifespanNutriti
 import { nutrition26SportsBioenergeticsLesson } from './nutrition26SportsBioenergetics'
 import { nutrition27NutrigenomicsPrecisionLesson } from './nutrition27NutrigenomicsPrecision'
 import { dietetics01AssessmentABCDLesson } from './dietetics01AssessmentABCD'
+import { dietetics02NcpPesLesson } from './dietetics02NcpPesDiagnostics'
+import { dietetics03NfpeLesson } from './dietetics03NfpePhysicalExam'
+import { dietetics04DietaryIntakeLesson } from './dietetics04DietaryIntakeMethodologies'
+import { dietetics05LaboratoryBiomarkersLesson } from './dietetics05LaboratoryBiomarkers'
+import { dietetics06PredictiveEnergyLesson } from './dietetics06PredictiveEnergyEquations'
+import { dietetics07ProteinRequirementsLesson } from './dietetics07ProteinRequirements'
+import { dietetics08MacronutrientLesson } from './dietetics08MacronutrientDistribution'
+import { dietetics09FluidElectrolytesLesson } from './dietetics09FluidElectrolytes'
+import { dietetics10MicronutrientLesson } from './dietetics10MicronutrientProtocols'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -497,10 +506,28 @@ export const allCompletedNutritionChapters: LessonTopic[] = [
 
 export const allDieteticsLessonsMap: Record<string, LessonTopic> = {
   [dietetics01AssessmentABCDLesson.id]: dietetics01AssessmentABCDLesson,
+  [dietetics02NcpPesLesson.id]: dietetics02NcpPesLesson,
+  [dietetics03NfpeLesson.id]: dietetics03NfpeLesson,
+  [dietetics04DietaryIntakeLesson.id]: dietetics04DietaryIntakeLesson,
+  [dietetics05LaboratoryBiomarkersLesson.id]: dietetics05LaboratoryBiomarkersLesson,
+  [dietetics06PredictiveEnergyLesson.id]: dietetics06PredictiveEnergyLesson,
+  [dietetics07ProteinRequirementsLesson.id]: dietetics07ProteinRequirementsLesson,
+  [dietetics08MacronutrientLesson.id]: dietetics08MacronutrientLesson,
+  [dietetics09FluidElectrolytesLesson.id]: dietetics09FluidElectrolytesLesson,
+  [dietetics10MicronutrientLesson.id]: dietetics10MicronutrientLesson,
 }
 
 export const allDieteticsLessonsBySlug: Record<string, LessonTopic> = {
   [dietetics01AssessmentABCDLesson.slug]: dietetics01AssessmentABCDLesson,
+  [dietetics02NcpPesLesson.slug]: dietetics02NcpPesLesson,
+  [dietetics03NfpeLesson.slug]: dietetics03NfpeLesson,
+  [dietetics04DietaryIntakeLesson.slug]: dietetics04DietaryIntakeLesson,
+  [dietetics05LaboratoryBiomarkersLesson.slug]: dietetics05LaboratoryBiomarkersLesson,
+  [dietetics06PredictiveEnergyLesson.slug]: dietetics06PredictiveEnergyLesson,
+  [dietetics07ProteinRequirementsLesson.slug]: dietetics07ProteinRequirementsLesson,
+  [dietetics08MacronutrientLesson.slug]: dietetics08MacronutrientLesson,
+  [dietetics09FluidElectrolytesLesson.slug]: dietetics09FluidElectrolytesLesson,
+  [dietetics10MicronutrientLesson.slug]: dietetics10MicronutrientLesson,
 }
 
 export function getDieteticsChapterLesson(identifier?: string): LessonTopic | undefined {
@@ -514,10 +541,24 @@ export function getAllAvailableDieteticsLessons(): LessonTopic[] {
 
 export const batch1DieteticsChapters: LessonTopic[] = [
   dietetics01AssessmentABCDLesson,
+  dietetics02NcpPesLesson,
+  dietetics03NfpeLesson,
+  dietetics04DietaryIntakeLesson,
+  dietetics05LaboratoryBiomarkersLesson,
+]
+
+export const batch2DieteticsChapters: LessonTopic[] = [
+  dietetics06PredictiveEnergyLesson,
+  dietetics07ProteinRequirementsLesson,
+  dietetics08MacronutrientLesson,
+  dietetics09FluidElectrolytesLesson,
+  dietetics10MicronutrientLesson,
 ]
 
 export const allCompletedDieteticsChapters: LessonTopic[] = [
   ...batch1DieteticsChapters,
+  ...batch2DieteticsChapters,
 ]
+
 
 

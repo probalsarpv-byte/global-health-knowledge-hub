@@ -155,9 +155,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Formulating structured nutrition diagnoses using standardized Problem-Etiology-Signs/Symptoms (PES) statements across intake, clinical, and behavioral domains.',
         'ইনটেক, ক্লিনিক্যাল ও আচরণগত ক্ষেত্রে আন্তর্জাতিক মানসম্মত Problem-Etiology-Signs/Symptoms (PES) বাক্যের মাধ্যমে সঠিক পুষ্টি রোগনির্ণয় গঠন।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.01'],
+      lessonId: 'topic.dietetics.ncp-pes-diagnostics',
       estimatedMinutes: 24,
     },
     {
@@ -173,9 +174,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Systematic physical examination techniques for detecting temporal and clavicular muscle wasting, orbital and thenar fat-pad loss, fluid accumulation, and cutaneous micronutrient deficiency signs.',
         'টেম্পোরাল ও ক্লাভিকুলার পেশি ক্ষয়, চোখের চারপাশের ফ্যাট হ্রাস, তরল জমা (এডিমা) এবং ত্বকে অনুপুষ্টি ঘাটতির শারীরিক লক্ষণ শনাক্তকরণ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.01'],
+      lessonId: 'topic.dietetics.nfpe-physical-exam',
       estimatedMinutes: 26,
     },
     {
@@ -191,9 +193,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Automated multiple-pass 24-hour recalls, validated food frequency questionnaires (FFQs), weighted food diaries, and mathematical adjustment for underreporting bias.',
         'মাল্টিপল-পাস ২৪ ঘণ্টার ডায়েটারি রিকল, খাদ্য গ্রহণের পুনরাবৃত্তি প্রশ্নমালা (FFQ), খাবারের ওজনের রেকর্ড এবং কম দেখানোর প্রবণতা দূর করার গাণিতিক কৌশল।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.01'],
+      lessonId: 'topic.dietetics.dietary-intake-methodologies',
       estimatedMinutes: 22,
     },
     {
@@ -209,9 +212,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Distinguishing negative acute-phase reactants (albumin, prealbumin) from genuine somatic protein status in systemic inflammation, alongside comprehensive metabolic panel interpretation.',
         'সিস্টেমিক প্রদাহের সময় নেগেটিভ একিউট-ফেজ প্রোটিন (অ্যালবুমিন, প্রিঅ্যালবুমিন) এবং প্রকৃত প্রোটিন মাত্রার পার্থক্য নিরূপণ ও মেটাবলিক প্যানেল বিশ্লেষণ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.01'],
+      lessonId: 'topic.dietetics.laboratory-biomarkers',
       estimatedMinutes: 25,
     },
 
@@ -229,9 +233,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Validated resting metabolic rate equations, activity adjustments, injury factors for sepsis, burns, and surgery, and indirect calorimetry benchmarking.',
         'বিশ্রামকালীন শক্তি খরচের সমীকরণ, শারীরিক কার্যকলাপের সমন্বয়, সেপসিস, পোড়া ও অস্ত্রোপচারের স্ট্রেস ফ্যাক্টর এবং ইনডাইরেক্ট ক্যালোরিমেট্রির মান।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.01'],
+      lessonId: 'topic.dietetics.predictive-energy-equations',
       estimatedMinutes: 28,
     },
     {
@@ -247,9 +252,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Determining individual protein targets across health, non-dialysis CKD, hemodialysis, and critical trauma using nitrogen balance kinetics and leucine thresholds.',
         'সুস্থ ব্যক্তি, ডায়ালাইসিস-পূর্ব সিকেডি, ডায়ালাইসিস ও তীব্র ট্রমার রোগীদের জন্য নাইট্রোজেন ভারসাম্য ও লিউসিন থ্রেশহোল্ড অনুযায়ী প্রোটিনের লক্ষ্যমাত্রা নির্ধারণ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.06'],
+      lessonId: 'topic.dietetics.protein-requirements',
       estimatedMinutes: 26,
     },
     {
@@ -265,9 +271,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Balancing acceptable macronutrient distribution ranges (AMDR) for carbohydrates, fats, and proteins according to specific metabolic and endocrine goals.',
         'নির্দিষ্ট বিপাকীয় ও হরমোনজনিত লক্ষ্যের সাথে সঙ্গতি রেখে কার্বোহাইড্রেট, ফ্যাট ও প্রোটিনের গ্রহণযোগ্য বণ্টন (AMDR) নির্ধারণ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.06', 'dietetics.chapter.07'],
+      lessonId: 'topic.dietetics.macronutrient-distribution',
       estimatedMinutes: 22,
     },
     {
@@ -283,9 +290,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Holliday-Segar and weight-based fluid calculations, sensible and insensible losses, serum osmolar gap evaluation, and sodium/potassium titration.',
         'হলHoliday-সেগার ও ওজনের ভিত্তিতে তরলের হিসাব, দৃশ্যমান ও অদৃশ্য ক্ষতি পূরণ, সেরাম অসমোলারিটি এবং সোডিয়াম-পটাশিয়াম অনুপাত নিয়ন্ত্রণ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.06'],
+      lessonId: 'topic.dietetics.fluid-electrolyte-prescriptions',
       estimatedMinutes: 24,
     },
     {
@@ -301,9 +309,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Evidence-based high-dose repletion protocols for Vitamin D3, intravenous/oral iron, B12/folate, thiamine, and zinc in severe clinical depletion.',
         'গুরুতর ঘাটতিতে ভিটামিন ডি৩, শিরায় বা মুখে আয়রন, বি১২/ফোলেট, থায়ামিন এবং জিংকের প্রমাণভিত্তিক উচ্চমাত্রার চিকিৎসা প্রোটোকল।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.05'],
+      lessonId: 'topic.dietetics.micronutrient-protocols',
       estimatedMinutes: 25,
     },
 
