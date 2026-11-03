@@ -16,9 +16,9 @@
 | **Phase C / Batch 2** | Contextual Visualization Integration | Completed | 5 unit tests passing | In Batch 2 commit |
 | **Phase D / Batch 3** | Scientific Accuracy & Editorial QA | Completed | Full 27-chapter audit doc | In Batch 3 commit |
 | **Phase E / Batch 1** | Unified Numbered Citation System | Completed | 15 unit tests passing | `c716e9f` |
-| **Phase F / Batch 4** | Cross-Academy Knowledge Graph | Completed | 8 unit tests passing | In Batch 4 commit |
-| **Phase G / Batch 5** | Nutrition Curriculum Gap Analysis | In Progress | Pending | TBD |
-| **Phase H / Batch 5** | Practical Dietetics Architecture | In Progress | Pending | TBD |
+| **Phase F / Batch 4** | Cross-Academy Knowledge Graph | Completed | 8 unit tests passing | `cb40b61` |
+| **Phase G / Batch 5** | Nutrition Curriculum Gap Analysis | Completed | 15-domain matrix doc | In Batch 5 commit |
+| **Phase H / Batch 5** | Practical Dietetics Architecture | Completed | Full companion blueprint | In Batch 5 commit |
 
 ---
 
@@ -65,10 +65,10 @@
 - [x] Commit and push to origin/main.
 
 ### Batch 5: Future Curriculum & Dietetics Architecture
-- [ ] Complete gap analysis of 15 candidate nutrition domains against 27 existing chapters.
-- [ ] Author `docs/V2_7_NUTRITION_GAP_MATRIX.md` with action classifications (A–E).
-- [ ] Architect the future *Practical Diet Planning & Therapeutic Dietetics* book in `docs/V2_7_DIETETICS_ARCHITECTURE.md`.
-- [ ] Map theoretical nutrition topics to practical diet planning counterparts.
-- [ ] Update `docs/V2_7_RESUME.md` with final delivery report.
-- [ ] Run full verification suite and push final commits.
+- [x] Complete gap analysis of 15 candidate nutrition domains against 27 existing chapters.
+- [x] Author `docs/V2_7_NUTRITION_GAP_MATRIX.md` with action classifications (A–E).
+- [x] Architect the future *Practical Diet Planning & Therapeutic Dietetics* book in `docs/V2_7_DIETETICS_ARCHITECTURE.md`.
+- [x] Map theoretical nutrition topics to practical diet planning counterparts.
+- [x] Update `docs/V2_7_RESUME.md` with final delivery report.
+- [x] Run full verification suite and push final commits.
 
