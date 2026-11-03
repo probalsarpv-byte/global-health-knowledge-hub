@@ -241,13 +241,15 @@ export const dietetics03NfpeLesson: LessonTopic = {
               'ওজনের বিভ্রান্তি এড়াতে পায়ে পানি জমার মাত্রা নিখুঁতভাবে গ্রেডিং করা আবশ্যক [2, 3]। পায়ের টিবিয়া হাড়ের ওপর ৫ সেকেন্ড আঙুল দিয়ে শক্তভাবে চেপে এডিমা গ্রেডিং করা হয়:'
             ),
             l(
-              '$$\\begin{aligned} &\\textbf{1+ (Mild):} \\quad 2\\text{ mm pit depth; rapid rebound within seconds.} \\\\ &\\textbf{2+ (Moderate):} \\quad 4\\text{ mm pit depth; rebounds within } 10\\text{--}15\\text{ seconds.} \\\\ &\\textbf{3+ (Severe):} \\quad 6\\text{ mm pit depth; persistent pit for } 1\\text{--}2\\text{ minutes; gross swelling.} \\\\ &\\textbf{4+ (Very Severe):} \\quad 8\\text{ mm deep pit; persists for } >2\\text{--}5\\text{ minutes; severe distortion.} \\end{aligned}$$',
-              '$$\\begin{aligned} &\\textbf{১+ (মৃদু):} \\quad ২\\text{ মিমি গর্ত; কয়েক সেকেন্ডের মধ্যেই মিলিয়ে যায়।} \\\\ &\\textbf{২+ (মাঝারি):} \\quad ৪\\text{ মিমি গর্ত; মিলিয়ে যেতে } ১০\\text{--}১৫\\text{ সেকেন্ড সময় নেয়।} \\\\ &\\textbf{৩+ (তীব্র):} \\quad ৬\\text{ মিমি গভীর গর্ত; } ১\\text{--}২\\text{ মিনিট স্থায়ী হয়, স্পষ্ট ফোলা।} \\\\ &\\textbf{৪+ (চরম):} \\quad ৮\\text{ মিমি গভীর খাদ; } >২\\text{--}৫\\text{ মিনিট পর্যন্ত স্থায়ী থাকে, পা বিকৃত ফোলা।} \\end{aligned}$$'
-            ),
-            l(
               'In bedridden patients, fluid gravitates to dependent regions; examiners must roll the patient to palpate the sacrum, buttocks, and posterior thighs for dependent pitting edema [2].',
               'বিছানায় শুয়ে থাকা রোগীদের ক্ষেত্রে পানি নিচের দিকে নেমে যায়; তাই চিকিৎসকদের রোগীকে কাত করে স্যাক্রাম, নিতম্ব ও ঊরুর পেছনের অংশে হাত দিয়ে চেপে স্যাক্রাল এডিমা পরীক্ষা করতে হয় [2]।'
             ),
+          ],
+          bullets: [
+            l('1+ Mild: 2 mm pit depth; disappears almost instantly upon release.', '১+ মৃদু: প্রায় ২ মিমি গর্ত; আঙুল সরালেই তৎক্ষণাৎ মিলিয়ে যায়।'),
+            l('2+ Moderate: 4 mm pit depth; rebounds within 10 to 15 seconds.', '২+ মাঝারি: প্রায় ৪ মিমি গর্ত; ১০ থেকে ১৫ সেকেন্ডে স্বাভাবিক হয়।'),
+            l('3+ Severe: 6 mm pit depth; persistent pit for 1 to 2 minutes with visible swelling.', '৩+ তীব্র: প্রায় ৬ মিমি গভীর গর্ত; ১ থেকে ২ মিনিট স্থায়ী হয়, স্পষ্ট ফোলা।'),
+            l('4+ Very Severe: 8 mm deep pit; persists for more than 2 to 5 minutes with marked distortion.', '৪+ চরম: প্রায় ৮ মিমি গভীর খাদ; ২ থেকে ৫ মিনিটের বেশি স্থায়ী থাকে, তীব্র ফোলা।'),
           ],
         },
       ],
