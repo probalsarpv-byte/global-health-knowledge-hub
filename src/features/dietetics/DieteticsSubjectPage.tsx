@@ -49,6 +49,17 @@ export function DieteticsSubjectPage() {
             <Layers3 size={12} style={{ display: 'inline', marginRight: '4px' }} />
             {label('CLINICAL DIETETICS & MNT', 'ক্লিনিক্যাল ডায়েটেটিক্স ও পুষ্টি থেরাপি')}
           </span>
+          <span
+            className="prototype-pill"
+            style={{
+              background: '#F0FDF4',
+              color: '#16A34A',
+              borderColor: '#BBF7D0',
+              fontWeight: 700,
+            }}
+          >
+            {label('V2.8 · CHAPTERS 01–08 ACTIVE', 'V২.৮ · ১ম–৮ম অধ্যায় সক্রিয়')}
+          </span>
         </div>
         <h1>
           {label(
@@ -62,8 +73,8 @@ export function DieteticsSubjectPage() {
         </h2>
         <p>
           {label(
-            'An evidence-based companion curriculum translating biochemical nutrition science into individualized medical nutrition therapies, standardized food exchanges, clinical calculation engines, and disease-specific dietary protocols. Flagship Chapter 01 is available with interactive 3-tier learning depth and Vancouver citations; Chapters 02–32 are registered in the active curriculum.',
-            'বায়োকেমিক্যাল পুষ্টিবিজ্ঞানকে রোগীর ব্যক্তিমাফিক চিকিৎসা পুষ্টি থেরাপি, প্রমিত খাদ্য বিনিময় ব্যবস্থা, ক্লিনিক্যাল ক্যালকুলেশন ইঞ্জিন এবং রোগভিত্তিক খাদ্য প্রোটোকলে রূপান্তরের প্রমাণভিত্তিক কারিকুলাম। ফ্ল্যাগশিপ ১ম অধ্যায় ৩টি শিখন স্তরে সম্পূর্ণ উন্মুক্ত ও ভ্যাঙ্কুভার সাইটেশনযুক্ত; ২–৩২ অধ্যায় সক্রিয় কারিকুলামে সংরক্ষিত।'
+            'An evidence-based companion curriculum translating biochemical nutrition science into individualized medical nutrition therapies, standardized food exchanges, clinical calculation engines, and disease-specific dietary protocols. Chapters 01–08 are available in full popular-science depth with interactive 3-tier learning levels, clinical equations, and Vancouver citations; Chapters 09–32 are registered in the active curriculum.',
+            'বায়োকেমিক্যাল পুষ্টিবিজ্ঞানকে রোগীর ব্যক্তিমাফিক চিকিৎসা পুষ্টি থেরাপি, প্রমিত খাদ্য বিনিময় ব্যবস্থা, ক্লিনিক্যাল ক্যালকুলেশন ইঞ্জিন এবং রোগভিত্তিক খাদ্য প্রোটোকলে রূপান্তরের প্রমাণভিত্তিক কারিকুলাম। ১ম থেকে ৮ম অধ্যায় জনপ্রিয় বিজ্ঞান ধারায় ৩টি শিখন স্তরে সম্পূর্ণ উন্মুক্ত, ক্লিনিক্যাল সমীকরণ ও ভ্যাঙ্কুভার সাইটেশনযুক্ত; ০৯–৩২তম অধ্যায় সক্রিয় কারিকুলামে সংরক্ষিত।'
           )}
         </p>
         <div className="anatomy-subject-metrics">
