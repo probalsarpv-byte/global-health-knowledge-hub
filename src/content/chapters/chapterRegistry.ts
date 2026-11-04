@@ -100,6 +100,8 @@ import { dietetics07ProteinRequirementsLesson } from './dietetics07ProteinRequir
 import { dietetics08MacronutrientLesson } from './dietetics08MacronutrientDistribution'
 import { dietetics09FluidElectrolytesLesson } from './dietetics09FluidElectrolytes'
 import { dietetics10MicronutrientLesson } from './dietetics10MicronutrientProtocols'
+import { dietetics11FoodExchangesLesson } from './dietetics11FoodExchanges'
+import { dietetics12BengaliExchangesLesson } from './dietetics12BengaliExchanges'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -515,6 +517,8 @@ export const allDieteticsLessonsMap: Record<string, LessonTopic> = {
   [dietetics08MacronutrientLesson.id]: dietetics08MacronutrientLesson,
   [dietetics09FluidElectrolytesLesson.id]: dietetics09FluidElectrolytesLesson,
   [dietetics10MicronutrientLesson.id]: dietetics10MicronutrientLesson,
+  [dietetics11FoodExchangesLesson.id]: dietetics11FoodExchangesLesson,
+  [dietetics12BengaliExchangesLesson.id]: dietetics12BengaliExchangesLesson,
 }
 
 export const allDieteticsLessonsBySlug: Record<string, LessonTopic> = {
@@ -528,6 +532,8 @@ export const allDieteticsLessonsBySlug: Record<string, LessonTopic> = {
   [dietetics08MacronutrientLesson.slug]: dietetics08MacronutrientLesson,
   [dietetics09FluidElectrolytesLesson.slug]: dietetics09FluidElectrolytesLesson,
   [dietetics10MicronutrientLesson.slug]: dietetics10MicronutrientLesson,
+  [dietetics11FoodExchangesLesson.slug]: dietetics11FoodExchangesLesson,
+  [dietetics12BengaliExchangesLesson.slug]: dietetics12BengaliExchangesLesson,
 }
 
 export function getDieteticsChapterLesson(identifier?: string): LessonTopic | undefined {
@@ -555,9 +561,15 @@ export const batch2DieteticsChapters: LessonTopic[] = [
   dietetics10MicronutrientLesson,
 ]
 
+export const batch3DieteticsChapters: LessonTopic[] = [
+  dietetics11FoodExchangesLesson,
+  dietetics12BengaliExchangesLesson,
+]
+
 export const allCompletedDieteticsChapters: LessonTopic[] = [
   ...batch1DieteticsChapters,
   ...batch2DieteticsChapters,
+  ...batch3DieteticsChapters,
 ]
 
 

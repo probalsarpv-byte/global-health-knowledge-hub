@@ -181,7 +181,7 @@ export function PublicHome() {
               <div className="public-actions-group">
                 <Link className="btn-scientific-primary" to="/learn/dietetics">
                   <Layers3 size={16} />
-                  {isBn ? 'ডায়েটেটিক্স অ্যাকাডেমি (১০ অধ্যায় · V2.8)' : 'Dietetics Academy (10 Chapters · V2.8)'}
+                  {isBn ? 'ডায়েটেটিক্স অ্যাকাডেমি (১২ অধ্যায় · V2.8)' : 'Dietetics Academy (12 Chapters · V2.8)'}
                 </Link>
                 <Link className="btn-scientific-secondary" to="/learn/nutrition">
                   <Utensils size={16} />
@@ -206,8 +206,8 @@ export function PublicHome() {
                 </span>
                 <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
                   {isBn
-                    ? '১০টি ক্লিনিক্যাল অধ্যায়সহ ডায়েটেটিক্স অ্যাকাডেমি এখন লাইভ: eNCPT PES রোগনির্ণয়, এনার্জি ও প্রোটিন প্রেসক্রিপশন ইঞ্জিন।'
-                    : 'Practical Diet Planning & Therapeutic Dietetics Academy is live with 10 clinical chapters, eNCPT PES diagnostics, and energy/protein prescription engines.'}
+                    ? '১২টি ক্লিনিক্যাল অধ্যায়সহ ডায়েটেটিক্স অ্যাকাডেমি এখন লাইভ: eNCPT PES রোগনির্ণয়, খাদ্য বিনিময় ও বাঙালি পথ্য প্রকৌশল।'
+                    : 'Practical Diet Planning & Therapeutic Dietetics Academy is live with 12 clinical chapters, eNCPT PES diagnostics, and Bengali food exchange engineering.'}
                 </span>
               </div>
             </div>

@@ -330,9 +330,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Mastering the exchange lists for meal planning: Starches, lean/medium/high-fat meats, non-starchy vegetables, fruits, and fats for precise macronutrient translation.',
         'খাদ্য তালিকা তৈরির বিনিময় ব্যবস্থা: শ্বেতসার, চর্বিহীন/মাঝারি মাংস, শ্বেতসারহীন সবজি, ফল ও তেলের সঠিক গ্রাম ও ক্যালোরি রূপান্তর।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.08'],
+      lessonId: 'topic.dietetics.food-exchange-systems',
       estimatedMinutes: 26,
     },
     {
@@ -348,9 +349,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Nutrient quantification of parboiled rice, handmade roti, lentils (dal), indigenous fish, traditional greens (shak), and mustard oil in standardized exchange units.',
         'সিদ্ধ চালের ভাত, লাল আটার রুটি, মসুর ডাল, দেশি মাছ, শাকসবজি এবং সরিষার তেলের সঠিক পুষ্টি উপাদানভিত্তিক বিনিময় তালিকা।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.11'],
+      lessonId: 'topic.dietetics.south-asian-exchanges',
       estimatedMinutes: 30,
     },
     {
