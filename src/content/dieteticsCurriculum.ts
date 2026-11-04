@@ -406,10 +406,11 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Circadian rhythm synchronization with peripheral metabolic clocks, time-restricted eating, and distributing protein into optimal ~25–35 g anabolic pulses.',
         'শরীরের অভ্যন্তরীণ জৈব ঘড়ির সাথে খাদ্যাভ্যাসের সমন্বয়, সীমিত সময়ের খাওয়া (TRE) এবং পেশি পুনর্গঠনের জন্য ২৫-৩৫ গ্রামের প্রোটিন পালসিং বণ্টন।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.11'],
-      estimatedMinutes: 22,
+      lessonId: 'topic.dietetics.meal-frequency-circadian',
+      estimatedMinutes: 28,
     },
 
     // Group 4: Cardiometabolic & Endocrine Medical Nutrition Therapy (Ch 16–20)
@@ -426,10 +427,11 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Clinical nutrition guidelines, carbohydrate consistency, managing hypoglycemia risk in insulin-treated patients, and strict glycemic targets in gestational diabetes.',
         'ডায়াবেটিসের ক্লিনিক্যাল খাদ্য নির্দেশিকা, নিয়মিত কার্বোহাইড্রেট বণ্টন, হাইপোগ্লাইসেমিয়া প্রতিরোধ এবং গর্ভকালীন ডায়াবেটিসের কঠোর নিয়ন্ত্রণ।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.13', 'dietetics.chapter.14'],
-      estimatedMinutes: 32,
+      lessonId: 'topic.dietetics.diabetes-mnt',
+      estimatedMinutes: 30,
     },
     {
       id: 'dietetics.chapter.17',

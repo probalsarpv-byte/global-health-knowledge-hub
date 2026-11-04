@@ -17,7 +17,7 @@ beforeEach(() => {
 afterEach(cleanup)
 
 describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery Batches A & B)', () => {
-  it('defines an ordered 32-chapter curriculum across 7 thematic groups with Chapters 01–14 available and Chapters 15–32 planned', () => {
+  it('defines an ordered 32-chapter curriculum across 7 thematic groups with Chapters 01–16 available and Chapters 17–32 planned', () => {
     expect(dieteticsCurriculum.chapters).toHaveLength(32)
     expect(dieteticsCurriculum.groups).toHaveLength(7)
     expect(dieteticsCurriculum.groups.map((group) => group.id)).toEqual([
@@ -35,14 +35,14 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
       Array.from({ length: 32 }, (_, index) => index + 1)
     )
 
-    // Chapters 01–14 are available
+    // Chapters 01–16 are available
     const availableChapters = dieteticsCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(14)
-    expect(availableChapters.map((ch) => ch.order)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+    expect(availableChapters).toHaveLength(16)
+    expect(availableChapters.map((ch) => ch.order)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
 
-    // Chapters 15–32 are strictly planned
+    // Chapters 17–32 are strictly planned
     const plannedChapters = dieteticsCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(18)
+    expect(plannedChapters).toHaveLength(16)
     plannedChapters.forEach((ch) => {
       expect(ch.status).toBe('planned')
       expect(ch.completionStatus).toBe('not-started')
@@ -64,7 +64,7 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
       expect(group.description.bn).toBeTruthy()
     })
 
-    expect(allCompletedDieteticsChapters).toHaveLength(14)
+    expect(allCompletedDieteticsChapters).toHaveLength(16)
   })
 
   it('renders the Dietetics curriculum overview and filters chapters by search query', async () => {
@@ -78,11 +78,11 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
         name: /Practical diet planning & therapeutic dietetics curriculum/i,
       })
     ).toBeInTheDocument()
-    expect(screen.getByText(/14 \/ 32 chapters available/i)).toBeInTheDocument()
+    expect(screen.getByText(/16 \/ 32 chapters available/i)).toBeInTheDocument()
 
     // Available chapter card visible with link
     const startLinks = screen.getAllByRole('link', { name: /Start chapter/i })
-    expect(startLinks.length).toBe(14)
+    expect(startLinks.length).toBe(16)
 
     // Test Search filtering
     const searchInput = screen.getByPlaceholderText(/Search available or planned dietetics lessons/i)
@@ -94,10 +94,10 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
     await user.type(searchInput, 'Mifflin')
     expect(screen.getByText(/06 · Energy Expenditure Formulation/i)).toBeInTheDocument()
 
-    // Clear and search for planned topic
+    // Clear and search for planned topic (e.g. Ch 17 DASH)
     await user.clear(searchInput)
-    await user.type(searchInput, 'Circadian Chrono-Nutrition')
-    expect(screen.getByText(/15 · Meal Frequency/i)).toBeInTheDocument()
+    await user.type(searchInput, 'DASH')
+    expect(screen.getByText(/17 · The Clinical DASH Protocol/i)).toBeInTheDocument()
     expect(screen.getByText(/In preparation/i)).toBeInTheDocument()
   })
 
@@ -114,7 +114,7 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
         name: /ব্যবহারিক পথ্য পরিকল্পনা ও থেরাপিউটিক ডায়েটেটিক্স কারিকুলাম/i,
       })
     ).toBeInTheDocument()
-    expect(screen.getByText(/14 \/ 32 অধ্যায় উপলভ্য/i)).toBeInTheDocument()
+    expect(screen.getByText(/16 \/ 32 অধ্যায় উপলভ্য/i)).toBeInTheDocument()
     expect(screen.getByText(/০১ · ক্লিনিক্যাল পুষ্টি মূল্যায়ন/i)).toBeInTheDocument()
     expect(screen.getByText(/০২ · নিউট্রিশন কেয়ার প্রসেস/i)).toBeInTheDocument()
   })
@@ -354,5 +354,70 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
     await user.click(academicBtn14)
     expect(screen.getAllByText(/Linear Amylose.*Branched Amylopectin/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Second-Meal Effect/i).length).toBeGreaterThan(0)
+  })
+
+  it('navigates to Chapter 15 (Meal Frequency & Circadian) and Chapter 16 (Diabetes MNT)', async () => {
+    const user = userEvent.setup()
+    window.history.replaceState({}, '', '/learn/dietetics/chapters/therapeutic-meal-distribution-circadian-timing')
+    cleanup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', {
+        name: /15 · Meal Frequency, Protein Pulsing & Circadian Chrono-Nutrition/i,
+      })
+    ).toBeInTheDocument()
+
+    const lesson15 = getDieteticsChapterLesson('topic.dietetics.meal-frequency-circadian')
+    expect(lesson15).toBeDefined()
+
+    // Switch to Foundation on Chapter 15
+    const foundationBtn15 = screen.getByRole('button', { name: /Foundation/i })
+    await user.click(foundationBtn15)
+    expect(screen.getAllByText(/Day-Shift Factory Analogy/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Meal Frequency Myths/i).length).toBeGreaterThan(0)
+
+    // Academic switch on Chapter 15
+    const academicBtn15 = screen.getByRole('button', { name: /Academic/i })
+    await user.click(academicBtn15)
+    expect(screen.getAllByText(/The Leucine Trigger/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Time-Restricted Eating/i).length).toBeGreaterThan(0)
+
+    // Advanced switch on Chapter 15
+    const advancedBtn15 = screen.getByRole('button', { name: /Advanced/i })
+    await user.click(advancedBtn15)
+    expect(screen.getAllByText(/Migrating Motor Complex \(MMC\)/i).length).toBeGreaterThan(0)
+
+    // Navigate to Chapter 16
+    window.history.replaceState({}, '', '/learn/dietetics/chapters/diabetes-mellitus-t1d-t2d-gestational-mnt')
+    cleanup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', {
+        name: /16 · Medical Nutrition Therapy for Diabetes Mellitus: T1D, T2D & Gestational Hyperglycemia/i,
+      })
+    ).toBeInTheDocument()
+
+    const lesson16 = getDieteticsChapterLesson('topic.dietetics.diabetes-mnt')
+    expect(lesson16).toBeDefined()
+
+    // Switch to Foundation on Chapter 16
+    const foundationBtn16 = screen.getByRole('button', { name: /Foundation/i })
+    await user.click(foundationBtn16)
+    expect(screen.getAllByText(/The Key Factory and Jammed Locks/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/The Life-Saving Rule of 15/i).length).toBeGreaterThan(0)
+
+    // Academic switch on Chapter 16
+    const academicBtn16 = screen.getByRole('button', { name: /Academic/i })
+    await user.click(academicBtn16)
+    expect(screen.getAllByText(/The DiRECT Trial Protocol/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Gestational Diabetes MNT/i).length).toBeGreaterThan(0)
+
+    // Advanced switch on Chapter 16
+    const advancedBtn16 = screen.getByRole('button', { name: /Advanced/i })
+    await user.click(advancedBtn16)
+    expect(screen.getAllByText(/Roy Taylor’s Twin Cycle Hypothesis/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Beta-Cell Dedifferentiation vs\. Apoptosis/i).length).toBeGreaterThan(0)
   })
 })

@@ -59,7 +59,7 @@ export function StudentLayout() {
       <header className="topbar">
         <div className="topbar-left"><button className="icon-button menu-button" aria-label={t('openMenu')} onClick={() => setMobileNav(true)}><Menu size={20} /></button><BackButton fallback="/" /><span className="breadcrumb">{t('navHome')} <span>/</span> <b>{activeModule ? t(activeModule.nameKey) : t('navHome')}</b></span></div>
         <div className="topbar-actions">
-          <span className="prototype-pill" title="Current build release" style={{ fontSize: '0.72rem', padding: '3px 8px', borderRadius: '4px', background: 'var(--panel-soft)', border: '1px solid var(--border)', fontWeight: 600, color: 'var(--text-muted)' }}>V2.8 · Ch 01–14</span>
+          <span className="prototype-pill" title="Current build release" style={{ fontSize: '0.72rem', padding: '3px 8px', borderRadius: '4px', background: 'var(--panel-soft)', border: '1px solid var(--border)', fontWeight: 600, color: 'var(--text-muted)' }}>V2.8 · Ch 01–16</span>
           <button className="search-trigger" aria-label={t('searchPlaceholder')} onClick={() => setSearchOpen((open) => !open)}><Search size={16} /><span>{t('searchPlaceholder')}</span><kbd><Command size={11} /> K</kbd></button>
           <GlobalControls />
         </div>

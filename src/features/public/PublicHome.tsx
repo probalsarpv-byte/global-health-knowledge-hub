@@ -31,7 +31,7 @@ export function PublicHome() {
       to: '/learn/dietetics',
       icon: Layers3,
       accent: 'var(--accent-dietetics, #E11D48)',
-      badge: isBn ? '১৪/৩২ অধ্যায় (নতুন V2.8)' : '14 / 32 Chapters (New V2.8)',
+      badge: isBn ? '১৬/৩২ অধ্যায় (নতুন V2.8)' : '16 / 32 Chapters (New V2.8)',
     },
     {
       title: isBn ? 'পুষ্টিবিজ্ঞান অ্যাকাডেমি' : 'Nutrition Academy',
@@ -181,7 +181,7 @@ export function PublicHome() {
               <div className="public-actions-group">
                 <Link className="btn-scientific-primary" to="/learn/dietetics">
                   <Layers3 size={16} />
-                  {isBn ? 'ডায়েটেটিক্স অ্যাকাডেমি (১৪ অধ্যায় · V2.8)' : 'Dietetics Academy (14 Chapters · V2.8)'}
+                  {isBn ? 'ডায়েটেটিক্স অ্যাকাডেমি (১৬ অধ্যায় · V2.8)' : 'Dietetics Academy (16 Chapters · V2.8)'}
                 </Link>
                 <Link className="btn-scientific-secondary" to="/learn/nutrition">
                   <Utensils size={16} />
@@ -206,8 +206,8 @@ export function PublicHome() {
                 </span>
                 <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
                   {isBn
-                    ? '১৪টি ক্লিনিক্যাল অধ্যায়সহ ডায়েটেটিক্স অ্যাকাডেমি এখন লাইভ: eNCPT PES রোগনির্ণয়, খাদ্য বিনিময়, কার্ব কাউন্টিং ও গ্লাইসেমিক লোড প্রকৌশল।'
-                    : 'Practical Diet Planning & Therapeutic Dietetics Academy is live with 14 clinical chapters, eNCPT PES diagnostics, carb counting, and glycemic load engineering.'}
+                    ? '১৬টি ক্লিনিক্যাল অধ্যায়সহ ডায়েটেটিক্স অ্যাকাডেমি এখন লাইভ: সার্কাডিয়ান ক্রোনো-নিউট্রিশন, ডায়াবেটিস MNT, কার্ব কাউন্টিং ও গ্লাইসেমিক লোড প্রকৌশল।'
+                    : 'Practical Diet Planning & Therapeutic Dietetics Academy is live with 16 clinical chapters, circadian chrono-nutrition, diabetes MNT, carb counting, and glycemic load engineering.'}
                 </span>
               </div>
             </div>

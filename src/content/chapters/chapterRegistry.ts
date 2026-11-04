@@ -104,6 +104,8 @@ import { dietetics11FoodExchangesLesson } from './dietetics11FoodExchanges'
 import { dietetics12BengaliExchangesLesson } from './dietetics12BengaliExchanges'
 import { dietetics13CarbCountingLesson } from './dietetics13CarbCountingICR'
 import { dietetics14GlycemicLesson } from './dietetics14GlycemicIndexLoad'
+import { dietetics15MealFrequencyLesson } from './dietetics15MealFrequencyCircadian'
+import { dietetics16DiabetesMntLesson } from './dietetics16DiabetesMnt'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -523,6 +525,8 @@ export const allDieteticsLessonsMap: Record<string, LessonTopic> = {
   [dietetics12BengaliExchangesLesson.id]: dietetics12BengaliExchangesLesson,
   [dietetics13CarbCountingLesson.id]: dietetics13CarbCountingLesson,
   [dietetics14GlycemicLesson.id]: dietetics14GlycemicLesson,
+  [dietetics15MealFrequencyLesson.id]: dietetics15MealFrequencyLesson,
+  [dietetics16DiabetesMntLesson.id]: dietetics16DiabetesMntLesson,
 }
 
 export const allDieteticsLessonsBySlug: Record<string, LessonTopic> = {
@@ -540,6 +544,8 @@ export const allDieteticsLessonsBySlug: Record<string, LessonTopic> = {
   [dietetics12BengaliExchangesLesson.slug]: dietetics12BengaliExchangesLesson,
   [dietetics13CarbCountingLesson.slug]: dietetics13CarbCountingLesson,
   [dietetics14GlycemicLesson.slug]: dietetics14GlycemicLesson,
+  [dietetics15MealFrequencyLesson.slug]: dietetics15MealFrequencyLesson,
+  [dietetics16DiabetesMntLesson.slug]: dietetics16DiabetesMntLesson,
 }
 
 export function getDieteticsChapterLesson(identifier?: string): LessonTopic | undefined {
@@ -572,12 +578,18 @@ export const batch3DieteticsChapters: LessonTopic[] = [
   dietetics12BengaliExchangesLesson,
   dietetics13CarbCountingLesson,
   dietetics14GlycemicLesson,
+  dietetics15MealFrequencyLesson,
+]
+
+export const batch4DieteticsChapters: LessonTopic[] = [
+  dietetics16DiabetesMntLesson,
 ]
 
 export const allCompletedDieteticsChapters: LessonTopic[] = [
   ...batch1DieteticsChapters,
   ...batch2DieteticsChapters,
   ...batch3DieteticsChapters,
+  ...batch4DieteticsChapters,
 ]
 
 
