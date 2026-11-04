@@ -215,7 +215,7 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
     expect(screen.getAllByText(/The Penn State Equations for Mechanical Ventilation/i).length).toBeGreaterThan(0)
   })
 
-  it('navigates to Chapter 07 (Clinical Protein Prescriptions) and Chapter 10 (Micronutrient Protocols)', async () => {
+  it('navigates to Chapter 07 (Clinical Protein Prescriptions) and Chapter 09 (Fluid & Electrolytes)', async () => {
     window.history.replaceState({}, '', '/learn/dietetics/chapters/protein-requirements-metabolic-stress-kinetics')
     render(<App />)
 
@@ -228,9 +228,25 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
     const lesson07 = getDieteticsChapterLesson('topic.dietetics.protein-requirements')
     expect(lesson07).toBeDefined()
 
-    // Navigate to Chapter 10
-    window.history.replaceState({}, '', '/learn/dietetics/chapters/micronutrient-therapeutic-supplementation-protocols')
+    // Navigate to Chapter 09
+    window.history.replaceState({}, '', '/learn/dietetics/chapters/fluid-electrolyte-osmolar-prescriptions')
     cleanup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', {
+        name: /09 · Fluid & Electrolyte Architecture: Osmolar Clearance & Maintenance Formulations/i,
+      })
+    ).toBeInTheDocument()
+
+    const lesson09 = getDieteticsChapterLesson('topic.dietetics.fluid-electrolyte-prescriptions')
+    expect(lesson09).toBeDefined()
+    expect(screen.getAllByText(/Holliday-Segar 100\/50\/20 algorithm/i).length).toBeGreaterThan(0)
+  })
+
+  it('navigates to Chapter 10 (Therapeutic Micronutrient Prescriptions) and operates depth tiers', async () => {
+    const user = userEvent.setup()
+    window.history.replaceState({}, '', '/learn/dietetics/chapters/micronutrient-therapeutic-supplementation-protocols')
     render(<App />)
 
     expect(
@@ -241,6 +257,16 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
 
     const lesson10 = getDieteticsChapterLesson('topic.dietetics.micronutrient-protocols')
     expect(lesson10).toBeDefined()
-    expect(screen.getAllByText(/Endocrine Society 50,000 IU Vitamin D3/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Endocrine Society 50,000 IU/i).length).toBeGreaterThan(0)
+
+    // Depth switch to Academic
+    const academicBtn = screen.getByRole('button', { name: /Academic/i })
+    await user.click(academicBtn)
+    expect(screen.getAllByText(/Ganzoni Formula/i).length).toBeGreaterThan(0)
+
+    // Depth switch to Advanced
+    const advancedBtn = screen.getByRole('button', { name: /Advanced/i })
+    await user.click(advancedBtn)
+    expect(screen.getAllByText(/Wernicke Encephalopathy/i).length).toBeGreaterThan(0)
   })
 })
