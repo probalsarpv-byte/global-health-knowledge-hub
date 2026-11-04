@@ -368,9 +368,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Basic and advanced carbohydrate counting, calculating meal boluses with insulin-to-carbohydrate ratios (ICR), and insulin sensitivity factor (ISF) correction rules.',
         'মৌলিক ও উন্নত কার্বোহাইড্রেট গণনা, ইনসুলিন-টু-কার্বোহাইড্রেট রেশিও (ICR) দিয়ে মিল বোলাস নির্ধারণ এবং ইনসুলিন সংবেদনশীলতা ফ্যাক্টর (ISF) সংশোধন।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.11'],
+      lessonId: 'topic.dietetics.carb-counting-icr',
       estimatedMinutes: 28,
     },
     {
@@ -386,9 +387,10 @@ export const dieteticsCurriculum: DieteticsCurriculum = {
         'Formulating composite meals to attenuate postprandial glycemic excursions using fiber viscosity, intact food architecture, and organic acid additions.',
         'খাবারের আঁশের ঘনত্ব, গোটা দানার গঠন এবং অম্লীয় উপাদানের সমন্বয়ে রক্তে গ্লুকোজের আকস্মিক বৃদ্ধি রোধকারী পথ্য তৈরি।'
       ),
-      status: 'planned',
+      status: 'available',
       completionStatus: 'not-started',
       prerequisiteIds: ['dietetics.chapter.11'],
+      lessonId: 'topic.dietetics.glycemic-index-load',
       estimatedMinutes: 24,
     },
     {

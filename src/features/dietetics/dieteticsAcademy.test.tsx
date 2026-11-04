@@ -17,7 +17,7 @@ beforeEach(() => {
 afterEach(cleanup)
 
 describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery Batches A & B)', () => {
-  it('defines an ordered 32-chapter curriculum across 7 thematic groups with Chapters 01–12 available and Chapters 13–32 planned', () => {
+  it('defines an ordered 32-chapter curriculum across 7 thematic groups with Chapters 01–14 available and Chapters 15–32 planned', () => {
     expect(dieteticsCurriculum.chapters).toHaveLength(32)
     expect(dieteticsCurriculum.groups).toHaveLength(7)
     expect(dieteticsCurriculum.groups.map((group) => group.id)).toEqual([
@@ -35,14 +35,14 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
       Array.from({ length: 32 }, (_, index) => index + 1)
     )
 
-    // Chapters 01–12 are available
+    // Chapters 01–14 are available
     const availableChapters = dieteticsCurriculum.chapters.filter((chapter) => chapter.status === 'available')
-    expect(availableChapters).toHaveLength(12)
-    expect(availableChapters.map((ch) => ch.order)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+    expect(availableChapters).toHaveLength(14)
+    expect(availableChapters.map((ch) => ch.order)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
 
-    // Chapters 13–32 are strictly planned
+    // Chapters 15–32 are strictly planned
     const plannedChapters = dieteticsCurriculum.chapters.filter((chapter) => chapter.status === 'planned')
-    expect(plannedChapters).toHaveLength(20)
+    expect(plannedChapters).toHaveLength(18)
     plannedChapters.forEach((ch) => {
       expect(ch.status).toBe('planned')
       expect(ch.completionStatus).toBe('not-started')
@@ -64,7 +64,7 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
       expect(group.description.bn).toBeTruthy()
     })
 
-    expect(allCompletedDieteticsChapters).toHaveLength(12)
+    expect(allCompletedDieteticsChapters).toHaveLength(14)
   })
 
   it('renders the Dietetics curriculum overview and filters chapters by search query', async () => {
@@ -78,11 +78,11 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
         name: /Practical diet planning & therapeutic dietetics curriculum/i,
       })
     ).toBeInTheDocument()
-    expect(screen.getByText(/12 \/ 32 chapters available/i)).toBeInTheDocument()
+    expect(screen.getByText(/14 \/ 32 chapters available/i)).toBeInTheDocument()
 
     // Available chapter card visible with link
     const startLinks = screen.getAllByRole('link', { name: /Start chapter/i })
-    expect(startLinks.length).toBe(12)
+    expect(startLinks.length).toBe(14)
 
     // Test Search filtering
     const searchInput = screen.getByPlaceholderText(/Search available or planned dietetics lessons/i)
@@ -96,8 +96,8 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
 
     // Clear and search for planned topic
     await user.clear(searchInput)
-    await user.type(searchInput, 'Carbohydrate Counting')
-    expect(screen.getByText(/13 · Carbohydrate Counting/i)).toBeInTheDocument()
+    await user.type(searchInput, 'Circadian Chrono-Nutrition')
+    expect(screen.getByText(/15 · Meal Frequency/i)).toBeInTheDocument()
     expect(screen.getByText(/In preparation/i)).toBeInTheDocument()
   })
 
@@ -114,7 +114,7 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
         name: /ব্যবহারিক পথ্য পরিকল্পনা ও থেরাপিউটিক ডায়েটেটিক্স কারিকুলাম/i,
       })
     ).toBeInTheDocument()
-    expect(screen.getByText(/12 \/ 32 অধ্যায় উপলভ্য/i)).toBeInTheDocument()
+    expect(screen.getByText(/14 \/ 32 অধ্যায় উপলভ্য/i)).toBeInTheDocument()
     expect(screen.getByText(/০১ · ক্লিনিক্যাল পুষ্টি মূল্যায়ন/i)).toBeInTheDocument()
     expect(screen.getByText(/০২ · নিউট্রিশন কেয়ার প্রসেস/i)).toBeInTheDocument()
   })
@@ -305,5 +305,54 @@ describe('Practical Diet Planning & Therapeutic Dietetics Academy (V2.8 Recovery
     expect(lesson12).toBeDefined()
     expect(screen.getAllByText(/Thin-Fat.*Asian Indian Phenotype/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Dual-Exchange.*Dal.*Identity/i).length).toBeGreaterThan(0)
+  })
+
+  it('navigates to Chapter 13 (Carbohydrate Counting & ICR) and Chapter 14 (Glycemic Index & Load)', async () => {
+    const user = userEvent.setup()
+    window.history.replaceState({}, '', '/learn/dietetics/chapters/carbohydrate-counting-insulin-to-carb-ratios')
+    cleanup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', {
+        name: /13 · Carbohydrate Counting & Advanced Insulin-to-Carbohydrate Ratio \(ICR\) Planning/i,
+      })
+    ).toBeInTheDocument()
+
+    const lesson13 = getDieteticsChapterLesson('topic.dietetics.carb-counting-icr')
+    expect(lesson13).toBeDefined()
+    expect(screen.getAllByText(/Metabolic Engine & Fuel Injection Analogy/i).length).toBeGreaterThan(0)
+
+    // Academic switch on Chapter 13
+    const academicBtn = screen.getByRole('button', { name: /Academic/i })
+    await user.click(academicBtn)
+    expect(screen.getAllByText(/Rule of 500/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Rule of 1800/i).length).toBeGreaterThan(0)
+
+    // Navigate to Chapter 14
+    window.history.replaceState({}, '', '/learn/dietetics/chapters/glycemic-index-glycemic-load-menu-engineering')
+    cleanup()
+    render(<App />)
+
+    expect(
+      screen.getByRole('heading', {
+        name: /14 · Glycemic Index & Glycemic Load: Precision Meal Engineering/i,
+      })
+    ).toBeInTheDocument()
+
+    const lesson14 = getDieteticsChapterLesson('topic.dietetics.glycemic-index-load')
+    expect(lesson14).toBeDefined()
+
+    // Switch to Foundation on Chapter 14
+    const foundationBtn14 = screen.getByRole('button', { name: /Foundation/i })
+    await user.click(foundationBtn14)
+    expect(screen.getAllByText(/Campfire Kindling vs. Hardwood Log Analogy/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Watermelon Paradox/i).length).toBeGreaterThan(0)
+
+    // Academic switch on Chapter 14
+    const academicBtn14 = screen.getByRole('button', { name: /Academic/i })
+    await user.click(academicBtn14)
+    expect(screen.getAllByText(/Linear Amylose.*Branched Amylopectin/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Second-Meal Effect/i).length).toBeGreaterThan(0)
   })
 })

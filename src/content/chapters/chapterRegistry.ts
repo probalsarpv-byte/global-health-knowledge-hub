@@ -102,6 +102,8 @@ import { dietetics09FluidElectrolytesLesson } from './dietetics09FluidElectrolyt
 import { dietetics10MicronutrientLesson } from './dietetics10MicronutrientProtocols'
 import { dietetics11FoodExchangesLesson } from './dietetics11FoodExchanges'
 import { dietetics12BengaliExchangesLesson } from './dietetics12BengaliExchanges'
+import { dietetics13CarbCountingLesson } from './dietetics13CarbCountingICR'
+import { dietetics14GlycemicLesson } from './dietetics14GlycemicIndexLoad'
 
 export const batch1Chapters: LessonTopic[] = [
   anatomyIntroductionLesson,
@@ -519,6 +521,8 @@ export const allDieteticsLessonsMap: Record<string, LessonTopic> = {
   [dietetics10MicronutrientLesson.id]: dietetics10MicronutrientLesson,
   [dietetics11FoodExchangesLesson.id]: dietetics11FoodExchangesLesson,
   [dietetics12BengaliExchangesLesson.id]: dietetics12BengaliExchangesLesson,
+  [dietetics13CarbCountingLesson.id]: dietetics13CarbCountingLesson,
+  [dietetics14GlycemicLesson.id]: dietetics14GlycemicLesson,
 }
 
 export const allDieteticsLessonsBySlug: Record<string, LessonTopic> = {
@@ -534,6 +538,8 @@ export const allDieteticsLessonsBySlug: Record<string, LessonTopic> = {
   [dietetics10MicronutrientLesson.slug]: dietetics10MicronutrientLesson,
   [dietetics11FoodExchangesLesson.slug]: dietetics11FoodExchangesLesson,
   [dietetics12BengaliExchangesLesson.slug]: dietetics12BengaliExchangesLesson,
+  [dietetics13CarbCountingLesson.slug]: dietetics13CarbCountingLesson,
+  [dietetics14GlycemicLesson.slug]: dietetics14GlycemicLesson,
 }
 
 export function getDieteticsChapterLesson(identifier?: string): LessonTopic | undefined {
@@ -564,6 +570,8 @@ export const batch2DieteticsChapters: LessonTopic[] = [
 export const batch3DieteticsChapters: LessonTopic[] = [
   dietetics11FoodExchangesLesson,
   dietetics12BengaliExchangesLesson,
+  dietetics13CarbCountingLesson,
+  dietetics14GlycemicLesson,
 ]
 
 export const allCompletedDieteticsChapters: LessonTopic[] = [
